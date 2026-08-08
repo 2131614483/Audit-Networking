@@ -1,0 +1,56 @@
+{
+  "entities": [
+    {
+      "entity_id": "E1",
+      "name": "核心担保集团",
+      "industry": "金融业",
+      "leverage": 0.95,
+      "current_ratio": 0.5,
+      "has_default_history": true,
+      "total_assets": 5000000
+    },
+    {
+      "entity_id": "E2",
+      "name": "区域运营公司",
+      "industry": "批发零售",
+      "leverage": 0.6,
+      "current_ratio": 1.2,
+      "has_default_history": false,
+      "total_assets": 8000000
+    },
+    {
+      "entity_id": "E3",
+      "name": "子公司",
+      "industry": "制造业",
+      "leverage": 0.4,
+      "current_ratio": 1.8,
+      "has_default_history": false,
+      "total_assets": 3000000
+    },
+    {
+      "entity_id": "E4",
+      "name": "关联企业",
+      "industry": "建筑业",
+      "leverage": 0.95,
+      "current_ratio": 0.6,
+      "has_default_history": true,
+      "total_assets": 1000000
+    },
+    {
+      "entity_id": "E5",
+      "name": "独立企业",
+      "industry": "信息技术",
+      "leverage": 0.3,
+      "current_ratio": 2.0,
+      "has_default_history": false,
+      "total_assets": 10000000
+    }
+  ],
+  "guarantees": [
+    {"guarantor": "E1", "borrower": "E2", "amount": 5000000, "guarantee_ratio": 1.0},
+    {"guarantor": "E1", "borrower": "E3", "amount": 3000000, "guarantee_ratio": 1.0},
+    {"guarantor": "E1", "borrower": "E4", "amount": 2000000, "guarantee_ratio": 1.0},
+    {"guarantor": "E4", "borrower": "E2", "amount": 1000000, "guarantee_ratio": 1.0},
+    {"guarantor": "E2", "borrower": "E5", "amount": 2000000, "guarantee_ratio": 0.5}
+  ]
+}

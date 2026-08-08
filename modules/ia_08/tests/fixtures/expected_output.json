@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "result_keys": ["items", "overall", "degradation_alerts", "needs_human_review", "generated_at"],
+  "item_keys": ["task_id", "remediation_type", "score", "verdict", "confidence", "confidence_label", "rule_results", "degradation_signal", "revalidation_period_days", "evidence_coverage", "generated_at"],
+  "overall_keys": ["total", "pass", "conditional", "fail", "avg_score", "avg_confidence"],
+  "verdicts": ["通过", "有条件通过", "不通过"],
+  "total": 3
+}

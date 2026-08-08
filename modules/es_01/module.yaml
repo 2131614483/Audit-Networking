@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: ES-01
+  name: ESG多源数据智能采集平台
+  name_en: es_01
+  version: 1.0.0
+  category: esg_audit
+  family: cv
+  family_display: Computer Vision
+  difficulty: 4
+  priority: medium
+  roi: ""
+  duration: "7个月"
+  budget: ""
+  description: >
+    本方案构建基于RPA、API、IoT、NLP和CV多技术融合的ESG多源数据智能采集平台。平台通过20+数据源连接器实现自动采集，利用多模态数据解析技术处理异构数据，通过智能标准化引擎统一数据口径，为ESG审计提供高质量、高覆盖的数据基础。平台可将数据采集效率提升80%，数据覆盖范围扩展300%以上。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.es_01
+  port: 8701
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - rop
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

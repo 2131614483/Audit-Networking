@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: FI-03
+  name: ML贷款违约预测验证系统
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

@@ -1,0 +1,41 @@
+{
+  "suppliers": [
+    {"supplier_id": "CORE-001", "name": "核心制造企业", "uscc": "91110000CORE001", "node_type": "focal", "attributes": {"industry": "高端制造", "tier": 0}},
+    {"supplier_id": "S-101", "name": "华芯电子元件", "uscc": "91310000S101001", "node_type": "supplier", "attributes": {"industry": "电子元件", "tier": 1, "region": "华东"}},
+    {"supplier_id": "S-102", "name": "宝钢原材料", "uscc": "91310000S102001", "node_type": "supplier", "attributes": {"industry": "钢材", "tier": 1, "region": "华东"}},
+    {"supplier_id": "S-103", "name": "绿叶包装材料", "uscc": "91320000S103001", "node_type": "supplier", "attributes": {"industry": "包装", "tier": 1, "region": "华南"}},
+    {"supplier_id": "S-104", "name": "备用电子供应商", "uscc": "91310000S104001", "node_type": "supplier", "attributes": {"industry": "电子元件", "tier": 1, "region": "华东"}},
+    {"supplier_id": "S-201", "name": "中芯芯片", "uscc": "91310000S201001", "node_type": "supplier", "attributes": {"industry": "芯片", "tier": 2}},
+    {"supplier_id": "S-202", "name": "稀贵金属供应", "uscc": "91530000S202001", "node_type": "supplier", "attributes": {"industry": "稀有金属", "tier": 2}},
+    {"supplier_id": "S-203", "name": "永丰造纸", "uscc": "91330000S203001", "node_type": "supplier", "attributes": {"industry": "造纸", "tier": 2}},
+    {"supplier_id": "S-301", "name": "晶圆代工厂", "uscc": "91310000S301001", "node_type": "supplier", "attributes": {"industry": "晶圆代工", "tier": 3}},
+    {"supplier_id": "S-302", "name": "西南矿业有限公司", "uscc": "91530000S302001", "node_type": "supplier", "attributes": {"industry": "矿产", "tier": 3}},
+    {"supplier_id": "S-401", "name": "高纯硅料厂", "uscc": "91310000S401001", "node_type": "supplier", "attributes": {"industry": "硅料", "tier": 4}},
+    {"supplier_id": "S-501", "name": "石英砂加工", "uscc": "91620000S501001", "node_type": "supplier", "attributes": {"industry": "石英砂", "tier": 5}},
+    {"supplier_id": "S-601", "name": "原矿开采集团", "uscc": "91620000S601001", "node_type": "supplier", "attributes": {"industry": "原矿", "tier": 6}},
+    {"supplier_id": "C-501", "name": "下游客户甲", "uscc": "91440000C501001", "node_type": "customer", "attributes": {"industry": "整机", "tier": -1}},
+    {"supplier_id": "C-502", "name": "下游客户乙", "uscc": "91440000C502001", "node_type": "customer", "attributes": {"industry": "整机", "tier": -1}}
+  ],
+  "relations": [
+    {"source": "S-101", "target": "CORE-001", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-102", "target": "CORE-001", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-103", "target": "CORE-001", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-201", "target": "S-101", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-202", "target": "S-102", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-203", "target": "S-103", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-301", "target": "S-201", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-302", "target": "S-202", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-401", "target": "S-301", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-501", "target": "S-401", "relation_type": "supplies", "weight": 1.0},
+    {"source": "S-601", "target": "S-501", "relation_type": "supplies", "weight": 1.0},
+    {"source": "CORE-001", "target": "C-501", "relation_type": "supplies", "weight": 4.0},
+    {"source": "S-103", "target": "C-501", "relation_type": "supplies", "weight": 1.0},
+    {"source": "CORE-001", "target": "C-502", "relation_type": "supplies", "weight": 1.0},
+    {"source": "CORE-001", "target": "S-101", "relation_type": "owns", "weight": 0.8},
+    {"source": "S-101", "target": "S-301", "relation_type": "related", "weight": 0.5},
+    {"source": "S-101", "target": "S-301", "relation_type": "shares_address", "weight": 0.6},
+    {"source": "S-101", "target": "S-301", "relation_type": "shares_phone", "weight": 0.7},
+    {"source": "S-102", "target": "S-103", "relation_type": "executes", "weight": 1.2},
+    {"source": "S-101", "target": "S-104", "relation_type": "supplies", "weight": 1.0}
+  ]
+}

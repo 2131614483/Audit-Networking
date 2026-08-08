@@ -1,0 +1,35 @@
+[
+  {
+    "task_id": "V001",
+    "remediation_type": "流程控制",
+    "evidence": {
+      "approval_pass_rate": 1.0,
+      "sla_hit_rate": 0.98,
+      "bypass_count": 0,
+      "log_complete_rate": 1.0
+    },
+    "sample_size": 100
+  },
+  {
+    "task_id": "V002",
+    "remediation_type": "流程控制",
+    "evidence": {
+      "approval_pass_rate": 1.0,
+      "sla_hit_rate": 0.96,
+      "bypass_count": 2,
+      "log_complete_rate": 1.0
+    },
+    "sample_size": 50
+  },
+  {
+    "task_id": "V003",
+    "remediation_type": "流程控制",
+    "evidence": {
+      "approval_pass_rate": 0.50,
+      "sla_hit_rate": 0.60,
+      "bypass_count": 10,
+      "log_complete_rate": 0.70
+    },
+    "sample_size": 30
+  }
+]

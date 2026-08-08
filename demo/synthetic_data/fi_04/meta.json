@@ -1,0 +1,27 @@
+{
+  "slug": "fi_04",
+  "family": "fi",
+  "module_name": "",
+  "total_bytes": 10908292,
+  "total_mb": 10.4,
+  "files": [
+    {
+      "file": "loans.jsonl",
+      "bytes": 7662365
+    },
+    {
+      "file": "guarantees.jsonl",
+      "bytes": 2138575
+    },
+    {
+      "file": "regulatory_reports.jsonl",
+      "bytes": 1107352
+    }
+  ],
+  "modalities": [
+    "regulatory_reports",
+    "guarantees",
+    "loans"
+  ],
+  "generated_at": "2026-08-08T15:00:43.119077"
+}

@@ -1,0 +1,37 @@
+{
+  "slug": "fa_03",
+  "family": "fa",
+  "module_name": "",
+  "total_bytes": 32951348,
+  "total_mb": 31.42,
+  "files": [
+    {
+      "file": "records.jsonl",
+      "bytes": 29011724
+    },
+    {
+      "file": "text_corpus.txt",
+      "bytes": 1753574
+    },
+    {
+      "file": "media_refs.jsonl",
+      "bytes": 254696
+    },
+    {
+      "file": "transactions.jsonl",
+      "bytes": 1903065
+    },
+    {
+      "file": "shareholders.jsonl",
+      "bytes": 28289
+    }
+  ],
+  "modalities": [
+    "records",
+    "media_refs",
+    "transactions",
+    "shareholders",
+    "text_corpus"
+  ],
+  "generated_at": "2026-08-08T14:59:27.040867"
+}

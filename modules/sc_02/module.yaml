@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: SC-02
+  name: 知识图谱供应链网络分析
+  name_en: sc_02
+  version: 1.0.0
+  category: supply_chain_audit
+  family: kg_gnn
+  family_display: Knowledge Graph / GNN
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "5个月"
+  budget: ""
+  description: >
+    本方案构建基于知识图谱和图神经网络的供应链网络分析平台。通过自动构建供应商多级关联图谱，利用GNN模型进行风险传导分析和隐藏关联挖掘，实现供应链网络的全面穿透和风险传导的精准识别。平台可将审计视角从单点供应商扩展到整个供应链网络，显著提升供应链审计的深度和广度。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.sc_02
+  port: 8602
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - akg
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CO-07
+  name: AI数据资产自动发现与分类
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

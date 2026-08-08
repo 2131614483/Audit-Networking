@@ -1,0 +1,57 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FA-09
+  name: AI底稿质量复核助手
+  name_en: fa_09
+  version: 1.0.0
+  category: financial_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 3
+  priority: high
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    AI底稿质量复核助手基于NLP、ML和LLM技术，对审计底稿进行自动化的质量复核。系统从完整性、逻辑一致性、风险评估、披露充分性四个维度对每份底稿进行评分，生成复核优先级排序和复核要点提示，辅助复核人高效聚焦高风险区域。方案将复核效率提升60-70%，风险底稿识别率>90%，同时确保复核标准的统一性和全面性。与FA-08底稿自动勾稽检查形成互补——FA-08检查"数字对不对"，FA-09检查"内容好不好"。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fa_09
+  port: 8009
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      - FA-03
+      - FA-07
+      - FA-08
+      - FA-11
+      - FA-12
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

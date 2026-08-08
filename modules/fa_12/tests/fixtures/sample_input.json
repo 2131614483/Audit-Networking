@@ -1,0 +1,64 @@
+{
+  "context": {
+    "entity": "示例科技股份有限公司",
+    "fiscal_year": "2025",
+    "reporting_standard": "CAS",
+    "currency": "CNY",
+    "auditor": "L3 审计自动化",
+    "disclosure_source": "2025 年年度报告关联交易章节"
+  },
+  "related_parties": ["母公司甲", "关联子公司乙", "合营企业A"],
+  "disclosure_text": "本公司2025年度关联交易披露如下：\n一、与母公司甲的采购交易：本年度向母公司甲采购原材料，交易金额8000000元，期末应付账款余额2000000元。定价依据市场公允价格协商确定，经董事会审议通过，对当期利润影响较小。\n二、与关联子公司乙的销售交易：本年度向关联子公司乙销售产品，期末应收账款余额1000000元。\n三、与合营企业A的资金往来：交易金额1200000元。",
+  "transactions": [
+    {
+      "tx_id": "TX-D01",
+      "related_party": "母公司甲",
+      "relationship": "母公司",
+      "tx_type": "采购",
+      "amount": 8000000.0,
+      "outstanding": 2000000.0,
+      "pricing_policy": "市场公允价格",
+      "approval": "董事会审议"
+    },
+    {
+      "tx_id": "TX-D02",
+      "related_party": "关联子公司乙",
+      "relationship": "子公司",
+      "tx_type": "销售",
+      "amount": 5000000.0,
+      "outstanding": 1000000.0,
+      "pricing_policy": "协议价",
+      "approval": ""
+    },
+    {
+      "tx_id": "TX-D03",
+      "related_party": "关联方丙",
+      "relationship": "联营",
+      "tx_type": "担保",
+      "amount": 3000000.0,
+      "outstanding": 0.0,
+      "pricing_policy": "",
+      "approval": ""
+    },
+    {
+      "tx_id": "TX-D04",
+      "related_party": "控股股东丁",
+      "relationship": "控股股东",
+      "tx_type": "资金占用",
+      "amount": 60000000.0,
+      "outstanding": 55000000.0,
+      "pricing_policy": "",
+      "approval": ""
+    },
+    {
+      "tx_id": "TX-D05",
+      "related_party": "关联自然人戊",
+      "relationship": "关联自然人",
+      "tx_type": "接受劳务",
+      "amount": 500000.0,
+      "outstanding": 0.0,
+      "pricing_policy": "",
+      "approval": ""
+    }
+  ]
+}

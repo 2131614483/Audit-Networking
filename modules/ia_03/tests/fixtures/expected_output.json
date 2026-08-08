@@ -1,0 +1,9 @@
+{
+  "action": "allocate",
+  "summary": {
+    "total_plans": 4,
+    "best_violations": 0
+  },
+  "total_projects": 2,
+  "total_auditors": 4
+}

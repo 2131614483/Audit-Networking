@@ -1,0 +1,119 @@
+{
+  "project_id": "IPO-2026-001",
+  "enterprise": {
+    "name": "智造未来科技股份有限公司",
+    "industry": "高端装备制造",
+    "registered_capital": 100000000,
+    "established_date": "2015-06-18",
+    "listing_target": "科创板",
+    "legal_representative": "张明"
+  },
+  "financial_data": {
+    "2023": {
+      "revenue": 320000000,
+      "net_profit": 45000000,
+      "total_assets": 580000000,
+      "accounts_receivable": 95000000,
+      "inventory": 68000000,
+      "paid_in_capital": 100000000,
+      "operating_cash_flow": 38000000,
+      "transactions": [
+        {"tx_id": "TX-2023-001", "amount": 2300000, "date": "2023-03-15", "description": "销售收款-客户A"},
+        {"tx_id": "TX-2023-002", "amount": 1800000, "date": "2023-05-20", "description": "采购付款-供应商X"},
+        {"tx_id": "TX-2023-003", "amount": 4200000, "date": "2023-08-11", "description": "销售收款-客户B"},
+        {"tx_id": "TX-2023-004", "amount": 1500000, "date": "2023-11-30", "description": "研发费用支付"},
+        {"tx_id": "TX-2023-005", "amount": 3100000, "date": "2023-12-18", "description": "销售收款-客户C"}
+      ]
+    },
+    "2024": {
+      "revenue": 385000000,
+      "net_profit": 52000000,
+      "total_assets": 640000000,
+      "accounts_receivable": 110000000,
+      "inventory": 75000000,
+      "paid_in_capital": 100000000,
+      "operating_cash_flow": 45000000,
+      "transactions": [
+        {"tx_id": "TX-2024-001", "amount": 2800000, "date": "2024-02-10", "description": "销售收款-客户A"},
+        {"tx_id": "TX-2024-002", "amount": 2100000, "date": "2024-04-22", "description": "采购付款-供应商X"},
+        {"tx_id": "TX-2024-003", "amount": 3900000, "date": "2024-07-15", "description": "销售收款-客户B"},
+        {"tx_id": "TX-2024-004", "amount": 1700000, "date": "2024-09-08", "description": "研发费用支付"},
+        {"tx_id": "TX-2024-005", "amount": 2600000, "date": "2024-12-25", "description": "销售收款-客户D"}
+      ]
+    },
+    "2025": {
+      "revenue": 620000000,
+      "net_profit": 38000000,
+      "total_assets": 780000000,
+      "accounts_receivable": 170000000,
+      "inventory": 92000000,
+      "paid_in_capital": 100000000,
+      "operating_cash_flow": 25000000,
+      "transactions": [
+        {"tx_id": "TX-2025-001", "amount": 3400000, "date": "2025-01-20", "description": "销售收款-客户A"},
+        {"tx_id": "TX-2025-002", "amount": 2800000, "date": "2025-03-15", "description": "采购付款-供应商X"},
+        {"tx_id": "TX-2025-003", "amount": 4500000, "date": "2025-06-08", "description": "销售收款-客户B"},
+        {"tx_id": "TX-2025-004", "amount": 8500000, "date": "2025-08-30", "description": "其他异常大额收款"},
+        {"tx_id": "TX-2025-005", "amount": 2200000, "date": "2025-10-12", "description": "研发费用支付"},
+        {"tx_id": "TX-2025-006", "amount": 3100000, "date": "2025-12-20", "description": "销售收款-客户C"}
+      ]
+    }
+  },
+  "legal_documents": [
+    {
+      "doc_name": "重大合同及担保协议",
+      "doc_type": "合同",
+      "content": "2023年6月，公司与关联方签订担保协议，为关联方提供连带责任担保5000万元。该担保事项存在法律风险。2024年公司涉及一起合同纠纷诉讼，涉案金额1200万元，目前尚未判决。公司章程规定对外担保须经董事会批准。"
+    },
+    {
+      "doc_name": "公司章程",
+      "doc_type": "章程",
+      "content": "公司注册资本1亿元，法定代表人为张明。公司经营范围为高端装备制造。股东会由全体股东组成，是公司最高权力机构。董事会由5名董事组成，负责公司重大经营决策。"
+    }
+  ],
+  "history": [
+    {"event": "公司成立", "date": "2015-06-18", "description": "智造未来科技股份有限公司成立，注册资本5000万元"},
+    {"event": "增资扩股", "date": "2018-09-10", "description": "注册资本增至1亿元，引入战略投资者"},
+    {"event": "股份制改造", "date": "2022-03-15", "description": "整体变更为股份有限公司"},
+    {"event": "IPO辅导", "date": "2024-01-20", "description": "启动IPO辅导备案"}
+  ],
+  "related_parties": [
+    {
+      "party_name": "关联方甲有限公司",
+      "relation_type": "同一控制下企业",
+      "shareholder": "张明",
+      "transactions": [
+        {"type": "采购原材料", "amount": 8200000, "date": "2025-03-10", "description": "向关联方采购原材料"},
+        {"type": "销售产品", "amount": 3500000, "date": "2025-06-15", "description": "向关联方销售产品"}
+      ]
+    },
+    {
+      "party_name": "关联方乙科技",
+      "relation_type": "联营企业",
+      "transactions": [
+        {"type": "技术服务", "amount": 1800000, "date": "2025-09-01", "description": "技术服务费"}
+      ]
+    }
+  ],
+  "equity_structure": {
+    "nodes": [
+      {"id": "E1", "name": "智造未来科技", "type": "enterprise"},
+      {"id": "H1", "name": "明控投资", "type": "company"},
+      {"id": "H2", "name": "联创控股", "type": "company"},
+      {"id": "H3", "name": "远景投资", "type": "company"},
+      {"id": "P1", "name": "张明", "type": "person"}
+    ],
+    "edges": [
+      {"from": "H1", "to": "E1", "relation": "shareholder", "ratio": 0.55},
+      {"from": "H2", "to": "H1", "relation": "shareholder", "ratio": 0.80},
+      {"from": "H3", "to": "H2", "relation": "shareholder", "ratio": 0.70},
+      {"from": "P1", "to": "H3", "relation": "shareholder", "ratio": 0.90}
+    ]
+  },
+  "documents": [
+    {
+      "doc_name": "招股说明书摘要",
+      "content": "公司是国内领先的高端装备制造商，2025年营业收入6.2亿元，同比增长61%。公司主要产品包括智能数控机床和工业机器人。公司存在关联交易和对外担保，需要投资者关注相关风险。公司实际控制人为张明，通过多层股权架构控制公司。"
+    }
+  ]
+}

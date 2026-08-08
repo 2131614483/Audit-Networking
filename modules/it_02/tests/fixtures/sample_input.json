@@ -1,0 +1,56 @@
+[
+  {
+    "platform": "Linux",
+    "hostname": "web-01",
+    "ip": "10.0.0.1",
+    "group": "production",
+    "scanned_at": "2026-08-01T10:00:00",
+    "config": {
+      "PermitRootLogin": "yes",
+      "PasswordAuthentication": "yes",
+      "PASS_MAX_DAYS": 120,
+      "firewall_active": false,
+      "unnecessary_services": 3,
+      "auditd_active": false
+    }
+  },
+  {
+    "platform": "Linux",
+    "hostname": "web-02",
+    "ip": "10.0.0.2",
+    "group": "production",
+    "config": {
+      "PermitRootLogin": "no",
+      "PasswordAuthentication": "no",
+      "PASS_MAX_DAYS": 90,
+      "firewall_active": true,
+      "unnecessary_services": 0,
+      "auditd_active": true
+    }
+  },
+  {
+    "platform": "Windows",
+    "hostname": "win-01",
+    "ip": "10.0.0.3",
+    "group": "office",
+    "config": {
+      "PasswordComplexity": 0,
+      "LockoutThreshold": 3,
+      "AutoUpdateEnabled": false,
+      "FirewallEnabled": true,
+      "AntivirusEnabled": true
+    }
+  },
+  {
+    "platform": "Database",
+    "hostname": "db-01",
+    "ip": "10.0.0.4",
+    "group": "production",
+    "config": {
+      "audit_enabled": false,
+      "default_secure": false,
+      "ssl_enabled": false,
+      "public_access": true
+    }
+  }
+]

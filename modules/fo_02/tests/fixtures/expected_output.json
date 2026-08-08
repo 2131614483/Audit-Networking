@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "entity_count": 7,
+    "transaction_count": 13,
+    "community_count": 3,
+    "anomaly_count": 1,
+    "pattern_count": 6,
+    "high_risk_entities": 1,
+    "total_volume": 5693000.0,
+    "network_risk_level": "中风险"
+  },
+  "high_risk_entity": "E1",
+  "e1_risk_score": 0.744,
+  "e1_risk_level": "高",
+  "risk_levels": {
+    "E1": "高",
+    "E2": "中",
+    "E3": "中",
+    "E4": "低",
+    "E5": "中",
+    "E6": "低",
+    "E7": "低"
+  },
+  "pattern_types_present": ["对称资金流", "循环交易", "高频交易"],
+  "anomaly": {
+    "src": "E1",
+    "dst": "E5",
+    "amount": 5000000.0,
+    "z_score": 3.4632
+  },
+  "e1_pagerank": 0.719347,
+  "cycle_entities": ["E1", "E2", "E3"],
+  "high_frequency_pair": ["E1", "E2"],
+  "symmetric_pairs": [["E1", "E4"], ["E5", "E6"]]
+}

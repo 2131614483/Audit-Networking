@@ -1,0 +1,79 @@
+{
+  "assets": [
+    {
+      "asset_id": "AST001",
+      "name": "客户主数据表",
+      "location": "mysql://prod-crm/customer_master",
+      "source_type": "database",
+      "format_type": "structured",
+      "owner": "数据治理部",
+      "description": "客户核心主数据，含个人身份信息",
+      "fields": [
+        {"field_name": "客户编号", "data_type": "VARCHAR", "sample_values": ["C10001", "C10002"]},
+        {"field_name": "身份证号", "data_type": "VARCHAR", "sample_values": ["110101199003071233", "310101198811228887"]},
+        {"field_name": "客户姓名", "data_type": "VARCHAR", "sample_values": ["张三", "李四"]},
+        {"field_name": "手机号码", "data_type": "VARCHAR", "sample_values": ["13800138000", "13900139000"]},
+        {"field_name": "电子邮箱", "data_type": "VARCHAR", "sample_values": ["zhangsan@example.com", "lisi@example.com"]},
+        {"field_name": "家庭住址", "data_type": "VARCHAR", "sample_values": ["北京市朝阳区建国路1号"]}
+      ]
+    },
+    {
+      "asset_id": "AST002",
+      "name": "员工薪酬表",
+      "location": "oracle://hr-db/salary",
+      "source_type": "database",
+      "format_type": "structured",
+      "owner": "人力资源部",
+      "description": "员工薪资与绩效数据",
+      "fields": [
+        {"field_name": "员工编号", "data_type": "VARCHAR", "sample_values": ["E001", "E002"]},
+        {"field_name": "税前工资", "data_type": "DECIMAL", "sample_values": ["15000.00", "25000.00"]},
+        {"field_name": "银行账号", "data_type": "VARCHAR", "sample_values": ["6222020200112345678", "6222020200112345679"]},
+        {"field_name": "绩效考核", "data_type": "VARCHAR", "sample_values": ["A", "B"]}
+      ]
+    },
+    {
+      "asset_id": "AST003",
+      "name": "患者病历表",
+      "location": "mongodb://his/patient_records",
+      "source_type": "database",
+      "format_type": "semi-structured",
+      "owner": "信息中心",
+      "description": "患者诊疗记录，含医疗敏感数据",
+      "fields": [
+        {"field_name": "患者姓名", "data_type": "VARCHAR", "sample_values": ["王五", "赵六"]},
+        {"field_name": "诊断结果", "data_type": "TEXT", "sample_values": ["高血压", "糖尿病"]},
+        {"field_name": "处方药品", "data_type": "TEXT", "sample_values": ["降压药", "胰岛素"]},
+        {"field_name": "身份证号", "data_type": "VARCHAR", "sample_values": ["110101199003071233"]}
+      ]
+    },
+    {
+      "asset_id": "AST004",
+      "name": "公司公开信息",
+      "location": "web://www.example.com/about",
+      "source_type": "web",
+      "format_type": "unstructured",
+      "owner": "市场部",
+      "description": "官网公开披露信息",
+      "fields": [
+        {"field_name": "公司名称", "data_type": "VARCHAR", "sample_values": ["某科技股份有限公司"]},
+        {"field_name": "官网地址", "data_type": "VARCHAR", "sample_values": ["www.example.com"]},
+        {"field_name": "联系电话", "data_type": "VARCHAR", "sample_values": ["010-88888888"]}
+      ]
+    },
+    {
+      "asset_id": "AST005",
+      "name": "信用卡交易记录",
+      "location": "public-cdn://exports/card_transactions",
+      "source_type": "file",
+      "format_type": "structured",
+      "owner": "财务部",
+      "description": "信用卡交易明细（误存公开存储）",
+      "fields": [
+        {"field_name": "信用卡号", "data_type": "VARCHAR", "sample_values": ["4111111111111111", "5500000000000004"]},
+        {"field_name": "交易金额", "data_type": "DECIMAL", "sample_values": ["1299.00", "899.00"]},
+        {"field_name": "客户名单", "data_type": "TEXT", "sample_values": ["VIP客户A", "VIP客户B"]}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CM-04
+  name: 持续审计价值量化模型
+  name_en: cm_04
+  version: 1.0.0
+  category: continuous_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 2
+  priority: medium
+  roi: ""
+  duration: "3个月"
+  budget: ""
+  description: >
+    本方案构建基于ML、ROI分析和风险量化的持续审计价值量化模型。平台通过风险损失避免测算、效率节约计算和ROI模型，实现持续审计价值的可量化、可展示。平台可为持续审计的投资决策和绩效评估提供数据支撑。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.cm_04
+  port: 9104
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

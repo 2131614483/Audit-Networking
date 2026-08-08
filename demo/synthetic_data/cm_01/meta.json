@@ -1,0 +1,27 @@
+{
+  "slug": "cm_01",
+  "family": "cm",
+  "module_name": "",
+  "total_bytes": 23292834,
+  "total_mb": 22.21,
+  "files": [
+    {
+      "file": "events.jsonl",
+      "bytes": 10325191
+    },
+    {
+      "file": "alerts.jsonl",
+      "bytes": 2225804
+    },
+    {
+      "file": "records.jsonl",
+      "bytes": 10741839
+    }
+  ],
+  "modalities": [
+    "events",
+    "records",
+    "alerts"
+  ],
+  "generated_at": "2026-08-08T15:00:07.044585"
+}

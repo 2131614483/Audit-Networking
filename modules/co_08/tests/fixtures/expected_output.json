@@ -1,0 +1,152 @@
+{
+  "entities": {
+    "sys-erp": {
+      "entity_id": "SYS-ERP",
+      "entity_type": "System",
+      "name": "ERP系统",
+      "location_id": "LOC-CN",
+      "sensitive_level": "L2",
+      "owner": "财务部"
+    },
+    "sys-crm": {
+      "entity_id": "SYS-CRM",
+      "entity_type": "System",
+      "name": "CRM系统",
+      "location_id": "LOC-SG",
+      "sensitive_level": "L3",
+      "owner": "市场部"
+    },
+    "sys-dw": {
+      "entity_id": "SYS-DW",
+      "entity_type": "System",
+      "name": "海外数据仓库",
+      "location_id": "LOC-US",
+      "sensitive_level": "L4",
+      "owner": "IT部"
+    },
+    "ds-gl": {
+      "entity_id": "DS-GL",
+      "entity_type": "Dataset",
+      "name": "总账数据",
+      "location_id": "LOC-CN",
+      "sensitive_level": "L2",
+      "owner": "财务部"
+    },
+    "ds-cust": {
+      "entity_id": "DS-CUST",
+      "entity_type": "Dataset",
+      "name": "客户数据",
+      "location_id": "LOC-SG",
+      "sensitive_level": "L3",
+      "owner": "市场部"
+    },
+    "ds-report": {
+      "entity_id": "DS-REPORT",
+      "entity_type": "Dataset",
+      "name": "合并报表",
+      "location_id": "LOC-US",
+      "sensitive_level": "L4",
+      "owner": "IT部"
+    }
+  },
+  "flows": [
+    {
+      "src_id": "sys-erp",
+      "dst_id": "ds-report",
+      "path": [
+        "sys-erp",
+        "ds-gl",
+        "ds-report"
+      ],
+      "hops": 2,
+      "is_cross_border": 1,
+      "max_sensitive_level": 90,
+      "risk_score": 100,
+      "risk_level": "critical",
+      "compliance_tags": [
+        "cross_border_transfer",
+        "GDPR-Art.44",
+        "PIPL",
+        "needs_audit"
+      ]
+    },
+    {
+      "src_id": "sys-crm",
+      "dst_id": "ds-report",
+      "path": [
+        "sys-crm",
+        "ds-cust",
+        "ds-report"
+      ],
+      "hops": 2,
+      "is_cross_border": 1,
+      "max_sensitive_level": 90,
+      "risk_score": 100,
+      "risk_level": "critical",
+      "compliance_tags": [
+        "cross_border_transfer",
+        "GDPR-Art.44",
+        "PIPL",
+        "needs_audit"
+      ]
+    }
+  ],
+  "cross_border_flows": [
+    {
+      "src_id": "ds-gl",
+      "dst_id": "ds-report",
+      "edge_type": "TRANSFORMS",
+      "src_country": "CN",
+      "dst_country": "US",
+      "sensitive_level": "L4"
+    },
+    {
+      "src_id": "ds-cust",
+      "dst_id": "ds-report",
+      "edge_type": "TRANSFORMS",
+      "src_country": "SG",
+      "dst_country": "US",
+      "sensitive_level": "L4"
+    }
+  ],
+  "upstream_impact": {
+    "ds-report": [
+      {
+        "entity_id": "sys-dw",
+        "hops": 1
+      },
+      {
+        "entity_id": "ds-gl",
+        "hops": 1
+      },
+      {
+        "entity_id": "ds-cust",
+        "hops": 1
+      },
+      {
+        "entity_id": "sys-erp",
+        "hops": 2
+      },
+      {
+        "entity_id": "sys-crm",
+        "hops": 2
+      }
+    ]
+  },
+  "downstream_impact": {
+    "ds-report": []
+  },
+  "target": {
+    "entity_id": "DS-REPORT",
+    "max_depth": 3
+  },
+  "statistics": {
+    "total_entities": 6,
+    "total_flows": 2,
+    "cross_border_count": 2,
+    "by_risk_level": {
+      "critical": 2
+    },
+    "high_risk_flows": 2
+  }
+}

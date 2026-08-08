@@ -1,0 +1,7 @@
+{
+  "action": "recommend",
+  "scenario": "采购付款流程的供应商管理和大额交易监控",
+  "risk_level": "high",
+  "resource_level": "medium",
+  "top_k": 3
+}

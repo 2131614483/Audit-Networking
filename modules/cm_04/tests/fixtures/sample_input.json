@@ -1,0 +1,11 @@
+{
+  "action": "quantify",
+  "time_horizon_years": 3,
+  "scenario": "base",
+  "costs": {
+    "initial_investment": 7200000,
+    "annual_operating": 2000000,
+    "annual_maintenance": 200000,
+    "annual_training": 100000
+  }
+}

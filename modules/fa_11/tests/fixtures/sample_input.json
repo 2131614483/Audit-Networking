@@ -1,0 +1,94 @@
+{
+  "context": {
+    "entity": "示例科技股份有限公司",
+    "fiscal_year": "2025",
+    "reporting_standard": "CAS",
+    "currency": "CNY",
+    "auditor": "L3 审计自动化"
+  },
+  "peers": [
+    {"price": 98.0, "industry": "制造", "company": "可比公司A"},
+    {"price": 100.0, "industry": "制造", "company": "可比公司B"},
+    {"price": 102.0, "industry": "制造", "company": "可比公司C"},
+    {"price": 99.0, "industry": "制造", "company": "可比公司D"},
+    {"price": 101.0, "industry": "制造", "company": "可比公司E"}
+  ],
+  "history": [
+    {"price": 96.0, "year": "2022"},
+    {"price": 98.0, "year": "2023"},
+    {"price": 100.0, "year": "2024"},
+    {"price": 102.0, "year": "2025"}
+  ],
+  "transactions": [
+    {
+      "tx_id": "RP-001",
+      "subject": "原材料采购",
+      "amount": 2000000.0,
+      "quantity": 20000,
+      "unit_price": 100.0,
+      "related_party": "关联制造有限公司",
+      "ownership_pct": 0.30,
+      "industry": "制造",
+      "direction": "采购",
+      "profit_margin": 0.15,
+      "dependence": 0.20,
+      "contract_ref": "CON-2025-001"
+    },
+    {
+      "tx_id": "RP-002",
+      "subject": "半成品采购",
+      "amount": 1537500.0,
+      "quantity": 15000,
+      "unit_price": 102.5,
+      "related_party": "关联制造有限公司",
+      "ownership_pct": 0.10,
+      "industry": "制造",
+      "direction": "采购",
+      "profit_margin": 0.15,
+      "dependence": 0.10,
+      "contract_ref": "CON-2025-002"
+    },
+    {
+      "tx_id": "RP-003",
+      "subject": "设备转让",
+      "amount": 15000000.0,
+      "quantity": 100,
+      "unit_price": 135.0,
+      "related_party": "控股股东旗下机械公司",
+      "ownership_pct": 0.70,
+      "industry": "制造",
+      "direction": "采购",
+      "profit_margin": 0.05,
+      "dependence": 0.60,
+      "contract_ref": "CON-2025-003"
+    },
+    {
+      "tx_id": "RP-004",
+      "subject": "技术服务费",
+      "amount": 800000.0,
+      "quantity": 8000,
+      "unit_price": 100.0,
+      "related_party": "关联科技子公司",
+      "ownership_pct": 0.20,
+      "industry": "科技",
+      "direction": "接受劳务",
+      "profit_margin": 0.0,
+      "dependence": 0.10,
+      "contract_ref": "CON-2025-004"
+    },
+    {
+      "tx_id": "RP-005",
+      "subject": "商品销售",
+      "amount": 5000000.0,
+      "quantity": 5000,
+      "unit_price": 120.0,
+      "related_party": "关联贸易公司",
+      "ownership_pct": 0.40,
+      "industry": "贸易",
+      "direction": "销售",
+      "profit_margin": 0.12,
+      "dependence": 0.30,
+      "contract_ref": "CON-2025-005"
+    }
+  ]
+}

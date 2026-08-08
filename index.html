@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="refresh" content="0; url=web/index.html">
+<title>正在跳转…</title>
+</head>
+<body style="font-family:'Microsoft YaHei',sans-serif;padding:40px;line-height:1.8;background:#f8fafc;color:#1a1d29;">
+<div style="max-width:640px;margin:0 auto;">
+  <h2 style="color:#4f46e5;">⚠️ 请使用 launch.py 启动平台</h2>
+  <p>检测到您是通过通用文件服务器直接打开的目录，这样 <b>无法访问 API 接口</b>（审计数据、AI 总结都会失败）。</p>
+  <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
+  <h3>✅ 正确启动方式</h3>
+  <pre style="background:#1e293b;color:#e2e8f0;padding:16px;border-radius:8px;overflow:auto;">cd c:\Pythonproject\解决方案详细报告
+.venv\Scripts\python.exe launch.py</pre>
+  <p style="margin-top:20px;">如果浏览器支持自动跳转，正在尝试跳转到静态页面：
+     <a href="web/index.html" style="color:#4f46e5;">web/index.html</a>（仅预览 UI，数据接口不可用）
+  </p>
+  <hr style="border:none;border-top:1px solid #e5e7eb;margin:20px 0;">
+  <h3>📌 启动参数</h3>
+  <ul>
+    <li><code>launch.py</code> — 默认端口 8765，自动打开浏览器</li>
+    <li><code>launch.py --regen</code> — 强制重新运行审计生成数据</li>
+    <li><code>launch.py --port 8888</code> — 指定端口</li>
+    <li><code>launch.py --no-browser</code> — 不自动打开浏览器</li>
+  </ul>
+</div>
+</body>
+</html>

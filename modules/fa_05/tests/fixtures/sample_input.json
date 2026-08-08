@@ -1,0 +1,44 @@
+{
+  "mode": "store",
+  "transactions": [
+    {
+      "tx_id": "BC-TX-001",
+      "type": "confirmation",
+      "bank_id": "ICBC-001",
+      "action": "initiate",
+      "confirmation_id": "CF-2024-0001",
+      "bank_name": "中国工商银行北京分行",
+      "account_number": "6222020200112345678",
+      "account_name": "审计客户A",
+      "balance": 1500000.00,
+      "currency": "CNY",
+      "as_of_date": "2024-12-31"
+    },
+    {
+      "tx_id": "BC-TX-002",
+      "type": "confirmation",
+      "bank_id": "CMB-001",
+      "action": "initiate",
+      "confirmation_id": "CF-2024-0002",
+      "bank_name": "招商银行深圳分行",
+      "account_number": "6225880112349990",
+      "account_name": "审计客户B",
+      "balance": 880000.00,
+      "currency": "CNY",
+      "as_of_date": "2024-12-31"
+    },
+    {
+      "tx_id": "BC-TX-003",
+      "type": "confirmation",
+      "bank_id": "BOC-001",
+      "action": "initiate",
+      "confirmation_id": "CF-2024-0003",
+      "bank_name": "中国银行广州分行",
+      "account_number": "6217000110045678",
+      "account_name": "审计客户C",
+      "balance": 3200000.00,
+      "currency": "CNY",
+      "as_of_date": "2024-12-31"
+    }
+  ]
+}

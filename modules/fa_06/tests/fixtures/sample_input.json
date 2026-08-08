@@ -1,0 +1,77 @@
+{
+  "materiality": 50000,
+  "items": [
+    {
+      "item_id": "CF001",
+      "subject": "银行存款-工商银行",
+      "book_amount": 1000000,
+      "reply_amount": 1004000,
+      "book_text": "工商银行账面余额",
+      "reply_text": "在途资金4000元",
+      "direction": "借"
+    },
+    {
+      "item_id": "CF002",
+      "subject": "银行存款-工商银行",
+      "book_amount": 2000000,
+      "reply_amount": 1950000,
+      "book_text": "工商银行账面余额",
+      "reply_text": "未达账项50000元",
+      "direction": "借"
+    },
+    {
+      "item_id": "CF003",
+      "subject": "应收账款-客户A",
+      "book_amount": 500000,
+      "reply_amount": 400000,
+      "book_text": "应收客户A货款",
+      "reply_text": "客户隐瞒部分收入",
+      "direction": "借"
+    },
+    {
+      "item_id": "CF004",
+      "subject": "应付账款-供应商B",
+      "book_amount": 300000,
+      "reply_amount": 330000,
+      "book_text": "应付供应商B货款",
+      "reply_text": "重记手续费30000",
+      "direction": "贷"
+    },
+    {
+      "item_id": "CF005",
+      "subject": "存货",
+      "book_amount": 800000,
+      "reply_amount": 750000,
+      "book_text": "存货账面成本",
+      "reply_text": "存货跌价核销坏账50000",
+      "direction": "借"
+    },
+    {
+      "item_id": "CF006",
+      "subject": "收入",
+      "book_amount": 1200000,
+      "reply_amount": 1212000,
+      "book_text": "营业收入",
+      "reply_text": "期末调汇汇兑差额12000",
+      "direction": "贷"
+    },
+    {
+      "item_id": "CF007",
+      "subject": "固定资产",
+      "book_amount": 2000000,
+      "reply_amount": 2000000,
+      "book_text": "设备原值",
+      "reply_text": "设备原值一致",
+      "direction": "借"
+    },
+    {
+      "item_id": "CF008",
+      "subject": "其他应收款",
+      "book_amount": 100000,
+      "reply_amount": 50000,
+      "book_text": "其他应收款",
+      "reply_text": "对方虚构交易伪造凭证",
+      "direction": "借"
+    }
+  ]
+}

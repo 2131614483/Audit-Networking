@@ -1,0 +1,9 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: IT-03
+  name: AI代码审计助手
+  kg:
+    uri: bolt://localhost:7687
+    user: neo4j
+  gnn:
+    model_path: models/gnn.pt

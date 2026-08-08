@@ -1,0 +1,89 @@
+{
+  "status": "ok",
+  "module": "FO-04",
+  "evidence_catalog": [
+    {
+      "evidence_id": "EV-001",
+      "filename": "sales_contract_2025.pdf",
+      "file_type": "PDF文档",
+      "content_hash": "sha256_content_hash",
+      "chain_hash": "chain_hash_001",
+      "timestamp": "2025-01-15T09:00:00",
+      "author": "张律师",
+      "source": "邮件附件",
+      "tags": ["合同", "关键证据"],
+      "integrity_level": "partial",
+      "tamper_alert": false,
+      "metadata_incomplete": false,
+      "missing_fields": []
+    }
+  ],
+  "hash_chain": [
+    {
+      "evidence_id": "EV-001",
+      "content_hash": "sha256_content_hash",
+      "chain_hash": "chain_hash_001"
+    }
+  ],
+  "custody_trail": [
+    {
+      "time": "2025-01-15T09:00:00",
+      "evidence_id": "EV-001",
+      "file_type": "PDF文档",
+      "source": "邮件附件",
+      "author": "张律师"
+    }
+  ],
+  "duplicates": [
+    {
+      "content_hash": "hash_prefix_16",
+      "count": 2,
+      "items": [
+        {"id": "EV-001", "file": "sales_contract_2025.pdf"},
+        {"id": "EV-005", "file": "backup_contract.pdf"}
+      ]
+    }
+  ],
+  "alerts": [
+    {
+      "type": "missing_metadata",
+      "evidence_id": "EV-004",
+      "missing": ["author"],
+      "message": "物证元数据缺失，证据不完整"
+    },
+    {
+      "type": "missing_metadata",
+      "evidence_id": "EV-008",
+      "missing": ["author", "timestamp"],
+      "message": "物证元数据缺失，证据不完整"
+    },
+    {
+      "type": "custody_gap",
+      "evidence_id": "EV-006",
+      "gap_hours": 1929.5,
+      "message": "取证链时间间隙 1929.5 小时，完整性存疑"
+    }
+  ],
+  "integrity_status": {
+    "forensic_integrity": "完整",
+    "integrity_score": 0.75,
+    "integrity_level": "partial",
+    "integrity_deductions": ["duplicates:1", "missing_metadata:3"],
+    "chain_complete": true,
+    "final_chain_hash": "final_chain_hash_value"
+  },
+  "statistics": {
+    "total_items": 8,
+    "unique_hashes": 7,
+    "duplicate_groups": 1,
+    "file_types": {"PDF文档": 2, "邮件": 1, "Excel表格": 1, "日志": 1, "Word文档": 1, "图片": 1, "音频": 1},
+    "authors": {"张律师": 3, "李会计": 1, "王秘书": 1, "取证人员": 1},
+    "sources": {"邮件附件": 1, "邮件服务器": 1, "财务系统": 1, "服务器日志": 1, "备份服务器": 1, "OA系统": 1, "现场取证": 1, "询问室": 1},
+    "alert_count": 3,
+    "tamper_alerts": 0,
+    "incomplete_evidence": 2,
+    "custody_gaps": 1,
+    "first_timestamp": "2025-01-15T09:00:00",
+    "last_timestamp": ""
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "entities": [
+    {
+      "entity_id": "ENT-001",
+      "name": "中国制造有限公司",
+      "company_type": "制造业",
+      "country": "中国",
+      "ultimate_parent": "GROUP-A",
+      "has_operations": true
+    },
+    {
+      "entity_id": "ENT-002",
+      "name": "开曼投资有限公司",
+      "company_type": "投资控股",
+      "country": "开曼",
+      "ultimate_parent": "GROUP-A",
+      "has_operations": false
+    },
+    {
+      "entity_id": "ENT-003",
+      "name": "香港贸易有限公司",
+      "company_type": "贸易",
+      "country": "香港",
+      "ultimate_parent": "GROUP-A",
+      "has_operations": false
+    },
+    {
+      "entity_id": "ENT-004",
+      "name": "美国销售公司",
+      "company_type": "销售",
+      "country": "美国",
+      "ultimate_parent": "GROUP-B",
+      "has_operations": true
+    },
+    {
+      "entity_id": "ENT-005",
+      "name": "瑞士控股有限公司",
+      "company_type": "投资控股",
+      "country": "瑞士",
+      "ultimate_parent": "GROUP-B",
+      "has_operations": false
+    }
+  ],
+  "transactions": [
+    {
+      "from": "ENT-001",
+      "to": "ENT-002",
+      "relation": "关联交易",
+      "amount": 5000000,
+      "currency": "CNY",
+      "year": 2024
+    },
+    {
+      "from": "ENT-002",
+      "to": "ENT-003",
+      "relation": "关联交易",
+      "amount": 3000000,
+      "currency": "CNY",
+      "year": 2024
+    },
+    {
+      "from": "ENT-003",
+      "to": "ENT-004",
+      "relation": "关联交易",
+      "amount": 2000000,
+      "currency": "CNY",
+      "year": 2024
+    },
+    {
+      "from": "ENT-004",
+      "to": "ENT-005",
+      "relation": "关联交易",
+      "amount": 1000000,
+      "currency": "CNY",
+      "year": 2024
+    }
+  ]
+}

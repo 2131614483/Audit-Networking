@@ -1,0 +1,13 @@
+{
+  "entity": "E001",
+  "company": "绿能科技公司",
+  "source": "企业自报",
+  "claims": [
+    {"text": "公司推进减排工作，2024年碳排放量较2020年下降30%", "source": "ESG报告", "channel": "ESG报告", "date": "2024-06-01"},
+    {"text": "公司全面实现碳中和，排放量持续上升", "source": "官网", "channel": "官网", "date": "2024-06-15"}
+  ],
+  "evidence": [
+    {"type": "satellite", "description": "卫星监测显示工厂碳排放浓度上升", "source": "卫星数据", "supports": false, "metric": "碳排放"},
+    {"type": "audit", "description": "第三方核实碳排放下降28%", "source": "第三方评级", "supports": true, "metric": "碳排放", "value": 28, "unit": "%"}
+  ]
+}

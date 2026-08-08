@@ -1,0 +1,9 @@
+{
+  "status": "ok",
+  "family": "federation",
+  "module": "CB-01",
+  "summary_keys": ["rounds_completed", "final_loss", "final_accuracy", "best_loss", "best_accuracy", "dp_epsilon", "total_samples", "node_count", "compliance", "cross_border_issues"],
+  "node_count": 4,
+  "total_samples": 14000,
+  "compliance_statuses": ["compliant"]
+}

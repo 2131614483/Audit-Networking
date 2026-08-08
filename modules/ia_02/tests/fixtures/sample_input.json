@@ -1,0 +1,38 @@
+{
+  "action": "monitor",
+  "events": [
+    {
+      "event_id": "EVT-001",
+      "timestamp": "2024-06-01T10:00:00",
+      "entity_id": "ENT-A",
+      "entity_name": "华东销售部",
+      "entity_type": "department",
+      "metric": "amount",
+      "value": 1500000,
+      "amount": 1500000,
+      "source": "ERP"
+    },
+    {
+      "event_id": "EVT-002",
+      "timestamp": "2024-06-01T11:00:00",
+      "entity_id": "ENT-B",
+      "entity_name": "财务部",
+      "entity_type": "department",
+      "metric": "amount",
+      "value": 800000,
+      "amount": 800000,
+      "source": "ERP"
+    },
+    {
+      "event_id": "EVT-003",
+      "timestamp": "2024-06-01T12:00:00",
+      "entity_id": "ENT-C",
+      "entity_name": "采购部",
+      "entity_type": "department",
+      "metric": "amount",
+      "value": 50000,
+      "amount": 50000,
+      "source": "ERP"
+    }
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "findings": [
+    {
+      "finding_id": "F001",
+      "category": "采购",
+      "severity": 3,
+      "loss_recovered": 60,
+      "cost_saving": 80,
+      "efficiency_improvement": 0.35,
+      "impact_amount": 200,
+      "probability_before": 0.35,
+      "probability_after": 0.05,
+      "industry": "制造业",
+      "fte_days": 15,
+      "first_identified": true,
+      "management_knew": false,
+      "external_force": false
+    },
+    {
+      "finding_id": "F002",
+      "category": "权限",
+      "severity": 4,
+      "loss_recovered": 80,
+      "cost_saving": 0,
+      "efficiency_improvement": 0.15,
+      "impact_amount": 350,
+      "probability_before": 0.25,
+      "probability_after": 0.02,
+      "industry": "金融",
+      "fte_days": 10,
+      "first_identified": true,
+      "management_knew": true,
+      "external_force": false
+    },
+    {
+      "finding_id": "F003",
+      "category": "税务",
+      "severity": 4,
+      "loss_recovered": 90,
+      "cost_saving": 120,
+      "efficiency_improvement": 0.20,
+      "impact_amount": 500,
+      "probability_before": 0.30,
+      "probability_after": 0.03,
+      "industry": "科技",
+      "fte_days": 20,
+      "first_identified": false,
+      "management_knew": false,
+      "external_force": true
+    }
+  ],
+  "total_cost": 480.0,
+  "hourly_rate": 0.08
+}

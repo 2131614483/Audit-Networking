@@ -1,0 +1,116 @@
+{
+  "rois": [
+    {
+      "roi_id": "ROI-FOREST-A",
+      "roi_name": "华北林区A",
+      "area_ha": 1200.0,
+      "industry": "林业",
+      "coordinates": {"lng": 116.42, "lat": 40.15},
+      "claimed_actions": ["生态恢复", "森林保护"],
+      "time_slices": [
+        {
+          "date": "2022-08-01",
+          "cloud_cover": 5,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.60, "red": 0.10, "green": 0.15, "blue": 0.05, "swir1": 0.20, "swir2": 0.15}
+        },
+        {
+          "date": "2023-08-01",
+          "cloud_cover": 8,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.45, "red": 0.20, "green": 0.18, "blue": 0.06, "swir1": 0.28, "swir2": 0.25}
+        },
+        {
+          "date": "2024-08-01",
+          "cloud_cover": 12,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.20, "red": 0.40, "green": 0.25, "blue": 0.10, "swir1": 0.45, "swir2": 0.50}
+        }
+      ]
+    },
+    {
+      "roi_id": "ROI-WATER-B",
+      "roi_name": "滨海湿地B",
+      "area_ha": 800.0,
+      "industry": "化工",
+      "coordinates": {"lng": 121.55, "lat": 31.20},
+      "claimed_actions": ["湿地保护", "节水改造"],
+      "time_slices": [
+        {
+          "date": "2022-07-15",
+          "cloud_cover": 3,
+          "source": "Landsat-8",
+          "bands": {"nir": 0.30, "red": 0.20, "green": 0.60, "blue": 0.10, "swir1": 0.25, "swir2": 0.20}
+        },
+        {
+          "date": "2023-07-15",
+          "cloud_cover": 6,
+          "source": "Landsat-8",
+          "bands": {"nir": 0.35, "red": 0.25, "green": 0.40, "blue": 0.12, "swir1": 0.30, "swir2": 0.28}
+        },
+        {
+          "date": "2024-07-15",
+          "cloud_cover": 10,
+          "source": "Landsat-8",
+          "bands": {"nir": 0.40, "red": 0.30, "green": 0.30, "blue": 0.15, "swir1": 0.35, "swir2": 0.33}
+        }
+      ]
+    },
+    {
+      "roi_id": "ROI-FARM-C",
+      "roi_name": "生态农场C",
+      "area_ha": 350.0,
+      "industry": "农业",
+      "coordinates": {"lng": 113.65, "lat": 34.78},
+      "claimed_actions": ["生态农业", "绿化种植"],
+      "time_slices": [
+        {
+          "date": "2022-09-01",
+          "cloud_cover": 4,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.40, "red": 0.25, "green": 0.20, "blue": 0.08, "swir1": 0.30, "swir2": 0.25}
+        },
+        {
+          "date": "2023-09-01",
+          "cloud_cover": 7,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.45, "red": 0.22, "green": 0.21, "blue": 0.07, "swir1": 0.28, "swir2": 0.22}
+        },
+        {
+          "date": "2024-09-01",
+          "cloud_cover": 5,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.50, "red": 0.20, "green": 0.22, "blue": 0.06, "swir1": 0.26, "swir2": 0.20}
+        }
+      ]
+    },
+    {
+      "roi_id": "ROI-MINE-D",
+      "roi_name": "西部矿区D",
+      "area_ha": 600.0,
+      "industry": "矿业",
+      "coordinates": {"lng": 104.07, "lat": 36.50},
+      "claimed_actions": ["矿区绿化恢复", "生态恢复"],
+      "time_slices": [
+        {
+          "date": "2022-06-01",
+          "cloud_cover": 6,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.50, "red": 0.15, "green": 0.18, "blue": 0.06, "swir1": 0.22, "swir2": 0.18}
+        },
+        {
+          "date": "2023-06-01",
+          "cloud_cover": 9,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.35, "red": 0.25, "green": 0.20, "blue": 0.08, "swir1": 0.30, "swir2": 0.28}
+        },
+        {
+          "date": "2024-06-01",
+          "cloud_cover": 11,
+          "source": "Sentinel-2",
+          "bands": {"nir": 0.20, "red": 0.45, "green": 0.25, "blue": 0.12, "swir1": 0.50, "swir2": 0.55}
+        }
+      ]
+    }
+  ]
+}

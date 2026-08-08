@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审计智能化平台 · 智能编排引擎</title>
+<style>
+:root{
+  --bg:#ffffff; --text:#1a1d29; --dim:#6c757d; --border:#d8dde5; --panel:#f8f9fa;
+  --ml:#4A90D9; --llm:#E67E22; --kg:#27AE60; --rpa:#9B59B6;
+  --cv:#E74C3C; --bc:#F39C12; --fl:#1ABC9C; --st:#5D6D7E;
+  --rs:#16A085; --db:#D35400;
+  --pending:#adb5bd; --running:#4A90D9; --done:#27AE60; --failed:#E74C3C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"PingFang SC","Microsoft YaHei","Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+.container{max-width:1400px;margin:0 auto;padding:20px}
+
+/* ===== 顶部 ===== */
+.top-section{background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:24px;margin-bottom:16px}
+.top-section h1{font-size:22px;font-weight:700;background:linear-gradient(90deg,#4A90D9,#27AE60);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.top-section .subtitle{color:var(--dim);font-size:13px;margin-top:4px;margin-bottom:16px}
+#requirement{width:100%;min-height:80px;padding:12px;border:1px solid var(--border);border-radius:8px;font-size:14px;font-family:inherit;resize:vertical;outline:none;transition:border-color .2s}
+#requirement:focus{border-color:var(--ml)}
+.case-buttons{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+.case-btn{padding:6px 16px;border:1px solid var(--border);border-radius:20px;background:#fff;color:var(--text);font-size:13px;cursor:pointer;transition:.2s}
+.case-btn:hover{border-color:var(--ml);color:var(--ml);background:#e8f2fc}
+.action-buttons{display:flex;gap:12px;margin-top:14px}
+.primary-btn{padding:10px 28px;border:none;border-radius:8px;background:linear-gradient(135deg,#4A90D9,#27AE60);color:#fff;font-size:15px;font-weight:600;cursor:pointer;transition:.2s;box-shadow:0 2px 8px rgba(74,144,217,.3)}
+.primary-btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(74,144,217,.4)}
+.exec-btn{padding:10px 28px;border:1px solid var(--border);border-radius:8px;background:#fff;color:var(--dim);font-size:15px;font-weight:600;cursor:not-allowed;transition:.2s}
+.exec-btn.active{border-color:var(--ml);color:var(--ml);cursor:pointer;background:#fff}
+.exec-btn.active:hover{background:#e8f2fc}
+.exec-btn.running{border-color:var(--running);color:var(--running);cursor:wait}
+
+/* ===== 中部 ===== */
+.mid-section{display:flex;gap:16px;margin-bottom:16px}
+.dag-area{flex:0 0 60%;height:500px;position:relative;border:1px solid var(--border);border-radius:10px;overflow:hidden;background:#fff}
+.dag-area svg{width:100%;height:100%;display:block}
+.detail-panel{flex:1;height:500px;overflow-y:auto;background:var(--panel);border:1px solid var(--border);border-radius:10px;padding:16px}
+.detail-panel::-webkit-scrollbar{width:6px}
+.detail-panel::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.panel-section{margin-bottom:18px}
+.panel-section h3{font-size:14px;color:var(--ml);margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+#reasoning{font-size:12px;color:var(--text);line-height:1.8;white-space:pre-wrap;font-family:inherit}
+.module-item{display:flex;align-items:center;gap:8px;padding:6px 8px;margin:3px 0;background:#fff;border-radius:6px;border:1px solid var(--border);font-size:12px}
+.module-item .mi-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.module-item .mi-name{flex:1;font-weight:500}
+.module-item .mi-family{font-size:10px;color:var(--dim)}
+.module-item .mi-role{font-size:10px;padding:1px 6px;border-radius:8px;background:var(--panel);color:var(--dim)}
+.contract-ok{color:var(--done);font-weight:600;font-size:13px}
+.contract-fail{color:var(--failed);font-weight:600;font-size:13px}
+.contract-detail{font-size:11px;color:var(--dim);margin-top:4px}
+.exec-order{display:flex;flex-wrap:wrap;align-items:center;gap:4px}
+.exec-order .eo-node{padding:3px 8px;border-radius:4px;font-size:11px;font-weight:500;color:#fff}
+.exec-order .eo-arrow{color:var(--dim);font-size:12px}
+.empty-state{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--dim);font-size:14px;text-align:center}
+.dag-legend{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:11px;display:flex;flex-wrap:wrap;gap:8px;max-width:300px}
+.dag-legend .lg-item{display:flex;align-items:center;gap:4px}
+.dag-legend .lg-dot{width:8px;height:8px;border-radius:50%}
+.dag-status-legend{position:absolute;bottom:10px;right:10px;background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:6px;padding:8px 10px;font-size:11px;display:flex;gap:10px}
+.dag-status-legend .sl-item{display:flex;align-items:center;gap:4px}
+
+/* SVG node/edge */
+.node rect{transition:all .3s}
+.node.pending rect{fill:#f0f1f3;stroke:var(--pending);stroke-width:1.5}
+.node.running rect{fill:#e8f2fc;stroke:var(--running);stroke-width:2.5;animation:nodePulse 1s ease-in-out infinite}
+.node.done rect{fill:#e8f7ee;stroke:var(--done);stroke-width:2}
+.node.failed rect{fill:#fdeaea;stroke:var(--failed);stroke-width:2}
+@keyframes nodePulse{0%,100%{stroke-width:2.5}50%{stroke-width:4.5}}
+.node text{pointer-events:none}
+.node .n-name{font-size:12px;font-weight:600;fill:var(--text);text-anchor:middle}
+.node .n-slug{font-size:9px;fill:var(--dim);text-anchor:middle}
+.node .n-status{font-size:13px;font-weight:700;text-anchor:middle}
+.node.pending .n-status{fill:var(--pending)}
+.node.running .n-status{fill:var(--running)}
+.node.done .n-status{fill:var(--done)}
+.node.failed .n-status{fill:var(--failed)}
+.edge{fill:none;stroke:#c4c9d2;stroke-width:1.5;transition:stroke .3s}
+.edge.done{stroke:var(--done);stroke-width:2}
+.edge-label rect{fill:#fff;stroke:var(--border);stroke-width:0.5}
+.edge-label text{font-size:9px;fill:var(--dim);text-anchor:middle}
+
+/* ===== 底部 ===== */
+.bottom-section{display:flex;gap:16px}
+.log-area{flex:0 0 45%;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+.log-area h3,.report-area h3{font-size:14px;color:var(--ml);padding:12px 16px;border-bottom:1px solid var(--border);background:var(--panel);flex-shrink:0}
+#exec-log{flex:1;overflow-y:auto;padding:12px;font-family:"Consolas","Courier New",monospace;font-size:12px;min-height:200px;max-height:420px}
+#exec-log::-webkit-scrollbar{width:6px}
+#exec-log::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.log-entry{padding:3px 0;line-height:1.7;border-bottom:1px dotted var(--border)}
+.log-time{color:var(--dim);margin-right:6px}
+.log-step{color:var(--ml);font-weight:600;margin-right:6px}
+.log-module{font-weight:600;margin-right:6px}
+.log-status-running{color:var(--running)}
+.log-status-done{color:var(--done)}
+.log-status-failed{color:var(--failed)}
+.log-duration{color:var(--llm);margin-right:6px}
+.log-summary{color:var(--text)}
+.log-placeholder{color:var(--dim);font-style:italic}
+.report-area{flex:1;border:1px solid var(--border);border-radius:10px;overflow:hidden;display:flex;flex-direction:column}
+#final-report{flex:1;overflow-y:auto;padding:16px;max-height:420px}
+#final-report::-webkit-scrollbar{width:6px}
+#final-report::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+.report-card{background:var(--panel);border-radius:8px;padding:14px;margin-bottom:12px;border-left:4px solid var(--ml)}
+.report-card.rc-risk{border-left-color:var(--failed)}
+.report-card.rc-finding{border-left-color:var(--llm)}
+.report-card.rc-rec{border-left-color:var(--done)}
+.report-card .rc-title{font-size:13px;font-weight:700;margin-bottom:8px}
+.report-card .rc-body{font-size:12px;color:var(--text);line-height:1.7}
+.risk-badge{display:inline-block;padding:3px 12px;border-radius:12px;font-size:12px;font-weight:700;color:#fff}
+.risk-高{background:var(--failed)}
+.risk-中高{background:var(--llm)}
+.risk-中{background:var(--bc)}
+.risk-低{background:var(--done)}
+.finding-item{padding:4px 0 4px 16px;position:relative}
+.finding-item::before{content:"▸";position:absolute;left:0;color:var(--llm)}
+.rec-item{padding:4px 0 4px 16px;position:relative}
+.rec-item::before{content:"✓";position:absolute;left:0;color:var(--done)}
+.mo-card{background:#fff;border:1px solid var(--border);border-radius:6px;padding:10px;margin:6px 0}
+.mo-card .mo-header{display:flex;align-items:center;gap:6px;margin-bottom:4px}
+.mo-card .mo-dot{width:8px;height:8px;border-radius:50%}
+.mo-card .mo-name{font-size:12px;font-weight:600;flex:1}
+.mo-card .mo-time{font-size:10px;color:var(--dim)}
+.mo-card .mo-summary{font-size:11px;color:var(--dim);margin-bottom:4px}
+.mo-card .mo-field{font-size:11px;padding:1px 0}
+.mo-card .mo-key{color:var(--ml);font-weight:500}
+
+/* ===== 后端集成相关样式 ===== */
+#reasoning-text{white-space:pre-wrap;font-size:12px;line-height:1.7;color:#495057}
+.status-msg{font-size:12px;padding:6px 12px;border-radius:6px;margin-top:10px;display:none}
+.status-msg.success{background:#e8f7ee;color:#27AE60;display:block}
+.status-msg.warn{background:#fff4e6;color:#E67E22;display:block}
+.status-msg.error{background:#fdeaea;color:#E74C3C;display:block}
+#backend-status{font-size:11px;color:#6c757d}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- ===== 顶部：标题 + 需求输入 ===== -->
+<section class="top-section">
+  <h1>审计智能化平台 · 智能编排引擎</h1>
+  <p class="subtitle">输入审计需求 → AI自动组网 → 按标准执行 → 输出结果</p>
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
+    <span id="backend-status" style="font-size:11px;color:#6c757d;">检查后端状态...</span>
+  </div>
+  <textarea id="requirement" placeholder="请输入审计需求，例如：审计公司与关联方之间的交易，检查关联方披露完整性、交易定价公允性..."></textarea>
+  <div class="case-buttons">
+    <button class="case-btn" data-case="related_party">关联交易审计</button>
+    <button class="case-btn" data-case="aml">反洗钱审计</button>
+    <button class="case-btn" data-case="ipo">IPO财务审计</button>
+  </div>
+  <div class="action-buttons">
+    <button id="plan-btn" class="primary-btn">AI 规划方案</button>
+    <button id="exec-btn" class="exec-btn" disabled>执行</button>
+  </div>
+  <div id="plan-status" class="status-msg" style="display:none"></div>
+</section>
+
+<!-- ===== 中部：组网方案可视化 ===== -->
+<section class="mid-section">
+  <div class="dag-area">
+    <svg id="dag-canvas" preserveAspectRatio="xMidYMid meet">
+      <defs>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#c4c9d2"/>
+        </marker>
+        <marker id="arrowhead-done" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+          <path d="M0,0 L10,5 L0,10 Z" fill="#27AE60"/>
+        </marker>
+      </defs>
+      <g id="dag-content"></g>
+    </svg>
+    <div id="dag-empty" class="empty-state">
+      <p>📝 点击「AI 规划方案」生成审计组网方案</p>
+    </div>
+    <div class="dag-legend" id="dag-legend" style="display:none"></div>
+    <div class="dag-status-legend" id="dag-status-legend" style="display:none">
+      <div class="sl-item"><span style="color:var(--pending)">●</span>待执行</div>
+      <div class="sl-item"><span style="color:var(--running)">●</span>执行中</div>
+      <div class="sl-item"><span style="color:var(--done)">●</span>已完成</div>
+    </div>
+  </div>
+  <div class="detail-panel">
+    <div class="panel-section">
+      <h3>AI 推理过程</h3>
+      <div id="reasoning"><span style="color:var(--dim)">规划后展示推理过程...</span></div>
+    </div>
+    <div class="panel-section">
+      <h3>选中模块</h3>
+      <div id="modules-list"><span style="color:var(--dim)">暂无</span></div>
+    </div>
+    <div class="panel-section">
+      <h3>接口契约校验</h3>
+      <div id="contract-check"><span style="color:var(--dim)">暂无</span></div>
+    </div>
+    <div class="panel-section">
+      <h3>执行顺序</h3>
+      <div id="exec-order"><span style="color:var(--dim)">暂无</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 底部：执行结果 ===== -->
+<section class="bottom-section">
+  <div class="log-area">
+    <h3>执行日志</h3>
+    <div id="exec-log">
+      <div class="log-placeholder">执行后在此显示实时日志...</div>
+    </div>
+  </div>
+  <div class="report-area" id="report-area" style="display:none">
+    <h3>最终审计报告</h3>
+    <div id="final-report"></div>
+  </div>
+</section>
+
+</div>
+
+<script>
+/* ======================= 数据层 ======================= */
+const FAMILY_COLOR = {
+  "机器学习":"#4A90D9","大语言模型":"#E67E22","知识图谱":"#27AE60",
+  "RPA流程自动化":"#9B59B6","计算机视觉":"#E74C3C","区块链":"#F39C12",
+  "联邦学习":"#1ABC9C","流处理":"#5D6D7E","资源调度":"#16A085","数据看板":"#D35400"
+};
+const DOMAIN_NAME = {
+  fa:"财务审计",ia:"内部审计",co:"合规审计",it:"IT审计",fo:"法务审计",
+  ta:"税务审计",sc:"供应链审计",es:"ESG审计",ip:"IPO审计",fi:"金融审计",
+  cb:"跨境审计",cm:"持续审计"
+};
+
+// 78 个模块 [slug, 名称, 家族, 引擎类]
+const RAW = [
+  ["fa_02","多源数据自动标准化","机器学习","MLEngine"],
+  ["fa_03","审计数据湖建设","机器学习","MLEngine"],
+  ["fa_04","智能函证管理平台","区块链","BlockchainEngine"],
+  ["fa_05","区块链银行函证","区块链","BlockchainEngine"],
+  ["fa_06","AI函证差异智能分析","知识图谱","KGEngine"],
+  ["fa_07","智能底稿自动生成平台","知识图谱","KGEngine"],
+  ["fa_08","底稿自动勾稽检查","机器学习","MLEngine"],
+  ["fa_09","AI底稿质量复核助手","大语言模型","LLMEngine"],
+  ["fa_10","知识图谱关联方发现引擎","机器学习","MLEngine"],
+  ["fa_11","关联交易定价公允性AI分析","机器学习","MLEngine"],
+  ["fa_12","关联交易披露完整性检查","知识图谱","KGEngine"],
+  ["ia_01","动态风险地图与智能审计计划","大语言模型","LLMEngine"],
+  ["ia_02","持续风险监控平台","知识图谱","KGEngine"],
+  ["ia_03","审计资源智能分配引擎","资源调度","ResourceEngine"],
+  ["ia_04","审计价值仪表板","数据看板","DashboardEngine"],
+  ["ia_05","AI驱动的管理建议书","大语言模型","LLMEngine"],
+  ["ia_06","内审价值量化模型","机器学习","MLEngine"],
+  ["ia_07","智能整改跟踪平台","RPA流程自动化","RPAEngine"],
+  ["ia_08","整改效果自动验证","RPA流程自动化","RPAEngine"],
+  ["co_01","全球法规智能监控平台","知识图谱","KGEngine"],
+  ["co_02","AI法规影响评估引擎","大语言模型","LLMEngine"],
+  ["co_03","合规审计程序自动更新","大语言模型","LLMEngine"],
+  ["co_04","AML智能交易监控引擎","知识图谱","KGEngine"],
+  ["co_05","知识图谱洗钱网络发现","知识图谱","KGEngine"],
+  ["co_06","AI可疑交易报告自动生成","知识图谱","KGEngine"],
+  ["co_07","AI数据资产自动发现与分类","机器学习","MLEngine"],
+  ["co_08","知识图谱数据流分析","知识图谱","KGEngine"],
+  ["co_09","隐私合规自动审计引擎","大语言模型","LLMEngine"],
+  ["it_01","IT审计自动化平台","RPA流程自动化","RPAEngine"],
+  ["it_02","AI配置合规扫描引擎","机器学习","MLEngine"],
+  ["it_03","AI代码审计助手","知识图谱","KGEngine"],
+  ["it_04","IT持续审计平台","机器学习","MLEngine"],
+  ["it_05","区块链审计日志存证","区块链","BlockchainEngine"],
+  ["fo_01","全量交易智能舞弊扫描","机器学习","MLEngine"],
+  ["fo_02","知识图谱舞弊网络分析","知识图谱","KGEngine"],
+  ["fo_03","NLP文本舞弊信号检测","大语言模型","LLMEngine"],
+  ["fo_04","AI电子取证平台","计算机视觉","CVEngine"],
+  ["fo_05","多语言智能翻译与分析","大语言模型","LLMEngine"],
+  ["fo_06","证据链智能构建","大语言模型","LLMEngine"],
+  ["ta_01","AI发票智能审计平台","计算机视觉","CVEngine"],
+  ["ta_02","发票四单自动匹配引擎","机器学习","MLEngine"],
+  ["ta_03","进项税额转出AI计算","大语言模型","LLMEngine"],
+  ["ta_04","AI转让定价文档自动生成","大语言模型","LLMEngine"],
+  ["ta_05","ML可比公司智能筛选","机器学习","MLEngine"],
+  ["ta_06","知识图谱全球关联交易分析","知识图谱","KGEngine"],
+  ["sc_01","供应商风险智能评分平台","机器学习","MLEngine"],
+  ["sc_02","知识图谱供应链网络分析","知识图谱","KGEngine"],
+  ["sc_03","供应商持续风险监控平台","机器学习","MLEngine"],
+  ["sc_04","ML采购价格异常检测平台","机器学习","MLEngine"],
+  ["sc_05","AI采购价格基准平台","机器学习","MLEngine"],
+  ["es_01","ESG多源数据智能采集平台","计算机视觉","CVEngine"],
+  ["es_02","AI碳排放自动核算引擎","机器学习","MLEngine"],
+  ["es_03","卫星遥感AI环境监测平台","计算机视觉","CVEngine"],
+  ["es_04","知识图谱绿色漂洗检测平台","知识图谱","KGEngine"],
+  ["es_05","ESG审计知识库与AI助手","大语言模型","LLMEngine"],
+  ["es_06","AI-ESG审计方法论引擎","大语言模型","LLMEngine"],
+  ["ip_01","IPO审计智能加速平台","大语言模型","LLMEngine"],
+  ["ip_02","AI监管反馈智能回复系统","大语言模型","LLMEngine"],
+  ["ip_03","知识图谱历史沿革梳理系统","知识图谱","KGEngine"],
+  ["ip_04","AI财务规范性智能诊断系统","机器学习","MLEngine"],
+  ["ip_05","IPO案例知识库与RAG系统","大语言模型","LLMEngine"],
+  ["ip_06","整改方案AI推荐引擎","大语言模型","LLMEngine"],
+  ["fi_01","AI信贷资产质量评估引擎","机器学习","MLEngine"],
+  ["fi_02","知识图谱担保链风险分析系统","知识图谱","KGEngine"],
+  ["fi_03","ML贷款违约预测验证系统","机器学习","MLEngine"],
+  ["fi_04","监管报表智能核对平台","大语言模型","LLMEngine"],
+  ["fi_05","AI监管口径自动更新系统","大语言模型","LLMEngine"],
+  ["cb_01","联邦学习跨境审计平台","联邦学习","FederationEngine"],
+  ["cb_02","数据脱敏网关与合规路由系统","机器学习","MLEngine"],
+  ["cb_03","多法域合规知识库","大语言模型","LLMEngine"],
+  ["cb_04","AI多准则自动转换引擎","大语言模型","LLMEngine"],
+  ["cb_05","AI多语言审计协作平台","大语言模型","LLMEngine"],
+  ["cb_06","集团审计智能协作平台","大语言模型","LLMEngine"],
+  ["cm_01","持续审计技术平台","流处理","StreamingEngine"],
+  ["cm_02","智能预警分级与自动处理系统","RPA流程自动化","RPAEngine"],
+  ["cm_03","持续审计方法论框架","大语言模型","LLMEngine"],
+  ["cm_04","持续审计价值量化模型","机器学习","MLEngine"],
+  ["cm_05","持续审计仪表板","机器学习","MLEngine"]
+];
+
+const MODULES = RAW.map(([s,n,f,e])=>({
+  slug:s, name:n, family:f, engine:e,
+  domain:DOMAIN_NAME[s.slice(0,2)],
+  color:FAMILY_COLOR[f]
+}));
+const M = {}; MODULES.forEach(m=>M[m.slug]=m);
+
+// 数据依赖边 [source, target]
+const DATA_EDGES = [
+  ["fa_02","fa_03"],["fa_03","fa_07"],["fa_03","fa_10"],["fa_03","fo_02"],
+  ["fa_03","cm_01"],["fa_03","ip_01"],["fa_06","fa_07"],["fa_07","ip_01"],
+  ["fa_10","ip_01"],["fa_10","fa_11"],["fa_10","fa_12"],["fa_08","fa_09"],
+  ["co_01","co_02"],["co_01","co_03"],["co_01","co_07"],["co_01","co_09"],
+  ["co_01","ip_01"],["co_04","co_05"],["co_05","co_04"],["co_04","co_06"],
+  ["co_05","co_06"],["co_02","co_03"],
+  ["es_01","sc_01"],["es_01","es_02"],["es_01","es_03"],["es_01","es_04"],
+  ["es_01","es_05"],["es_01","es_06"],
+  ["cb_01","cb_02"],["cb_01","cb_03"],["cb_01","cb_04"],["cb_01","cb_05"],["cb_01","cb_06"],
+  ["cm_01","cm_02"],["cm_01","cm_03"],["cm_01","cm_04"],["cm_01","cm_05"],
+  ["ta_01","ta_02"],["fi_01","fi_03"],["fi_02","fi_01"],
+  ["ia_01","ia_02"],["ia_02","ia_06"],["ia_06","ia_04"],
+  ["sc_01","sc_03"],["sc_03","sc_04"]
+];
+
+// 边数据类型映射（从 NETWORK_SCHEMA 提取）
+const EDGE_TYPES = {
+  "fa_02":{"fa_03":"标准化数据集"},
+  "fa_03":{"fa_07":"数据湖分区数据","fa_10":"数据湖分区数据","fo_02":"数据湖分区数据","cm_01":"数据湖分区数据","ip_01":"数据湖分区数据"},
+  "fa_06":{"fa_07":"函证差异分析结果"},
+  "fa_07":{"ip_01":"审计底稿文档"},
+  "fa_10":{"ip_01":"关联方图谱","fa_11":"关联方图谱","fa_12":"关联方图谱"},
+  "co_01":{"co_02":"法规变更事件","co_03":"法规变更事件","co_07":"法规变更事件","co_09":"法规变更事件","ip_01":"法规变更事件"},
+  "co_02":{"co_03":"法规影响评估"},
+  "co_04":{"co_05":"AML告警","co_06":"AML告警"},
+  "co_05":{"co_04":"洗钱网络图谱","co_06":"洗钱网络图谱"},
+  "es_01":{"sc_01":"ESG原始数据","es_02":"ESG原始数据","es_03":"ESG原始数据","es_04":"ESG原始数据","es_05":"ESG原始数据","es_06":"ESG原始数据"},
+  "cb_01":{"cb_02":"联邦模型参数","cb_03":"联邦模型参数","cb_04":"联邦模型参数","cb_05":"联邦模型参数","cb_06":"联邦模型参数"},
+  "cm_01":{"cm_02":"实时审计事件流","cm_03":"实时审计事件流","cm_04":"实时审计事件流","cm_05":"实时审计事件流"},
+  "ta_01":{"ta_02":"发票结构化数据"},
+  "fi_02":{"fi_01":"担保链图谱"},
+  "fi_01":{"fi_03":"信贷资产评分"},
+  "ia_01":{"ia_02":"风险地图"},
+  "ia_02":{"ia_06":"风险监控信号"},
+  "ia_06":{"ia_04":"内审价值指标"},
+  "sc_01":{"sc_03":"供应商风险评分"},
+  "sc_03":{"sc_04":"供应商监控告警"},
+};
+
+// 关键词→模块映射
+const KEYWORD_MAP = {
+  "关联交易":["fa_10","fa_11","fa_12","ta_06"],
+  "关联方":["fa_10","fa_12"],
+  "定价公允":["fa_11"],
+  "定价":["fa_11","ta_04","ta_05","sc_04","sc_05"],
+  "披露完整性":["fa_12"],
+  "披露":["fa_12","co_03"],
+  "数据标准化":["fa_02"],
+  "标准化":["fa_02"],
+  "数据湖":["fa_03"],
+  "底稿":["fa_07","fa_08","fa_09"],
+  "函证":["fa_04","fa_05","fa_06"],
+  "反洗钱":["co_04","co_05","co_06"],
+  "AML":["co_04","co_05","co_06"],
+  "可疑交易":["co_04","co_06"],
+  "洗钱":["co_04","co_05"],
+  "资金闭环":["co_05"],
+  "拆分交易":["co_04"],
+  "快进快出":["co_04"],
+  "法规":["co_01","co_02","co_03"],
+  "合规":["co_01","co_09"],
+  "隐私":["co_09"],
+  "IPO":["ip_01","ip_05"],
+  "上市":["ip_01","ip_02"],
+  "财务规范":["ip_04","ip_01"],
+  "历史沿革":["ip_03"],
+  "舞弊":["fo_01","fo_02","fo_03"],
+  "取证":["fo_04","fo_06"],
+  "发票":["ta_01","ta_02"],
+  "转让定价":["ta_04","ta_05"],
+  "供应商":["sc_01","sc_02","sc_03"],
+  "采购":["sc_04","sc_05"],
+  "碳排放":["es_02"],
+  "ESG":["es_01","es_05","es_06"],
+  "信贷":["fi_01","fi_03"],
+  "担保":["fi_02"],
+  "监管报表":["fi_04","fi_05"],
+  "风险":["ia_01","ia_02"],
+  "整改":["ia_07","ia_08","ip_06"],
+  "持续审计":["cm_01","cm_02"],
+  "跨境":["cb_01","cb_02"],
+  "联邦学习":["cb_01"],
+  "IT审计":["it_01","it_02"],
+  "代码审计":["it_03"],
+};
+
+// 模块角色映射
+const MODULE_ROLE = {
+  fa_02:"数据标准化接入",fa_03:"数据湖存储",fa_07:"底稿生成",
+  fa_10:"关联方图谱发现",fa_11:"定价公允性分析",fa_12:"披露完整性检查",
+  co_01:"法规智能监控",co_04:"AML交易监控",co_05:"洗钱网络发现",co_06:"可疑交易报告生成",
+  ip_01:"IPO综合诊断",
+};
+
+/* ======================= 3个审计案例 ======================= */
+const CASES = {
+  related_party: {
+    title: "关联交易公允性审计",
+    requirement: "审计公司与关联方之间的交易，检查关联方披露完整性、交易定价公允性。重点关注关联采购定价是否偏离市场价格，担保费支出是否合理，关联方披露是否完整。",
+    domain: "财务审计",
+    keywords: ["关联交易","关联方","定价公允","披露完整性"],
+    modules: ["fa_02","fa_03","fa_10","fa_11","fa_12"],
+    edges: [["fa_02","fa_03"],["fa_03","fa_10"],["fa_10","fa_11"],["fa_10","fa_12"]],
+    moduleResults: {
+      fa_02: {status:"done",duration:0.3,summary:"标准化 24 条多源数据（ERP/银行/合同），字段映射 15 个，去重 3 条",output:{data_type:"标准化数据集",records_count:21,sources:["ERP","银行流水","合同系统"],quality_score:0.92}},
+      fa_03: {status:"done",duration:0.5,summary:"数据湖三区分层：ODS 21条 → DWD 18条 → ADS 12条（科目月度汇总）",output:{data_type:"数据湖分区数据",ods:21,dwd:18,ads:12,reuse_rate:0.67,quality:{completeness:0.95,uniqueness:1.0,consistency:0.88}}},
+      fa_10: {status:"done",duration:1.2,summary:"发现 5 个关联方实体，构建关联关系图谱（17个节点，23条边）",output:{data_type:"关联方图谱",entities:5,relations:23,key_findings:["实际控制人王某通过卓郎科技、懋达实业形成关联网络","持股8.5%股东李某关联华信投资未披露","发现3笔通过第三方支付的隐性关联交易"]}},
+      fa_11: {status:"done",duration:0.8,summary:"定价公允性分析：12笔关联交易中4笔偏离市场价格超10%",output:{data_type:"定价公允性分析结果",total_transactions:12,deviation_count:4,max_deviation:113.3,findings:[{tx:"担保费支出",amount:320000,market:150000,deviation:"113.3%",risk:"高"},{tx:"原材料采购",amount:5800000,market:5200000,deviation:"11.5%",risk:"中"},{tx:"设备租赁",amount:890000,market:650000,deviation:"36.9%",risk:"高"},{tx:"技术服务费",amount:450000,market:380000,deviation:"18.4%",risk:"中"}]}},
+      fa_12: {status:"done",duration:0.6,summary:"披露完整性检查：发现2项未披露关联交易",output:{data_type:"披露完整性报告",disclosed:10,undisclosed:2,missing:["华信投资（李某关联方）的采购交易未披露","通过第三方支付的担保费未识别为关联交易"]}}
+    },
+    finalReport: {
+      audit_conclusion: "关联交易存在公允性和披露完整性问题",
+      risk_level: "中高",
+      findings: [
+        "发现5个关联方实体，其中1个未披露",
+        "12笔关联交易中4笔定价偏离市场价格超10%",
+        "2项关联交易未在财报附注中披露",
+        "担保费支出偏离市场价格113.3%，存在利益输送嫌疑"
+      ],
+      recommendations: [
+        "补充披露华信投资关联关系及交易",
+        "对偏离市场价格的关联交易进行定价调整",
+        "建立关联交易自动监控机制",
+        "加强关联方识别的完整性检查"
+      ]
+    }
+  },
+  aml: {
+    title: "反洗钱可疑交易审计",
+    requirement: "对银行客户交易进行反洗钱监控，发现可疑交易网络并生成可疑交易报告。重点关注资金闭环、拆分交易、快进快出等可疑模式。",
+    domain: "合规审计",
+    keywords: ["反洗钱","AML","可疑交易","洗钱网络"],
+    modules: ["co_04","co_05","co_06"],
+    edges: [["co_04","co_05"],["co_05","co_04"],["co_04","co_06"],["co_05","co_06"]],
+    moduleResults: {
+      co_04: {status:"done",duration:0.9,summary:"AML三层监控：规则层告警18条 → ML层确认8条 → GNN层识别3个可疑网络",output:{data_type:"AML告警",rule_alerts:18,ml_confirmed:8,gnn_networks:3,total_amount:18500000}},
+      co_05: {status:"done",duration:1.1,summary:"洗钱网络发现：识别3个资金闭环网络，涉及7个账户",output:{data_type:"洗钱网络图谱",networks:3,accounts:7,total_flow:14200000,patterns:["资金闭环(A→B→C→A)","拆分交易(490000×3)","快进快出(间隔<2h)"]}},
+      co_06: {status:"done",duration:0.7,summary:"生成3份可疑交易报告（STR），涉及金额1420万元",output:{data_type:"可疑交易报告",reports:3,total_amount:14200000,risk_levels:{"高":2,"中":1}}}
+    },
+    finalReport: {
+      audit_conclusion: "发现3个可疑交易网络，建议上报反洗钱中心",
+      risk_level: "高",
+      findings: [
+        "识别3个资金闭环网络，总流转金额1420万元",
+        "7个账户存在拆分交易、快进快出等可疑模式",
+        "账户B002（乙个体户）KYC信息不全，风险等级高",
+        "3笔交易金额接近报告阈值（49万），疑似刻意拆分"
+      ],
+      recommendations: [
+        "立即上报3份STR至反洗钱监测中心",
+        "对账户B002进行强化尽调（EDD）",
+        "调整交易监控阈值，覆盖拆分交易模式",
+        "加强客户KYC信息完整性管理"
+      ]
+    }
+  },
+  ipo: {
+    title: "IPO财务规范性审计",
+    requirement: "IPO前财务规范性诊断，检查关联方关系完整性和历史沿革合规性，确保符合上市监管要求。",
+    domain: "IPO审计",
+    keywords: ["IPO","财务规范","关联方","历史沿革"],
+    modules: ["fa_03","fa_10","co_01","ip_01"],
+    edges: [["fa_03","ip_01"],["fa_10","ip_01"],["co_01","ip_01"]],
+    moduleResults: {
+      fa_03: {status:"done",duration:0.5,summary:"近3年财务数据入湖：ODS 156条 → DWD 142条 → ADS 89条",output:{data_type:"数据湖分区数据",ods:156,dwd:142,ads:89,years:["2023","2024","2025"]}},
+      fa_10: {status:"done",duration:1.0,summary:"关联方梳理：发现8个关联方实体，3项未披露",output:{data_type:"关联方图谱",entities:8,undisclosed:3,relations:31}},
+      co_01: {status:"done",duration:0.8,summary:"法规监控：匹配IPO相关法规42条，影响评估5项高风险",output:{data_type:"法规变更事件",regulations:42,high_risk:5,domains:["关联交易","信息披露","公司治理"]}},
+      ip_01: {status:"done",duration:1.5,summary:"IPO规范性诊断：综合评分72/100，发现7项需整改问题",output:{data_type:"IPO审计诊断报告",score:72,issues:7,critical:2,categories:{"关联交易":3,"信息披露":2,"财务核算":2}}}
+    },
+    finalReport: {
+      audit_conclusion: "IPO财务规范性评分72分，需整改7项问题后方可申报",
+      risk_level: "中",
+      findings: [
+        "3个关联方未披露，需补充关联关系说明",
+        "2笔关联交易定价偏离超20%，需调整或说明",
+        "5项法规变更影响未完全落实",
+        "历史沿革中2次股权变更程序瑕疵",
+        "财务核算中2项会计政策不一致"
+      ],
+      recommendations: [
+        "补充披露3个未披露关联方",
+        "对偏离定价的关联交易进行调整",
+        "落实5项法规变更的合规要求",
+        "完善股权变更的法律程序",
+        "统一会计政策并追溯调整"
+      ]
+    }
+  }
+};
+
+/* ======================= 状态 ======================= */
+let currentPlan = null;
+let isExecuting = false;
+let backendOnline = false;
+
+/* ======================= 工具函数 ======================= */
+function sleep(ms){return new Promise(r=>setTimeout(r,ms));}
+
+function getEdgeDataType(s,t){
+  return EDGE_TYPES[s] && EDGE_TYPES[s][t] ? EDGE_TYPES[s][t] : null;
+}
+
+// 拓扑排序（处理环：选择入度最低的节点打破环）
+function topologicalSort(modules, edges){
+  const inDeg={}, adj={};
+  modules.forEach(m=>{inDeg[m]=0;adj[m]=[];});
+  edges.forEach(([s,t])=>{adj[s].push(t);inDeg[t]++;});
+  const result=[], remaining=new Set(modules);
+  while(remaining.size>0){
+    let batch=modules.filter(m=>remaining.has(m)&&inDeg[m]===0);
+    if(batch.length===0){
+      batch=[modules.filter(m=>remaining.has(m)).sort((a,b)=>inDeg[a]-inDeg[b])[0]];
+    }
+    batch.forEach(m=>{
+      result.push(m);
+      remaining.delete(m);
+      adj[m].forEach(t=>{if(remaining.has(t))inDeg[t]--;});
+    });
+  }
+  return result;
+}
+
+// 层分配（基于拓扑序的最长路径）
+function assignLayers(modules, edges, topoOrder){
+  const layer={};
+  topoOrder.forEach(m=>{
+    let maxL=-1;
+    edges.forEach(([s,t])=>{if(t===m&&layer[s]!==undefined)maxL=Math.max(maxL,layer[s]);});
+    layer[m]=maxL+1;
+  });
+  return layer;
+}
+
+// DAG布局
+function layoutDAG(modules, edges){
+  const topo=topologicalSort(modules,edges);
+  const layer=assignLayers(modules,edges,topo);
+  const groups={};
+  modules.forEach(m=>{
+    const l=layer[m];
+    if(!groups[l])groups[l]=[];
+    groups[l].push(m);
+  });
+  const LW=240, NH=56, NS=28;
+  const positions={};
+  Object.keys(groups).sort((a,b)=>a-b).forEach(l=>{
+    const mods=groups[l];
+    const totalH=mods.length*(NH+NS)-NS;
+    const startY=-totalH/2;
+    mods.forEach((m,i)=>{
+      positions[m]={x:parseInt(l)*LW, y:startY+i*(NH+NS)};
+    });
+  });
+  return positions;
+}
+
+// 获取模块角色
+function getModuleRole(slug, modules, edges){
+  if(MODULE_ROLE[slug])return MODULE_ROLE[slug];
+  const hasIn=edges.some(([s,t])=>t===slug);
+  const hasOut=edges.some(([s,t])=>s===slug);
+  if(!hasIn)return "数据接入";
+  if(!hasOut)return "结果输出";
+  return "分析处理";
+}
+
+/* ======================= AI 规划逻辑 ======================= */
+function matchCase(requirement){
+  for(const [key,c] of Object.entries(CASES)){
+    const matched=c.keywords.filter(k=>requirement.includes(k));
+    if(matched.length>=2)return key;
+  }
+  return null;
+}
+
+function matchModules(requirement){
+  const set=new Set();
+  Object.entries(KEYWORD_MAP).forEach(([kw,mods])=>{
+    if(requirement.includes(kw))mods.forEach(m=>set.add(m));
+  });
+  return [...set];
+}
+
+function completeUpstream(matched){
+  const result=new Set(matched);
+  const queue=[...matched];
+  while(queue.length>0){
+    const m=queue.shift();
+    DATA_EDGES.forEach(([s,t])=>{
+      if(t===m&&!result.has(s)){
+        result.add(s);
+        queue.push(s);
+      }
+    });
+  }
+  return [...result];
+}
+
+function generateEdges(modules){
+  const set=new Set(modules);
+  return DATA_EDGES.filter(([s,t])=>set.has(s)&&set.has(t));
+}
+
+function generateReasoning(requirement, caseKey, modules, edges){
+  let text="";
+  if(caseKey){
+    const c=CASES[caseKey];
+    const hitKw=c.keywords.filter(k=>requirement.includes(k));
+    text+="【需求识别】\n";
+    text+="解析审计需求文本，识别关键场景：\n";
+    text+="命中关键词："+hitKw.join("、")+"\n";
+    text+="匹配审计场景："+c.title+"（"+c.domain+"）\n\n";
+    text+="【模块匹配】\n";
+    text+="根据关键词字典映射候选模块：\n";
+    const coreMods=modules.filter(m=>{
+      const upEdges=edges.filter(([s,t])=>t===m);
+      return upEdges.length===0||!edges.some(([s,t])=>t===m&&modules.includes(s)&&edges.some(([s2,t2])=>t2===s));
+    });
+    modules.forEach(s=>{
+      const m=M[s];
+      const upE=edges.filter(([src,t])=>t===s);
+      if(upE.length===0){
+        text+="• "+m.name+"（"+m.family+"）→ 数据接入层\n";
+      }else{
+        const downE=edges.filter(([src,t])=>src===s);
+        if(downE.length===0){
+          text+="• "+m.name+"（"+m.family+"）→ 结果输出层\n";
+        }else{
+          text+="• "+m.name+"（"+m.family+"）→ 分析处理层\n";
+        }
+      }
+    });
+    text+="\n【上游补全】\n";
+    text+="递归检查 DATA_EDGES 补全上游依赖：\n";
+    edges.forEach(([s,t])=>{
+      const dt=getEdgeDataType(s,t);
+      text+="• "+M[s].name+" → "+M[t].name+" ["+(dt||"数据")+"]\n";
+    });
+    text+="\n【组网结果】\n";
+    text+="共组网 "+modules.length+" 个模块，"+edges.length+" 条数据流边\n";
+    const topo=topologicalSort(modules,edges);
+    text+="执行顺序："+topo.map(s=>s.toUpperCase()).join(" → ");
+  }else{
+    const matched=matchModules(requirement);
+    text+="【关键词匹配】\n";
+    text+="扫描需求文本，命中关键词：\n";
+    const hitKw=Object.keys(KEYWORD_MAP).filter(kw=>requirement.includes(kw));
+    text+=hitKw.length>0?hitKw.join("、")+"（匹配 "+matched.length+" 个模块）":"未命中预设关键词\n";
+    text+="\n【上游补全】\n";
+    text+="根据 DATA_EDGES 递归补全上游依赖\n";
+    text+="候选模块 "+matched.length+" → 组网后 "+modules.length+" 个模块\n";
+    text+="\n【组网结果】\n";
+    text+="共组网 "+modules.length+" 个模块，"+edges.length+" 条数据流边\n";
+    const topo=topologicalSort(modules,edges);
+    text+="执行顺序："+topo.map(s=>s.toUpperCase()).join(" → ");
+  }
+  return text;
+}
+
+function checkContracts(modules, edges){
+  const issues=[];
+  let checked=0;
+  edges.forEach(([s,t])=>{
+    checked++;
+    const dt=getEdgeDataType(s,t);
+    if(!dt){
+      issues.push(M[s].name+" → "+M[t].name+": 未找到接口契约定义");
+    }
+  });
+  return {valid:issues.length===0, checked, issues};
+}
+
+function planAuditLocal(requirement){
+  const caseKey=matchCase(requirement);
+  let modules, edges;
+  if(caseKey){
+    const c=CASES[caseKey];
+    modules=c.modules;
+    edges=c.edges;
+  }else{
+    const matched=matchModules(requirement);
+    if(matched.length===0){
+      return null;
+    }
+    modules=completeUpstream(matched);
+    edges=generateEdges(modules);
+  }
+  const reasoning=generateReasoning(requirement, caseKey, modules, edges);
+  return {modules, edges, reasoning, caseKey};
+}
+
+/* ======================= 后端集成 ======================= */
+// 检查后端是否在线
+async function checkBackend(){
+  const el=document.getElementById('backend-status');
+  if(!el)return;
+  try{
+    const controller=new AbortController();
+    const timeoutId=setTimeout(()=>controller.abort(),2000);
+    const resp=await fetch('http://localhost:9000/api/health',{signal:controller.signal});
+    clearTimeout(timeoutId);
+    const data=await resp.json();
+    el.innerHTML='🟢 后端已连接 (DeepSeek LLM)';
+    el.style.color='#27AE60';
+    backendOnline=true;
+  }catch(e){
+    el.innerHTML='🔴 后端未启动（将使用本地规划）';
+    el.style.color='#dc3545';
+    backendOnline=false;
+  }
+}
+
+// 显示状态消息
+function showStatus(msg, type){
+  const el=document.getElementById('plan-status');
+  if(!el)return;
+  el.className='status-msg '+(type||'');
+  el.textContent=msg;
+  el.style.display='block';
+}
+
+// 统一渲染规划结果（兼容后端和本地两种数据源）
+function renderPlan(){
+  renderDAG(currentPlan);
+  renderPlanDetails(currentPlan);
+}
+
+// 查找与当前模块组合完全匹配的预设案例
+function findMatchingCase(modules){
+  for(const caseId in CASES){
+    const c=CASES[caseId];
+    if(c.modules.length===modules.length &&
+       modules.every(m=>c.modules.includes(m))){
+      return caseId;
+    }
+  }
+  return null;
+}
+
+// 获取模块执行结果（支持 LLM 返回的任意模块组合）
+function getModuleResult(slug, stepIndex){
+  // 先从当前匹配的案例中找
+  if(currentPlan && currentPlan.caseKey &&
+     CASES[currentPlan.caseKey].moduleResults &&
+     CASES[currentPlan.caseKey].moduleResults[slug]){
+    return CASES[currentPlan.caseKey].moduleResults[slug];
+  }
+  // 再从其他案例中找
+  for(const caseId in CASES){
+    const c=CASES[caseId];
+    if(c.moduleResults && c.moduleResults[slug]){
+      return c.moduleResults[slug];
+    }
+  }
+  // 默认结果
+  const m=M[slug];
+  const name=m?m.name:slug;
+  return {
+    status:'done',
+    duration:+(0.5+Math.random()*0.5).toFixed(1),
+    summary:name+' 执行完成',
+    output:{data_type:'分析结果', module:slug}
+  };
+}
+
+// 调用后端 API 进行 LLM 规划，失败时回退到本地规划
+async function planWithBackend(requirement){
+  const planBtn=document.getElementById('plan-btn');
+  const execBtn=document.getElementById('exec-btn');
+  try{
+    planBtn.textContent='AI 思考中...';
+    planBtn.disabled=true;
+
+    const resp=await fetch('http://localhost:9000/api/plan',{
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({requirement:requirement})
+    });
+
+    if(!resp.ok) throw new Error('HTTP '+resp.status);
+
+    const data=await resp.json();
+    if(!data.success) throw new Error(data.error||'未知错误');
+
+    // 用后端返回的数据渲染
+    currentPlan={
+      modules:data.modules,
+      edges:data.edges.map(e=>Array.isArray(e)?e:[e[0],e[1]]),
+      reasoning:data.reasoning,
+      steps:(data.steps||[]).map(s=>typeof s==='string'?s:s.slug),
+      contract_valid:data.contract_valid,
+      contract_issues:data.contract_issues||[]
+    };
+
+    renderPlan();
+    execBtn.disabled=false;
+    execBtn.classList.add('active');
+    execBtn.textContent='执行';
+    document.getElementById('report-area').style.display='none';
+    clearLog();
+    document.getElementById('exec-log').innerHTML='<div class="log-placeholder">方案已就绪（DeepSeek LLM），点击「执行」开始模拟运行...</div>';
+    showStatus('✓ AI 规划完成（DeepSeek LLM）','success');
+  }catch(err){
+    // 回退到本地规划
+    console.warn('后端调用失败，回退到本地规划:',err);
+    showStatus('⚠ 后端未启动，使用本地关键词规划。启动后端：python backend.py','warn');
+    const plan=planAuditLocal(requirement);
+    if(!plan){
+      alert('未能匹配到合适的审计模块，请尝试更具体的需求描述');
+      return;
+    }
+    currentPlan=plan;
+    renderPlan();
+    execBtn.disabled=false;
+    execBtn.classList.add('active');
+    execBtn.textContent='执行';
+    document.getElementById('report-area').style.display='none';
+    clearLog();
+    document.getElementById('exec-log').innerHTML='<div class="log-placeholder">方案已就绪（本地规划），点击「执行」开始模拟运行...</div>';
+  }finally{
+    planBtn.textContent='AI 规划方案';
+    planBtn.disabled=false;
+  }
+}
+
+/* ======================= DAG 渲染 ======================= */
+const NODE_W=170, NODE_H=50;
+
+function renderDAG(plan){
+  const positions=layoutDAG(plan.modules, plan.edges);
+  const g=document.getElementById('dag-content');
+  let html="";
+
+  // 边
+  plan.edges.forEach(([s,t])=>{
+    const p1=positions[s], p2=positions[t];
+    if(!p1||!p2)return;
+    const dt=getEdgeDataType(s,t);
+    const isBackward=p2.x<p1.x;
+    let x1,y1,x2,y2,d;
+    if(!isBackward){
+      x1=p1.x+NODE_W/2; y1=p1.y;
+      x2=p2.x-NODE_W/2; y2=p2.y;
+      const cx=(x1+x2)/2;
+      d="M "+x1+" "+y1+" C "+cx+" "+y1+", "+cx+" "+y2+", "+x2+" "+y2;
+    }else{
+      x1=p1.x; y1=p1.y+NODE_H/2;
+      x2=p2.x; y2=p2.y+NODE_H/2;
+      const cy=Math.max(y1,y2)+45;
+      d="M "+x1+" "+y1+" C "+x1+" "+cy+", "+x2+" "+cy+", "+x2+" "+y2;
+    }
+    html+="<path class=\"edge\" data-edge=\""+s+"->"+t+"\" d=\""+d+"\" marker-end=\"url(#arrowhead)\""+(isBackward?" stroke-dasharray=\"5 3\"":"")+"/>";
+    // 边标签
+    if(dt){
+      let lx,ly;
+      if(!isBackward){
+        lx=(x1+x2)/2; ly=(y1+y2)/2;
+      }else{
+        lx=(x1+x2)/2; ly=Math.max(y1,y2)+45;
+      }
+      const labelW=dt.length*9+10;
+      html+="<g class=\"edge-label\" transform=\"translate("+lx+","+ly+")\">";
+      html+="<rect x=\""+(-labelW/2)+"\" y=\"-8\" width=\""+labelW+"\" height=\"16\" rx=\"8\"/>";
+      html+="<text y=\"3\">"+dt+"</text>";
+      html+="</g>";
+    }
+  });
+
+  // 节点
+  plan.modules.forEach(slug=>{
+    const m=M[slug];
+    const p=positions[slug];
+    if(!p)return;
+    const nameDisplay=m.name.length>10?m.name.slice(0,9)+"…":m.name;
+    html+="<g class=\"node pending\" data-slug=\""+slug+"\" transform=\"translate("+p.x+","+p.y+")\">";
+    html+="<rect x=\""+(-NODE_W/2)+"\" y=\""+(-NODE_H/2)+"\" width=\""+NODE_W+"\" height=\""+NODE_H+"\" rx=\"8\"/>";
+    html+="<rect x=\""+(-NODE_W/2)+"\" y=\""+(-NODE_H/2)+"\" width=\"4\" height=\""+NODE_H+"\" rx=\"2\" fill=\""+m.color+"\"/>";
+    html+="<text class=\"n-name\" y=\"-4\">"+nameDisplay+"</text>";
+    html+="<text class=\"n-slug\" y=\"10\">"+slug.toUpperCase()+" · "+m.family+"</text>";
+    html+="<text class=\"n-status\" x=\""+(NODE_W/2-14)+"\" y=\"4\">○</text>";
+    html+="</g>";
+  });
+
+  g.innerHTML=html;
+  document.getElementById('dag-empty').style.display='none';
+  renderLegend();
+  document.getElementById('dag-legend').style.display='flex';
+  document.getElementById('dag-status-legend').style.display='flex';
+  fitContent();
+}
+
+function renderLegend(){
+  const lg=document.getElementById('dag-legend');
+  let html="";
+  const families={};
+  currentPlan.modules.forEach(s=>{
+    const f=M[s].family;
+    if(!families[f])families[f]=0;
+    families[f]++;
+  });
+  Object.entries(families).forEach(([f,c])=>{
+    html+="<div class=\"lg-item\"><span class=\"lg-dot\" style=\"background:"+FAMILY_COLOR[f]+"\"></span>"+f+"("+c+")</div>";
+  });
+  lg.innerHTML=html;
+}
+
+function fitContent(){
+  const g=document.getElementById('dag-content');
+  const svg=document.getElementById('dag-canvas');
+  if(!g||!svg)return;
+  const bbox=g.getBBox();
+  if(!bbox.width||!bbox.height)return;
+  const cw=svg.clientWidth, ch=svg.clientHeight;
+  const pad=50;
+  const scale=Math.min((cw-pad*2)/bbox.width,(ch-pad*2)/bbox.height,1);
+  const tx=cw/2-(bbox.x+bbox.width/2)*scale;
+  const ty=ch/2-(bbox.y+bbox.height/2)*scale;
+  g.setAttribute('transform',"translate("+tx+","+ty+") scale("+scale+")");
+}
+
+function updateNodeStatus(slug, status){
+  const node=document.querySelector('[data-slug="'+slug+'"]');
+  if(node){
+    node.classList.remove('pending','running','done','failed');
+    node.classList.add(status);
+    const st=node.querySelector('.n-status');
+    if(st){
+      const icons={pending:'○',running:'◐',done:'✓',failed:'✗'};
+      st.textContent=icons[status]||'○';
+    }
+  }
+}
+
+function updateEdgeStatus(s, t, done){
+  const edge=document.querySelector('[data-edge="'+s+'->'+t+'"]');
+  if(edge&&done){
+    edge.classList.add('done');
+    edge.setAttribute('marker-end','url(#arrowhead-done)');
+  }
+}
+
+window.addEventListener('resize',()=>{if(currentPlan)fitContent();});
+
+/* ======================= 规划详情面板渲染 ======================= */
+function renderPlanDetails(plan){
+  // AI 推理过程（保留换行，后端返回的 reasoning 包含多行）
+  const reasoningEl=document.getElementById('reasoning');
+  reasoningEl.innerHTML='<div id="reasoning-text"></div>';
+  document.getElementById('reasoning-text').textContent=plan.reasoning||'';
+
+  // 选中模块
+  const ml=document.getElementById('modules-list');
+  let mlHtml="";
+  plan.modules.forEach(slug=>{
+    const m=M[slug];
+    if(!m)return;
+    const role=getModuleRole(slug, plan.modules, plan.edges);
+    mlHtml+="<div class=\"module-item\">";
+    mlHtml+="<span class=\"mi-dot\" style=\"background:"+m.color+"\"></span>";
+    mlHtml+="<span class=\"mi-name\">"+m.name+"</span>";
+    mlHtml+="<span class=\"mi-family\">"+m.family+"</span>";
+    mlHtml+="<span class=\"mi-role\">"+role+"</span>";
+    mlHtml+="</div>";
+  });
+  ml.innerHTML=mlHtml;
+
+  // 接口契约校验（优先使用后端返回结果，否则本地计算）
+  let cc;
+  if(plan.contract_valid!==undefined){
+    cc={
+      valid:plan.contract_valid,
+      checked:plan.edges.length,
+      issues:plan.contract_issues||[]
+    };
+  }else{
+    cc=checkContracts(plan.modules, plan.edges);
+  }
+  const ccEl=document.getElementById('contract-check');
+  let ccHtml="";
+  if(cc.valid){
+    ccHtml+="<div class=\"contract-ok\">✓ 契约一致</div>";
+    ccHtml+="<div class=\"contract-detail\">已校验 "+cc.checked+" 条数据流接口，全部通过</div>";
+  }else{
+    ccHtml+="<div class=\"contract-fail\">✗ 发现 "+cc.issues.length+" 个问题</div>";
+    cc.issues.forEach(iss=>{
+      ccHtml+="<div class=\"contract-detail\">• "+iss+"</div>";
+    });
+  }
+  ccEl.innerHTML=ccHtml;
+
+  // 执行顺序（优先使用后端返回的 steps，否则本地拓扑排序）
+  const topo=plan.steps||topologicalSort(plan.modules, plan.edges);
+  const eoEl=document.getElementById('exec-order');
+  let eoHtml="<div class=\"exec-order\">";
+  topo.forEach((s,i)=>{
+    const m=M[s];
+    if(!m)return;
+    eoHtml+="<span class=\"eo-node\" style=\"background:"+m.color+"\">"+s.toUpperCase()+"</span>";
+    if(i<topo.length-1)eoHtml+="<span class=\"eo-arrow\">→</span>";
+  });
+  eoHtml+="</div>";
+  eoEl.innerHTML=eoHtml;
+}
+
+/* ======================= 执行日志 ======================= */
+function clearLog(){
+  const log=document.getElementById('exec-log');
+  log.innerHTML="";
+}
+function addLog(step, moduleName, status, duration, summary){
+  const log=document.getElementById('exec-log');
+  const time=new Date().toLocaleTimeString('zh-CN',{hour12:false});
+  const entry=document.createElement('div');
+  entry.className='log-entry';
+  let html="<span class=\"log-time\">["+time+"]</span>";
+  html+="<span class=\"log-step\">#"+step+"</span>";
+  html+="<span class=\"log-module\">"+moduleName+"</span>";
+  html+="<span class=\"log-status-"+status+"\">"+(status==='running'?'▶ 执行中':status==='done'?'✓ 完成':'✗ 失败')+"</span>";
+  if(duration)html+="<span class=\"log-duration\">"+duration+"s</span>";
+  if(summary)html+="<span class=\"log-summary\">"+summary+"</span>";
+  entry.innerHTML=html;
+  log.appendChild(entry);
+  log.scrollTop=log.scrollHeight;
+}
+
+/* ======================= 最终报告渲染 ======================= */
+function renderReport(report, plan){
+  const area=document.getElementById('report-area');
+  const el=document.getElementById('final-report');
+  let html="";
+
+  // 审计结论
+  html+="<div class=\"report-card\">";
+  html+="<div class=\"rc-title\">审计结论</div>";
+  html+="<div class=\"rc-body\">"+report.audit_conclusion+"</div>";
+  html+="</div>";
+
+  // 风险评级
+  html+="<div class=\"report-card rc-risk\">";
+  html+="<div class=\"rc-title\">风险评级</div>";
+  html+="<div class=\"rc-body\"><span class=\"risk-badge risk-"+report.risk_level+"\">"+report.risk_level+"风险</span></div>";
+  html+="</div>";
+
+  // 审计发现
+  html+="<div class=\"report-card rc-finding\">";
+  html+="<div class=\"rc-title\">审计发现汇总</div>";
+  html+="<div class=\"rc-body\">";
+  report.findings.forEach((f,i)=>{
+    html+="<div class=\"finding-item\">"+f+"</div>";
+  });
+  html+="</div></div>";
+
+  // 各模块关键输出（兼容后端 LLM 返回的任意模块组合）
+  if(plan.modules && plan.modules.length>0){
+    html+="<div class=\"report-card\">";
+    html+="<div class=\"rc-title\">各模块关键输出</div>";
+    html+="<div class=\"rc-body\">";
+    plan.modules.forEach(slug=>{
+      const m=M[slug];
+      if(!m)return;
+      const result=getModuleResult(slug, 0);
+      if(!result)return;
+      html+="<div class=\"mo-card\">";
+      html+="<div class=\"mo-header\">";
+      html+="<span class=\"mo-dot\" style=\"background:"+m.color+"\"></span>";
+      html+="<span class=\"mo-name\">"+m.name+"</span>";
+      html+="<span class=\"mo-time\">"+result.duration+"s</span>";
+      html+="</div>";
+      html+="<div class=\"mo-summary\">"+result.summary+"</div>";
+      if(result.output){
+        Object.entries(result.output).forEach(([k,v])=>{
+          if(typeof v==='object'&&v!==null&&!Array.isArray(v)){
+            const parts=Object.entries(v).map(([k2,v2])=>k2+"="+v2).join(", ");
+            html+="<div class=\"mo-field\"><span class=\"mo-key\">"+k+":</span> "+parts+"</div>";
+          }else if(Array.isArray(v)){
+            html+="<div class=\"mo-field\"><span class=\"mo-key\">"+k+":</span> "+v.join("; ")+"</div>";
+          }else{
+            html+="<div class=\"mo-field\"><span class=\"mo-key\">"+k+":</span> "+v+"</div>";
+          }
+        });
+      }
+      html+="</div>";
+    });
+    html+="</div></div>";
+  }
+
+  // 审计建议
+  html+="<div class=\"report-card rc-rec\">";
+  html+="<div class=\"rc-title\">审计建议</div>";
+  html+="<div class=\"rc-body\">";
+  report.recommendations.forEach((r,i)=>{
+    html+="<div class=\"rec-item\">"+r+"</div>";
+  });
+  html+="</div></div>";
+
+  el.innerHTML=html;
+  area.style.display='flex';
+}
+
+/* ======================= 模拟执行 ======================= */
+function genericModuleResult(slug){
+  const m=M[slug];
+  return {
+    status:"done",
+    duration:+(0.5+Math.random()).toFixed(1),
+    summary:m.name+" 执行完成，输出"+m.family+"分析结果",
+    output:{data_type:"分析结果",module:slug,family:m.family}
+  };
+}
+
+function genericFinalReport(modules){
+  return {
+    audit_conclusion:"审计执行完成，共运行"+modules.length+"个模块，请查看各模块输出",
+    risk_level:"中",
+    findings:modules.map(s=>M[s].name+" 模块分析完成"),
+    recommendations:["建议根据各模块输出进一步深入分析","建议建立持续监控机制跟踪风险变化"]
+  };
+}
+
+async function executePlan(){
+  if(!currentPlan||isExecuting)return;
+  isExecuting=true;
+  const plan=currentPlan;
+  const execBtn=document.getElementById('exec-btn');
+  execBtn.classList.remove('active');
+  execBtn.classList.add('running');
+  execBtn.textContent='执行中...';
+
+  // 重置节点状态
+  plan.modules.forEach(s=>updateNodeStatus(s,'pending'));
+  // 重置边状态
+  plan.edges.forEach(([s,t])=>{
+    const edge=document.querySelector('[data-edge="'+s+'->'+t+'"]');
+    if(edge){edge.classList.remove('done');edge.setAttribute('marker-end','url(#arrowhead)');}
+  });
+
+  clearLog();
+  document.getElementById('report-area').style.display='none';
+
+  // 优先使用后端返回的执行顺序，否则本地拓扑排序
+  const topo=plan.steps||topologicalSort(plan.modules, plan.edges);
+  let step=0;
+
+  addLog(0,'编排引擎','done',null,'开始执行审计方案，共 '+topo.length+' 个模块');
+  await sleep(300);
+
+  for(const slug of topo){
+    step++;
+    const m=M[slug];
+
+    // 设置 running
+    updateNodeStatus(slug,'running');
+    addLog(step,m.name,'running',null,'开始执行...');
+
+    // 获取结果（支持 LLM 返回的任意模块组合）
+    const result=getModuleResult(slug, step);
+
+    // 模拟执行延迟 (800-1500ms)
+    const delay=Math.max(800,Math.min(1500,result.duration*1000));
+    await sleep(delay);
+
+    // 设置 done
+    updateNodeStatus(slug,'done');
+    // 标记上游边为完成
+    plan.edges.forEach(([s,t])=>{
+      if(t===slug)updateEdgeStatus(s,t,true);
+    });
+    addLog(step,m.name,'done',result.duration,result.summary);
+  }
+
+  await sleep(300);
+  addLog(step+1,'编排引擎','done',null,'全部模块执行完成，生成审计报告');
+
+  // 展示报告：优先匹配预设案例，否则使用通用报告
+  const matchedCase=plan.caseKey||findMatchingCase(plan.modules);
+  const report=matchedCase?CASES[matchedCase].finalReport:genericFinalReport(plan.modules);
+  renderReport(report, plan);
+
+  execBtn.classList.remove('running');
+  execBtn.classList.add('active');
+  execBtn.textContent='重新执行';
+  isExecuting=false;
+}
+
+/* ======================= 事件绑定 ======================= */
+document.querySelectorAll('.case-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const caseKey=btn.dataset.case;
+    document.getElementById('requirement').value=CASES[caseKey].requirement;
+  });
+});
+
+document.getElementById('plan-btn').addEventListener('click',()=>{
+  const req=document.getElementById('requirement').value.trim();
+  if(!req){
+    alert('请输入审计需求');
+    return;
+  }
+  planWithBackend(req);
+});
+
+document.getElementById('exec-btn').addEventListener('click',()=>{
+  if(!currentPlan||isExecuting)return;
+  executePlan();
+});
+
+// 页面加载时检查后端状态
+checkBackend();
+</script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+{
+  "findings": [
+    {
+      "finding_id": "F001",
+      "title": "信贷审批流程违规",
+      "category": "合规",
+      "severity": "严重",
+      "impact_amount": 5000000,
+      "pre_mitigation_prob": 0.8,
+      "post_mitigation_prob": 0.2,
+      "status": "已整改",
+      "bu": "零售银行",
+      "project_id": "P001",
+      "regulations": ["GDPR"],
+      "strategic_score": 80,
+      "suggestion_adopted": true
+    },
+    {
+      "finding_id": "F002",
+      "title": "对公贷款内控缺陷",
+      "category": "内部控制",
+      "severity": "一般",
+      "impact_amount": 1000000,
+      "pre_mitigation_prob": 0.5,
+      "post_mitigation_prob": 0.3,
+      "status": "整改中",
+      "bu": "对公业务",
+      "project_id": "P002",
+      "suggestion_adopted": false
+    },
+    {
+      "finding_id": "F003",
+      "title": "数字化转型战略建议",
+      "category": "战略建议",
+      "severity": "重大",
+      "impact_amount": 2000000,
+      "pre_mitigation_prob": 0.6,
+      "post_mitigation_prob": 0.1,
+      "status": "计划中",
+      "bu": "零售银行",
+      "project_id": "P001",
+      "strategic_score": 90,
+      "suggestion_adopted": true
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "P001",
+      "name": "零售银行年度审计",
+      "bu": "零售银行",
+      "status": "已完成",
+      "budget_hours": 200,
+      "actual_hours": 180,
+      "completed_on_time": true
+    },
+    {
+      "project_id": "P002",
+      "name": "对公业务专项审计",
+      "bu": "对公业务",
+      "status": "进行中",
+      "budget_hours": 150,
+      "actual_hours": 100
+    }
+  ],
+  "annual_budget": 20000000,
+  "annual_audit_hours": 10000
+}

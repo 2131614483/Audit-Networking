@@ -1,0 +1,1168 @@
+[
+  {
+    "slug": "fa_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.1,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "standardized_fields",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "fa_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.19,
+    "input_size": 50,
+    "output_keys": [
+      "module",
+      "name",
+      "status",
+      "batch_id",
+      "project_code",
+      "三区统计",
+      "质量分布",
+      "血缘摘要",
+      "复用率",
+      "去重移除"
+    ]
+  },
+  {
+    "slug": "fa_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "dashboard",
+      "confirmations",
+      "exceptions",
+      "follow_up_list",
+      "escalations",
+      "transitions",
+      "grading",
+      "custom_rules"
+    ]
+  },
+  {
+    "slug": "fa_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "mode",
+      "certificate",
+      "chain_summary",
+      "blocks",
+      "hash_chain",
+      "audit_trail",
+      "alerts",
+      "integrity"
+    ]
+  },
+  {
+    "slug": "fa_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "difference_items",
+      "summary",
+      "workpaper_todo"
+    ]
+  },
+  {
+    "slug": "fa_07",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 20,
+    "output_keys": [
+      "status",
+      "workpaper_directory",
+      "workpapers",
+      "cross_reference_graph",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "fa_08",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 20,
+    "output_keys": [
+      "status",
+      "module",
+      "module_name",
+      "summary",
+      "items",
+      "critical_issues",
+      "adjustment_suggestions"
+    ]
+  },
+  {
+    "slug": "fa_09",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 20,
+    "output_keys": [
+      "status",
+      "module",
+      "module_name",
+      "summary",
+      "items",
+      "critical_issues",
+      "improvement_tips"
+    ]
+  },
+  {
+    "slug": "fa_10",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 100,
+    "output_keys": [
+      "status",
+      "networks",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fa_11",
+    "status": "pass",
+    "error": "",
+    "duration": 0.1,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "transactions",
+      "fairness_summary",
+      "deviation_analysis",
+      "adjustment_suggestions"
+    ]
+  },
+  {
+    "slug": "fa_12",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 100,
+    "output_keys": [
+      "status",
+      "module",
+      "disclosure_items",
+      "completeness_summary",
+      "missing_items",
+      "supplement_suggestions"
+    ]
+  },
+  {
+    "slug": "co_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "report"
+    ]
+  },
+  {
+    "slug": "co_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "executive_summary",
+      "regulation_analysis",
+      "gap_analysis",
+      "impact_assessment",
+      "remediation_plan",
+      "custom_rule_flags"
+    ]
+  },
+  {
+    "slug": "co_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "meta",
+      "custom_rule_flags",
+      "regulation_title",
+      "affected_domains",
+      "affected_program_count",
+      "analysis_summary",
+      "affected_programs",
+      "priority_distribution"
+    ]
+  },
+  {
+    "slug": "co_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 60,
+    "output_keys": [
+      "status",
+      "module",
+      "alerts",
+      "summary"
+    ]
+  },
+  {
+    "slug": "co_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.62,
+    "input_size": 1100,
+    "output_keys": [
+      "status",
+      "module",
+      "action",
+      "meta",
+      "detections",
+      "summary"
+    ]
+  },
+  {
+    "slug": "co_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 20,
+    "output_keys": [
+      "status",
+      "module",
+      "report_id",
+      "alert_id",
+      "regulator",
+      "risk",
+      "narrative_5w1h",
+      "evidence_chain",
+      "suspicious_patterns",
+      "conclusion"
+    ]
+  },
+  {
+    "slug": "co_07",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "asset_catalog",
+      "classification_summary",
+      "sensitivity_summary",
+      "alerts",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "co_08",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 1,
+    "output_keys": [
+      "status",
+      "module",
+      "module_name",
+      "entities",
+      "flows",
+      "cross_border_flows",
+      "upstream_impact",
+      "downstream_impact",
+      "statistics",
+      "rule_summary"
+    ]
+  },
+  {
+    "slug": "co_09",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "policies",
+      "gap_analysis",
+      "remediation_plan",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ip_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.07,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "dashboard",
+      "task_list",
+      "findings",
+      "cycle_statistics"
+    ]
+  },
+  {
+    "slug": "ip_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "reply",
+      "reply_sections",
+      "similar_cases",
+      "quality",
+      "risk_points",
+      "action_tips",
+      "metadata"
+    ]
+  },
+  {
+    "slug": "ip_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 6,
+    "output_keys": [
+      "timeline",
+      "equity_snapshots",
+      "anomalies",
+      "compliance",
+      "company",
+      "statistics",
+      "verdict"
+    ]
+  },
+  {
+    "slug": "ip_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "diagnosis_score",
+      "risk_level",
+      "industry_benchmark",
+      "problems",
+      "statistics",
+      "suggestions"
+    ]
+  },
+  {
+    "slug": "ip_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "answer",
+      "top_cases",
+      "intent",
+      "global_stats",
+      "confidence",
+      "disclaimer"
+    ]
+  },
+  {
+    "slug": "ip_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 20,
+    "output_keys": [
+      "solutions",
+      "roadmap",
+      "statistics",
+      "top_actions"
+    ]
+  },
+  {
+    "slug": "cm_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "alerts",
+      "metrics",
+      "summary"
+    ]
+  },
+  {
+    "slug": "cm_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 50,
+    "output_keys": [
+      "alerts",
+      "summary"
+    ]
+  },
+  {
+    "slug": "cm_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "action",
+      "scenario_matched",
+      "recommendations",
+      "top_method",
+      "engine",
+      "timestamp"
+    ]
+  },
+  {
+    "slug": "cm_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 1,
+    "output_keys": [
+      "action",
+      "scenario",
+      "horizon_years",
+      "breakdown",
+      "totals",
+      "costs",
+      "roi_metrics",
+      "engine",
+      "timestamp"
+    ]
+  },
+  {
+    "slug": "cm_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 40,
+    "output_keys": [
+      "action",
+      "role",
+      "period",
+      "kpis",
+      "role_view",
+      "distribution",
+      "top_findings",
+      "project_summary",
+      "engine",
+      "timestamp"
+    ]
+  },
+  {
+    "slug": "fo_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.14,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "suspicious_transactions",
+      "layer_summary",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "fo_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "summary",
+      "key_findings",
+      "entities",
+      "relationships",
+      "communities",
+      "anomalies",
+      "patterns",
+      "visualization"
+    ]
+  },
+  {
+    "slug": "fo_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "detections",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fo_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.08,
+    "input_size": 30,
+    "output_keys": [
+      "status",
+      "module",
+      "evidence_catalog",
+      "hash_chain",
+      "custody_trail",
+      "duplicates",
+      "alerts",
+      "integrity_status",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "fo_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.05,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "translations",
+      "quality_assessment",
+      "alerts",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "fo_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "module_name",
+      "chains",
+      "all_entities",
+      "cross_case_entities",
+      "summary"
+    ]
+  },
+  {
+    "slug": "it_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "audit_plan",
+      "execution_summary",
+      "findings",
+      "findings_summary",
+      "evidence_chain",
+      "recommendations",
+      "conclusion",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "it_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "scan_summary",
+      "host_reports",
+      "priority_fixes",
+      "generated_at",
+      "critical_alerts",
+      "security_flags",
+      "systemic_issues"
+    ]
+  },
+  {
+    "slug": "it_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "overall_assessment",
+      "top_risk_files",
+      "critical_findings",
+      "all_findings_count",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "it_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "summary",
+      "metric_analyses",
+      "alerts",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "it_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "message",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "ta_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 50,
+    "output_keys": [
+      "results",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ta_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "matches",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ta_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "results",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ta_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "doc_sections",
+      "pli_analysis",
+      "func_risk_profile",
+      "interquartile_check",
+      "compliance",
+      "enterprise",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ta_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.05,
+    "input_size": 10,
+    "output_keys": [
+      "target",
+      "all_candidates",
+      "selected",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ta_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "entities",
+      "edges",
+      "communities",
+      "risk_scores",
+      "group_clusters",
+      "paths",
+      "summary"
+    ]
+  },
+  {
+    "slug": "sc_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.26,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "source",
+      "supplier_ranking",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "sc_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.06,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "network",
+      "risk_hotspots",
+      "dependency_analysis",
+      "risk_paths",
+      "recommendations",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "sc_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "status",
+      "module",
+      "suppliers",
+      "recommendations",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "sc_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "flagged_transactions",
+      "statistical_details",
+      "rule_summary",
+      "recommendations",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "sc_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.06,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "category_benchmarks",
+      "price_comparisons",
+      "trend_analysis",
+      "recommendations",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "es_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "data_catalog",
+      "dimension_summary",
+      "quality_assessment",
+      "data_gaps",
+      "rule_alerts",
+      "collection_log"
+    ]
+  },
+  {
+    "slug": "es_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "activities",
+      "summary"
+    ]
+  },
+  {
+    "slug": "es_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "status",
+      "module",
+      "roi_reports",
+      "alerts",
+      "rule_flags",
+      "statistics"
+    ]
+  },
+  {
+    "slug": "es_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "overall_risk",
+      "high_risk_claims",
+      "all_claim_evaluations",
+      "category_statistics",
+      "contradictions",
+      "evidence_conflicts",
+      "knowledge_graph_summary",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "es_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "answers",
+      "intent_distribution",
+      "needs_human_review",
+      "kb_version",
+      "kb_size",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "es_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "methodologies",
+      "summary",
+      "quality_flags",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "fi_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 50,
+    "output_keys": [
+      "loans",
+      "assessments",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fi_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 50,
+    "output_keys": [
+      "guarantors",
+      "edges",
+      "risk_scores",
+      "communities",
+      "shock_simulations",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fi_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "applicants",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fi_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.04,
+    "input_size": 0,
+    "output_keys": [
+      "reports",
+      "violations",
+      "summary"
+    ]
+  },
+  {
+    "slug": "fi_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "changes",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ia_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "action",
+      "entity",
+      "risk_score",
+      "risk_level",
+      "contributions",
+      "top_3",
+      "engine",
+      "timestamp"
+    ]
+  },
+  {
+    "slug": "ia_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.05,
+    "input_size": 0,
+    "output_keys": [
+      "action",
+      "total_events",
+      "alerts_generated",
+      "alerts_by_severity",
+      "alerts",
+      "engine",
+      "timestamp"
+    ]
+  },
+  {
+    "slug": "ia_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.09,
+    "input_size": 18,
+    "output_keys": [
+      "action",
+      "plans",
+      "best_plan",
+      "total_projects",
+      "total_auditors",
+      "summary"
+    ]
+  },
+  {
+    "slug": "ia_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 15,
+    "output_keys": [
+      "action",
+      "strategic",
+      "operational",
+      "executive",
+      "heatmap",
+      "trends",
+      "top_findings",
+      "scenario",
+      "total_findings",
+      "total_projects"
+    ]
+  },
+  {
+    "slug": "ia_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "framework",
+      "suggestions",
+      "quantified_impacts",
+      "quality",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "ia_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "total_point",
+      "breakdown",
+      "percentage",
+      "total_cost",
+      "roi_point",
+      "roi_p50",
+      "monte_carlo",
+      "attribution",
+      "sensitivity",
+      "n_findings"
+    ]
+  },
+  {
+    "slug": "ia_07",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "tasks",
+      "total",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "ia_08",
+    "status": "pass",
+    "error": "",
+    "duration": 0.01,
+    "input_size": 0,
+    "output_keys": [
+      "items",
+      "overall",
+      "degradation_alerts",
+      "needs_human_review",
+      "generated_at"
+    ]
+  },
+  {
+    "slug": "cb_01",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "round",
+      "status",
+      "global_weights",
+      "summary",
+      "family",
+      "module"
+    ]
+  },
+  {
+    "slug": "cb_02",
+    "status": "pass",
+    "error": "",
+    "duration": 0.03,
+    "input_size": 0,
+    "output_keys": [
+      "source_jurisdiction",
+      "target_jurisdiction",
+      "routing_decision",
+      "fields",
+      "total_detections",
+      "summary"
+    ]
+  },
+  {
+    "slug": "cb_03",
+    "status": "pass",
+    "error": "",
+    "duration": 0.07,
+    "input_size": 0,
+    "output_keys": [
+      "regulations",
+      "query",
+      "note",
+      "summary"
+    ]
+  },
+  {
+    "slug": "cb_04",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "from_standard",
+      "to_standard",
+      "detected_standard",
+      "matched_differences",
+      "adjustments",
+      "summary",
+      "audit_plan"
+    ]
+  },
+  {
+    "slug": "cb_05",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 0,
+    "output_keys": [
+      "translated_text",
+      "source_lang",
+      "target_lang",
+      "translated_terms",
+      "memory_hit",
+      "term_count",
+      "collaboration"
+    ]
+  },
+  {
+    "slug": "cb_06",
+    "status": "pass",
+    "error": "",
+    "duration": 0.02,
+    "input_size": 1,
+    "output_keys": [
+      "group_name",
+      "total_orders",
+      "orders",
+      "summary",
+      "collaboration"
+    ]
+  }
+]

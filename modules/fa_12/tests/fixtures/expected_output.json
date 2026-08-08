@@ -1,0 +1,116 @@
+{
+  "items": [
+    {
+      "tx_id": "TX-D03",
+      "related_party": "关联方丙",
+      "relationship": "联营",
+      "tx_type": "担保",
+      "amount": 3000000.0,
+      "outstanding": 0.0,
+      "status": "UNDISCLOSED",
+      "severity": "medium",
+      "reason": "交易金额未披露；关联关系类型未披露",
+      "suggestion": "补充 关联方丙 交易明细至关联交易章节"
+    },
+    {
+      "tx_id": "TX-D04",
+      "related_party": "控股股东丁",
+      "relationship": "控股股东",
+      "tx_type": "资金占用",
+      "amount": 60000000.0,
+      "outstanding": 55000000.0,
+      "status": "UNDISCLOSED",
+      "severity": "high",
+      "reason": "交易金额未披露；关联关系类型未披露",
+      "suggestion": "立即补充披露 控股股东丁 的资金占用交易"
+    },
+    {
+      "tx_id": "TX-D05",
+      "related_party": "关联自然人戊",
+      "relationship": "关联自然人",
+      "tx_type": "接受劳务",
+      "amount": 500000.0,
+      "outstanding": 0.0,
+      "status": "UNDISCLOSED",
+      "severity": "low",
+      "reason": "交易金额未披露；关联关系类型未披露",
+      "suggestion": "补充 关联自然人戊 交易明细至关联交易章节"
+    },
+    {
+      "tx_id": "TX-D02",
+      "related_party": "关联子公司乙",
+      "relationship": "子公司",
+      "tx_type": "销售",
+      "amount": 5000000.0,
+      "outstanding": 1000000.0,
+      "status": "PARTIAL",
+      "severity": "medium",
+      "missing_fields": [
+        "交易金额"
+      ],
+      "suggestion": "补充披露: ['交易金额']"
+    },
+    {
+      "tx_id": "TX-D01",
+      "related_party": "母公司甲",
+      "relationship": "母公司",
+      "tx_type": "采购",
+      "amount": 8000000.0,
+      "outstanding": 2000000.0,
+      "status": "OK",
+      "severity": "low",
+      "suggestion": ""
+    }
+  ],
+  "summary": {
+    "total_transactions": 5,
+    "fully_disclosed": 1,
+    "partially_disclosed": 1,
+    "undisclosed": 3,
+    "completeness_score": 32.0,
+    "severity_distribution": {
+      "medium": 2,
+      "high": 1,
+      "low": 1
+    },
+    "total_transaction_amount": 76500000.0,
+    "undisclosed_amount": 63500000.0,
+    "missing_mandatory_fields": []
+  },
+  "high_risk_items": [
+    {
+      "tx_id": "TX-D04",
+      "related_party": "控股股东丁",
+      "relationship": "控股股东",
+      "tx_type": "资金占用",
+      "amount": 60000000.0,
+      "outstanding": 55000000.0,
+      "status": "UNDISCLOSED",
+      "severity": "high",
+      "reason": "交易金额未披露；关联关系类型未披露",
+      "suggestion": "立即补充披露 控股股东丁 的资金占用交易"
+    }
+  ],
+  "remediation_plan": [
+    {
+      "priority": "P1",
+      "action": "补披露: 关联方丙 - 担保 - ¥3,000,000",
+      "owner": "董秘/财务"
+    },
+    {
+      "priority": "P0",
+      "action": "补披露: 控股股东丁 - 资金占用 - ¥60,000,000",
+      "owner": "董秘/财务"
+    },
+    {
+      "priority": "P1",
+      "action": "补披露: 关联自然人戊 - 接受劳务 - ¥500,000",
+      "owner": "董秘/财务"
+    },
+    {
+      "priority": "P1",
+      "action": "补充字段: ['交易金额']",
+      "owner": "董秘/财务"
+    }
+  ]
+}

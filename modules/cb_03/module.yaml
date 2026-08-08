@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CB-03
+  name: 多法域合规知识库
+  name_en: cb_03
+  version: 1.0.0
+  category: cross_border_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "5个月"
+  budget: ""
+  description: >
+    本方案构建基于LLM、RAG和知识图谱的多法域合规知识库。平台整合200+国家和地区的法规知识，支持自然语言问答、合规检查、法规比对等智能功能，帮助审计人员快速获取跨境合规知识。平台可实现跨境合规知识覆盖200+国家。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.cb_03
+  port: 9003
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

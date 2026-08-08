@@ -1,0 +1,32 @@
+{
+  "slug": "es_03",
+  "family": "es",
+  "module_name": "",
+  "total_bytes": 12103099,
+  "total_mb": 11.54,
+  "files": [
+    {
+      "file": "esg_data.jsonl",
+      "bytes": 2406384
+    },
+    {
+      "file": "satellite_refs.jsonl",
+      "bytes": 198621
+    },
+    {
+      "file": "text_reports.txt",
+      "bytes": 2270835
+    },
+    {
+      "file": "carbon.jsonl",
+      "bytes": 7227259
+    }
+  ],
+  "modalities": [
+    "text_reports",
+    "esg_data",
+    "satellite_refs",
+    "carbon"
+  ],
+  "generated_at": "2026-08-08T15:00:36.894665"
+}

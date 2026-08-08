@@ -1,0 +1,7 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CM-01
+  name: 持续审计技术平台
+  kafka:
+    brokers: localhost:9092
+    topic: audit.events

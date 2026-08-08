@@ -1,0 +1,16 @@
+# 智能审计可视化平台 — Python 依赖
+# 安装: pip install -r requirements.txt
+
+# Web 服务
+fastapi>=0.100
+uvicorn>=0.23
+pydantic>=2.0
+
+# 配置文件
+PyYAML>=6.0
+
+# AI 审计总结 (DeepSeek API)
+openai>=1.0
+
+# 测试
+pytest>=7.0

@@ -1,0 +1,32 @@
+{
+  "slug": "ip_02",
+  "family": "ip",
+  "module_name": "",
+  "total_bytes": 24457494,
+  "total_mb": 23.32,
+  "files": [
+    {
+      "file": "history_events.jsonl",
+      "bytes": 2129115
+    },
+    {
+      "file": "cases.jsonl",
+      "bytes": 1525335
+    },
+    {
+      "file": "records.jsonl",
+      "bytes": 19338256
+    },
+    {
+      "file": "text_corpus.txt",
+      "bytes": 1464788
+    }
+  ],
+  "modalities": [
+    "cases",
+    "records",
+    "history_events",
+    "text_corpus"
+  ],
+  "generated_at": "2026-08-08T14:59:57.940070"
+}

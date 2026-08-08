@@ -1,0 +1,27 @@
+{
+  "slug": "ia_02",
+  "family": "ia",
+  "module_name": "",
+  "total_bytes": 7695297,
+  "total_mb": 7.34,
+  "files": [
+    {
+      "file": "risks.jsonl",
+      "bytes": 4005477
+    },
+    {
+      "file": "remediation.jsonl",
+      "bytes": 2452708
+    },
+    {
+      "file": "audit_plans.jsonl",
+      "bytes": 1237112
+    }
+  ],
+  "modalities": [
+    "audit_plans",
+    "risks",
+    "remediation"
+  ],
+  "generated_at": "2026-08-08T15:00:44.974941"
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- 强制360浏览器/搜狗/猎豹等双核浏览器使用 WebKit(Chromium) 内核，而非 IE 兼容内核 -->
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!-- 360浏览器特定：强制极速模式 -->
+<meta name="force-rendering" content="webkit">
+<title>智能审计可视化平台</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <!-- 顶部栏 -->
+  <header id="topbar">
+    <div class="topbar-left">
+      <span class="logo">◆ 智能审计可视化平台</span>
+    </div>
+    <div class="topbar-center" id="summary-bar">
+      <span class="stat"><span class="stat-num" id="stat-modules">--</span><span class="stat-label">模块</span></span>
+      <span class="stat"><span class="stat-num" id="stat-success">--</span><span class="stat-label">成功</span></span>
+      <span class="stat"><span class="stat-num" id="stat-findings">--</span><span class="stat-label">发现</span></span>
+      <span class="stat"><span class="stat-num" id="stat-high">--</span><span class="stat-label">高风险</span></span>
+      <span class="stat"><span class="stat-num" id="stat-duration">--</span><span class="stat-label">耗时(s)</span></span>
+    </div>
+    <div class="topbar-right">
+      <button id="btn-zoom-in" title="放大">+</button>
+      <button id="btn-zoom-out" title="缩小">−</button>
+      <button id="btn-reset" title="重置视图">⟲</button>
+    </div>
+  </header>
+
+  <!-- 主体 -->
+  <div id="main">
+    <!-- 画布区 -->
+    <div id="canvas-wrapper">
+      <canvas id="galaxy-canvas"></canvas>
+      <div id="canvas-hint">滚轮缩放 · 拖拽平移 · 点击节点查看详情</div>
+      <!-- 图例 -->
+      <div id="legend"></div>
+    </div>
+
+    <!-- 右侧面板 -->
+    <aside id="sidebar">
+      <!-- 需求信息 -->
+      <div class="panel" id="panel-req">
+        <h3>审计需求</h3>
+        <p id="req-text" class="req-text">--</p>
+      </div>
+
+      <!-- 模块详情 -->
+      <div class="panel" id="panel-detail" style="display:none;">
+        <h3 id="detail-title">模块详情</h3>
+        <div id="detail-content"></div>
+      </div>
+
+      <!-- 审计发现 -->
+      <div class="panel" id="panel-findings">
+        <h3>审计发现 <span class="badge" id="findings-count">0</span></h3>
+        <div id="findings-list" class="findings-list"></div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- 底部执行日志 -->
+  <footer id="log-bar">
+    <div id="log-toggle" onclick="toggleLog()">▸ 执行日志</div>
+    <div id="log-content" style="display:none;"></div>
+  </footer>
+</div>
+
+<script src="galaxy.js"></script>
+</body>
+</html>

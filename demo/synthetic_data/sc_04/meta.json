@@ -1,0 +1,27 @@
+{
+  "slug": "sc_04",
+  "family": "sc",
+  "module_name": "",
+  "total_bytes": 10517148,
+  "total_mb": 10.03,
+  "files": [
+    {
+      "file": "suppliers.jsonl",
+      "bytes": 3696941
+    },
+    {
+      "file": "procurement.jsonl",
+      "bytes": 6696452
+    },
+    {
+      "file": "media_refs.jsonl",
+      "bytes": 123755
+    }
+  ],
+  "modalities": [
+    "suppliers",
+    "media_refs",
+    "procurement"
+  ],
+  "generated_at": "2026-08-08T15:00:33.394018"
+}

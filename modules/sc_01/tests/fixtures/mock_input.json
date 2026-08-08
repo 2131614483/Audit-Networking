@@ -1,0 +1,210 @@
+{
+  "source": "multi-source-audit",
+  "sources": ["ERP-A", "ERP-B", "IFS", "Bank", "Tax"],
+  "suppliers": [
+    {
+      "supplier_id": "SUP-MOCK-001",
+      "name": "深圳市锐捷信息技术有限公司",
+      "uscc": "91440300MA5EX2X71A",
+      "source": "ERP-A",
+      "business": {
+        "registered_capital": 50000000,
+        "establishment_years": 15,
+        "business_status": "存续",
+        "change_count": 1
+      },
+      "litigation": {
+        "litigation_count": 0,
+        "executed_count": 0,
+        "dishonest_count": 0,
+        "litigation_text": ""
+      },
+      "financial": {
+        "revenue": 200000000,
+        "debt_ratio": 0.35,
+        "current_ratio": 2.5,
+        "cash_flow": 30000000
+      },
+      "esg": {
+        "esg_penalty_count": 0,
+        "social_security_compliance": "合规",
+        "tax_violation_count": 0,
+        "esg_text": "通过ISO14001环境管理体系认证"
+      },
+      "sentiment": {
+        "news_count": 0,
+        "news_text": "公司获得行业优秀企业称号，技术创新获得表彰"
+      }
+    },
+    {
+      "supplier_id": "SUP-MOCK-002",
+      "name": "东莞市松山湖制造有限公司",
+      "uscc": "91441900MA4UBCDE78",
+      "source": "ERP-B",
+      "business": {
+        "registered_capital": 3000000,
+        "establishment_years": 5,
+        "business_status": "存续",
+        "change_count": 2
+      },
+      "litigation": {
+        "litigation_count": 3,
+        "executed_count": 0,
+        "dishonest_count": 0,
+        "litigation_text": "劳动合同纠纷起诉，被告欠薪争议"
+      },
+      "financial": {
+        "revenue": 30000000,
+        "debt_ratio": 0.58,
+        "current_ratio": 1.4,
+        "cash_flow": 1000000
+      },
+      "esg": {
+        "esg_penalty_count": 1,
+        "social_security_compliance": "未知",
+        "tax_violation_count": 0,
+        "esg_text": "环保处罚记录"
+      },
+      "sentiment": {
+        "news_count": 3,
+        "news_text": "公司被通报整改，存在风险"
+      }
+    },
+    {
+      "supplier_id": "SUP-MOCK-003",
+      "name": "深圳市失信贸易有限公司",
+      "uscc": "91440300MA5XBCDE02",
+      "source": "IFS",
+      "business": {
+        "registered_capital": 1000000,
+        "establishment_years": 5,
+        "business_status": "存续",
+        "change_count": 4
+      },
+      "litigation": {
+        "litigation_count": 6,
+        "executed_count": 3,
+        "dishonest_count": 1,
+        "litigation_text": "多起诉讼，多次被执行，失信被执行人，涉及欠款强制执行查封冻结限消"
+      },
+      "financial": {
+        "revenue": 8000000,
+        "debt_ratio": 0.90,
+        "current_ratio": 0.5,
+        "cash_flow": -3000000
+      },
+      "esg": {
+        "esg_penalty_count": 1,
+        "social_security_compliance": "不合规",
+        "tax_violation_count": 1,
+        "esg_text": "欠薪欠税"
+      },
+      "sentiment": {
+        "news_count": 8,
+        "news_text": "公司失信被通报，业绩下滑，被执行，违规风险"
+      }
+    },
+    {
+      "supplier_id": "SUP-MOCK-004",
+      "name": "深圳市破产清算科技有限公司",
+      "uscc": "91440300MA5XBCDE04",
+      "source": "ERP-A",
+      "business": {
+        "registered_capital": 5000000,
+        "establishment_years": 6,
+        "business_status": "清算",
+        "change_count": 8
+      },
+      "litigation": {
+        "litigation_count": 12,
+        "executed_count": 4,
+        "dishonest_count": 2,
+        "litigation_text": "诉讼过多，多次被执行，失信被执行人，涉及欠款强制执行查封冻结限消"
+      },
+      "financial": {
+        "revenue": 3000000,
+        "debt_ratio": 0.98,
+        "current_ratio": 0.3,
+        "cash_flow": -8000000
+      },
+      "esg": {
+        "esg_penalty_count": 3,
+        "social_security_compliance": "不合规",
+        "tax_violation_count": 3,
+        "esg_text": "环保污染，欠薪欠税，偷税漏税，停产整顿"
+      },
+      "sentiment": {
+        "news_count": 18,
+        "news_text": "公司破产清算，被处罚，业绩下滑，违规，被通报，涉嫌立案，被执行，暴跌，纠纷，欺诈造假，暴雷"
+      }
+    },
+    {
+      "supplier_id": "SUP-MOCK-005",
+      "name": "东莞市数据缺失科技有限公司",
+      "uscc": "91440300MA5XBCDE10",
+      "source": "Bank",
+      "business": {
+        "registered_capital": 5000000,
+        "establishment_years": 5,
+        "business_status": "存续",
+        "change_count": 2
+      },
+      "litigation": {
+        "litigation_count": 1,
+        "executed_count": 0,
+        "dishonest_count": 0,
+        "litigation_text": "合同纠纷已结案"
+      },
+      "financial": {
+        "revenue": 0,
+        "debt_ratio": 0,
+        "current_ratio": 0,
+        "cash_flow": 0
+      },
+      "esg": {
+        "esg_penalty_count": 0,
+        "social_security_compliance": "未知",
+        "tax_violation_count": 0,
+        "esg_text": ""
+      },
+      "sentiment": {
+        "news_count": 0,
+        "news_text": ""
+      }
+    },
+    {
+      "supplier_id": "SUP-MOCK-006",
+      "name": "深圳市前海空壳贸易有限公司",
+      "uscc": "91440300MA5XBCD369",
+      "source": "Tax",
+      "business": {
+        "registered_capital": 50000,
+        "establishment_years": 0.5,
+        "business_status": "存续",
+        "change_count": 12
+      },
+      "litigation": {
+        "litigation_count": 3,
+        "executed_count": 1,
+        "dishonest_count": 0,
+        "litigation_text": "合同纠纷，被执行一起，涉及欠款"
+      },
+      "financial": {
+        "revenue": 2000000,
+        "debt_ratio": 0.85,
+        "current_ratio": 0.4,
+        "cash_flow": -500000
+      },
+      "esg": {
+        "esg_penalty_count": 0,
+        "social_security_compliance": "未知",
+        "tax_violation_count": 0,
+        "esg_text": ""
+      },
+      "sentiment": {
+        "news_count": 2,
+        "news_text": "公司被质疑空壳，业绩下滑"
+      }
+    }
+  ]
+}

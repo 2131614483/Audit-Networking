@@ -1,0 +1,4 @@
+# 用户定制配置（覆盖 default.yaml，仅写需要覆盖的项）
+# 示例：
+# threshold:
+#   confidence: 0.90

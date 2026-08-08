@@ -1,0 +1,12 @@
+# 家族虚拟环境依赖
+# 安装: python modules/venvs/setup_venvs.py ml_nlp
+#
+# FA-02 多源数据自动标准化：纯 Python 标准库实现（difflib / re / json / sqlite3 / pathlib），
+# 无任何第三方运行时依赖。PortableDB 已封装 sqlite3，engine 仅用 stdlib。
+#
+# 下列 fastapi / uvicorn / pyyaml / httpx 仅为可选的 HTTP 运行时（main.py / test_api.py），
+# 不是 engine / pipeline / custom 算法层的依赖；缺失时核心功能与单测仍可运行。
+# fastapi>=0.110
+# uvicorn[standard]>=0.27
+# pyyaml>=6.0
+# httpx>=0.27

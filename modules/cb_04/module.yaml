@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CB-04
+  name: AI多准则自动转换引擎
+  name_en: cb_04
+  version: 1.0.0
+  category: cross_border_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "6个月"
+  budget: ""
+  description: >
+    本方案构建基于LLM、RAG和知识图谱的多准则自动转换引擎。平台整合IFRS、US GAAP、China GAAP等准则知识，自动识别准则差异，生成差异分析和调节表，实现准则转换的全流程智能化。平台可将准则转换效率提升85%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.cb_04
+  port: 9004
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

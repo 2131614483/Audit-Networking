@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: IP-05
+  name: IPO案例知识库与RAG系统
+  name_en: ip_05
+  version: 1.0.0
+  category: ipo_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "4个月"
+  budget: ""
+  description: >
+    本方案构建基于LLM、RAG和知识图谱的IPO案例知识库系统。平台整合历史IPO反馈问题、审核案例、招股书等资料，支持自然语言检索、案例对标和智能问答，帮助审计人员快速获取相关案例参考。平台可将案例参考效率提升90%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ip_05
+  port: 8805
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

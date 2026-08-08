@@ -1,0 +1,54 @@
+{
+  "sales_allocation": {
+    "total_sales": 100000.00,
+    "tax_exempted_sales": 20000.00,
+    "simple_taxation_sales": 10000.00
+  },
+  "invoices": [
+    {
+      "invoice_id": "INV-001",
+      "invoice_no": "12345678",
+      "purchase_content": "员工食堂餐费",
+      "amount_excl_tax": 1000.00,
+      "tax_rate": 0.06,
+      "tax_amount": 60.00,
+      "remark": "年会聚餐"
+    },
+    {
+      "invoice_id": "INV-002",
+      "invoice_no": "23456789",
+      "purchase_content": "个人礼品",
+      "amount_excl_tax": 500.00,
+      "tax_rate": 0.13,
+      "tax_amount": 65.00,
+      "remark": "送礼"
+    },
+    {
+      "invoice_id": "INV-003",
+      "invoice_no": "34567890",
+      "purchase_content": "免税农产品",
+      "amount_excl_tax": 2000.00,
+      "tax_rate": 0.09,
+      "tax_amount": 180.00,
+      "remark": "农业原料"
+    },
+    {
+      "invoice_id": "INV-004",
+      "invoice_no": "45678901",
+      "purchase_content": "原材料被盗损失",
+      "amount_excl_tax": 3000.00,
+      "tax_rate": 0.13,
+      "tax_amount": 390.00,
+      "remark": "仓库霉变毁损"
+    },
+    {
+      "invoice_id": "INV-005",
+      "invoice_no": "56789012",
+      "purchase_content": "办公用品",
+      "amount_excl_tax": 800.00,
+      "tax_rate": 0.13,
+      "tax_amount": 104.00,
+      "remark": "日常采购"
+    }
+  ]
+}

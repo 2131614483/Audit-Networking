@@ -1,0 +1,197 @@
+{
+  "items": [
+    {
+      "tx_id": "RP-001",
+      "subject": "原材料采购",
+      "related_party": "关联制造有限公司",
+      "amount": 2000000.0,
+      "unit_price": 100.0,
+      "ownership_pct": 0.3,
+      "industry": "制造",
+      "fairness_level": "fair",
+      "fairness_score": 0.84,
+      "deviation_rate": 0.0,
+      "peer_zscore": 0.0,
+      "hist_zscore": 0.39,
+      "assessment_methods": {
+        "comparable_company": {
+          "zscore": 0.0,
+          "deviation_pct": 0.0,
+          "mean": 100.0,
+          "std": 1.5811388300841898
+        },
+        "historical_trend": {
+          "zscore": 0.3872983346207417,
+          "deviation_pct": 0.010101010101010102,
+          "mean": 99.0,
+          "std": 2.581988897471611
+        },
+        "cost_plus": {
+          "related_margin": 0.15
+        }
+      },
+      "suggestion": "定价符合独立交易原则，保留原合同",
+      "tax_risk_level": "low"
+    },
+    {
+      "tx_id": "RP-002",
+      "subject": "半成品采购",
+      "related_party": "关联制造有限公司",
+      "amount": 1537500.0,
+      "unit_price": 102.5,
+      "ownership_pct": 0.1,
+      "industry": "制造",
+      "fairness_level": "slightly_biased",
+      "fairness_score": 0.577,
+      "deviation_rate": 0.025,
+      "peer_zscore": 1.58,
+      "hist_zscore": 1.36,
+      "assessment_methods": {
+        "comparable_company": {
+          "zscore": 1.5811388300841895,
+          "deviation_pct": 0.025,
+          "mean": 100.0,
+          "std": 1.5811388300841898
+        },
+        "historical_trend": {
+          "zscore": 1.355544171172596,
+          "deviation_pct": 0.03535353535353535,
+          "mean": 99.0,
+          "std": 2.581988897471611
+        },
+        "cost_plus": {
+          "related_margin": 0.15
+        }
+      },
+      "suggestion": "建议补充可比分析文档，关注税务机关挑战风险",
+      "tax_risk_level": "low"
+    },
+    {
+      "tx_id": "RP-003",
+      "subject": "设备转让",
+      "related_party": "控股股东旗下机械公司",
+      "amount": 15000000.0,
+      "unit_price": 135.0,
+      "ownership_pct": 0.7,
+      "industry": "制造",
+      "fairness_level": "significantly_biased",
+      "fairness_score": 0.14,
+      "deviation_rate": 0.35,
+      "peer_zscore": 22.14,
+      "hist_zscore": 13.94,
+      "assessment_methods": {
+        "comparable_company": {
+          "zscore": 22.135943621178654,
+          "deviation_pct": 0.35,
+          "mean": 100.0,
+          "std": 1.5811388300841898
+        },
+        "historical_trend": {
+          "zscore": 13.942740046346701,
+          "deviation_pct": 0.36363636363636365,
+          "mean": 99.0,
+          "std": 2.581988897471611
+        },
+        "cost_plus": {
+          "related_margin": 0.05
+        }
+      },
+      "suggestion": "定价显著偏离，建议调整至公允区间或准备充分的转让定价同期资料",
+      "tax_risk_level": "high"
+    },
+    {
+      "tx_id": "RP-004",
+      "subject": "技术服务费",
+      "related_party": "关联科技子公司",
+      "amount": 800000.0,
+      "unit_price": 100.0,
+      "ownership_pct": 0.2,
+      "industry": "科技",
+      "fairness_level": "fair",
+      "fairness_score": 0.873,
+      "deviation_rate": 0.0,
+      "peer_zscore": 0.0,
+      "hist_zscore": 0.39,
+      "assessment_methods": {
+        "comparable_company": {
+          "zscore": 0.0,
+          "deviation_pct": 0.0,
+          "mean": 100.0,
+          "std": 1.5811388300841898
+        },
+        "historical_trend": {
+          "zscore": 0.3872983346207417,
+          "deviation_pct": 0.010101010101010102,
+          "mean": 99.0,
+          "std": 2.581988897471611
+        }
+      },
+      "suggestion": "定价符合独立交易原则，保留原合同",
+      "tax_risk_level": "low"
+    },
+    {
+      "tx_id": "RP-005",
+      "subject": "商品销售",
+      "related_party": "关联贸易公司",
+      "amount": 5000000.0,
+      "unit_price": 120.0,
+      "ownership_pct": 0.4,
+      "industry": "贸易",
+      "fairness_level": "significantly_biased",
+      "fairness_score": 0.167,
+      "deviation_rate": 0.2,
+      "peer_zscore": 12.65,
+      "hist_zscore": 8.13,
+      "assessment_methods": {
+        "comparable_company": {
+          "zscore": 12.649110640673516,
+          "deviation_pct": 0.2,
+          "mean": 100.0,
+          "std": 1.5811388300841898
+        },
+        "historical_trend": {
+          "zscore": 8.133265027035575,
+          "deviation_pct": 0.21212121212121213,
+          "mean": 99.0,
+          "std": 2.581988897471611
+        },
+        "cost_plus": {
+          "related_margin": 0.12
+        }
+      },
+      "suggestion": "定价显著偏离，建议调整至公允区间或准备充分的转让定价同期资料",
+      "tax_risk_level": "medium"
+    }
+  ],
+  "summary": {
+    "total_transactions": 5,
+    "total_amount": 24337500.0,
+    "fairness_distribution": {
+      "fair": 2,
+      "slightly_biased": 1,
+      "significantly_biased": 2
+    },
+    "tax_risk_distribution": {
+      "low": 3,
+      "high": 1,
+      "medium": 1
+    },
+    "biased_amount": 21537500.0,
+    "critical_biased_amount": 20000000.0,
+    "fair_rate": 0.4
+  },
+  "adjustment_suggestions": [
+    {
+      "tx_id": "RP-002",
+      "suggestion": "建议补充可比分析文档，关注税务机关挑战风险"
+    },
+    {
+      "tx_id": "RP-003",
+      "suggestion": "定价显著偏离，建议调整至公允区间或准备充分的转让定价同期资料"
+    },
+    {
+      "tx_id": "RP-005",
+      "suggestion": "定价显著偏离，建议调整至公允区间或准备充分的转让定价同期资料"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: TA-04
+  name: AI转让定价文档自动生成
+  name_en: ta_04
+  version: 1.0.0
+  category: tax_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "6个月"
+  budget: "约400万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于ML+NLP+LLM+KG的AI转让定价文档自动生成平台，实现转让定价文档的智能化编制。平台利用ML模型进行可比公司智能筛选，利用NLP+LLM进行行业分析和文档撰写，利用知识图谱沉淀转让定价知识，自动生成符合税务合规要求的转让定价文档。方案实施后，文档编制效率提升85%，编制周期从4-8周缩短到3-5天。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ta_04
+  port: 8504
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

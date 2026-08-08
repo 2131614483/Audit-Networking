@@ -1,0 +1,26 @@
+[
+  {
+    "type": "audit_log",
+    "entity": "user_001",
+    "action": "login",
+    "timestamp": "2026-08-01T10:00:00",
+    "ip": "10.0.0.1",
+    "result": "success"
+  },
+  {
+    "type": "audit_log",
+    "entity": "user_002",
+    "action": "privilege_escalation",
+    "timestamp": "2026-08-01T10:05:00",
+    "ip": "10.0.0.2",
+    "result": "denied"
+  },
+  {
+    "type": "config_change",
+    "entity": "server_01",
+    "action": "firewall_rule_added",
+    "timestamp": "2026-08-01T10:10:00",
+    "operator": "admin",
+    "detail": "ALLOW 0.0.0.0/0 -> 22"
+  }
+]

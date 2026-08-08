@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FI-04
+  name: 监管报表智能核对平台
+  name_en: fi_04
+  version: 1.0.0
+  category: other
+  family: rpa
+  family_display: RPA
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "5个月"
+  budget: ""
+  description: >
+    本方案构建基于RPA、规则引擎和机器学习的监管报表智能核对平台。平台通过RPA自动获取报表数据，规则引擎执行勾稽关系检查，ML模型识别异常模式，实现100+报表的全自动核对和差异追踪。平台可将核对效率提升90%以上。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fi_04
+  port: 8904
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - rop
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

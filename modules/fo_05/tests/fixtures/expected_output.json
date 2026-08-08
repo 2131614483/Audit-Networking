@@ -1,0 +1,63 @@
+{
+  "status": "ok",
+  "module": "FO-05",
+  "translations": [
+    {
+      "text_id": "TXT-001",
+      "detected_language": "zh",
+      "source_language": "zh",
+      "target_language": "en",
+      "translated_text": "本[intellectual_property]由[intellectual_property]与[intellectual_property]...",
+      "translation_confidence": 0.9,
+      "quality_level": "high",
+      "sentiment": {"score": -0.2, "label": "中性", "positive_hits": 0, "negative_hits": 1},
+      "legal_terms_found": [{"zh": "知识产权", "en": "intellectual_property", "count": 1}],
+      "code_switch_detected": false,
+      "needs_review": false,
+      "escalate": false,
+      "missing_terms": [],
+      "rule_adjustments": []
+    },
+    {
+      "text_id": "TXT-003",
+      "detected_language": "zh",
+      "source_language": "zh",
+      "target_language": "en",
+      "translated_text": "[intellectual_property]同意将[intellectual_property]转让给[intellectual_property]...",
+      "translation_confidence": 0.7,
+      "quality_level": "medium",
+      "sentiment": {"score": 0.0, "label": "中性", "positive_hits": 0, "negative_hits": 0},
+      "legal_terms_found": [{"zh": "知识产权", "en": "intellectual_property", "count": 1}],
+      "code_switch_detected": true,
+      "needs_review": false,
+      "escalate": false,
+      "missing_terms": [],
+      "rule_adjustments": ["代码切换检测"]
+    }
+  ],
+  "quality_assessment": {
+    "avg_confidence": 0.82,
+    "quality_level": "high",
+    "quality_distribution": {"high": 5, "medium": 1, "low": 1},
+    "overall_sentiment": "中性",
+    "avg_sentiment_score": -0.05
+  },
+  "alerts": [
+    {
+      "type": "low_confidence",
+      "text_id": "TXT-007",
+      "confidence": 0.3,
+      "message": "翻译置信度低于阈值，需人工复核"
+    }
+  ],
+  "statistics": {
+    "text_count": 7,
+    "language_distribution": {"zh": 5, "en": 2},
+    "code_switch_count": 1,
+    "total_legal_terms": 15,
+    "needs_review_count": 1,
+    "terminology_alerts": 0,
+    "escalate_count": 0,
+    "alert_count": 1
+  }
+}

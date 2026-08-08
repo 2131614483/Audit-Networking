@@ -1,0 +1,15 @@
+; supervisord 配置示例：把选定模块作为独立进程托管。
+; 用法: supervisord -c modules/supervisor/audit-modules.conf
+; 每个模块用对应家族 venv 的 python 启动。
+
+[program:fa_02]
+command=%(here)s/../../.venvs/ml/Scripts/python.exe -m modules.fa_02.main
+directory=%(here)s/../..
+autorestart=true
+stdout_logfile=%(here)s/logs/fa_02.log
+stderr_logfile=%(here)s/logs/fa_02.err
+
+; [program:fa_07]
+; command=%(here)s/../../.venvs/llm/Scripts/python.exe -m modules.fa_07.main
+; directory=%(here)s/../..
+; autorestart=true

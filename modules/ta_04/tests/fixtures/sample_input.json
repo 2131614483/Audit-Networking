@@ -1,0 +1,67 @@
+{
+  "doc_type": "同期资料",
+  "enterprise": {
+    "name": "示例科技有限公司",
+    "uscc": "91110100MA01ABCDEF",
+    "functions_performed": ["研发", "生产", "营销", "管理"],
+    "risks_assumed": ["市场风险", "信用风险"],
+    "assets_used": ["有形资产", "无形资产", "人力资本"],
+    "pli_values": {
+      "operating_margin": 0.10,
+      "full_cost_plus_markup": 0.08,
+      "roa": 0.06
+    }
+  },
+  "comparables": [
+    {
+      "company_id": "COMP-001",
+      "company_name": "可比公司A",
+      "country": "中国",
+      "industry": "制造业",
+      "operating_margin": 0.05,
+      "full_cost_plus_markup": 0.04,
+      "roa": 0.03,
+      "revenue": 100000000
+    },
+    {
+      "company_id": "COMP-002",
+      "company_name": "可比公司B",
+      "country": "中国",
+      "industry": "制造业",
+      "operating_margin": 0.08,
+      "full_cost_plus_markup": 0.06,
+      "roa": 0.05,
+      "revenue": 120000000
+    },
+    {
+      "company_id": "COMP-003",
+      "company_name": "可比公司C",
+      "country": "中国",
+      "industry": "制造业",
+      "operating_margin": 0.10,
+      "full_cost_plus_markup": 0.08,
+      "roa": 0.06,
+      "revenue": 150000000
+    },
+    {
+      "company_id": "COMP-004",
+      "company_name": "可比公司D",
+      "country": "中国",
+      "industry": "制造业",
+      "operating_margin": 0.12,
+      "full_cost_plus_markup": 0.10,
+      "roa": 0.07,
+      "revenue": 130000000
+    },
+    {
+      "company_id": "COMP-005",
+      "company_name": "可比公司E",
+      "country": "中国",
+      "industry": "制造业",
+      "operating_margin": 0.15,
+      "full_cost_plus_markup": 0.12,
+      "roa": 0.09,
+      "revenue": 110000000
+    }
+  ]
+}

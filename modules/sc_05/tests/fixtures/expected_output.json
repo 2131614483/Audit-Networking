@@ -1,0 +1,226 @@
+{
+  "status": "ok",
+  "module": "SC-05",
+  "category_benchmarks": [
+    {
+      "category": "钢材",
+      "sample_count": 8,
+      "mean": 4987.5,
+      "median": 4990.0,
+      "std": 58.4701,
+      "baseline_price": 4990.0,
+      "low_bound": 4914.0,
+      "high_bound": 5059.0,
+      "percentiles": {
+        "10": 4914.0,
+        "25": 4942.5,
+        "50": 4990.0,
+        "75": 5027.5,
+        "90": 5059.0,
+        "95": 5069.5
+      },
+      "trend_slope": 25.47619,
+      "trend_r2": 0.9967,
+      "trend_stable": true,
+      "trend_direction": "上升"
+    },
+    {
+      "category": "水泥",
+      "sample_count": 6,
+      "mean": 398.6667,
+      "median": 397.5,
+      "std": 7.1102,
+      "baseline_price": 397.5,
+      "low_bound": 391.0,
+      "high_bound": 407.5,
+      "percentiles": {
+        "10": 391.0,
+        "25": 392.75,
+        "50": 397.5,
+        "75": 403.75,
+        "90": 407.5,
+        "95": 408.75
+      },
+      "trend_slope": 4.114286,
+      "trend_r2": 0.9766,
+      "trend_stable": true,
+      "trend_direction": "上升"
+    },
+    {
+      "category": "电缆",
+      "sample_count": 6,
+      "mean": 1075.0,
+      "median": 1075.0,
+      "std": 85.3913,
+      "baseline_price": 1075.0,
+      "low_bound": 975.0,
+      "high_bound": 1175.0,
+      "percentiles": {
+        "10": 975.0,
+        "25": 1012.5,
+        "50": 1075.0,
+        "75": 1137.5,
+        "90": 1175.0,
+        "95": 1187.5
+      },
+      "trend_slope": -50.0,
+      "trend_r2": 1.0,
+      "trend_stable": true,
+      "trend_direction": "下降"
+    }
+  ],
+  "price_comparisons": [
+    {
+      "benchmark_id": "B-0001",
+      "category": "钢材",
+      "test_price": 6500.0,
+      "baseline_price": 4990.0,
+      "deviation_pct": 30.26,
+      "position": "偏高",
+      "grade": "expensive",
+      "assessment": "价格偏高，建议议价或寻找替代供应商（历史价格上升趋势）",
+      "confirmed_deviation": true,
+      "expensive_p90": true,
+      "renegotiate_opportunity": false,
+      "rule_flags": [
+        "价格高于品类P90(5059.0)"
+      ]
+    },
+    {
+      "benchmark_id": "B-0002",
+      "category": "钢材",
+      "test_price": 5600.0,
+      "baseline_price": 4990.0,
+      "deviation_pct": 12.22,
+      "position": "偏高",
+      "grade": "marginal",
+      "assessment": "价格偏高，建议议价或寻找替代供应商（历史价格上升趋势）",
+      "confirmed_deviation": false,
+      "expensive_p90": true,
+      "renegotiate_opportunity": false,
+      "rule_flags": [
+        "价格高于品类P90(5059.0)"
+      ]
+    },
+    {
+      "benchmark_id": "B-0003",
+      "category": "水泥",
+      "test_price": 900.0,
+      "baseline_price": 397.5,
+      "deviation_pct": 126.42,
+      "position": "偏高",
+      "grade": "expensive",
+      "assessment": "价格偏高，建议议价或寻找替代供应商（历史价格上升趋势）",
+      "confirmed_deviation": true,
+      "expensive_p90": true,
+      "renegotiate_opportunity": false,
+      "rule_flags": [
+        "价格高于品类P90(407.5)"
+      ]
+    },
+    {
+      "benchmark_id": "B-0004",
+      "category": "电缆",
+      "test_price": 1000.0,
+      "baseline_price": 1075.0,
+      "deviation_pct": -6.98,
+      "position": "正常",
+      "grade": "acceptable",
+      "assessment": "价格处于合理区间（历史价格下降趋势）",
+      "confirmed_deviation": false,
+      "expensive_p90": false,
+      "renegotiate_opportunity": true,
+      "rule_flags": [
+        "历史价格下降趋势累计降幅23.3%(>10%),建议议价"
+      ]
+    },
+    {
+      "benchmark_id": "B-0005",
+      "category": "木材",
+      "test_price": null,
+      "baseline_price": null,
+      "deviation_pct": null,
+      "position": "no_baseline",
+      "grade": "no_data",
+      "assessment": "数据不足，无法对标",
+      "confirmed_deviation": false,
+      "expensive_p90": false,
+      "renegotiate_opportunity": false,
+      "rule_flags": []
+    },
+    {
+      "benchmark_id": "B-0006",
+      "category": "木材",
+      "test_price": null,
+      "baseline_price": null,
+      "deviation_pct": null,
+      "position": "no_baseline",
+      "grade": "no_data",
+      "assessment": "数据不足，无法对标",
+      "confirmed_deviation": false,
+      "expensive_p90": false,
+      "renegotiate_opportunity": false,
+      "rule_flags": []
+    },
+    {
+      "benchmark_id": "B-0007",
+      "category": "木材",
+      "test_price": null,
+      "baseline_price": null,
+      "deviation_pct": null,
+      "position": "no_baseline",
+      "grade": "no_data",
+      "assessment": "数据不足，无法对标",
+      "confirmed_deviation": false,
+      "expensive_p90": false,
+      "renegotiate_opportunity": false,
+      "rule_flags": []
+    }
+  ],
+  "trend_analysis": {
+    "stable_categories": [
+      "钢材",
+      "水泥",
+      "电缆"
+    ],
+    "unstable_categories": [],
+    "declining_categories": [
+      "电缆"
+    ],
+    "stable_count": 3,
+    "unstable_count": 0
+  },
+  "recommendations": [
+    "基准覆盖率仅57%,存在数据缺口,建议补充历史采购价与市场参考价以完善品类基准",
+    "发现3笔采购价高于品类P90,建议引入竞争性报价或重新议价",
+    "部分品类历史价格呈下降趋势,建议抓住议价机会与供应商重新谈判长期合约",
+    "2笔采购偏离基准超25%,建议重点核查单价构成与采购审批",
+    "品类电缆历史价格下降,可考虑在续约时下调基准价"
+  ],
+  "statistics": {
+    "category_count": 3,
+    "query_count": 7,
+    "assessments": {
+      "正常": 1,
+      "偏高": 3,
+      "偏低": 0,
+      "no_baseline": 3
+    },
+    "grade_distribution": {
+      "acceptable": 1,
+      "marginal": 1,
+      "expensive": 2,
+      "no_data": 3
+    },
+    "benchmark_coverage": 0.5714,
+    "data_gap_alert": true,
+    "rule_flags": {
+      "expensive_p90": 3,
+      "renegotiate_opportunity": 1
+    },
+    "thresholds": {
+      "acceptable_pct": 10.0,
+      "marginal_pct": 25.0
+    }
+  }
+}

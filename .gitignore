@@ -1,0 +1,54 @@
+# ===== Python =====
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# ===== 虚拟环境 =====
+.venv/
+venv/
+env/
+ENV/
+
+# ===== 测试缓存 =====
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+
+# ===== IDE / 编辑器 =====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ===== TRAE 工具产物 =====
+.trae/
+launcher_crash.log
+launcher_batch.log
+launcher_platform.log
+
+# ===== 运行时产物 =====
+*.log
+*.tmp
+*.bak
+es03_out.txt
+
+# ===== 临时/调试脚本（下划线前缀） =====
+_gen_*.py
+_smoke_*.py
+_test_*.py
+
+# ===== 系统文件 =====
+desktop.ini
+ehthumbs.db

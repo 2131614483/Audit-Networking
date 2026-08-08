@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: TA-02
+  name: 发票四单自动匹配引擎
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

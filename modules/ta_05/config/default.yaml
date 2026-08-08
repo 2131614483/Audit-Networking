@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: TA-05
+  name: ML可比公司智能筛选
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

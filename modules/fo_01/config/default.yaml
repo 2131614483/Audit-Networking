@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: FO-01
+  name: 全量交易智能舞弊扫描
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

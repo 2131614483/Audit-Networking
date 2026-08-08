@@ -1,0 +1,40 @@
+{
+  "alerts": [
+    {
+      "alert_id": "A001",
+      "source": "交易系统",
+      "category": "fraud",
+      "amount": 6000000,
+      "frequency": 15,
+      "after_hours": true,
+      "repeat_count": 5
+    },
+    {
+      "alert_id": "A002",
+      "source": "登录系统",
+      "category": "normal",
+      "amount": 500000,
+      "frequency": 5,
+      "after_hours": false,
+      "repeat_count": 1
+    },
+    {
+      "alert_id": "A003",
+      "source": "合规系统",
+      "category": "aml",
+      "amount": 2000000,
+      "frequency": 3,
+      "after_hours": false,
+      "repeat_count": 1
+    },
+    {
+      "alert_id": "A004",
+      "source": "支付系统",
+      "category": "payment",
+      "amount": 1500000,
+      "frequency": 2,
+      "after_hours": false,
+      "repeat_count": 4
+    }
+  ]
+}

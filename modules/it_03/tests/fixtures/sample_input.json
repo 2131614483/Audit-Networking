@@ -1,0 +1,12 @@
+[
+  {
+    "filename": "vuln_app.py",
+    "language": "python",
+    "code": "import os\nimport pickle\nimport logging\n\nclass UserController:\n    def __init__(self):\n        self.password = \"supersecret123\"\n\n    def login(self, username):\n        cursor.execute(\"SELECT * FROM users WHERE name='%s'\" % username)\n        os.system(username)\n        pickle.loads(data)\n        logging.info(\"password=%s\" % self.password)\n        open(user_input)\n        md5(password)\n"
+  },
+  {
+    "filename": "safe_app.py",
+    "language": "python",
+    "code": "import os\n\ndef hello(name):\n    return 'hello ' + name\n"
+  }
+]

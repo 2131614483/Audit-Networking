@@ -1,0 +1,14 @@
+{"record_type":"balance","subject_code":"1002","subject_name":"银行存款","category":"asset_current","balance":12000000,"detail":{"bank_name":"工商银行中关村支行","bank_account_no":"6222020100012345678","account_count":3}}
+{"record_type":"balance","subject_code":"1001","subject_name":"库存现金","category":"asset_current","balance":50000,"detail":{"cash_counted":null}}
+{"record_type":"balance","subject_code":"1122","subject_name":"应收账款","category":"asset_current","balance":8800000,"detail":{"aging":{"within_1y":8200000,"one_to_2y":400000,"two_to_3y":150000,"over_3y":50000,"within_1y_ratio":0.9318},"top_customer":"甲科技有限公司","top_customer_amount":3200000,"customer_count":42}}
+{"record_type":"balance","subject_code":"1241","subject_name":"存货","category":"asset_current","balance":5600000,"detail":{"raw_materials":null,"finished_goods":2100000}}
+{"record_type":"balance","subject_code":"1601","subject_name":"固定资产","category":"asset_noncurrent","balance":15000000,"detail":{"dep_rate":0.095,"book_depreciation":4275000}}
+{"record_type":"balance","subject_code":"2202","subject_name":"应付账款","category":"liability_current","balance":4300000,"detail":{"top_supplier":null,"top_supplier_amount":null}}
+{"record_type":"balance","subject_code":"6001","subject_name":"营业收入","category":"revenue","balance":42000000,"detail":{"invoice_count":1280,"cutoff_vouchers":35}}
+{"record_type":"balance","subject_code":"6602","subject_name":"管理费用","category":"expense","balance":3200000,"detail":{"yoy_ratio":0.25}}
+{"record_type":"balance","subject_code":"1123","subject_name":"预付账款","category":"asset_current","balance":680000,"detail":{"over_1y":120000}}
+{"record_type":"voucher","voucher_no":"ZY-2024-0001","date":"2024-01-05","subject_code":"1122","amount":1500000,"summary":"销售回款-甲公司"}
+{"record_type":"voucher","voucher_no":"ZY-2024-1299","date":"2024-12-28","subject_code":"6001","amount":2300000,"summary":"12月销售收入确认"}
+{"record_type":"voucher","voucher_no":"ZY-2024-1305","date":"2025-01-03","subject_code":"6001","amount":680000,"summary":"次年1月销售确认（截止测试关注）"}
+{"record_type":"contract","contract_no":"HT-2024-S-001","party":"甲科技有限公司","amount":5200000,"sign_date":"2024-03-15","type":"销售合同"}
+{"record_type":"contract","contract_no":"HT-2024-P-018","party":"乙材料供应商","amount":3100000,"sign_date":"2024-06-20","type":"采购合同"}

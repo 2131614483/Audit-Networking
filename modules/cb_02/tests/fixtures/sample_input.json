@@ -1,0 +1,12 @@
+{
+  "source_jurisdiction": "CN",
+  "target_jurisdiction": "EU",
+  "fields": [
+    {"name": "姓名", "value": "张三"},
+    {"name": "身份证号", "value": "11010519491231002X"},
+    {"name": "手机号", "value": "13812345678"},
+    {"name": "邮箱", "value": "zhangsan@example.com"},
+    {"name": "银行卡号", "value": "4111111111111111"},
+    {"name": "IP地址", "value": "192.168.1.1"}
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "locations": [
+    {"location_id": "LOC-CN", "name": "北京数据中心", "country": "CN", "region": "Asia"},
+    {"location_id": "LOC-SG", "name": "新加坡节点", "country": "SG", "region": "Asia"},
+    {"location_id": "LOC-US", "name": "美东数据中心", "country": "US", "region": "NorthAmerica"}
+  ],
+  "systems": [
+    {"system_id": "SYS-ERP", "name": "ERP系统", "location_id": "LOC-CN", "sensitive_level": "L2", "owner": "财务部"},
+    {"system_id": "SYS-CRM", "name": "CRM系统", "location_id": "LOC-SG", "sensitive_level": "L3", "owner": "市场部"},
+    {"system_id": "SYS-DW", "name": "海外数据仓库", "location_id": "LOC-US", "sensitive_level": "L4", "owner": "IT部"}
+  ],
+  "datasets": [
+    {
+      "dataset_id": "DS-GL", "name": "总账数据", "system_id": "SYS-ERP",
+      "location_id": "LOC-CN", "sensitive_level": "L2", "owner": "财务部",
+      "sql": "SELECT * FROM source_gl WHERE period = '2024'"
+    },
+    {
+      "dataset_id": "DS-CUST", "name": "客户数据", "system_id": "SYS-CRM",
+      "location_id": "LOC-SG", "sensitive_level": "L3", "owner": "市场部",
+      "sql": "SELECT id, name, email FROM customer_db WHERE status = 'active'"
+    },
+    {
+      "dataset_id": "DS-REPORT", "name": "合并报表", "system_id": "SYS-DW",
+      "location_id": "LOC-US", "sensitive_level": "L4", "owner": "IT部",
+      "sql": "INSERT INTO report_table SELECT * FROM ds_gl JOIN ds_cust ON gl.entity_id = cust.entity_id"
+    }
+  ],
+  "processes": [
+    {
+      "process_id": "ETL-001", "name": "数据汇总ETL",
+      "input_datasets": ["DS-GL", "DS-CUST"],
+      "output_dataset": "DS-REPORT"
+    }
+  ],
+  "target": {
+    "entity_id": "DS-REPORT",
+    "max_depth": 3
+  }
+}

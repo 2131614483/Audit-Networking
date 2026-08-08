@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CB-01
+  name: 联邦学习跨境审计平台
+  fed:
+    server: http://localhost:8100
+    rounds: 10
+    dp_epsilon: 8.0

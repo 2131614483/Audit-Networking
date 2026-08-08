@@ -1,0 +1,7 @@
+{
+  "action": "update_programs",
+  "regulation_title": "反洗钱法修订案（2025）",
+  "regulation_change": "本次反洗钱法修订强化了客户尽职调查(KYC)要求，新增受益所有权识别义务，要求金融机构加强可疑交易监控与报告，并提高对高风险客户和PEP的审查标准。",
+  "change_type": "minor",
+  "affected_prog_ids": []
+}

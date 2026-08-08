@@ -1,0 +1,37 @@
+{
+  "slug": "fo_02",
+  "family": "fo",
+  "module_name": "",
+  "total_bytes": 13190699,
+  "total_mb": 12.58,
+  "files": [
+    {
+      "file": "transactions.jsonl",
+      "bytes": 8440838
+    },
+    {
+      "file": "documents.txt",
+      "bytes": 2438879
+    },
+    {
+      "file": "media_refs.jsonl",
+      "bytes": 265232
+    },
+    {
+      "file": "evidence.jsonl",
+      "bytes": 1874292
+    },
+    {
+      "file": "graph.json",
+      "bytes": 171458
+    }
+  ],
+  "modalities": [
+    "evidence",
+    "media_refs",
+    "transactions",
+    "documents",
+    "graph"
+  ],
+  "generated_at": "2026-08-08T15:00:14.553991"
+}

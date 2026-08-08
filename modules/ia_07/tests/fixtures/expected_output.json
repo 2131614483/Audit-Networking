@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "result_keys": ["tasks", "total", "generated_at"],
+  "task_keys": ["task_id", "finding_id", "state", "escalation", "failure_risk", "risk_level", "progress_estimate", "next_action", "recommended_plan", "days_passed", "days_remaining", "severity", "issue_type", "escalation_label", "escalation_desc", "timestamp"],
+  "states": ["待分配", "整改中", "待验证", "已关闭", "归档", "争议中"],
+  "risk_levels": ["高", "中", "低"],
+  "total": 3
+}

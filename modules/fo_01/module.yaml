@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FO-01
+  name: 全量交易智能舞弊扫描
+  name_en: fo_01
+  version: 1.0.0
+  category: legal_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "6个月"
+  budget: "约420万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于机器学习+Benford定律+无监督学习的四层全量交易舞弊扫描模型，对企业的全量交易数据进行系统性扫描。第一层（统计层）采用Benford定律、异常值检测等统计方法进行初筛；第二层（无监督ML层）采用Isolation Forest、Autoencoder等无监督算法发现未知异常模式；第三层（监督ML层）基于历史舞弊案例训练分类模型，识别已知舞弊模式；第四层（知识图谱层）构建交易网络图谱，发现隐藏的关联关系。方案实施后，主动舞弊发现率提升45-60%，交易覆盖率从不足5%提升至100%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fo_01
+  port: 8401
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

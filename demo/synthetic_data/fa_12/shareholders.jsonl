@@ -1,0 +1,200 @@
+{"name": "郭某", "role": "董事", "share_pct": 16.0, "uscc": "KL7B62P4GWGF92D95F", "related_entities": ["懋达实业", "卓郎科技", "宁德时代"]}
+{"name": "黄某", "role": "实际控制人", "share_pct": 4.9, "uscc": "N5AEADT5T0GAPBR9CA", "related_entities": ["供应商A", "中天科技", "分包商F"]}
+{"name": "孙某", "role": "董事", "share_pct": 2.4, "uscc": "3ML11D7QNPD1UHXQHJ", "related_entities": ["金徽矿业"]}
+{"name": "杨某", "role": "高管", "share_pct": 20.5, "uscc": "62LX1HY8KAF1KWXKJY", "related_entities": ["懋达实业", "客户C", "供应商B"]}
+{"name": "郭某", "role": "实际控制人", "share_pct": 30.9, "uscc": "EUW31L0DU9Q7644GTF", "related_entities": ["北方华创", "华信投资"]}
+{"name": "林某", "role": "监事", "share_pct": 7.5, "uscc": "ANW8A123AQDK3HHDML", "related_entities": ["供应商B", "客户D", "北方华创"]}
+{"name": "林某", "role": "董事", "share_pct": 25.8, "uscc": "DKHYDNL2JC2XAM0366", "related_entities": ["实控人王某", "关联方E"]}
+{"name": "吴某", "role": "高管", "share_pct": 23.5, "uscc": "KFFDUBYPAYT57RCAF6", "related_entities": ["北方华创"]}
+{"name": "林某", "role": "监事", "share_pct": 36.9, "uscc": "DHWXYXK2F39XLGTYM7", "related_entities": ["关联方E", "北方华创", "金徽矿业"]}
+{"name": "郑某", "role": "高管", "share_pct": 30.0, "uscc": "MW965D0ER4X5RULB1W", "related_entities": ["中天科技", "懋达实业", "北方华创"]}
+{"name": "刘某", "role": "实际控制人", "share_pct": 13.4, "uscc": "UJN074M18Q6KJN1XEY", "related_entities": ["瑞达期货", "宁德时代"]}
+{"name": "杨某", "role": "董事", "share_pct": 23.7, "uscc": "CM4M8M7HMFH1UXP2BR", "related_entities": ["分包商F"]}
+{"name": "刘某", "role": "高管", "share_pct": 11.5, "uscc": "WNC0HWHMB1CXJAKMQB", "related_entities": ["客户D"]}
+{"name": "周某", "role": "实际控制人", "share_pct": 19.2, "uscc": "JLHKC2KKGHY4U40JBD", "related_entities": ["北方华创", "卓郎科技"]}
+{"name": "郑某", "role": "董事", "share_pct": 15.2, "uscc": "34EY6LM71TR6BEUD8D", "related_entities": ["实控人王某", "关联方E", "代理商G"]}
+{"name": "王某", "role": "董事", "share_pct": 10.0, "uscc": "JF19Y95NTTWYD6M5G2", "related_entities": ["关联方E", "实控人王某"]}
+{"name": "周某", "role": "高管", "share_pct": 39.3, "uscc": "CKFLL6FTFUM9F7QH8R", "related_entities": ["华信投资", "懋达实业"]}
+{"name": "黄某", "role": "董事", "share_pct": 7.4, "uscc": "EGE34QL0016WDM5BPU", "related_entities": ["供应商B", "海尔智家"]}
+{"name": "高某", "role": "监事", "share_pct": 34.1, "uscc": "HFF3UCXC49MYYW8RH5", "related_entities": ["卓郎科技"]}
+{"name": "朱某", "role": "董事", "share_pct": 32.5, "uscc": "WU8UKAMU4LFCR7GA2P", "related_entities": ["卓郎科技", "懋达实业"]}
+{"name": "郭某", "role": "监事", "share_pct": 31.0, "uscc": "JBJBQRQE161CF9R6XP", "related_entities": ["懋达实业"]}
+{"name": "王某", "role": "实际控制人", "share_pct": 18.9, "uscc": "PM3E7YG3BYQ3YYW616", "related_entities": ["兴业银行"]}
+{"name": "张某", "role": "高管", "share_pct": 3.2, "uscc": "XGJNR7CAM72Y99T9N7", "related_entities": ["关联方E", "供应商B", "中天科技"]}
+{"name": "李某", "role": "实际控制人", "share_pct": 31.1, "uscc": "657G6C9TXKAR9L4T9Q", "related_entities": ["中天科技", "实控人王某", "北方华创"]}
+{"name": "林某", "role": "董事", "share_pct": 26.0, "uscc": "295E03HP9A1NQ3BAAJ", "related_entities": ["华信投资", "分包商F"]}
+{"name": "黄某", "role": "监事", "share_pct": 22.4, "uscc": "897WYX78413UA5ENKC", "related_entities": ["代理商G"]}
+{"name": "高某", "role": "高管", "share_pct": 8.0, "uscc": "36A5YEGU91HH5D9CLE", "related_entities": ["关联方E"]}
+{"name": "马某", "role": "董事", "share_pct": 18.5, "uscc": "LWLKQ5HMY58L0D73FN", "related_entities": ["分包商F", "兴业银行"]}
+{"name": "朱某", "role": "监事", "share_pct": 32.3, "uscc": "J58NPB2287HB9H6PM9", "related_entities": ["供应商A", "兴业银行"]}
+{"name": "胡某", "role": "监事", "share_pct": 38.8, "uscc": "5A9DWMJFKFLMF32MFA", "related_entities": ["瑞达期货", "兴业银行"]}
+{"name": "吴某", "role": "实际控制人", "share_pct": 19.7, "uscc": "2M3KXGTT67DQ4UU1DL", "related_entities": ["海尔智家", "华信投资"]}
+{"name": "刘某", "role": "实际控制人", "share_pct": 26.5, "uscc": "5QAJ0M5CPXGDQWKBC3", "related_entities": ["供应商B", "供应商A", "卓郎科技"]}
+{"name": "杨某", "role": "高管", "share_pct": 30.9, "uscc": "63E33DC91HJAG3K8T7", "related_entities": ["中天科技", "供应商B", "兴业银行"]}
+{"name": "林某", "role": "董事", "share_pct": 30.3, "uscc": "WJ5FT9RD577DNU08WM", "related_entities": ["海尔智家"]}
+{"name": "高某", "role": "董事", "share_pct": 28.8, "uscc": "2MNJN9L1LQY24G2YK1", "related_entities": ["华信投资", "宁德时代", "北方华创"]}
+{"name": "孙某", "role": "监事", "share_pct": 4.6, "uscc": "89703H7JQJJKABRPHW", "related_entities": ["分包商F", "兴业银行"]}
+{"name": "李某", "role": "监事", "share_pct": 31.4, "uscc": "FURYBCEF7D7Y1CHMKE", "related_entities": ["瑞达期货", "北方华创", "金徽矿业"]}
+{"name": "高某", "role": "监事", "share_pct": 23.5, "uscc": "7J1NR03CT5GLFPUBA5", "related_entities": ["中天科技"]}
+{"name": "李某", "role": "高管", "share_pct": 36.5, "uscc": "K64HXK8FQR648MLTJK", "related_entities": ["兴业银行", "代理商G", "中天科技"]}
+{"name": "刘某", "role": "监事", "share_pct": 30.8, "uscc": "23H5ERFPMMX07EU9H9", "related_entities": ["卓郎科技", "关联方E"]}
+{"name": "郭某", "role": "监事", "share_pct": 24.2, "uscc": "7UBQJNF953L9C6RTHE", "related_entities": ["海尔智家", "客户D", "关联方E"]}
+{"name": "周某", "role": "董事", "share_pct": 12.0, "uscc": "LAJ88E5NCNB24CB4KW", "related_entities": ["中天科技", "关联方E", "实控人王某"]}
+{"name": "王某", "role": "监事", "share_pct": 38.3, "uscc": "0HMB2WCG4PEFH5M208", "related_entities": ["客户D"]}
+{"name": "胡某", "role": "监事", "share_pct": 26.7, "uscc": "CLR687L1TK487U18HG", "related_entities": ["代理商G"]}
+{"name": "胡某", "role": "高管", "share_pct": 21.4, "uscc": "CJMJRXYXN95EATXLHF", "related_entities": ["金徽矿业"]}
+{"name": "吴某", "role": "实际控制人", "share_pct": 15.2, "uscc": "64CN0F92RA6CB7D82G", "related_entities": ["金徽矿业"]}
+{"name": "朱某", "role": "高管", "share_pct": 26.2, "uscc": "1XMBMUTYW506C8LWPR", "related_entities": ["代理商G", "关联方E", "瑞达期货"]}
+{"name": "张某", "role": "监事", "share_pct": 28.9, "uscc": "QUGTQ6GFRLF5GNL1KY", "related_entities": ["金徽矿业"]}
+{"name": "黄某", "role": "实际控制人", "share_pct": 37.1, "uscc": "TQJMLC6NTX8J462A32", "related_entities": ["海尔智家", "供应商B", "代理商G"]}
+{"name": "陈某", "role": "高管", "share_pct": 11.9, "uscc": "Q1FCDPE4DLQH3347XC", "related_entities": ["关联方E"]}
+{"name": "张某", "role": "实际控制人", "share_pct": 11.1, "uscc": "XXU70N4QALA5T5HAX4", "related_entities": ["代理商G", "懋达实业"]}
+{"name": "孙某", "role": "高管", "share_pct": 6.9, "uscc": "QXEXJ37ACWTQP1CM65", "related_entities": ["客户D", "客户C", "代理商G"]}
+{"name": "马某", "role": "董事", "share_pct": 25.4, "uscc": "N8GQ5MLHMUCFX6J2A3", "related_entities": ["供应商B", "实控人王某", "金徽矿业"]}
+{"name": "胡某", "role": "高管", "share_pct": 11.6, "uscc": "0LPEMMHNHBX18C2CD8", "related_entities": ["金徽矿业", "中天科技"]}
+{"name": "胡某", "role": "监事", "share_pct": 6.0, "uscc": "KN6JQMN238KQBKJGMK", "related_entities": ["代理商G"]}
+{"name": "罗某", "role": "实际控制人", "share_pct": 33.6, "uscc": "EJY118BMEUF2J3BA2N", "related_entities": ["宁德时代"]}
+{"name": "马某", "role": "实际控制人", "share_pct": 36.4, "uscc": "BWRMGXBMFKT2QR7K49", "related_entities": ["实控人王某", "供应商A"]}
+{"name": "郭某", "role": "监事", "share_pct": 23.5, "uscc": "KK3TJC1H2L5D6CMK26", "related_entities": ["分包商F", "海尔智家"]}
+{"name": "高某", "role": "高管", "share_pct": 18.8, "uscc": "BH8JH5GMQLLXKQ3D1K", "related_entities": ["中天科技"]}
+{"name": "朱某", "role": "实际控制人", "share_pct": 28.4, "uscc": "4DHEPYX2LECWGU20U5", "related_entities": ["分包商F", "海尔智家"]}
+{"name": "林某", "role": "董事", "share_pct": 22.7, "uscc": "G83XU580MH9TYMPGC5", "related_entities": ["兴业银行", "华信投资", "海尔智家"]}
+{"name": "郑某", "role": "实际控制人", "share_pct": 2.0, "uscc": "JD7QF47EKRU8MFUAX3", "related_entities": ["华信投资", "供应商A"]}
+{"name": "郭某", "role": "董事", "share_pct": 32.6, "uscc": "7J2FJX86UUJ4D8UL6K", "related_entities": ["宁德时代", "卓郎科技", "实控人王某"]}
+{"name": "何某", "role": "董事", "share_pct": 39.4, "uscc": "DDEL0GWW74TBMM7P14", "related_entities": ["兴业银行"]}
+{"name": "李某", "role": "董事", "share_pct": 26.8, "uscc": "QR2NJ23A5CDB1LRWFU", "related_entities": ["瑞达期货", "供应商A"]}
+{"name": "刘某", "role": "董事", "share_pct": 15.3, "uscc": "KQBPJWH84BYKWAREGH", "related_entities": ["关联方E"]}
+{"name": "刘某", "role": "实际控制人", "share_pct": 34.3, "uscc": "XWPRGGB45W2EQPLYW3", "related_entities": ["华信投资", "海尔智家", "分包商F"]}
+{"name": "周某", "role": "高管", "share_pct": 2.8, "uscc": "WLQH9UB3YPKCFBMARH", "related_entities": ["分包商F", "海尔智家"]}
+{"name": "马某", "role": "高管", "share_pct": 29.9, "uscc": "DEBNM8T382FMXA147X", "related_entities": ["懋达实业", "华信投资", "客户C"]}
+{"name": "高某", "role": "监事", "share_pct": 32.0, "uscc": "7W7QCYRY5M59CC4A10", "related_entities": ["兴业银行", "关联方E"]}
+{"name": "胡某", "role": "高管", "share_pct": 20.5, "uscc": "KR6MWQQEQ8WAM0A4QW", "related_entities": ["宁德时代", "懋达实业"]}
+{"name": "张某", "role": "董事", "share_pct": 20.0, "uscc": "Q9EH9H4J790M6ACDJD", "related_entities": ["华信投资", "供应商B", "卓郎科技"]}
+{"name": "赵某", "role": "监事", "share_pct": 35.7, "uscc": "28PDYCKJ8BLK5RLCH8", "related_entities": ["兴业银行", "华信投资"]}
+{"name": "刘某", "role": "董事", "share_pct": 15.9, "uscc": "36NG7KN1LFP7R72HK8", "related_entities": ["海尔智家", "关联方E"]}
+{"name": "杨某", "role": "监事", "share_pct": 21.5, "uscc": "1BHPTM7MJ660WHNXF4", "related_entities": ["海尔智家", "供应商A", "供应商B"]}
+{"name": "陈某", "role": "高管", "share_pct": 22.6, "uscc": "KL8YFPGC39LG1RP68C", "related_entities": ["客户C", "中天科技"]}
+{"name": "赵某", "role": "监事", "share_pct": 5.7, "uscc": "K68QTT9KJ5GHY5YXXB", "related_entities": ["客户D"]}
+{"name": "张某", "role": "监事", "share_pct": 28.3, "uscc": "8MH4RB4N1HGQ32UA0J", "related_entities": ["实控人王某", "懋达实业"]}
+{"name": "何某", "role": "高管", "share_pct": 29.4, "uscc": "5G48DC9TB9C7XM0906", "related_entities": ["分包商F", "中天科技"]}
+{"name": "王某", "role": "监事", "share_pct": 29.4, "uscc": "DCJLWEDK0MM0M5D5T4", "related_entities": ["宁德时代", "客户C", "海尔智家"]}
+{"name": "吴某", "role": "监事", "share_pct": 4.4, "uscc": "7G6D38FCKKB19H2GN4", "related_entities": ["代理商G", "分包商F", "实控人王某"]}
+{"name": "胡某", "role": "实际控制人", "share_pct": 37.6, "uscc": "67N3Y8HDQ24TGW9CR5", "related_entities": ["代理商G"]}
+{"name": "林某", "role": "监事", "share_pct": 17.6, "uscc": "NDNPXQHPNFDR0KMK24", "related_entities": ["华信投资", "宁德时代", "海尔智家"]}
+{"name": "孙某", "role": "实际控制人", "share_pct": 3.8, "uscc": "Y0YWE6CCA3FEM21393", "related_entities": ["华信投资", "宁德时代", "瑞达期货"]}
+{"name": "张某", "role": "监事", "share_pct": 17.4, "uscc": "BM4ED5EDHH2NG60BYE", "related_entities": ["关联方E", "宁德时代"]}
+{"name": "赵某", "role": "监事", "share_pct": 9.8, "uscc": "FQMDGPRR2RW0XHCD8E", "related_entities": ["懋达实业", "兴业银行", "实控人王某"]}
+{"name": "陈某", "role": "高管", "share_pct": 12.2, "uscc": "DWGW7BEUT2D1MF3TB8", "related_entities": ["供应商A", "金徽矿业"]}
+{"name": "胡某", "role": "高管", "share_pct": 19.8, "uscc": "1LMW91W47QC0W9DB8G", "related_entities": ["海尔智家"]}
+{"name": "胡某", "role": "监事", "share_pct": 39.6, "uscc": "EBK0LW5CRJQN2W444E", "related_entities": ["瑞达期货"]}
+{"name": "郑某", "role": "实际控制人", "share_pct": 39.4, "uscc": "RBNWKE693N1D4CXLTM", "related_entities": ["宁德时代", "北方华创", "实控人王某"]}
+{"name": "胡某", "role": "监事", "share_pct": 21.5, "uscc": "08AWWCQN0GWQ4NWWRR", "related_entities": ["中天科技", "供应商B"]}
+{"name": "郑某", "role": "监事", "share_pct": 16.0, "uscc": "DUAKUXYXFCRPUH9MPG", "related_entities": ["实控人王某"]}
+{"name": "马某", "role": "实际控制人", "share_pct": 39.3, "uscc": "8N2FBBR9YFK8JYH0GR", "related_entities": ["海尔智家"]}
+{"name": "罗某", "role": "监事", "share_pct": 23.7, "uscc": "C21YJYM0M05GU0MMXM", "related_entities": ["华信投资", "瑞达期货", "关联方E"]}
+{"name": "孙某", "role": "高管", "share_pct": 23.7, "uscc": "U41PAUJBXCKNLTRLA2", "related_entities": ["客户D", "瑞达期货"]}
+{"name": "李某", "role": "监事", "share_pct": 22.3, "uscc": "TF49ERXFWLU0UPT52Q", "related_entities": ["懋达实业", "北方华创"]}
+{"name": "马某", "role": "董事", "share_pct": 30.8, "uscc": "B84D6GL8DDFFUTHPFT", "related_entities": ["客户D", "北方华创"]}
+{"name": "赵某", "role": "董事", "share_pct": 19.2, "uscc": "XKPFJ9862YXYATXYGK", "related_entities": ["北方华创"]}
+{"name": "郭某", "role": "监事", "share_pct": 16.8, "uscc": "25BL8H36DT5UJNC7CP", "related_entities": ["瑞达期货"]}
+{"name": "黄某", "role": "实际控制人", "share_pct": 31.0, "uscc": "FY1JQ8E9E9D947GTRB", "related_entities": ["卓郎科技", "金徽矿业"]}
+{"name": "郭某", "role": "高管", "share_pct": 23.9, "uscc": "NA8EG5LBKF6TY2YBPU", "related_entities": ["客户C"]}
+{"name": "刘某", "role": "董事", "share_pct": 23.1, "uscc": "GYXDY2QP22D7P65WF5", "related_entities": ["金徽矿业"]}
+{"name": "吴某", "role": "实际控制人", "share_pct": 1.7, "uscc": "DXT4N3QGKWPX22MN1K", "related_entities": ["华信投资", "卓郎科技", "客户C"]}
+{"name": "郭某", "role": "董事", "share_pct": 10.6, "uscc": "H6EH734FNHM5PJTWQK", "related_entities": ["兴业银行"]}
+{"name": "吴某", "role": "实际控制人", "share_pct": 35.6, "uscc": "2NUEKA43AY5YMD7PKY", "related_entities": ["客户D"]}
+{"name": "林某", "role": "董事", "share_pct": 8.6, "uscc": "HN77MD74P24X7LWPQ7", "related_entities": ["卓郎科技"]}
+{"name": "黄某", "role": "监事", "share_pct": 33.9, "uscc": "KQ8JAT4XA1U53M561L", "related_entities": ["供应商B", "金徽矿业", "分包商F"]}
+{"name": "马某", "role": "高管", "share_pct": 19.1, "uscc": "651C51C7TD91847N2T", "related_entities": ["分包商F"]}
+{"name": "李某", "role": "董事", "share_pct": 1.0, "uscc": "YQR3HY1M1Y7WK3YE7Y", "related_entities": ["实控人王某", "海尔智家"]}
+{"name": "黄某", "role": "监事", "share_pct": 22.4, "uscc": "X8AG3FCWXY73CE9NDJ", "related_entities": ["卓郎科技"]}
+{"name": "陈某", "role": "监事", "share_pct": 1.6, "uscc": "TD94WPCW7XA0CH4507", "related_entities": ["瑞达期货", "金徽矿业", "客户D"]}
+{"name": "张某", "role": "监事", "share_pct": 15.0, "uscc": "AM393QNLMNFR2JM8LG", "related_entities": ["北方华创"]}
+{"name": "孙某", "role": "监事", "share_pct": 21.6, "uscc": "BJMK1Q18KJ6L9EJ6H9", "related_entities": ["供应商B", "代理商G"]}
+{"name": "陈某", "role": "董事", "share_pct": 23.9, "uscc": "746NEKDNCH129FNQBF", "related_entities": ["客户C", "客户D", "中天科技"]}
+{"name": "刘某", "role": "实际控制人", "share_pct": 31.9, "uscc": "2UQKJRYTBW23UABYRT", "related_entities": ["海尔智家", "卓郎科技"]}
+{"name": "罗某", "role": "监事", "share_pct": 23.9, "uscc": "91TD26XU1CWDK2ET6P", "related_entities": ["懋达实业", "瑞达期货"]}
+{"name": "周某", "role": "监事", "share_pct": 6.3, "uscc": "5Y2BGK3T51G54TKCGJ", "related_entities": ["宁德时代", "代理商G"]}
+{"name": "马某", "role": "高管", "share_pct": 24.5, "uscc": "N42HMHUHQ1KB6J36K4", "related_entities": ["关联方E", "宁德时代", "供应商A"]}
+{"name": "林某", "role": "高管", "share_pct": 20.7, "uscc": "09B5141X6X8PKTTYGH", "related_entities": ["分包商F"]}
+{"name": "李某", "role": "高管", "share_pct": 12.1, "uscc": "GW2129F9346L8AFLWP", "related_entities": ["供应商A", "海尔智家"]}
+{"name": "陈某", "role": "实际控制人", "share_pct": 25.1, "uscc": "674GW3X3E4JMCLY4M5", "related_entities": ["实控人王某", "北方华创", "供应商A"]}
+{"name": "王某", "role": "实际控制人", "share_pct": 36.4, "uscc": "11Q6CH3G9YLK282BT3", "related_entities": ["海尔智家", "客户C"]}
+{"name": "罗某", "role": "监事", "share_pct": 37.6, "uscc": "NGQ3Y4PN6NWUBJM93J", "related_entities": ["客户D"]}
+{"name": "罗某", "role": "高管", "share_pct": 2.6, "uscc": "812JYARCCYAMUHXYGM", "related_entities": ["客户D", "关联方E", "卓郎科技"]}
+{"name": "周某", "role": "监事", "share_pct": 11.1, "uscc": "CKQ2J1YLAU658P384J", "related_entities": ["客户D", "金徽矿业"]}
+{"name": "吴某", "role": "高管", "share_pct": 30.7, "uscc": "W20CP5C8K5D1JBUEY6", "related_entities": ["瑞达期货", "中天科技"]}
+{"name": "刘某", "role": "实际控制人", "share_pct": 15.7, "uscc": "HM11PBH0NJHP0J3LJY", "related_entities": ["实控人王某"]}
+{"name": "马某", "role": "董事", "share_pct": 7.2, "uscc": "H4ET8CH8HD0YTRGG81", "related_entities": ["金徽矿业", "北方华创"]}
+{"name": "王某", "role": "高管", "share_pct": 14.3, "uscc": "G4WANCWFM1EDM64FGD", "related_entities": ["海尔智家"]}
+{"name": "赵某", "role": "高管", "share_pct": 32.9, "uscc": "82R3690A8H2PYJJFUF", "related_entities": ["瑞达期货"]}
+{"name": "赵某", "role": "监事", "share_pct": 36.6, "uscc": "RDTJJ6U2H6EEFA211N", "related_entities": ["关联方E", "客户D", "宁德时代"]}
+{"name": "郭某", "role": "董事", "share_pct": 15.2, "uscc": "P124XN4J5AAEARNBED", "related_entities": ["代理商G", "瑞达期货", "关联方E"]}
+{"name": "杨某", "role": "实际控制人", "share_pct": 14.1, "uscc": "YN1TQXCA37FQ2PK0XJ", "related_entities": ["分包商F"]}
+{"name": "朱某", "role": "董事", "share_pct": 13.7, "uscc": "NH2EEEJFJXQ88XH1NK", "related_entities": ["客户D"]}
+{"name": "罗某", "role": "实际控制人", "share_pct": 11.2, "uscc": "RPP0W5D2AJGGY3YKBT", "related_entities": ["供应商B", "实控人王某"]}
+{"name": "赵某", "role": "监事", "share_pct": 20.4, "uscc": "7JCLBM6HN6M6MYAQPQ", "related_entities": ["实控人王某", "分包商F"]}
+{"name": "郭某", "role": "实际控制人", "share_pct": 33.0, "uscc": "QJ15X19AGGM14QPA0L", "related_entities": ["卓郎科技", "懋达实业", "兴业银行"]}
+{"name": "罗某", "role": "实际控制人", "share_pct": 27.9, "uscc": "465H62T1QD001U0P03", "related_entities": ["北方华创"]}
+{"name": "刘某", "role": "董事", "share_pct": 38.8, "uscc": "5MX7YWWR2M15D2Q1KX", "related_entities": ["懋达实业", "瑞达期货"]}
+{"name": "赵某", "role": "监事", "share_pct": 38.4, "uscc": "46P7BHCNM4KF0DXCUB", "related_entities": ["金徽矿业", "分包商F"]}
+{"name": "杨某", "role": "实际控制人", "share_pct": 2.7, "uscc": "B1ELB5FRYXUYLY9MFB", "related_entities": ["客户D"]}
+{"name": "马某", "role": "董事", "share_pct": 7.0, "uscc": "41X41K8HEH1UWRM31W", "related_entities": ["关联方E"]}
+{"name": "张某", "role": "董事", "share_pct": 34.1, "uscc": "L478B5UBDEKXA9U07W", "related_entities": ["卓郎科技"]}
+{"name": "陈某", "role": "董事", "share_pct": 30.0, "uscc": "L695QEJ50PEF01X6CY", "related_entities": ["宁德时代", "海尔智家"]}
+{"name": "孙某", "role": "高管", "share_pct": 25.9, "uscc": "UJEUQD0MAGTMXDKAGN", "related_entities": ["北方华创", "华信投资"]}
+{"name": "林某", "role": "高管", "share_pct": 39.5, "uscc": "Q23KPFTX5835QRAH6T", "related_entities": ["海尔智家"]}
+{"name": "胡某", "role": "实际控制人", "share_pct": 32.5, "uscc": "3HB434T53KR4JWEUG4", "related_entities": ["宁德时代", "代理商G"]}
+{"name": "高某", "role": "监事", "share_pct": 23.2, "uscc": "9T7YJMT9U0XJ76RBBF", "related_entities": ["金徽矿业", "客户C"]}
+{"name": "郭某", "role": "高管", "share_pct": 18.4, "uscc": "FGBMYN71933FKENM68", "related_entities": ["客户D", "宁德时代"]}
+{"name": "郑某", "role": "实际控制人", "share_pct": 26.6, "uscc": "KXFB1ETXTJH21B3RDU", "related_entities": ["客户C", "兴业银行", "卓郎科技"]}
+{"name": "罗某", "role": "监事", "share_pct": 12.5, "uscc": "E59KFNCCFHRUADPQ9U", "related_entities": ["懋达实业"]}
+{"name": "杨某", "role": "高管", "share_pct": 3.0, "uscc": "51RGA89JY1QLF9JH2R", "related_entities": ["瑞达期货", "关联方E", "懋达实业"]}
+{"name": "陈某", "role": "董事", "share_pct": 5.4, "uscc": "ARTPQF9H6GY87D1P86", "related_entities": ["供应商A", "金徽矿业", "关联方E"]}
+{"name": "赵某", "role": "实际控制人", "share_pct": 15.1, "uscc": "XKKLXWHJXTYPUQKH8Q", "related_entities": ["关联方E", "代理商G", "懋达实业"]}
+{"name": "朱某", "role": "高管", "share_pct": 34.6, "uscc": "3PHH3PTFFKTFLN8PH2", "related_entities": ["金徽矿业", "兴业银行"]}
+{"name": "朱某", "role": "实际控制人", "share_pct": 32.7, "uscc": "KF7KWLXA0YLYDCWKFC", "related_entities": ["北方华创"]}
+{"name": "郭某", "role": "高管", "share_pct": 29.1, "uscc": "8T4429BTM09RPTCUJG", "related_entities": ["代理商G", "兴业银行"]}
+{"name": "刘某", "role": "监事", "share_pct": 4.2, "uscc": "AANWM9LMBPC8UPAP2H", "related_entities": ["宁德时代", "分包商F", "瑞达期货"]}
+{"name": "吴某", "role": "实际控制人", "share_pct": 1.4, "uscc": "C4EUU9P5702K3TG3G1", "related_entities": ["懋达实业", "供应商B", "中天科技"]}
+{"name": "朱某", "role": "监事", "share_pct": 31.9, "uscc": "YAKD9GDHQEA461L4ML", "related_entities": ["供应商B", "客户D", "供应商A"]}
+{"name": "林某", "role": "高管", "share_pct": 8.9, "uscc": "1M6MM42HL3LBQAGX1H", "related_entities": ["客户C", "懋达实业", "卓郎科技"]}
+{"name": "李某", "role": "监事", "share_pct": 31.4, "uscc": "G82GAKBLE3LP10XDR2", "related_entities": ["客户C", "兴业银行"]}
+{"name": "马某", "role": "监事", "share_pct": 6.4, "uscc": "QGJPE09P45TBTUY6ND", "related_entities": ["中天科技"]}
+{"name": "何某", "role": "实际控制人", "share_pct": 26.6, "uscc": "0EW9BB6TKCJKXKC8MF", "related_entities": ["海尔智家"]}
+{"name": "吴某", "role": "监事", "share_pct": 34.3, "uscc": "MY7UJC4J72Q8L5AC40", "related_entities": ["供应商B"]}
+{"name": "林某", "role": "监事", "share_pct": 2.3, "uscc": "4FT2NLM8LRWJN5A4AQ", "related_entities": ["华信投资", "卓郎科技", "供应商B"]}
+{"name": "高某", "role": "实际控制人", "share_pct": 6.7, "uscc": "EFM3GYGD6JDEUQQ4BY", "related_entities": ["海尔智家"]}
+{"name": "罗某", "role": "董事", "share_pct": 4.4, "uscc": "R0TLY8YL6E6NY15F5M", "related_entities": ["供应商B", "宁德时代"]}
+{"name": "孙某", "role": "高管", "share_pct": 15.8, "uscc": "RHLX308JATN5C96J5F", "related_entities": ["供应商A", "中天科技", "懋达实业"]}
+{"name": "孙某", "role": "董事", "share_pct": 26.5, "uscc": "JYFPTC233905J32MK3", "related_entities": ["金徽矿业", "分包商F", "北方华创"]}
+{"name": "朱某", "role": "董事", "share_pct": 2.7, "uscc": "LCYFNR64FD3RLGPW3J", "related_entities": ["懋达实业", "客户D"]}
+{"name": "马某", "role": "高管", "share_pct": 9.4, "uscc": "M8XN55KX4CD5LFPKHQ", "related_entities": ["懋达实业", "兴业银行", "北方华创"]}
+{"name": "何某", "role": "实际控制人", "share_pct": 3.4, "uscc": "UJCXBLDHU71UXJHXDU", "related_entities": ["金徽矿业", "懋达实业"]}
+{"name": "林某", "role": "监事", "share_pct": 8.5, "uscc": "JTR9K63EYRCRNCK5WX", "related_entities": ["实控人王某", "关联方E"]}
+{"name": "李某", "role": "董事", "share_pct": 28.1, "uscc": "M0YXY1N5QC3FX21DEW", "related_entities": ["宁德时代", "关联方E", "海尔智家"]}
+{"name": "吴某", "role": "高管", "share_pct": 23.9, "uscc": "04CA2WXRHEC6822DDD", "related_entities": ["兴业银行", "中天科技"]}
+{"name": "陈某", "role": "高管", "share_pct": 7.7, "uscc": "8LQCCR82W80BT4FY3F", "related_entities": ["兴业银行", "供应商B", "懋达实业"]}
+{"name": "胡某", "role": "实际控制人", "share_pct": 35.1, "uscc": "0H0GK3RHQ0JCF27JYX", "related_entities": ["海尔智家"]}
+{"name": "李某", "role": "监事", "share_pct": 26.0, "uscc": "XB87RMW60JR57DXA4F", "related_entities": ["关联方E", "代理商G"]}
+{"name": "赵某", "role": "监事", "share_pct": 7.0, "uscc": "MCRHB8PYK16K4F4U4K", "related_entities": ["兴业银行"]}
+{"name": "胡某", "role": "高管", "share_pct": 29.4, "uscc": "324UCDKBE906747A98", "related_entities": ["瑞达期货", "金徽矿业", "中天科技"]}
+{"name": "赵某", "role": "监事", "share_pct": 6.8, "uscc": "QH5K9WLL9HKLAU59DP", "related_entities": ["客户D", "北方华创"]}
+{"name": "赵某", "role": "监事", "share_pct": 16.7, "uscc": "U7RGT5R7TM2QTPD1A3", "related_entities": ["客户D", "兴业银行", "华信投资"]}
+{"name": "罗某", "role": "董事", "share_pct": 30.3, "uscc": "03J48EHP06N2AUAB1J", "related_entities": ["北方华创"]}
+{"name": "赵某", "role": "监事", "share_pct": 4.5, "uscc": "EW8K7XNF2T1NECANQP", "related_entities": ["关联方E", "代理商G"]}
+{"name": "郑某", "role": "高管", "share_pct": 30.0, "uscc": "T71HYHCG98927EXAH6", "related_entities": ["卓郎科技", "关联方E", "代理商G"]}
+{"name": "郭某", "role": "监事", "share_pct": 13.3, "uscc": "YT8TDPAEB2HHF71U6B", "related_entities": ["海尔智家"]}
+{"name": "周某", "role": "高管", "share_pct": 6.4, "uscc": "LHTU05KATER7XF8JFK", "related_entities": ["客户D"]}
+{"name": "林某", "role": "监事", "share_pct": 17.7, "uscc": "EEKU8MYBDYU5P8UNDT", "related_entities": ["实控人王某", "懋达实业"]}
+{"name": "杨某", "role": "实际控制人", "share_pct": 35.4, "uscc": "AAYB80MBJ93G15RTLJ", "related_entities": ["北方华创", "供应商B", "代理商G"]}
+{"name": "林某", "role": "监事", "share_pct": 10.5, "uscc": "AGRDX5KP3G7QGK1T9U", "related_entities": ["华信投资", "兴业银行"]}
+{"name": "周某", "role": "高管", "share_pct": 11.9, "uscc": "A328UJ02YNEM041HCD", "related_entities": ["中天科技", "分包商F", "华信投资"]}
+{"name": "罗某", "role": "实际控制人", "share_pct": 12.8, "uscc": "58EL3R37RDH0EA3CL4", "related_entities": ["北方华创", "宁德时代", "实控人王某"]}
+{"name": "朱某", "role": "监事", "share_pct": 8.2, "uscc": "TYDX45ARE1XBNFHX8X", "related_entities": ["瑞达期货"]}
+{"name": "郭某", "role": "高管", "share_pct": 18.7, "uscc": "FFFTPBCF3XE95M4Y6A", "related_entities": ["海尔智家", "供应商B", "金徽矿业"]}
+{"name": "高某", "role": "实际控制人", "share_pct": 23.9, "uscc": "LAPKXYD4JU82G211TH", "related_entities": ["华信投资", "懋达实业", "代理商G"]}
+{"name": "郑某", "role": "董事", "share_pct": 1.6, "uscc": "8A9WH9B88KERH47H8N", "related_entities": ["北方华创", "瑞达期货"]}
+{"name": "林某", "role": "高管", "share_pct": 33.5, "uscc": "MG2C0MC4J21JC9QF5C", "related_entities": ["兴业银行", "瑞达期货"]}
+{"name": "孙某", "role": "实际控制人", "share_pct": 2.6, "uscc": "TPYDMH8P2XGURBCJ51", "related_entities": ["关联方E"]}
+{"name": "刘某", "role": "高管", "share_pct": 7.4, "uscc": "W82NXDA9DED2W6273U", "related_entities": ["北方华创", "供应商B", "卓郎科技"]}

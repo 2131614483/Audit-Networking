@@ -1,0 +1,9 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CM-03
+  name: 持续审计方法论框架
+  lsb:
+    base_url: http://localhost:8080   # LLM 服务总线
+  llm:
+    prompt_template: templates/prompt.txt
+    temperature: 0.2

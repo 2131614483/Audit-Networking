@@ -1,0 +1,192 @@
+{
+  "status": "ok",
+  "module": "FO-03",
+  "detections": [
+    {
+      "doc_id": "EMAIL001",
+      "title": "财务部内部邮件-本月账务处理",
+      "doc_type": "邮件",
+      "risk_score": 0.6,
+      "risk_grade": "high",
+      "signal_count": 3,
+      "findings": [
+        {
+          "category": "隐瞒收入",
+          "keyword": "隐瞒",
+          "count": 1,
+          "severity": "high"
+        },
+        {
+          "category": "虚列支出",
+          "keyword": "虚列",
+          "count": 1,
+          "severity": "high"
+        },
+        {
+          "category": "资金挪用",
+          "keyword": "挪用",
+          "count": 1,
+          "severity": "high"
+        }
+      ],
+      "high_risk_flag": true,
+      "investigate": false,
+      "suspicious_hedging": false,
+      "recommendations": [
+        "多重舞弊信号叠加，建议立即启动专项核查"
+      ]
+    },
+    {
+      "doc_id": "MEMO001",
+      "title": "审计会议纪要-第一季度",
+      "doc_type": "会议纪要",
+      "risk_score": 0.31999999999999995,
+      "risk_grade": "medium",
+      "signal_count": 4,
+      "findings": [
+        {
+          "category": "虚假发票",
+          "keyword": "虚开",
+          "count": 1,
+          "severity": "high"
+        },
+        {
+          "category": "模糊用语",
+          "keyword": "可能",
+          "count": 2,
+          "severity": "low"
+        },
+        {
+          "category": "模糊用语",
+          "keyword": "大概",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "模糊用语",
+          "keyword": "估计",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "high_risk_flag": false,
+      "investigate": true,
+      "suspicious_hedging": true,
+      "recommendations": [
+        "模糊用语与财务舞弊关键词并存，建议重点调查",
+        "过度使用模糊用词，建议要求对方书面澄清"
+      ]
+    },
+    {
+      "doc_id": "DISC001",
+      "title": "年度报告信息披露",
+      "doc_type": "年报披露",
+      "risk_score": 0.36,
+      "risk_grade": "medium",
+      "signal_count": 5,
+      "findings": [
+        {
+          "category": "利益输送",
+          "keyword": "关联交易",
+          "count": 1,
+          "severity": "high"
+        },
+        {
+          "category": "模糊用语",
+          "keyword": "可能",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "强烈肯定",
+          "keyword": "绝对",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "强烈肯定",
+          "keyword": "保证",
+          "count": 1,
+          "severity": "low"
+        },
+        {
+          "category": "强烈肯定",
+          "keyword": "确保",
+          "count": 1,
+          "severity": "low"
+        }
+      ],
+      "high_risk_flag": false,
+      "investigate": true,
+      "suspicious_hedging": false,
+      "recommendations": [
+        "模糊用语与财务舞弊关键词并存，建议重点调查"
+      ]
+    },
+    {
+      "doc_id": "CLEAN001",
+      "title": "正常经营活动说明",
+      "doc_type": "说明函",
+      "risk_score": 0.0,
+      "risk_grade": "low",
+      "signal_count": 0,
+      "findings": [],
+      "high_risk_flag": false,
+      "investigate": false,
+      "suspicious_hedging": false,
+      "recommendations": []
+    },
+    {
+      "doc_id": "NUM001",
+      "title": "费用明细表-12月",
+      "doc_type": "费用表",
+      "risk_score": 0.1,
+      "risk_grade": "low",
+      "signal_count": 1,
+      "findings": [
+        {
+          "category": "数值异常",
+          "keyword": "Benford定律检验",
+          "count": 12,
+          "severity": "medium",
+          "deviation": 0.954
+        }
+      ],
+      "high_risk_flag": false,
+      "investigate": false,
+      "suspicious_hedging": false,
+      "recommendations": []
+    }
+  ],
+  "summary": {
+    "document_count": 5,
+    "total_signals": 13,
+    "high_risk_docs": 1,
+    "avg_risk_score": 0.276,
+    "overall_risk_level": "中风险",
+    "risk_grade_distribution": {
+      "high": 1,
+      "medium": 2,
+      "low": 2
+    },
+    "category_counts": {
+      "隐瞒收入": 1,
+      "虚列支出": 1,
+      "资金挪用": 1,
+      "虚假发票": 1,
+      "模糊用语": 4,
+      "利益输送": 1,
+      "强烈肯定": 3,
+      "数值异常": 1
+    },
+    "rule_flags": {
+      "high_risk_flagged": 1,
+      "investigate_flagged": 2,
+      "hedging_flagged": 1
+    },
+    "thresholds": {
+      "high": 0.6,
+      "medium": 0.3
+    }
+  }
+}

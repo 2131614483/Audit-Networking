@@ -1,0 +1,8 @@
+{"rule_id": "SUB-001", "industry": "finance", "country": "CN", "categories": ["data_security", "finance", "tax", "accounting", "antitrust"], "priority": "high", "desc": "中国金融企业全类高优先订阅"}
+{"rule_id": "SUB-002", "industry": "technology", "country": "CN", "categories": ["data_security", "antitrust"], "priority": "high", "desc": "中国科技企业数据安全与反垄断订阅"}
+{"rule_id": "SUB-003", "industry": "finance", "country": "US", "categories": ["finance", "data_security"], "priority": "medium", "desc": "美国市场金融与数据安全关注"}
+{"rule_id": "SUB-004", "industry": "finance", "country": "EU", "categories": ["data_security", "finance"], "priority": "medium", "desc": "欧盟市场数据安全(GDPR)与金融关注"}
+{"rule_id": "SUB-005", "industry": "all", "country": "all", "categories": ["data_security"], "priority": "high", "desc": "全球数据安全法规强制订阅(跨境业务)"}
+{"rule_id": "SUB-006", "industry": "finance", "country": "all", "categories": ["accounting"], "priority": "medium", "desc": "全球会计准则变更关注(上市企业)"}
+{"rule_id": "SUB-007", "industry": "all", "country": "CN", "categories": ["labor", "environmental"], "priority": "low", "desc": "中国劳动与环保法规关注"}
+{"rule_id": "SUB-008", "industry": "all", "country": "all", "categories": ["antitrust"], "priority": "medium", "desc": "全球反垄断法规关注(大型企业)"}

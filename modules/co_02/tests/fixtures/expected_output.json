@@ -1,0 +1,35 @@
+{
+  "status": "ok",
+  "module": "CO-02",
+  "executive_summary": {
+    "module": "CO-02",
+    "family": "llm_rag",
+    "regulation": "个人信息保护实施条例（示例）",
+    "total_clauses_analyzed": 8,
+    "overall_impact_level": "high"
+  },
+  "regulation_analysis": {
+    "title": "个人信息保护实施条例（示例）",
+    "clause_count": 8,
+    "structure": {
+      "definition": 1,
+      "obligation": 5,
+      "right": 1,
+      "other": 1
+    },
+    "key_obligations_count": 5
+  },
+  "gap_analysis": {
+    "total_obligations": 5,
+    "gaps_by_type_contains": ["missing", "partial", "covered"],
+    "gap_rate_min": 0
+  },
+  "impact_assessment": {
+    "impact_score_min": 40,
+    "impact_score_max": 100,
+    "overall_level_in": ["low", "medium", "high"],
+    "cost_estimation_has": ["effort_months", "required_team_size", "primary_systems_affected"]
+  },
+  "remediation_plan_min_length": 1,
+  "custom_rule_flags_is_list": true
+}

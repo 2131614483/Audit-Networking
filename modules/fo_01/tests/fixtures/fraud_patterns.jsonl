@@ -1,0 +1,10 @@
+{"pattern_id": "FP001", "name": "年末大额交易", "description": "12月份单笔金额超过100万，疑似年末利润调节", "layer": "supervised", "conditions": {"month": 12, "amount_min": 1000000}, "weight": 0.9, "enabled": 1}
+{"pattern_id": "FP002", "name": "整数金额交易", "description": "金额为整数且超过1万元，疑似人为操纵", "layer": "supervised", "conditions": {"amount_is_integer": true, "amount_min": 10000}, "weight": 0.6, "enabled": 1}
+{"pattern_id": "FP003", "name": "非营业时间交易", "description": "交易发生在8点前或20点后，疑似规避监管", "layer": "supervised", "conditions": {"hour_outside": [8, 20]}, "weight": 0.7, "enabled": 1}
+{"pattern_id": "FP004", "name": "关联方交易", "description": "标记为关联方的交易，需重点核查公允性", "layer": "supervised", "conditions": {"is_related_party": true}, "weight": 0.8, "enabled": 1}
+{"pattern_id": "FP005", "name": "月末大额交易", "description": "月末(28日及以后)单笔金额超过50万，疑似月末调节", "layer": "supervised", "conditions": {"day_min": 28, "amount_min": 500000}, "weight": 0.75, "enabled": 1}
+{"pattern_id": "FP006", "name": "大额现金交易", "description": "现金类型交易且金额超过50万，疑似规避银行监管", "layer": "supervised", "conditions": {"tx_type": "cash", "amount_min": 500000}, "weight": 0.85, "enabled": 1}
+{"pattern_id": "FP007", "name": "首位数字异常大额", "description": "金额首位数字为7/8/9且超过10万，疑似规避Benford分布", "layer": "supervised", "conditions": {"amount_first_digit_in": [7, 8, 9], "amount_min": 100000}, "weight": 0.65, "enabled": 1}
+{"pattern_id": "FP008", "name": "整数倍金额", "description": "金额为10万的整数倍且超过100万，疑似虚构交易", "layer": "supervised", "conditions": {"amount_multiple_of": 100000, "amount_min": 1000000}, "weight": 0.7, "enabled": 1}
+{"pattern_id": "FP009", "name": "季度末大额交易", "description": "季度末月份(3/6/9/12)单笔金额超过80万", "layer": "supervised", "conditions": {"month_in": [3, 6, 9, 12], "amount_min": 800000}, "weight": 0.7, "enabled": 1}
+{"pattern_id": "FP010", "name": "深夜整数交易", "description": "深夜(0-5时)且金额为整数超过5万", "layer": "supervised", "conditions": {"hour_max": 5, "amount_is_integer": true, "amount_min": 50000}, "weight": 0.8, "enabled": 1}

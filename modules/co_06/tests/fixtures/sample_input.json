@@ -1,0 +1,149 @@
+{
+  "template_id": "CN-PBOC",
+  "report_date": "2025-06-15T08:00:00+00:00",
+  "alert": {
+    "alert_id": "ALERT-2025-0001",
+    "risk_score": 65,
+    "trigger_reason": "客户多账户分散存入小额资金，随后频繁跨境转出至高风险法域，疑似结构化洗钱与分层流转",
+    "patterns": ["STRUCTURING"],
+    "customer": {
+      "name": "张某",
+      "id_type": "身份证",
+      "id_no": "310101199001011234",
+      "account": "6222021234567890",
+      "occupation": "个体工商户",
+      "income": "50000/月",
+      "business": "建材零售",
+      "address": "上海市浦东新区世纪大道100号",
+      "nationality": "中国",
+      "dob": "1990-01-01"
+    },
+    "subjects": [
+      {
+        "name": "张某",
+        "id_no": "310101199001011234",
+        "account": "6222021234567890",
+        "relation": "主主体"
+      },
+      {
+        "name": "李某",
+        "id_no": "310102198805056789",
+        "account": "6222029876543210",
+        "relation": "关联人"
+      }
+    ],
+    "transactions": [
+      {
+        "tx_id": "TX20250610001",
+        "timestamp": "2025-06-10T09:15:00+08:00",
+        "amount": 9500,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "柜台",
+        "ip": "",
+        "location": "上海浦东支行",
+        "purpose": "现金存款"
+      },
+      {
+        "tx_id": "TX20250610002",
+        "timestamp": "2025-06-10T10:20:00+08:00",
+        "amount": 9800,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "柜台",
+        "ip": "",
+        "location": "上海浦东支行",
+        "purpose": "现金存款"
+      },
+      {
+        "tx_id": "TX20250610003",
+        "timestamp": "2025-06-10T11:05:00+08:00",
+        "amount": 9200,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "柜台",
+        "ip": "",
+        "location": "上海浦东支行",
+        "purpose": "现金存款"
+      },
+      {
+        "tx_id": "TX20250610004",
+        "timestamp": "2025-06-10T14:30:00+08:00",
+        "amount": 8800,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "柜台",
+        "ip": "",
+        "location": "上海浦东支行",
+        "purpose": "现金存款"
+      },
+      {
+        "tx_id": "TX20250611005",
+        "timestamp": "2025-06-11T08:45:00+08:00",
+        "amount": 150000,
+        "currency": "CNY",
+        "direction": "out",
+        "counterparty": {"name": "海外空壳公司A", "account": "OS-A-001"},
+        "channel": "网银",
+        "ip": "180.168.22.33",
+        "location": "开曼群岛",
+        "purpose": "货款"
+      },
+      {
+        "tx_id": "TX20250611006",
+        "timestamp": "2025-06-11T15:10:00+08:00",
+        "amount": 120000,
+        "currency": "CNY",
+        "direction": "out",
+        "counterparty": {"name": "离岸贸易公司B", "account": "OS-B-002"},
+        "channel": "网银",
+        "ip": "180.168.22.34",
+        "location": "英属维尔京群岛",
+        "purpose": "咨询费"
+      },
+      {
+        "tx_id": "TX20250612007",
+        "timestamp": "2025-06-12T09:00:00+08:00",
+        "amount": 5000,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "ATM",
+        "ip": "",
+        "location": "上海徐汇支行",
+        "purpose": "现金存款"
+      },
+      {
+        "tx_id": "TX20250612008",
+        "timestamp": "2025-06-12T16:25:00+08:00",
+        "amount": 9000,
+        "currency": "CNY",
+        "direction": "in",
+        "counterparty": {"name": "现金存入", "account": "CASH"},
+        "channel": "柜台",
+        "ip": "",
+        "location": "上海徐汇支行",
+        "purpose": "现金存款"
+      }
+    ],
+    "related_accounts": ["6222029876543210", "6222025555444433", "6222027777888899"],
+    "related_parties": [
+      {"name": "李某", "relation": "账户共有人", "id_no": "310102198805056789"},
+      {"name": "王某", "relation": "法定代表人", "id_no": "310103197512120001"},
+      {"name": "海外空壳公司A", "relation": "交易对手", "id_no": "OS-A-001"},
+      {"name": "离岸贸易公司B", "relation": "交易对手", "id_no": "OS-B-002"}
+    ],
+    "related_txs": ["TX20250611005", "TX20250611006"],
+    "attachments": ["交易流水明细.csv", "客户KYC资料.pdf", "账户网络关系图.png"],
+    "external_info": {
+      "pep_check": "未命中",
+      "sanction_check": "未命中",
+      "jurisdiction_risk": "高风险法域：开曼群岛、BVI"
+    },
+    "history_sars": []
+  }
+}

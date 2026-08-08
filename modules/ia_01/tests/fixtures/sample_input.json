@@ -1,0 +1,17 @@
+{
+  "action": "score",
+  "entity": {
+    "entity_id": "ENT-001",
+    "entity_name": "华东销售子公司",
+    "entity_type": "subsidiary",
+    "parent_id": "root"
+  },
+  "indicators": {
+    "FIN_001": 30,
+    "FIN_002": 40,
+    "OPS_001": 8,
+    "CMP_001": 100,
+    "EXT_001": 40,
+    "HIS_002": 40
+  }
+}

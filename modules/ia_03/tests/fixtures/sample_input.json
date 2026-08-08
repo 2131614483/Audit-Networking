@@ -1,0 +1,79 @@
+{
+  "auditors": [
+    {
+      "auditor_id": "A001",
+      "name": "张审计",
+      "level": "高级",
+      "skills": {"财务审计": 0.9, "数据分析": 0.7},
+      "industries": ["银行"],
+      "city": "北京",
+      "hourly_rate": 500,
+      "weekly_hours": 40,
+      "available_hours": 40,
+      "development_goals": ["金融", "财务审计"]
+    },
+    {
+      "auditor_id": "A002",
+      "name": "李审计",
+      "level": "中级",
+      "skills": {"财务审计": 0.6, "IT审计": 0.8},
+      "industries": ["软件"],
+      "city": "上海",
+      "hourly_rate": 400,
+      "weekly_hours": 40,
+      "available_hours": 40,
+      "development_goals": ["科技"]
+    },
+    {
+      "auditor_id": "A003",
+      "name": "王审计",
+      "level": "高级",
+      "skills": {"IT审计": 0.9, "风险评估": 0.7},
+      "industries": ["软件"],
+      "city": "北京",
+      "hourly_rate": 550,
+      "weekly_hours": 40,
+      "available_hours": 40,
+      "development_goals": ["科技", "IT审计"]
+    },
+    {
+      "auditor_id": "A004",
+      "name": "赵审计",
+      "level": "初级",
+      "skills": {"财务审计": 0.5, "数据分析": 0.6},
+      "industries": ["零售"],
+      "city": "广州",
+      "hourly_rate": 300,
+      "weekly_hours": 40,
+      "available_hours": 40,
+      "development_goals": ["财务审计"]
+    }
+  ],
+  "projects": [
+    {
+      "project_id": "P001",
+      "name": "银行年度审计",
+      "industry": "银行",
+      "city": "北京",
+      "required_skills": {"财务审计": 0.8, "数据分析": 0.6},
+      "required_count": 2,
+      "duration_weeks": 4,
+      "budget": 500000,
+      "complexity": 60,
+      "min_senior": 1
+    },
+    {
+      "project_id": "P002",
+      "name": "科技公司IT审计",
+      "industry": "软件",
+      "city": "北京",
+      "required_skills": {"IT审计": 0.8, "风险评估": 0.6},
+      "required_count": 2,
+      "duration_weeks": 3,
+      "budget": 400000,
+      "complexity": 70,
+      "min_senior": 1
+    }
+  ],
+  "constraints": {"pop_size": 10, "max_gen": 1}
+}

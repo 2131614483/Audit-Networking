@@ -1,0 +1,55 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CO-07
+  name: AI数据资产自动发现与分类
+  name_en: co_07
+  version: 1.0.0
+  category: compliance_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 4
+  priority: high
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    AI数据资产自动发现与分类平台通过数据库扫描、文件系统遍历、网络嗅探等技术自动发现企业数据资产，ML+NLP模型自动识别敏感数据类型（PII/财务/医疗/商业秘密等），元数据管理引擎建立统一的数据资产目录。预期数据资产覆盖率从30-50%提升至95%以上。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.co_07
+  port: 8207
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      - CO-01
+      - CO-08
+      - CO-09
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

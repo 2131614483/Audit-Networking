@@ -1,0 +1,27 @@
+{
+  "slug": "cb_04",
+  "family": "cb",
+  "module_name": "",
+  "total_bytes": 11156958,
+  "total_mb": 10.64,
+  "files": [
+    {
+      "file": "cross_border.jsonl",
+      "bytes": 8195206
+    },
+    {
+      "file": "regulations.jsonl",
+      "bytes": 1255061
+    },
+    {
+      "file": "text_corpus.txt",
+      "bytes": 1706691
+    }
+  ],
+  "modalities": [
+    "cross_border",
+    "regulations",
+    "text_corpus"
+  ],
+  "generated_at": "2026-08-08T15:00:51.976227"
+}

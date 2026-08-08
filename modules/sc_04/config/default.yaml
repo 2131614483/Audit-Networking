@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: SC-04
+  name: ML采购价格异常检测平台
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

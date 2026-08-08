@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CM-02
+  name: 智能预警分级与自动处理系统
+  rop:
+    base_url: http://localhost:8090   # RPA 编排平台
+  rpa:
+    flow_id: ""

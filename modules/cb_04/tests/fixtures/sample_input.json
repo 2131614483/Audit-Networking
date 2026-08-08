@@ -1,0 +1,14 @@
+{
+  "from_standard": "IFRS",
+  "to_standard": "US_GAAP",
+  "accounting_policies": [
+    "收入确认采用 IFRS 15 五步法模型，识别履约义务并在履行时确认收入",
+    "租赁按 IFRS 16 处理，所有租赁入表确认使用权资产和租赁负债",
+    "金融工具按 IFRS 9 三分类计量，采用预期信用损失模型"
+  ],
+  "financial_statements": {
+    "balance_sheet": {"使用权资产": 1000000, "租赁负债": 900000},
+    "income_statement": {"营业收入": 5000000, "资产减值损失": 200000}
+  },
+  "industry": "制造业"
+}

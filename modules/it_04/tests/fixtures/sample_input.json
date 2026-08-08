@@ -1,0 +1,20 @@
+[
+  {
+    "metric": "login_failure_rate",
+    "values": [0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.01, 0.03],
+    "timestamps": ["t1", "t2", "t3", "t4", "t5", "t6", "t7", "t8", "t9", "t10"],
+    "metadata": {"unit": "ratio", "system": "auth"}
+  },
+  {
+    "metric": "transaction_volume",
+    "values": [100, 105, 98, 102, 100, 95, 0],
+    "timestamps": ["t1", "t2", "t3", "t4", "t5", "t6", "t7"],
+    "metadata": {"unit": "count", "system": "core"}
+  },
+  {
+    "metric": "privilege_change_count",
+    "values": [1, 2, 3, 4, 5, 6, 7],
+    "timestamps": ["t1", "t2", "t3", "t4", "t5", "t6", "t7"],
+    "metadata": {"unit": "count", "system": "iam"}
+  }
+]

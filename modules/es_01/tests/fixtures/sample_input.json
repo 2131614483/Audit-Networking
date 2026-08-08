@@ -1,0 +1,121 @@
+{
+  "entity": "示例集团股份有限公司",
+  "period": "2024年度",
+  "data_sources": [
+    {
+      "data_type": "structured",
+      "source": "政府平台",
+      "metric_key": "GHG_Emissions",
+      "content": {"value": 12000, "unit": "tCO2"},
+      "unit": "tCO2",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-03-15T10:00:00"
+    },
+    {
+      "data_type": "semi_structured",
+      "source": "企业ESG报告",
+      "metric_key": "GHG_Emissions",
+      "content": "本年度温室气体排放总量为 12500 tCO2，较上年下降5%",
+      "unit": "tCO2",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-20T09:30:00"
+    },
+    {
+      "data_type": "text",
+      "source": "新闻媒体",
+      "metric_key": "GHG_Emissions",
+      "content": "据媒体报道，该公司碳排放高达 25000 吨，温室气体排放引发环保组织关注",
+      "unit": "tCO2",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-05-11T14:00:00"
+    },
+    {
+      "data_type": "time_series",
+      "source": "IoT传感器",
+      "metric_key": "Energy_Consumption",
+      "content": [
+        {"value": 5000, "unit": "MJ"},
+        {"value": 5200, "unit": "MJ"},
+        {"value": 4800, "unit": "MJ"},
+        {"value": 5100, "unit": "MJ"}
+      ],
+      "unit": "MJ",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-03-31T23:59:00"
+    },
+    {
+      "data_type": "structured",
+      "source": "内部系统",
+      "metric_key": "Energy_Consumption",
+      "content": {"energy_total": 20100, "unit": "MJ"},
+      "unit": "MJ",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-01T08:00:00"
+    },
+    {
+      "data_type": "semi_structured",
+      "source": "企业年报",
+      "metric_key": "Water_Intensity",
+      "content": "全年取水量 85000 m3，万元营收用水强度持续下降",
+      "unit": "m3",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-10T16:00:00"
+    },
+    {
+      "data_type": "text",
+      "source": "行业数据",
+      "metric_key": "Waste_Generated",
+      "content": "行业固废排放 320 tCO2，废弃物处理符合规范",
+      "unit": "tCO2",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-05-05T11:00:00"
+    },
+    {
+      "data_type": "structured",
+      "source": "第三方评级",
+      "metric_key": "Employee_Turnover",
+      "content": {"turnover_rate": 12.5, "unit": "%"},
+      "unit": "%",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-25T10:00:00"
+    },
+    {
+      "data_type": "structured",
+      "source": "企业ESG报告",
+      "metric_key": "Diversity_Ratio",
+      "content": {"female_ratio": 38.0, "unit": "%"},
+      "unit": "%",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-20T09:30:00"
+    },
+    {
+      "data_type": "structured",
+      "source": "企业年报",
+      "metric_key": "Board_Independence",
+      "content": {"independent_ratio": 75.0, "unit": "%"},
+      "unit": "%",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-10T16:00:00"
+    },
+    {
+      "data_type": "structured",
+      "source": "内部系统",
+      "metric_key": "Anti_Corruption",
+      "content": {"score": 88.0, "unit": "分"},
+      "unit": "分",
+      "entity": "示例集团股份有限公司",
+      "period": "2024年度",
+      "timestamp": "2025-04-01T08:00:00"
+    }
+  ]
+}

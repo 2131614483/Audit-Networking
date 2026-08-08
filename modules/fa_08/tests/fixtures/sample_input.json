@@ -1,0 +1,54 @@
+{
+  "statements": {
+    "trial_balance": {
+      "debit": 12500000.00,
+      "credit": 12500000.00
+    },
+    "balance_sheet": {
+      "assets": 8800000.00,
+      "liabilities": 3200000.00,
+      "equity": 5500000.00
+    },
+    "cash_flow": {
+      "cf_ending_cash": 1200000.00,
+      "bs_cash": 1180000.00
+    },
+    "retained_earnings": {
+      "ending_re": 2300000.00,
+      "begin_re": 1800000.00,
+      "net_profit": 750000.00,
+      "dividend": 250000.00
+    },
+    "inventory": {
+      "inventory_total": 3600000.00,
+      "raw": 1200000.00,
+      "wip": 800000.00,
+      "fg": 1600000.00
+    },
+    "depreciation": {
+      "dep_ending": 2400000.00,
+      "dep_begin": 2000000.00,
+      "dep_add": 500000.00,
+      "dep_dispose": 100000.00
+    },
+    "payroll": {
+      "pay_ending": 450000.00,
+      "pay_begin": 380000.00,
+      "pay_accrue": 220000.00,
+      "pay_paid": 150000.00
+    }
+  },
+  "workpapers": [
+    {"id": "WP001", "amount": 100000.00, "subject": "货币资金"},
+    {"id": "WP002", "amount": 50000.00, "subject": "应收账款"}
+  ],
+  "vouchers": [
+    {"workpaper_id": "WP001", "amount": 100000.00},
+    {"workpaper_id": "WP002", "amount": 45000.00}
+  ],
+  "metrics": [
+    {"name": "营业收入", "current": 1200000.00, "previous": 1000000.00},
+    {"name": "净利润", "current": 500000.00, "previous": 300000.00},
+    {"name": "管理费用", "current": 200000.00, "previous": 0.00}
+  ]
+}

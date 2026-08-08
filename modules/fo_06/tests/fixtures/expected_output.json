@@ -1,0 +1,651 @@
+{
+  "chains": [
+    {
+      "case_id": "CASE-001",
+      "case_name": "采购舞弊案",
+      "evidence": [
+        {
+          "evidence_id": "EVD-001",
+          "case_id": "CASE-001",
+          "content": "2024年3月15日，张三经理代表华兴科技有限公司与李四董事签订采购合同，合同金额人民币500万元。",
+          "evidence_type": "合同",
+          "timestamp": "2024-03-15",
+          "source": "采购系统",
+          "entities": {
+            "person": [
+              "张三经理",
+              "司与李四董事"
+            ],
+            "company": [
+              "张三经理代表华兴科技有限公司"
+            ],
+            "amount": [
+              "人民币500"
+            ],
+            "date": [
+              "2024年3月15日"
+            ],
+            "location": []
+          }
+        },
+        {
+          "evidence_id": "EVD-002",
+          "case_id": "CASE-001",
+          "content": "2024年3月20日，华兴科技有限公司向万达有限公司转账支付人民币500万元。",
+          "evidence_type": "银行流水",
+          "timestamp": "2024-03-20",
+          "source": "银行系统",
+          "entities": {
+            "person": [],
+            "company": [
+              "华兴科技有限公司",
+              "向万达有限公司"
+            ],
+            "amount": [
+              "人民币500"
+            ],
+            "date": [
+              "2024年3月20日"
+            ],
+            "location": []
+          }
+        },
+        {
+          "evidence_id": "EVD-003",
+          "case_id": "CASE-001",
+          "content": "2024年4月1日，李四董事收到万达有限公司支付的回扣人民币50万元。",
+          "evidence_type": "证人证言",
+          "timestamp": "2024-04-01",
+          "source": "调查笔录",
+          "entities": {
+            "person": [
+              "李四董事"
+            ],
+            "company": [
+              "李四董事收到万达有限公司"
+            ],
+            "amount": [
+              "人民币50"
+            ],
+            "date": [
+              "2024年4月1日"
+            ],
+            "location": []
+          }
+        }
+      ],
+      "entities": [
+        {
+          "entity_type": "person",
+          "entity_value": "张三经理",
+          "evidence_count": 1,
+          "first_seen": "2024-03-15"
+        },
+        {
+          "entity_type": "person",
+          "entity_value": "司与李四董事",
+          "evidence_count": 1,
+          "first_seen": "2024-03-15"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "张三经理代表华兴科技有限公司",
+          "evidence_count": 1,
+          "first_seen": "2024-03-15"
+        },
+        {
+          "entity_type": "amount",
+          "entity_value": "人民币500",
+          "evidence_count": 2,
+          "first_seen": "2024-03-15"
+        },
+        {
+          "entity_type": "date",
+          "entity_value": "2024年3月15日",
+          "evidence_count": 1,
+          "first_seen": "2024-03-15"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "华兴科技有限公司",
+          "evidence_count": 1,
+          "first_seen": "2024-03-20"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "向万达有限公司",
+          "evidence_count": 1,
+          "first_seen": "2024-03-20"
+        },
+        {
+          "entity_type": "date",
+          "entity_value": "2024年3月20日",
+          "evidence_count": 1,
+          "first_seen": "2024-03-20"
+        },
+        {
+          "entity_type": "person",
+          "entity_value": "李四董事",
+          "evidence_count": 1,
+          "first_seen": "2024-04-01"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "李四董事收到万达有限公司",
+          "evidence_count": 1,
+          "first_seen": "2024-04-01"
+        },
+        {
+          "entity_type": "amount",
+          "entity_value": "人民币50",
+          "evidence_count": 1,
+          "first_seen": "2024-04-01"
+        },
+        {
+          "entity_type": "date",
+          "entity_value": "2024年4月1日",
+          "evidence_count": 1,
+          "first_seen": "2024-04-01"
+        }
+      ],
+      "connections": [
+        {
+          "entities": [
+            "person:司与李四董事",
+            "person:张三经理"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:张三经理代表华兴科技有限公司",
+            "person:张三经理"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "person:张三经理"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "date:2024年3月15日",
+            "person:张三经理"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:张三经理代表华兴科技有限公司",
+            "person:司与李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "person:司与李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "date:2024年3月15日",
+            "person:司与李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "company:张三经理代表华兴科技有限公司"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:张三经理代表华兴科技有限公司",
+            "date:2024年3月15日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "date:2024年3月15日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:华兴科技有限公司",
+            "company:向万达有限公司"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "company:华兴科技有限公司"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:华兴科技有限公司",
+            "date:2024年3月20日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "company:向万达有限公司"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:向万达有限公司",
+            "date:2024年3月20日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币500",
+            "date:2024年3月20日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:李四董事收到万达有限公司",
+            "person:李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币50",
+            "person:李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "date:2024年4月1日",
+            "person:李四董事"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币50",
+            "company:李四董事收到万达有限公司"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:李四董事收到万达有限公司",
+            "date:2024年4月1日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币50",
+            "date:2024年4月1日"
+          ],
+          "weight": 0.3333,
+          "evidence_count": 1
+        }
+      ],
+      "entity_count": 12,
+      "connection_count": 22,
+      "chain_complete": true,
+      "completeness_score": 100.0,
+      "missing_elements": []
+    },
+    {
+      "case_id": "CASE-002",
+      "case_name": "资金挪用案",
+      "evidence": [
+        {
+          "evidence_id": "EVD-005",
+          "case_id": "CASE-002",
+          "content": "华兴科技有限公司与王五经理存在关联关系。",
+          "evidence_type": "工商记录",
+          "timestamp": "2024-01-01",
+          "source": "工商系统",
+          "entities": {
+            "person": [
+              "司与王五经理"
+            ],
+            "company": [
+              "华兴科技有限公司"
+            ],
+            "amount": [],
+            "date": [],
+            "location": []
+          }
+        },
+        {
+          "evidence_id": "EVD-004",
+          "case_id": "CASE-002",
+          "content": "2024年5月10日，王五经理从公司账户转出人民币200万元至个人账户。",
+          "evidence_type": "审计报告",
+          "timestamp": "2024-05-10",
+          "source": "内审部门",
+          "entities": {
+            "person": [
+              "王五经理"
+            ],
+            "company": [
+              "王五经理从公司"
+            ],
+            "amount": [
+              "人民币200"
+            ],
+            "date": [
+              "2024年5月10日"
+            ],
+            "location": []
+          }
+        }
+      ],
+      "entities": [
+        {
+          "entity_type": "person",
+          "entity_value": "司与王五经理",
+          "evidence_count": 1,
+          "first_seen": "2024-01-01"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "华兴科技有限公司",
+          "evidence_count": 1,
+          "first_seen": "2024-01-01"
+        },
+        {
+          "entity_type": "person",
+          "entity_value": "王五经理",
+          "evidence_count": 1,
+          "first_seen": "2024-05-10"
+        },
+        {
+          "entity_type": "company",
+          "entity_value": "王五经理从公司",
+          "evidence_count": 1,
+          "first_seen": "2024-05-10"
+        },
+        {
+          "entity_type": "amount",
+          "entity_value": "人民币200",
+          "evidence_count": 1,
+          "first_seen": "2024-05-10"
+        },
+        {
+          "entity_type": "date",
+          "entity_value": "2024年5月10日",
+          "evidence_count": 1,
+          "first_seen": "2024-05-10"
+        }
+      ],
+      "connections": [
+        {
+          "entities": [
+            "company:华兴科技有限公司",
+            "person:司与王五经理"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:王五经理从公司",
+            "person:王五经理"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币200",
+            "person:王五经理"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "date:2024年5月10日",
+            "person:王五经理"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币200",
+            "company:王五经理从公司"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "company:王五经理从公司",
+            "date:2024年5月10日"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        },
+        {
+          "entities": [
+            "amount:人民币200",
+            "date:2024年5月10日"
+          ],
+          "weight": 0.5,
+          "evidence_count": 1
+        }
+      ],
+      "entity_count": 6,
+      "connection_count": 7,
+      "chain_complete": false,
+      "completeness_score": 70.0,
+      "missing_elements": [
+        "证据数量不足（需3条，现有2条）"
+      ]
+    }
+  ],
+  "all_entities": {
+    "person:张三经理": {
+      "entity_type": "person",
+      "entity_value": "张三经理",
+      "evidence_count": 1,
+      "first_seen": "2024-03-15",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "person:司与李四董事": {
+      "entity_type": "person",
+      "entity_value": "司与李四董事",
+      "evidence_count": 1,
+      "first_seen": "2024-03-15",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "company:张三经理代表华兴科技有限公司": {
+      "entity_type": "company",
+      "entity_value": "张三经理代表华兴科技有限公司",
+      "evidence_count": 1,
+      "first_seen": "2024-03-15",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "amount:人民币500": {
+      "entity_type": "amount",
+      "entity_value": "人民币500",
+      "evidence_count": 2,
+      "first_seen": "2024-03-15",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "date:2024年3月15日": {
+      "entity_type": "date",
+      "entity_value": "2024年3月15日",
+      "evidence_count": 1,
+      "first_seen": "2024-03-15",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "company:华兴科技有限公司": {
+      "entity_type": "company",
+      "entity_value": "华兴科技有限公司",
+      "evidence_count": 2,
+      "first_seen": "2024-03-20",
+      "cases": [
+        "CASE-001",
+        "CASE-002"
+      ]
+    },
+    "company:向万达有限公司": {
+      "entity_type": "company",
+      "entity_value": "向万达有限公司",
+      "evidence_count": 1,
+      "first_seen": "2024-03-20",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "date:2024年3月20日": {
+      "entity_type": "date",
+      "entity_value": "2024年3月20日",
+      "evidence_count": 1,
+      "first_seen": "2024-03-20",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "person:李四董事": {
+      "entity_type": "person",
+      "entity_value": "李四董事",
+      "evidence_count": 1,
+      "first_seen": "2024-04-01",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "company:李四董事收到万达有限公司": {
+      "entity_type": "company",
+      "entity_value": "李四董事收到万达有限公司",
+      "evidence_count": 1,
+      "first_seen": "2024-04-01",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "amount:人民币50": {
+      "entity_type": "amount",
+      "entity_value": "人民币50",
+      "evidence_count": 1,
+      "first_seen": "2024-04-01",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "date:2024年4月1日": {
+      "entity_type": "date",
+      "entity_value": "2024年4月1日",
+      "evidence_count": 1,
+      "first_seen": "2024-04-01",
+      "cases": [
+        "CASE-001"
+      ]
+    },
+    "person:司与王五经理": {
+      "entity_type": "person",
+      "entity_value": "司与王五经理",
+      "evidence_count": 1,
+      "first_seen": "2024-01-01",
+      "cases": [
+        "CASE-002"
+      ]
+    },
+    "person:王五经理": {
+      "entity_type": "person",
+      "entity_value": "王五经理",
+      "evidence_count": 1,
+      "first_seen": "2024-05-10",
+      "cases": [
+        "CASE-002"
+      ]
+    },
+    "company:王五经理从公司": {
+      "entity_type": "company",
+      "entity_value": "王五经理从公司",
+      "evidence_count": 1,
+      "first_seen": "2024-05-10",
+      "cases": [
+        "CASE-002"
+      ]
+    },
+    "amount:人民币200": {
+      "entity_type": "amount",
+      "entity_value": "人民币200",
+      "evidence_count": 1,
+      "first_seen": "2024-05-10",
+      "cases": [
+        "CASE-002"
+      ]
+    },
+    "date:2024年5月10日": {
+      "entity_type": "date",
+      "entity_value": "2024年5月10日",
+      "evidence_count": 1,
+      "first_seen": "2024-05-10",
+      "cases": [
+        "CASE-002"
+      ]
+    }
+  },
+  "summary": {
+    "total_evidence": 5,
+    "total_chains": 2,
+    "total_entities": 17,
+    "avg_evidence_per_chain": 2.5,
+    "complete_chains": 1,
+    "chain_quality": "良好"
+  }
+}

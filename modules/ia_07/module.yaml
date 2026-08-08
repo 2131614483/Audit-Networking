@@ -1,0 +1,57 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: IA-07
+  name: 智能整改跟踪平台
+  name_en: ia_07
+  version: 1.0.0
+  category: internal_audit
+  family: rpa
+  family_display: RPA
+  difficulty: 3
+  priority: medium
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    智能整改跟踪平台通过RPA自动抓取整改状态数据、工作流引擎驱动整改流程自动化、ML模型预测整改风险和推荐最优整改方案，实现整改闭环管理。系统自动跟踪每项整改的进度，超时自动升级至更高管理层，整改完成后自动触发效果验证。预期整改完成率提升至90%以上。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ia_07
+  port: 8107
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - rop
+  modules:
+      - IA-02
+      - IA-04
+      - IA-05
+      - IA-06
+      - IA-08
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

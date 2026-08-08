@@ -1,0 +1,57 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: IA-01
+  name: 动态风险地图与智能审计计划
+  name_en: ia_01
+  version: 1.0.0
+  category: internal_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 5
+  priority: high
+  roi: "1-1.5年"
+  duration: ""
+  budget: ""
+  description: >
+    动态风险地图与智能审计计划平台通过ML模型（XGBoost）对100+持续计算的指标进行实时风险评分，结合NLP技术处理内外部文本数据（新闻、监管公告、社交媒体、内部报告），实现风险从"数月感知"到"<24小时感知"的飞跃。LLM引擎将风险评分结果、资源约束、历史审计覆盖等多维信息整合，自动生成最优审计计划草案，风险识别准确率提升30-40%。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ia_01
+  port: 8101
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      - CO-01
+      - IA-02
+      - IA-03
+      - IA-04
+      - IA-06
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

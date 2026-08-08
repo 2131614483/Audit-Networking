@@ -1,0 +1,14 @@
+{
+  "status": "ok",
+  "module": "CO-03",
+  "regulation_title": "反洗钱法修订案（2025）",
+  "change_type": "minor",
+  "affected_domains_contains": ["aml"],
+  "programs_updated_min": 1,
+  "updated_programs_has": ["prog_id", "old_version", "new_version", "change_count", "updates_made"],
+  "version_history_is_list": true,
+  "change_log_is_list": true,
+  "coverage_stats_has": ["coverage_rate", "coverage_alert"],
+  "custom_rule_flags_contains_aml": true,
+  "version_bump_pattern": "minor_bump"
+}

@@ -1,0 +1,56 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FA-05
+  name: 区块链银行函证
+  name_en: fa_05
+  version: 1.0.0
+  category: financial_audit
+  family: blockchain
+  family_display: Blockchain
+  difficulty: 4
+  priority: high
+  roi: "1-1.5年"
+  duration: ""
+  budget: ""
+  description: >
+    区块链银行函证方案基于Hyperledger Fabric联盟链构建，审计师通过智能合约发起函证请求，银行节点自动查询账户数据并生成数字签名回函，全程上链存证、不可篡改。方案支持与银行核心系统API直连，回函数据由银行系统自动生成并数字签名，确保函证数据的真实性和完整性。通过区块链函证，回函周期从7-15天压缩至<1天（API直连银行可达实时），函证真实性100%可验证，函证覆盖率提升至100%。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fa_05
+  port: 8005
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      - FA-03
+      - FA-04
+      - FA-06
+      - FA-07
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

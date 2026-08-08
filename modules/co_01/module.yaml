@@ -1,0 +1,58 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CO-01
+  name: 全球法规智能监控平台
+  name_en: co_01
+  version: 1.0.0
+  category: compliance_audit
+  family: kg_gnn
+  family_display: Knowledge Graph / GNN
+  difficulty: 5
+  priority: high
+  roi: "1-2年"
+  duration: ""
+  budget: ""
+  description: >
+    全球法规智能监控平台通过分布式爬虫系统实时采集200+国家和地区的法规发布信息，NLP模型进行多语言法规文本理解和分类，LLM进行法规影响自动评估，RAG知识库存储法规全文和解读。平台实现法规感知从"月"级提升至"<24小时"，覆盖200+国家和地区的监管动态，自动识别与企业相关的法规变更并推送至相关合规人员。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.co_01
+  port: 8201
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - akg
+    - lsb
+  modules:
+      - CO-02
+      - CO-03
+      - CO-07
+      - CO-08
+      - CO-09
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

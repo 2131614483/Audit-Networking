@@ -1,0 +1,158 @@
+{
+  "items": [
+    {
+      "check_id": "balance_sheet",
+      "type": "consistency",
+      "description": "资产=负债+权益",
+      "severity": "high",
+      "diff_amount": 100000.0,
+      "status": "FAIL",
+      "suggestion": "复核资产=负债+权益相关科目明细"
+    },
+    {
+      "check_id": "cash_flow",
+      "type": "consistency",
+      "description": "现金流量期末=资产负债现金",
+      "severity": "high",
+      "diff_amount": 20000.0,
+      "status": "FAIL",
+      "suggestion": "复核现金流量期末=资产负债现金相关科目明细"
+    },
+    {
+      "check_id": "voucher_WP002",
+      "type": "cross_doc",
+      "description": "底稿与凭证金额不一致 (WP002)",
+      "severity": "high",
+      "diff_amount": -5000.0,
+      "status": "FAIL",
+      "suggestion": "核对底稿金额与原始凭证"
+    },
+    {
+      "check_id": "anomaly_80170f62",
+      "type": "anomaly",
+      "description": "异常波动: 净利润",
+      "severity": "medium",
+      "diff_amount": 200000.0,
+      "change_pct": 0.667,
+      "status": "FAIL",
+      "suggestion": "复核净利润同比66.7%波动原因"
+    },
+    {
+      "check_id": "anomaly_9d718184",
+      "type": "anomaly",
+      "description": "异常波动: 管理费用",
+      "severity": "high",
+      "diff_amount": 200000.0,
+      "change_pct": 1.0,
+      "status": "FAIL",
+      "suggestion": "复核管理费用同比100.0%波动原因"
+    },
+    {
+      "check_id": "trial_balance",
+      "type": "consistency",
+      "description": "借贷平衡",
+      "severity": "low",
+      "diff_amount": 0.0,
+      "status": "PASS",
+      "suggestion": ""
+    },
+    {
+      "check_id": "retained_earnings",
+      "type": "consistency",
+      "description": "期末未分配利润=期初+净利润-分配",
+      "severity": "low",
+      "diff_amount": 0.0,
+      "status": "PASS",
+      "suggestion": ""
+    },
+    {
+      "check_id": "inventory",
+      "type": "consistency",
+      "description": "存货=原材料+在产品+产成品",
+      "severity": "low",
+      "diff_amount": 0.0,
+      "status": "PASS",
+      "suggestion": ""
+    },
+    {
+      "check_id": "depreciation",
+      "type": "consistency",
+      "description": "累计折旧期末=期初+本期计提-本期处置",
+      "severity": "low",
+      "diff_amount": 0.0,
+      "status": "PASS",
+      "suggestion": ""
+    },
+    {
+      "check_id": "payroll",
+      "type": "consistency",
+      "description": "应付职工薪酬期末=期初+计提-发放",
+      "severity": "low",
+      "diff_amount": 0.0,
+      "status": "PASS",
+      "suggestion": ""
+    }
+  ],
+  "summary": {
+    "total_checks": 10,
+    "pass_count": 5,
+    "fail_count": 5,
+    "pass_rate": 0.5,
+    "severity_distribution": {
+      "high": 4,
+      "medium": 1
+    },
+    "total_diff_amount": 525000.0
+  },
+  "critical_issues": [
+    {
+      "check_id": "balance_sheet",
+      "type": "consistency",
+      "description": "资产=负债+权益",
+      "severity": "high",
+      "diff_amount": 100000.0,
+      "status": "FAIL",
+      "suggestion": "复核资产=负债+权益相关科目明细"
+    },
+    {
+      "check_id": "cash_flow",
+      "type": "consistency",
+      "description": "现金流量期末=资产负债现金",
+      "severity": "high",
+      "diff_amount": 20000.0,
+      "status": "FAIL",
+      "suggestion": "复核现金流量期末=资产负债现金相关科目明细"
+    },
+    {
+      "check_id": "voucher_WP002",
+      "type": "cross_doc",
+      "description": "底稿与凭证金额不一致 (WP002)",
+      "severity": "high",
+      "diff_amount": -5000.0,
+      "status": "FAIL",
+      "suggestion": "核对底稿金额与原始凭证"
+    },
+    {
+      "check_id": "anomaly_9d718184",
+      "type": "anomaly",
+      "description": "异常波动: 管理费用",
+      "severity": "high",
+      "diff_amount": 200000.0,
+      "change_pct": 1.0,
+      "status": "FAIL",
+      "suggestion": "复核管理费用同比100.0%波动原因"
+    }
+  ],
+  "adjustment_suggestions": [
+    {
+      "issue": "资产=负债+权益",
+      "action": "复核资产=负债+权益相关科目明细",
+      "expected_diff": 100000.0
+    },
+    {
+      "issue": "现金流量期末=资产负债现金",
+      "action": "复核现金流量期末=资产负债现金相关科目明细",
+      "expected_diff": 20000.0
+    }
+  ]
+}

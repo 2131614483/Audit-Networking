@@ -1,0 +1,35 @@
+{
+  "action": "detect_patterns",
+  "nodes": [
+    {"node_id": "ACC1", "node_type": "account", "attrs": {"owner": "张三", "bank": "ICBC"}},
+    {"node_id": "ACC2", "node_type": "account", "attrs": {"owner": "李四", "bank": "CCB"}},
+    {"node_id": "ACC3", "node_type": "account", "attrs": {"owner": "王五", "bank": "ABC"}},
+    {"node_id": "ACC4", "node_type": "account", "attrs": {"owner": "赵六", "bank": "ICBC"}},
+    {"node_id": "ACC5", "node_type": "account", "attrs": {"owner": "孙七", "bank": "BOC"}},
+    {"node_id": "ACC6", "node_type": "account", "attrs": {"owner": "周八", "bank": "CCB"}},
+    {"node_id": "ACC7", "node_type": "account", "attrs": {"owner": "吴九", "bank": "CMB"}},
+    {"node_id": "ACC8", "node_type": "account", "attrs": {"owner": "郑十", "bank": "SPDB"}},
+    {"node_id": "ACC9", "node_type": "account", "attrs": {"owner": "钱十一", "bank": "CIB"}},
+    {"node_id": "ACC10", "node_type": "account", "attrs": {"owner": "冯十二", "bank": "HXB"}},
+    {"node_id": "ACC11", "node_type": "account", "attrs": {"owner": "陈十三", "bank": "PAB"}},
+    {"node_id": "COMP1", "node_type": "company", "attrs": {"phone": "010-12345678", "address": "上海市浦东新区张江路100号", "ip": "192.168.1.1", "capital": 10000}},
+    {"node_id": "COMP2", "node_type": "company", "attrs": {"phone": "010-12345678", "address": "上海市浦东新区张江路100号", "ip": "192.168.1.1", "capital": 5000}},
+    {"node_id": "COMP3", "node_type": "company", "attrs": {"phone": "010-12345678", "address": "上海市浦东新区张江路100号", "ip": "192.168.1.2", "capital": 8000}},
+    {"node_id": "COMP4", "node_type": "company", "attrs": {"phone": "010-12345678", "address": "上海市浦东新区张江路100号", "ip": "192.168.1.3", "capital": 3000}}
+  ],
+  "edges": [
+    {"src": "ACC1", "dst": "ACC4", "edge_type": "transfer", "amount": 5000, "timestamp": "2025-06-01T10:00:00"},
+    {"src": "ACC2", "dst": "ACC4", "edge_type": "transfer", "amount": 6000, "timestamp": "2025-06-01T11:00:00"},
+    {"src": "ACC3", "dst": "ACC4", "edge_type": "transfer", "amount": 7000, "timestamp": "2025-06-01T12:00:00"},
+    {"src": "ACC10", "dst": "ACC4", "edge_type": "transfer", "amount": 4000, "timestamp": "2025-06-01T13:00:00"},
+    {"src": "ACC11", "dst": "ACC4", "edge_type": "transfer", "amount": 3000, "timestamp": "2025-06-01T14:00:00"},
+
+    {"src": "ACC5", "dst": "ACC7", "edge_type": "transfer", "amount": 9000, "timestamp": "2025-06-02T09:00:00"},
+    {"src": "ACC5", "dst": "ACC8", "edge_type": "transfer", "amount": 9500, "timestamp": "2025-06-02T10:00:00"},
+    {"src": "ACC5", "dst": "ACC9", "edge_type": "transfer", "amount": 8500, "timestamp": "2025-06-02T11:00:00"},
+
+    {"src": "ACC4", "dst": "ACC5", "edge_type": "transfer", "amount": 10000, "timestamp": "2025-06-03T09:00:00"},
+    {"src": "ACC5", "dst": "ACC6", "edge_type": "transfer", "amount": 9800, "timestamp": "2025-06-03T10:00:00"},
+    {"src": "ACC6", "dst": "ACC4", "edge_type": "transfer", "amount": 9500, "timestamp": "2025-06-03T11:00:00"}
+  ]
+}

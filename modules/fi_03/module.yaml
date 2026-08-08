@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FI-03
+  name: ML贷款违约预测验证系统
+  name_en: fi_03
+  version: 1.0.0
+  category: other
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "4个月"
+  budget: ""
+  description: >
+    本方案构建基于机器学习、时间序列分析和可解释AI的贷款违约预测验证系统。平台通过自动化模型回测、可解释性分析和压力测试，实现对违约预测模型的全面、高效验证。平台可将模型验证效率提升90%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fi_03
+  port: 8903
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

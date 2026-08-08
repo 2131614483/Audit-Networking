@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "module": "IT-01",
+  "audit_plan": {
+    "total_programs": 9,
+    "domains_covered": ["身份与访问管理", "网络安全", "数据安全", "系统运维"]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "status": "ok",
+  "module": "FA-05",
+  "mode": "store",
+  "certificate": {
+    "tx_ids": ["BC-TX-001", "BC-TX-002", "BC-TX-003"],
+    "chain_height": 3,
+    "merkle_root": null,
+    "timestamp": null,
+    "chain_valid": true
+  },
+  "chain_summary": {
+    "blocks": 4,
+    "transactions_total": 3,
+    "latest_hash": null,
+    "latest_index": 3,
+    "chain_valid": true
+  },
+  "blocks": [
+    {"index": 0, "tx_count": 0, "tx_ids": [], "prev_hash": "0000000000000000000000000000000000000000000000000000000000000000"},
+    {"index": 1, "tx_count": 1, "tx_ids": ["BC-TX-001"]},
+    {"index": 2, "tx_count": 1, "tx_ids": ["BC-TX-002"]},
+    {"index": 3, "tx_count": 1, "tx_ids": ["BC-TX-003"]}
+  ],
+  "hash_chain": [
+    {"block_index": 0, "linked": true},
+    {"block_index": 1, "linked": true},
+    {"block_index": 2, "linked": true},
+    {"block_index": 3, "linked": true}
+  ],
+  "audit_trail_count": 4,
+  "alerts": [],
+  "integrity": {
+    "integrity_score": 1.0,
+    "trust_level": "high",
+    "verification_level": "verified"
+  },
+  "tamper_alert": false
+}

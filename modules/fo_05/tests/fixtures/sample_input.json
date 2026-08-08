@@ -1,0 +1,48 @@
+{
+  "case_id": "CASE-2025-002",
+  "case_name": "跨国合同纠纷多语言文本分析",
+  "texts": [
+    {
+      "text_id": "TXT-001",
+      "content": "本合同由甲方与乙方就知识产权转让事宜签订，包含保密条款与违约条款。如发生违约，违约方应承担赔偿责任。",
+      "source_lang": "zh",
+      "target_lang": "en"
+    },
+    {
+      "text_id": "TXT-002",
+      "content": "The party shall not breach the confidentiality agreement. Any violation will result in compensation and litigation under the governing law.",
+      "source_lang": "en",
+      "target_lang": "zh"
+    },
+    {
+      "text_id": "TXT-003",
+      "content": "甲方同意将知识产权转让给乙方，双方就合同条款达成协议。The assignment includes warranty and guarantee clauses.",
+      "source_lang": "zh",
+      "target_lang": "en"
+    },
+    {
+      "text_id": "TXT-004",
+      "content": "仲裁条款：双方同意通过仲裁解决争议，仲裁裁决为终局判决。适用法律为中国法律。",
+      "source_lang": "zh",
+      "target_lang": "en"
+    },
+    {
+      "text_id": "TXT-005",
+      "content": "All disputes shall be resolved through arbitration. The judgment is final.",
+      "source_lang": "en",
+      "target_lang": "zh"
+    },
+    {
+      "text_id": "TXT-006",
+      "content": "这是一份涉及关联方交易与重大影响的合同。本次交易存在违约风险，可能造成损失。",
+      "source_lang": "zh",
+      "target_lang": "en"
+    },
+    {
+      "text_id": "TXT-007",
+      "content": "04/15/2025 财务数据调整完毕。",
+      "source_lang": "",
+      "target_lang": "zh"
+    }
+  ]
+}

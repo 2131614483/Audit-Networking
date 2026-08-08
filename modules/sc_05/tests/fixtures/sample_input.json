@@ -1,0 +1,36 @@
+{
+  "price_history": [
+    {"record_id": "H-001", "category": "钢材", "price": 4900, "source": "市场", "record_date": "2025-01-10"},
+    {"record_id": "H-002", "category": "钢材", "price": 4920, "source": "市场", "record_date": "2025-02-10"},
+    {"record_id": "H-003", "category": "钢材", "price": 4950, "source": "招标", "record_date": "2025-03-10"},
+    {"record_id": "H-004", "category": "钢材", "price": 4980, "source": "市场", "record_date": "2025-04-10"},
+    {"record_id": "H-005", "category": "钢材", "price": 5000, "source": "招标", "record_date": "2025-05-10"},
+    {"record_id": "H-006", "category": "钢材", "price": 5020, "source": "市场", "record_date": "2025-06-10"},
+    {"record_id": "H-007", "category": "钢材", "price": 5050, "source": "市场", "record_date": "2025-07-10"},
+    {"record_id": "H-008", "category": "钢材", "price": 5080, "source": "招标", "record_date": "2025-08-10"},
+    {"record_id": "H-009", "category": "水泥", "price": 390, "source": "市场", "record_date": "2025-01-15"},
+    {"record_id": "H-010", "category": "水泥", "price": 392, "source": "市场", "record_date": "2025-02-15"},
+    {"record_id": "H-011", "category": "水泥", "price": 395, "source": "招标", "record_date": "2025-03-15"},
+    {"record_id": "H-012", "category": "水泥", "price": 400, "source": "市场", "record_date": "2025-04-15"},
+    {"record_id": "H-013", "category": "水泥", "price": 405, "source": "市场", "record_date": "2025-05-15"},
+    {"record_id": "H-014", "category": "水泥", "price": 410, "source": "招标", "record_date": "2025-06-15"},
+    {"record_id": "H-015", "category": "电缆", "price": 1200, "source": "市场", "record_date": "2025-01-20"},
+    {"record_id": "H-016", "category": "电缆", "price": 1150, "source": "市场", "record_date": "2025-02-20"},
+    {"record_id": "H-017", "category": "电缆", "price": 1100, "source": "招标", "record_date": "2025-03-20"},
+    {"record_id": "H-018", "category": "电缆", "price": 1050, "source": "市场", "record_date": "2025-04-20"},
+    {"record_id": "H-019", "category": "电缆", "price": 1000, "source": "市场", "record_date": "2025-05-20"},
+    {"record_id": "H-020", "category": "电缆", "price": 950, "source": "招标", "record_date": "2025-06-20"},
+    {"record_id": "H-021", "category": "木材", "price": 500, "source": "市场", "record_date": "2025-02-01"},
+    {"record_id": "H-022", "category": "木材", "price": 520, "source": "市场", "record_date": "2025-04-01"},
+    {"record_id": "H-023", "category": "木材", "price": 510, "source": "市场", "record_date": "2025-06-01"}
+  ],
+  "benchmark_queries": [
+    {"benchmark_id": "B-0001", "category": "钢材", "price": 6500, "expected_trend": "上升"},
+    {"benchmark_id": "B-0002", "category": "钢材", "price": 5600, "expected_trend": "上升"},
+    {"benchmark_id": "B-0003", "category": "水泥", "price": 900, "expected_trend": "平稳"},
+    {"benchmark_id": "B-0004", "category": "电缆", "price": 1000, "expected_trend": "下降"},
+    {"benchmark_id": "B-0005", "category": "木材", "price": 500, "expected_trend": "平稳"},
+    {"benchmark_id": "B-0006", "category": "木材", "price": 700, "expected_trend": "平稳"},
+    {"benchmark_id": "B-0007", "category": "木材", "price": 900, "expected_trend": "平稳"}
+  ]
+}

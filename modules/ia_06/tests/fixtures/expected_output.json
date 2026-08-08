@@ -1,0 +1,8 @@
+{
+  "status": "ok",
+  "result_keys": ["total_point", "breakdown", "percentage", "total_cost", "roi_point", "roi_p50", "monte_carlo", "attribution", "sensitivity", "n_findings", "generated_at", "summary_text"],
+  "breakdown_keys": ["direct_financial", "risk_reduction", "strategic", "compliance", "prevention"],
+  "monte_carlo_keys": ["p10", "p50", "p90"],
+  "n_findings": 3,
+  "total_cost": 480.0
+}

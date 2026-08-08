@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: TA-02
+  name: 发票四单自动匹配引擎
+  name_en: ta_02
+  version: 1.0.0
+  category: tax_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "4个月"
+  budget: "约250万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于ML+NLP+规则的发票四单自动匹配引擎，实现采购订单（PO）、入库单（GR）、发票（Invoice）、付款单（Payment）的四维智能匹配。引擎利用ML模型进行智能匹配决策和异常处理推荐，利用NLP技术处理非结构化单据描述信息的匹配，利用规则引擎处理标准化匹配逻辑。方案实施后，匹配准确率超过98%，匹配效率提升90%以上。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ta_02
+  port: 8502
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

@@ -1,0 +1,793 @@
+{
+  "status": "ok",
+  "module": "SC-02",
+  "network": {
+    "nodes": [
+      {
+        "supplier_id": "S-201",
+        "name": "中芯芯片",
+        "node_type": "supplier",
+        "pagerank": 0.144258,
+        "community_id": 3,
+        "risk_score": 0.8752,
+        "risk_level": "critical",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 4,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "S-401",
+        "name": "高纯硅料厂",
+        "node_type": "supplier",
+        "pagerank": 0.049491,
+        "community_id": 0,
+        "risk_score": 0.3003,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 2,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "S-601",
+        "name": "原矿开采集团",
+        "node_type": "supplier",
+        "pagerank": 0.019239,
+        "community_id": 0,
+        "risk_score": 0.1167,
+        "risk_level": "low",
+        "concentration_ratio": 0.0,
+        "dependency_depth": 0,
+        "rule_flags": []
+      },
+      {
+        "supplier_id": "S-102",
+        "name": "宝钢原材料",
+        "node_type": "supplier",
+        "pagerank": 0.049491,
+        "community_id": 2,
+        "risk_score": 0.3003,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 2,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "C-502",
+        "name": "下游客户乙",
+        "node_type": "customer",
+        "pagerank": 0.045569,
+        "community_id": 1,
+        "risk_score": 0.5,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 7,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration",
+          "visibility_depth_exceeded"
+        ]
+      },
+      {
+        "supplier_id": "S-203",
+        "name": "永丰造纸",
+        "node_type": "supplier",
+        "pagerank": 0.019239,
+        "community_id": 2,
+        "risk_score": 0.1167,
+        "risk_level": "low",
+        "concentration_ratio": 0.0,
+        "dependency_depth": 0,
+        "rule_flags": []
+      },
+      {
+        "supplier_id": "S-101",
+        "name": "华芯电子元件",
+        "node_type": "supplier",
+        "pagerank": 0.168189,
+        "community_id": 3,
+        "risk_score": 1.0,
+        "risk_level": "critical",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 5,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "CORE-001",
+        "name": "核心制造企业",
+        "node_type": "focal",
+        "pagerank": 0.09293,
+        "community_id": 1,
+        "risk_score": 0.7143,
+        "risk_level": "high",
+        "concentration_ratio": 0.3333,
+        "dependency_depth": 6,
+        "rule_flags": [
+          "visibility_depth_exceeded"
+        ]
+      },
+      {
+        "supplier_id": "S-302",
+        "name": "西南矿业有限公司",
+        "node_type": "supplier",
+        "pagerank": 0.019239,
+        "community_id": 4,
+        "risk_score": 0.1167,
+        "risk_level": "low",
+        "concentration_ratio": 0.0,
+        "dependency_depth": 0,
+        "rule_flags": []
+      },
+      {
+        "supplier_id": "S-104",
+        "name": "备用电子供应商",
+        "node_type": "supplier",
+        "pagerank": 0.047831,
+        "community_id": 3,
+        "risk_score": 0.7143,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 6,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration",
+          "visibility_depth_exceeded"
+        ]
+      },
+      {
+        "supplier_id": "S-501",
+        "name": "石英砂加工",
+        "node_type": "supplier",
+        "pagerank": 0.035591,
+        "community_id": 0,
+        "risk_score": 0.2159,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 1,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "C-501",
+        "name": "下游客户甲",
+        "node_type": "customer",
+        "pagerank": 0.069634,
+        "community_id": 1,
+        "risk_score": 1.0,
+        "risk_level": "critical",
+        "concentration_ratio": 0.8,
+        "dependency_depth": 7,
+        "rule_flags": [
+          "monopoly_concentration",
+          "visibility_depth_exceeded"
+        ]
+      },
+      {
+        "supplier_id": "S-103",
+        "name": "绿叶包装材料",
+        "node_type": "supplier",
+        "pagerank": 0.056625,
+        "community_id": 2,
+        "risk_score": 0.3435,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 1,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "S-301",
+        "name": "晶圆代工厂",
+        "node_type": "supplier",
+        "pagerank": 0.147082,
+        "community_id": 3,
+        "risk_score": 0.8924,
+        "risk_level": "critical",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 3,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      },
+      {
+        "supplier_id": "S-202",
+        "name": "稀贵金属供应",
+        "node_type": "supplier",
+        "pagerank": 0.035591,
+        "community_id": 4,
+        "risk_score": 0.2159,
+        "risk_level": "high",
+        "concentration_ratio": 1.0,
+        "dependency_depth": 1,
+        "rule_flags": [
+          "single_source_dependency",
+          "monopoly_concentration"
+        ]
+      }
+    ],
+    "edges": [
+      {
+        "source": "S-101",
+        "target": "CORE-001",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-102",
+        "target": "CORE-001",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-103",
+        "target": "CORE-001",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-201",
+        "target": "S-101",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-202",
+        "target": "S-102",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-203",
+        "target": "S-103",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-301",
+        "target": "S-201",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-302",
+        "target": "S-202",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-401",
+        "target": "S-301",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-501",
+        "target": "S-401",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "S-601",
+        "target": "S-501",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "CORE-001",
+        "target": "C-501",
+        "relation_type": "supplies",
+        "weight": 4.0
+      },
+      {
+        "source": "S-103",
+        "target": "C-501",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "CORE-001",
+        "target": "C-502",
+        "relation_type": "supplies",
+        "weight": 1.0
+      },
+      {
+        "source": "CORE-001",
+        "target": "S-101",
+        "relation_type": "owns",
+        "weight": 0.8
+      },
+      {
+        "source": "S-101",
+        "target": "S-301",
+        "relation_type": "related",
+        "weight": 0.5
+      },
+      {
+        "source": "S-101",
+        "target": "S-301",
+        "relation_type": "shares_address",
+        "weight": 0.6
+      },
+      {
+        "source": "S-101",
+        "target": "S-301",
+        "relation_type": "shares_phone",
+        "weight": 0.7
+      },
+      {
+        "source": "S-102",
+        "target": "S-103",
+        "relation_type": "executes",
+        "weight": 1.2
+      },
+      {
+        "source": "S-101",
+        "target": "S-104",
+        "relation_type": "supplies",
+        "weight": 1.0
+      }
+    ]
+  },
+  "risk_hotspots": [
+    {
+      "supplier_id": "S-201",
+      "name": "中芯芯片",
+      "risk_score": 0.8752,
+      "risk_level": "critical",
+      "pagerank": 0.144258,
+      "community_id": 3,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "S-401",
+      "name": "高纯硅料厂",
+      "risk_score": 0.3003,
+      "risk_level": "high",
+      "pagerank": 0.049491,
+      "community_id": 0,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "S-102",
+      "name": "宝钢原材料",
+      "risk_score": 0.3003,
+      "risk_level": "high",
+      "pagerank": 0.049491,
+      "community_id": 2,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "C-502",
+      "name": "下游客户乙",
+      "risk_score": 0.5,
+      "risk_level": "high",
+      "pagerank": 0.045569,
+      "community_id": 1,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration",
+        "visibility_depth_exceeded"
+      ]
+    },
+    {
+      "supplier_id": "S-101",
+      "name": "华芯电子元件",
+      "risk_score": 1.0,
+      "risk_level": "critical",
+      "pagerank": 0.168189,
+      "community_id": 3,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "CORE-001",
+      "name": "核心制造企业",
+      "risk_score": 0.7143,
+      "risk_level": "high",
+      "pagerank": 0.09293,
+      "community_id": 1,
+      "rule_flags": [
+        "visibility_depth_exceeded"
+      ]
+    },
+    {
+      "supplier_id": "S-104",
+      "name": "备用电子供应商",
+      "risk_score": 0.7143,
+      "risk_level": "high",
+      "pagerank": 0.047831,
+      "community_id": 3,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration",
+        "visibility_depth_exceeded"
+      ]
+    },
+    {
+      "supplier_id": "S-501",
+      "name": "石英砂加工",
+      "risk_score": 0.2159,
+      "risk_level": "high",
+      "pagerank": 0.035591,
+      "community_id": 0,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "C-501",
+      "name": "下游客户甲",
+      "risk_score": 1.0,
+      "risk_level": "critical",
+      "pagerank": 0.069634,
+      "community_id": 1,
+      "rule_flags": [
+        "monopoly_concentration",
+        "visibility_depth_exceeded"
+      ]
+    },
+    {
+      "supplier_id": "S-103",
+      "name": "绿叶包装材料",
+      "risk_score": 0.3435,
+      "risk_level": "high",
+      "pagerank": 0.056625,
+      "community_id": 2,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "S-301",
+      "name": "晶圆代工厂",
+      "risk_score": 0.8924,
+      "risk_level": "critical",
+      "pagerank": 0.147082,
+      "community_id": 3,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    },
+    {
+      "supplier_id": "S-202",
+      "name": "稀贵金属供应",
+      "risk_score": 0.2159,
+      "risk_level": "high",
+      "pagerank": 0.035591,
+      "community_id": 4,
+      "rule_flags": [
+        "single_source_dependency",
+        "monopoly_concentration"
+      ]
+    }
+  ],
+  "dependency_analysis": {
+    "single_source_nodes": [
+      {
+        "supplier_id": "S-201",
+        "name": "中芯芯片"
+      },
+      {
+        "supplier_id": "S-401",
+        "name": "高纯硅料厂"
+      },
+      {
+        "supplier_id": "S-102",
+        "name": "宝钢原材料"
+      },
+      {
+        "supplier_id": "C-502",
+        "name": "下游客户乙"
+      },
+      {
+        "supplier_id": "S-101",
+        "name": "华芯电子元件"
+      },
+      {
+        "supplier_id": "S-104",
+        "name": "备用电子供应商"
+      },
+      {
+        "supplier_id": "S-501",
+        "name": "石英砂加工"
+      },
+      {
+        "supplier_id": "S-103",
+        "name": "绿叶包装材料"
+      },
+      {
+        "supplier_id": "S-301",
+        "name": "晶圆代工厂"
+      },
+      {
+        "supplier_id": "S-202",
+        "name": "稀贵金属供应"
+      }
+    ],
+    "monopoly_risk_nodes": [
+      {
+        "supplier_id": "S-201",
+        "name": "中芯芯片",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-401",
+        "name": "高纯硅料厂",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-102",
+        "name": "宝钢原材料",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "C-502",
+        "name": "下游客户乙",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-101",
+        "name": "华芯电子元件",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-104",
+        "name": "备用电子供应商",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-501",
+        "name": "石英砂加工",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "C-501",
+        "name": "下游客户甲",
+        "concentration_ratio": 0.8
+      },
+      {
+        "supplier_id": "S-103",
+        "name": "绿叶包装材料",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-301",
+        "name": "晶圆代工厂",
+        "concentration_ratio": 1.0
+      },
+      {
+        "supplier_id": "S-202",
+        "name": "稀贵金属供应",
+        "concentration_ratio": 1.0
+      }
+    ],
+    "deep_dependency_nodes": [
+      {
+        "supplier_id": "C-502",
+        "name": "下游客户乙",
+        "dependency_depth": 7
+      },
+      {
+        "supplier_id": "CORE-001",
+        "name": "核心制造企业",
+        "dependency_depth": 6
+      },
+      {
+        "supplier_id": "S-104",
+        "name": "备用电子供应商",
+        "dependency_depth": 6
+      },
+      {
+        "supplier_id": "C-501",
+        "name": "下游客户甲",
+        "dependency_depth": 7
+      }
+    ]
+  },
+  "risk_paths": [
+    {
+      "path": [
+        "S-101",
+        "CORE-001",
+        "C-501"
+      ],
+      "length": 2,
+      "end_risk": 1.0
+    },
+    {
+      "path": [
+        "S-101",
+        "CORE-001",
+        "C-502"
+      ],
+      "length": 2,
+      "end_risk": 0.5
+    },
+    {
+      "path": [
+        "S-101",
+        "S-301",
+        "S-201"
+      ],
+      "length": 2,
+      "end_risk": 0.8752
+    },
+    {
+      "path": [
+        "S-101",
+        "S-301",
+        "S-201"
+      ],
+      "length": 2,
+      "end_risk": 0.8752
+    },
+    {
+      "path": [
+        "S-101",
+        "S-301",
+        "S-201"
+      ],
+      "length": 2,
+      "end_risk": 0.8752
+    },
+    {
+      "path": [
+        "S-301",
+        "S-201",
+        "S-101"
+      ],
+      "length": 2,
+      "end_risk": 1.0
+    },
+    {
+      "path": [
+        "S-201",
+        "S-101",
+        "CORE-001"
+      ],
+      "length": 2,
+      "end_risk": 0.7143
+    },
+    {
+      "path": [
+        "S-201",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "S-201",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "S-201",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "S-201",
+        "S-101",
+        "S-104"
+      ],
+      "length": 2,
+      "end_risk": 0.7143
+    },
+    {
+      "path": [
+        "CORE-001",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "CORE-001",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "CORE-001",
+        "S-101",
+        "S-301"
+      ],
+      "length": 2,
+      "end_risk": 0.8924
+    },
+    {
+      "path": [
+        "CORE-001",
+        "S-101",
+        "S-104"
+      ],
+      "length": 2,
+      "end_risk": 0.7143
+    }
+  ],
+  "recommendations": [
+    "识别到 10 个单一来源依赖节点，建议引入备选供应商以降低断供风险",
+    "识别到 11 个供应商集中度超 70% 的节点，建议分散采购份额以避免垄断依赖",
+    "识别到 4 个多层级依赖过深（>5 层）的节点，建议建立 N+1 级供应商可见性机制",
+    "共 7 个高风险节点，建议优先开展现场审计与风险缓释",
+    "网络划分为 5 个供应社区，建议按社区制定差异化监控策略"
+  ],
+  "statistics": {
+    "node_count": 15,
+    "edge_count": 20,
+    "community_count": 5,
+    "avg_degree": 1.33,
+    "risk_distribution": {
+      "critical": 4,
+      "high": 3,
+      "medium": 3,
+      "low": 5
+    },
+    "high_risk_count": 7,
+    "monopoly_risk_count": 11,
+    "rule_flags": {
+      "single_source_dependency": 10,
+      "monopoly_concentration": 11,
+      "visibility_depth_exceeded": 4
+    },
+    "community_distribution": {
+      "3": 4,
+      "0": 3,
+      "2": 3,
+      "1": 3,
+      "4": 2
+    },
+    "thresholds": {
+      "critical": 0.8,
+      "high": 0.5,
+      "medium": 0.3,
+      "concentration": 0.7
+    }
+  }
+}

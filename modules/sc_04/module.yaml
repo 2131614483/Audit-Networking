@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: SC-04
+  name: ML采购价格异常检测平台
+  name_en: sc_04
+  version: 1.0.0
+  category: supply_chain_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "4个月"
+  budget: ""
+  description: >
+    本方案构建基于机器学习和多维数据分析的采购价格异常检测平台。通过融合内部采购历史数据、行业价格基准、市场趋势指数等多维数据，利用多种ML算法（孤立森林、自编码器、XGBoost等）进行异常检测，实现采购价格异常的高效、精准识别。平台将价格异常发现率提升200-400%，将审计覆盖率从抽样提升到全量覆盖。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.sc_04
+  port: 8604
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

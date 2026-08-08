@@ -1,0 +1,48 @@
+{
+  "cases": [
+    {"case_id": "CASE-001", "case_name": "采购舞弊案"},
+    {"case_id": "CASE-002", "case_name": "资金挪用案"}
+  ],
+  "evidence": [
+    {
+      "evidence_id": "EVD-001",
+      "case_id": "CASE-001",
+      "content": "2024年3月15日，张三经理代表华兴科技有限公司与李四董事签订采购合同，合同金额人民币500万元。",
+      "evidence_type": "合同",
+      "timestamp": "2024-03-15",
+      "source": "采购系统"
+    },
+    {
+      "evidence_id": "EVD-002",
+      "case_id": "CASE-001",
+      "content": "2024年3月20日，华兴科技有限公司向万达有限公司转账支付人民币500万元。",
+      "evidence_type": "银行流水",
+      "timestamp": "2024-03-20",
+      "source": "银行系统"
+    },
+    {
+      "evidence_id": "EVD-003",
+      "case_id": "CASE-001",
+      "content": "2024年4月1日，李四董事收到万达有限公司支付的回扣人民币50万元。",
+      "evidence_type": "证人证言",
+      "timestamp": "2024-04-01",
+      "source": "调查笔录"
+    },
+    {
+      "evidence_id": "EVD-004",
+      "case_id": "CASE-002",
+      "content": "2024年5月10日，王五经理从公司账户转出人民币200万元至个人账户。",
+      "evidence_type": "审计报告",
+      "timestamp": "2024-05-10",
+      "source": "内审部门"
+    },
+    {
+      "evidence_id": "EVD-005",
+      "case_id": "CASE-002",
+      "content": "华兴科技有限公司与王五经理存在关联关系。",
+      "evidence_type": "工商记录",
+      "timestamp": "2024-01-01",
+      "source": "工商系统"
+    }
+  ]
+}

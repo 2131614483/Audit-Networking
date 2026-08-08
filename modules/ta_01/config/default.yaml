@@ -1,0 +1,7 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: TA-01
+  name: AI发票智能审计平台
+  ocr:
+    lang: ch
+    use_angle_cls: true

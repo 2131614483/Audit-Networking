@@ -1,0 +1,1017 @@
+{
+  "status": "ok",
+  "module": "SC-03",
+  "suppliers": [
+    {
+      "supplier_id": "SUP-B",
+      "name": "锐捷电子科技",
+      "overall_risk_score": 0.5794,
+      "alert_level": "紧急",
+      "risk_tier": "medium",
+      "confirmed_high_risk": false,
+      "needs_immediate_review": true,
+      "trend_escalated": true,
+      "critical_alert": true,
+      "metric_analyses": {
+        "payment_delay_days": {
+          "count": 12,
+          "mean": 14.25,
+          "std": 23.566,
+          "latest": 80.0,
+          "ewma": 37.9665,
+          "trend_direction": "上升",
+          "trend_slope": 4.9126,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.6,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 25.0,
+                  "bound": 18.25
+                },
+                {
+                  "index": 10,
+                  "value": 45.0,
+                  "bound": 18.25
+                },
+                {
+                  "index": 11,
+                  "value": 80.0,
+                  "bound": 18.25
+                }
+              ],
+              "metric_name": "payment_delay_days"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "high",
+              "deviation_pct": 110.7,
+              "metric_name": "payment_delay_days"
+            },
+            {
+              "type": "significant_trend",
+              "severity": "medium",
+              "direction": "上升",
+              "slope": 4.9126,
+              "metric_name": "payment_delay_days"
+            }
+          ]
+        },
+        "quality_failure_rate": {
+          "count": 12,
+          "mean": 2.8167,
+          "std": 4.457,
+          "latest": 15.0,
+          "ewma": 7.312,
+          "trend_direction": "上升",
+          "trend_slope": 0.935,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.6,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 5.0,
+                  "bound": 3.5
+                },
+                {
+                  "index": 10,
+                  "value": 9.0,
+                  "bound": 3.5
+                },
+                {
+                  "index": 11,
+                  "value": 15.0,
+                  "bound": 3.5
+                }
+              ],
+              "metric_name": "quality_failure_rate"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "high",
+              "deviation_pct": 105.1,
+              "metric_name": "quality_failure_rate"
+            },
+            {
+              "type": "significant_trend",
+              "severity": "medium",
+              "direction": "上升",
+              "slope": 0.935,
+              "metric_name": "quality_failure_rate"
+            }
+          ]
+        },
+        "on_time_delivery_rate": {
+          "count": 12,
+          "mean": 0.8067,
+          "std": 0.3037,
+          "latest": 0.1,
+          "ewma": 0.5007,
+          "trend_direction": "下降",
+          "trend_slope": -0.0669,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.5329,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 0.5,
+                  "bound": 0.661
+                },
+                {
+                  "index": 10,
+                  "value": 0.3,
+                  "bound": 0.661
+                },
+                {
+                  "index": 11,
+                  "value": 0.1,
+                  "bound": 0.661
+                }
+              ],
+              "metric_name": "on_time_delivery_rate"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 80.0,
+              "metric_name": "on_time_delivery_rate"
+            }
+          ]
+        },
+        "rejection_rate": {
+          "count": 12,
+          "mean": 2.1667,
+          "std": 3.5787,
+          "latest": 12.0,
+          "ewma": 5.7764,
+          "trend_direction": "上升",
+          "trend_slope": 0.751,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.6,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 4.0,
+                  "bound": 2.8
+                },
+                {
+                  "index": 10,
+                  "value": 7.0,
+                  "bound": 2.8
+                },
+                {
+                  "index": 11,
+                  "value": 12.0,
+                  "bound": 2.8
+                }
+              ],
+              "metric_name": "rejection_rate"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "high",
+              "deviation_pct": 107.7,
+              "metric_name": "rejection_rate"
+            },
+            {
+              "type": "significant_trend",
+              "severity": "medium",
+              "direction": "上升",
+              "slope": 0.751,
+              "metric_name": "rejection_rate"
+            }
+          ]
+        },
+        "price_change_pct": {
+          "count": 12,
+          "mean": 4.1,
+          "std": 7.7053,
+          "latest": 25.0,
+          "ewma": 11.8758,
+          "trend_direction": "上升",
+          "trend_slope": 1.6196,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.6,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 8.0,
+                  "bound": 5.225
+                },
+                {
+                  "index": 10,
+                  "value": 15.0,
+                  "bound": 5.225
+                },
+                {
+                  "index": 11,
+                  "value": 25.0,
+                  "bound": 5.225
+                }
+              ],
+              "metric_name": "price_change_pct"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "high",
+              "deviation_pct": 110.5,
+              "metric_name": "price_change_pct"
+            },
+            {
+              "type": "significant_trend",
+              "severity": "medium",
+              "direction": "上升",
+              "slope": 1.6196,
+              "metric_name": "price_change_pct"
+            }
+          ]
+        },
+        "communication_responsiveness": {
+          "count": 12,
+          "mean": 0.7633,
+          "std": 0.3237,
+          "latest": 0.05,
+          "ewma": 0.4397,
+          "trend_direction": "下降",
+          "trend_slope": -0.0715,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 3,
+          "anomaly_score": 0.5437,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 3,
+              "details": [
+                {
+                  "index": 9,
+                  "value": 0.4,
+                  "bound": 0.587
+                },
+                {
+                  "index": 10,
+                  "value": 0.2,
+                  "bound": 0.587
+                },
+                {
+                  "index": 11,
+                  "value": 0.05,
+                  "bound": 0.587
+                }
+              ],
+              "metric_name": "communication_responsiveness"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 88.6,
+              "metric_name": "communication_responsiveness"
+            }
+          ]
+        }
+      },
+      "alerts": [
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 25.0,
+              "bound": 18.25
+            },
+            {
+              "index": 10,
+              "value": 45.0,
+              "bound": 18.25
+            },
+            {
+              "index": 11,
+              "value": 80.0,
+              "bound": 18.25
+            }
+          ],
+          "metric_name": "payment_delay_days"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "high",
+          "deviation_pct": 110.7,
+          "metric_name": "payment_delay_days"
+        },
+        {
+          "type": "significant_trend",
+          "severity": "medium",
+          "direction": "上升",
+          "slope": 4.9126,
+          "metric_name": "payment_delay_days"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 5.0,
+              "bound": 3.5
+            },
+            {
+              "index": 10,
+              "value": 9.0,
+              "bound": 3.5
+            },
+            {
+              "index": 11,
+              "value": 15.0,
+              "bound": 3.5
+            }
+          ],
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "high",
+          "deviation_pct": 105.1,
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "significant_trend",
+          "severity": "medium",
+          "direction": "上升",
+          "slope": 0.935,
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 0.5,
+              "bound": 0.661
+            },
+            {
+              "index": 10,
+              "value": 0.3,
+              "bound": 0.661
+            },
+            {
+              "index": 11,
+              "value": 0.1,
+              "bound": 0.661
+            }
+          ],
+          "metric_name": "on_time_delivery_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 80.0,
+          "metric_name": "on_time_delivery_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 4.0,
+              "bound": 2.8
+            },
+            {
+              "index": 10,
+              "value": 7.0,
+              "bound": 2.8
+            },
+            {
+              "index": 11,
+              "value": 12.0,
+              "bound": 2.8
+            }
+          ],
+          "metric_name": "rejection_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "high",
+          "deviation_pct": 107.7,
+          "metric_name": "rejection_rate"
+        },
+        {
+          "type": "significant_trend",
+          "severity": "medium",
+          "direction": "上升",
+          "slope": 0.751,
+          "metric_name": "rejection_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 8.0,
+              "bound": 5.225
+            },
+            {
+              "index": 10,
+              "value": 15.0,
+              "bound": 5.225
+            },
+            {
+              "index": 11,
+              "value": 25.0,
+              "bound": 5.225
+            }
+          ],
+          "metric_name": "price_change_pct"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "high",
+          "deviation_pct": 110.5,
+          "metric_name": "price_change_pct"
+        },
+        {
+          "type": "significant_trend",
+          "severity": "medium",
+          "direction": "上升",
+          "slope": 1.6196,
+          "metric_name": "price_change_pct"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 3,
+          "details": [
+            {
+              "index": 9,
+              "value": 0.4,
+              "bound": 0.587
+            },
+            {
+              "index": 10,
+              "value": 0.2,
+              "bound": 0.587
+            },
+            {
+              "index": 11,
+              "value": 0.05,
+              "bound": 0.587
+            }
+          ],
+          "metric_name": "communication_responsiveness"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 88.6,
+          "metric_name": "communication_responsiveness"
+        }
+      ],
+      "rule_adjustments": [
+        "多指标上升趋势(4个)升级预警",
+        "财务类指标异常触发即时复核",
+        "高危异常信号触发关键告警"
+      ]
+    },
+    {
+      "supplier_id": "SUP-C",
+      "name": "创新材料有限公司",
+      "overall_risk_score": 0.2948,
+      "alert_level": "中",
+      "risk_tier": "low",
+      "confirmed_high_risk": false,
+      "needs_immediate_review": false,
+      "trend_escalated": true,
+      "critical_alert": false,
+      "metric_analyses": {
+        "payment_delay_days": {
+          "count": 12,
+          "mean": 5.4167,
+          "std": 1.8008,
+          "latest": 9.0,
+          "ewma": 6.9334,
+          "trend_direction": "上升",
+          "trend_slope": 0.4441,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.232,
+          "alerts": []
+        },
+        "quality_failure_rate": {
+          "count": 12,
+          "mean": 1.9333,
+          "std": 1.3597,
+          "latest": 5.0,
+          "ewma": 2.9089,
+          "trend_direction": "上升",
+          "trend_slope": 0.2476,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 1,
+          "anomaly_score": 0.378,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 1,
+              "details": [
+                {
+                  "index": 11,
+                  "value": 5.0,
+                  "bound": 4.438
+                }
+              ],
+              "metric_name": "quality_failure_rate"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 71.9,
+              "metric_name": "quality_failure_rate"
+            }
+          ]
+        },
+        "on_time_delivery_rate": {
+          "count": 12,
+          "mean": 0.86,
+          "std": 0.07,
+          "latest": 0.7,
+          "ewma": 0.8051,
+          "trend_direction": "下降",
+          "trend_slope": -0.0144,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 1,
+          "anomaly_score": 0.2668,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 1,
+              "details": [
+                {
+                  "index": 11,
+                  "value": 0.7,
+                  "bound": 0.74
+                }
+              ],
+              "metric_name": "on_time_delivery_rate"
+            }
+          ]
+        },
+        "rejection_rate": {
+          "count": 12,
+          "mean": 1.375,
+          "std": 0.7096,
+          "latest": 3.0,
+          "ewma": 1.9118,
+          "trend_direction": "上升",
+          "trend_slope": 0.1374,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 1,
+          "anomaly_score": 0.3499,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 1,
+              "details": [
+                {
+                  "index": 11,
+                  "value": 3.0,
+                  "bound": 2.75
+                }
+              ],
+              "metric_name": "rejection_rate"
+            },
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 56.9,
+              "metric_name": "rejection_rate"
+            }
+          ]
+        },
+        "price_change_pct": {
+          "count": 12,
+          "mean": 1.5833,
+          "std": 0.9353,
+          "latest": 3.5,
+          "ewma": 2.2902,
+          "trend_direction": "上升",
+          "trend_slope": 0.1986,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.2754,
+          "alerts": [
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 52.8,
+              "metric_name": "price_change_pct"
+            }
+          ]
+        },
+        "communication_responsiveness": {
+          "count": 12,
+          "mean": 0.7942,
+          "std": 0.0633,
+          "latest": 0.65,
+          "ewma": 0.7429,
+          "trend_direction": "下降",
+          "trend_slope": -0.0133,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 1,
+          "anomaly_score": 0.2667,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 1,
+              "details": [
+                {
+                  "index": 11,
+                  "value": 0.65,
+                  "bound": 0.679
+                }
+              ],
+              "metric_name": "communication_responsiveness"
+            }
+          ]
+        }
+      },
+      "alerts": [
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 1,
+          "details": [
+            {
+              "index": 11,
+              "value": 5.0,
+              "bound": 4.438
+            }
+          ],
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 71.9,
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 1,
+          "details": [
+            {
+              "index": 11,
+              "value": 0.7,
+              "bound": 0.74
+            }
+          ],
+          "metric_name": "on_time_delivery_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 1,
+          "details": [
+            {
+              "index": 11,
+              "value": 3.0,
+              "bound": 2.75
+            }
+          ],
+          "metric_name": "rejection_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 56.9,
+          "metric_name": "rejection_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 52.8,
+          "metric_name": "price_change_pct"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 1,
+          "details": [
+            {
+              "index": 11,
+              "value": 0.65,
+              "bound": 0.679
+            }
+          ],
+          "metric_name": "communication_responsiveness"
+        }
+      ],
+      "rule_adjustments": [
+        "多指标上升趋势(4个)升级预警"
+      ]
+    },
+    {
+      "supplier_id": "SUP-A",
+      "name": "恒达精密制造",
+      "overall_risk_score": 0.1974,
+      "alert_level": "中",
+      "risk_tier": "info",
+      "confirmed_high_risk": false,
+      "needs_immediate_review": false,
+      "trend_escalated": true,
+      "critical_alert": false,
+      "metric_analyses": {
+        "payment_delay_days": {
+          "count": 12,
+          "mean": 1.3333,
+          "std": 0.4714,
+          "latest": 1.0,
+          "ewma": 1.2306,
+          "trend_direction": "下降",
+          "trend_slope": -0.014,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.1605,
+          "alerts": []
+        },
+        "quality_failure_rate": {
+          "count": 12,
+          "mean": 0.5083,
+          "std": 0.064,
+          "latest": 0.5,
+          "ewma": 0.5164,
+          "trend_direction": "上升",
+          "trend_slope": 0.0003,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 5,
+          "anomaly_score": 0.3644,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 5,
+              "details": [
+                {
+                  "index": 5,
+                  "value": 0.6,
+                  "bound": 0.562
+                },
+                {
+                  "index": 7,
+                  "value": 0.4,
+                  "bound": 0.462
+                },
+                {
+                  "index": 10,
+                  "value": 0.6,
+                  "bound": 0.562
+                }
+              ],
+              "metric_name": "quality_failure_rate"
+            }
+          ]
+        },
+        "on_time_delivery_rate": {
+          "count": 12,
+          "mean": 0.98,
+          "std": 0.0071,
+          "latest": 0.98,
+          "ewma": 0.9814,
+          "trend_direction": "上升",
+          "trend_slope": 0.0004,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 6,
+          "anomaly_score": 0.3033,
+          "alerts": [
+            {
+              "type": "iqr_anomaly",
+              "severity": "medium",
+              "count": 6,
+              "details": [
+                {
+                  "index": 6,
+                  "value": 0.99,
+                  "bound": 0.99
+                },
+                {
+                  "index": 8,
+                  "value": 0.97,
+                  "bound": 0.97
+                },
+                {
+                  "index": 10,
+                  "value": 0.99,
+                  "bound": 0.99
+                }
+              ],
+              "metric_name": "on_time_delivery_rate"
+            }
+          ]
+        },
+        "rejection_rate": {
+          "count": 12,
+          "mean": 0.3333,
+          "std": 0.0471,
+          "latest": 0.3,
+          "ewma": 0.3231,
+          "trend_direction": "下降",
+          "trend_slope": -0.0014,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.147,
+          "alerts": []
+        },
+        "price_change_pct": {
+          "count": 12,
+          "mean": 0.05,
+          "std": 0.05,
+          "latest": 0.1,
+          "ewma": 0.058,
+          "trend_direction": "上升",
+          "trend_slope": 0.0021,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.192,
+          "alerts": [
+            {
+              "type": "ewma_deviation",
+              "severity": "medium",
+              "deviation_pct": 72.4,
+              "metric_name": "price_change_pct"
+            }
+          ]
+        },
+        "communication_responsiveness": {
+          "count": 12,
+          "mean": 0.95,
+          "std": 0.0071,
+          "latest": 0.96,
+          "ewma": 0.952,
+          "trend_direction": "上升",
+          "trend_slope": 0.0004,
+          "z_anomaly_count": 0,
+          "iqr_anomaly_count": 0,
+          "anomaly_score": 0.0173,
+          "alerts": []
+        }
+      },
+      "alerts": [
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 5,
+          "details": [
+            {
+              "index": 5,
+              "value": 0.6,
+              "bound": 0.562
+            },
+            {
+              "index": 7,
+              "value": 0.4,
+              "bound": 0.462
+            },
+            {
+              "index": 10,
+              "value": 0.6,
+              "bound": 0.562
+            }
+          ],
+          "metric_name": "quality_failure_rate"
+        },
+        {
+          "type": "iqr_anomaly",
+          "severity": "medium",
+          "count": 6,
+          "details": [
+            {
+              "index": 6,
+              "value": 0.99,
+              "bound": 0.99
+            },
+            {
+              "index": 8,
+              "value": 0.97,
+              "bound": 0.97
+            },
+            {
+              "index": 10,
+              "value": 0.99,
+              "bound": 0.99
+            }
+          ],
+          "metric_name": "on_time_delivery_rate"
+        },
+        {
+          "type": "ewma_deviation",
+          "severity": "medium",
+          "deviation_pct": 72.4,
+          "metric_name": "price_change_pct"
+        }
+      ],
+      "rule_adjustments": [
+        "多指标上升趋势(4个)升级预警"
+      ]
+    },
+    {
+      "supplier_id": "SUP-D",
+      "name": "新兴材料供应商",
+      "overall_risk_score": 0.0,
+      "alert_level": "低",
+      "risk_tier": "info",
+      "confirmed_high_risk": false,
+      "needs_immediate_review": false,
+      "trend_escalated": false,
+      "critical_alert": false,
+      "metric_analyses": {
+        "payment_delay_days": {
+          "status": "insufficient_data",
+          "anomaly_score": 0.0,
+          "alerts": []
+        },
+        "quality_failure_rate": {
+          "status": "insufficient_data",
+          "anomaly_score": 0.0,
+          "alerts": []
+        }
+      },
+      "alerts": [],
+      "rule_adjustments": []
+    }
+  ],
+  "recommendations": [
+    "识别到 1 个触发关键告警的供应商，建议立即启动现场核查与风险处置",
+    "识别到 1 个财务类指标异常供应商，建议安排专项财务复核",
+    "识别到 3 个多指标上升趋势供应商，建议提高监控频率并预制备选供应商"
+  ],
+  "statistics": {
+    "supplier_count": 4,
+    "avg_risk_score": 0.2679,
+    "alerts_by_level": {
+      "紧急": 0,
+      "高": 0,
+      "中": 1,
+      "低": 3
+    },
+    "risk_tier_distribution": {
+      "critical": 0,
+      "high": 0,
+      "medium": 1,
+      "low": 1,
+      "info": 2
+    },
+    "high_risk_suppliers": [],
+    "rule_summary": {
+      "trend_escalated": 3,
+      "immediate_review": 1,
+      "critical_alert_triggered": 1
+    },
+    "thresholds": {
+      "critical": 0.8,
+      "high": 0.6,
+      "medium": 0.4,
+      "low": 0.2
+    }
+  }
+}

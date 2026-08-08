@@ -1,0 +1,228 @@
+{
+  "status": "ok",
+  "module": "CO-07",
+  "asset_catalog": [
+    {
+      "asset_id": "AST001",
+      "name": "客户主数据表",
+      "location": "mysql://prod-crm/customer_master",
+      "source_type": "database",
+      "format_type": "structured",
+      "sensitive_types": [
+        "bank_account",
+        "chinese_id",
+        "email",
+        "phone",
+        "pii"
+      ],
+      "sensitivity_level": "L4",
+      "sensitivity_grade": "internal",
+      "sensitivity_score": 0.5833,
+      "field_count": 6,
+      "compliance_tags": [
+        "CCPA",
+        "GDPR-Art.32",
+        "GDPR-Art.9",
+        "GLBA",
+        "HIPAA",
+        "PIPL"
+      ],
+      "owner": "数据治理部",
+      "needs_encryption": true,
+      "auto_classified": false,
+      "public_zone_exposure": false,
+      "rule_flags": [
+        "pii_without_encryption"
+      ]
+    },
+    {
+      "asset_id": "AST002",
+      "name": "员工薪酬表",
+      "location": "oracle://hr-db/salary",
+      "source_type": "database",
+      "format_type": "structured",
+      "sensitive_types": [
+        "bank_account",
+        "credit_card",
+        "finance",
+        "hr",
+        "phone"
+      ],
+      "sensitivity_level": "L2",
+      "sensitivity_grade": "internal",
+      "sensitivity_score": 0.5833,
+      "field_count": 4,
+      "compliance_tags": [
+        "GDPR-Art.32",
+        "PIPL"
+      ],
+      "owner": "人力资源部",
+      "needs_encryption": false,
+      "auto_classified": false,
+      "public_zone_exposure": false,
+      "rule_flags": []
+    },
+    {
+      "asset_id": "AST003",
+      "name": "患者病历表",
+      "location": "mongodb://his/patient_records",
+      "source_type": "database",
+      "format_type": "semi-structured",
+      "sensitive_types": [
+        "bank_account",
+        "chinese_id",
+        "health",
+        "phone",
+        "pii"
+      ],
+      "sensitivity_level": "L4",
+      "sensitivity_grade": "internal",
+      "sensitivity_score": 0.5833,
+      "field_count": 4,
+      "compliance_tags": [
+        "CCPA",
+        "GDPR-Art.32",
+        "GDPR-Art.9",
+        "GLBA",
+        "HIPAA",
+        "PIPL"
+      ],
+      "owner": "信息中心",
+      "needs_encryption": true,
+      "auto_classified": false,
+      "public_zone_exposure": false,
+      "rule_flags": [
+        "pii_without_encryption"
+      ]
+    },
+    {
+      "asset_id": "AST004",
+      "name": "公司公开信息",
+      "location": "web://www.example.com/about",
+      "source_type": "web",
+      "format_type": "unstructured",
+      "sensitive_types": [
+        "phone"
+      ],
+      "sensitivity_level": "L2",
+      "sensitivity_grade": "internal",
+      "sensitivity_score": 0.2833,
+      "field_count": 3,
+      "compliance_tags": [],
+      "owner": "市场部",
+      "needs_encryption": false,
+      "auto_classified": true,
+      "public_zone_exposure": true,
+      "rule_flags": [
+        "auto_classified",
+        "sensitive_in_public_zone"
+      ]
+    },
+    {
+      "asset_id": "AST005",
+      "name": "信用卡交易记录",
+      "location": "public-cdn://exports/card_transactions",
+      "source_type": "file",
+      "format_type": "structured",
+      "sensitive_types": [
+        "bank_account",
+        "business_secret",
+        "credit_card",
+        "finance",
+        "phone"
+      ],
+      "sensitivity_level": "L2",
+      "sensitivity_grade": "internal",
+      "sensitivity_score": 0.5833,
+      "field_count": 3,
+      "compliance_tags": [
+        "GDPR-Art.32",
+        "PIPL"
+      ],
+      "owner": "财务部",
+      "needs_encryption": false,
+      "auto_classified": false,
+      "public_zone_exposure": true,
+      "rule_flags": [
+        "sensitive_in_public_zone"
+      ]
+    }
+  ],
+  "classification_summary": {
+    "by_level": {
+      "L0": 0,
+      "L1": 0,
+      "L2": 3,
+      "L3": 0,
+      "L4": 2
+    },
+    "by_sensitive_type": {
+      "bank_account": 4,
+      "chinese_id": 2,
+      "email": 1,
+      "phone": 5,
+      "pii": 2,
+      "credit_card": 2,
+      "finance": 2,
+      "hr": 1,
+      "health": 1,
+      "business_secret": 1
+    },
+    "grade_distribution": {
+      "public": 0,
+      "internal": 5,
+      "confidential": 0,
+      "restricted": 0
+    },
+    "l3_l4_count": 2
+  },
+  "sensitivity_summary": {
+    "total_sensitive_assets": 5,
+    "restricted_count": 0,
+    "confidential_count": 0,
+    "internal_count": 5,
+    "public_count": 0,
+    "thresholds": {
+      "restricted": 0.85,
+      "confidential": 0.65,
+      "internal": 0.15
+    }
+  },
+  "alerts": [
+    {
+      "asset_id": "AST001",
+      "rule": "pii_without_encryption",
+      "severity": "critical",
+      "message": "资产 客户主数据表 含 PII/医疗敏感数据但未加密"
+    },
+    {
+      "asset_id": "AST003",
+      "rule": "pii_without_encryption",
+      "severity": "critical",
+      "message": "资产 患者病历表 含 PII/医疗敏感数据但未加密"
+    },
+    {
+      "asset_id": "AST004",
+      "rule": "sensitive_in_public_zone",
+      "severity": "high",
+      "message": "资产 公司公开信息 含敏感数据但位于公开区域"
+    },
+    {
+      "asset_id": "AST005",
+      "rule": "sensitive_in_public_zone",
+      "severity": "high",
+      "message": "资产 信用卡交易记录 含敏感数据但位于公开区域"
+    }
+  ],
+  "statistics": {
+    "total_assets": 5,
+    "total_fields": 20,
+    "l3_l4_count": 2,
+    "rule_summary": {
+      "pii_without_encryption": 2,
+      "auto_classified": 1,
+      "sensitive_in_public_zone": 2,
+      "total_alerts": 4
+    }
+  }
+}

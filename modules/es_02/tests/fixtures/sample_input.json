@@ -1,0 +1,12 @@
+{
+  "activities": [
+    {"id": "A001", "type": "natural_gas", "amount": 1000, "unit": "m³"},
+    {"id": "A002", "type": "electricity", "amount": 50000, "unit": "kWh"},
+    {"id": "A003", "type": "diesel", "amount": 500, "unit": "L"},
+    {"id": "A004", "type": "air_travel", "amount": 10000, "unit": "passenger-km"},
+    {"id": "A005", "type": "coal", "amount": 2000, "unit": "kg"},
+    {"id": "A006", "type": "gasoline", "amount": 300, "unit": "L"},
+    {"id": "A007", "type": "steam", "amount": 80000, "unit": "MJ"},
+    {"id": "A008", "type": "commute_bus", "amount": 20000, "unit": "passenger-km"}
+  ]
+}

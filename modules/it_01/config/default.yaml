@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: IT-01
+  name: IT审计自动化平台
+  rop:
+    base_url: http://localhost:8090   # RPA 编排平台
+  rpa:
+    flow_id: ""

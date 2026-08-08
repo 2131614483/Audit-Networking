@@ -1,0 +1,60 @@
+{
+  "loans": [
+    {
+      "asset_id": "L001",
+      "borrower": "优质制造企业",
+      "amount": 1000000,
+      "remaining_amount": 800000,
+      "industry": "制造业",
+      "collateral_type": "现金",
+      "term_months": 36,
+      "debt_ratio": 0.3,
+      "current_ratio": 2.0,
+      "operating_margin": 0.15,
+      "cashflow_coverage": 2.0,
+      "payment_history": 24
+    },
+    {
+      "asset_id": "L002",
+      "borrower": "中等批发企业",
+      "amount": 300000,
+      "remaining_amount": 200000,
+      "industry": "批发零售",
+      "collateral_type": "房产",
+      "term_months": 24,
+      "debt_ratio": 0.7,
+      "current_ratio": 1.0,
+      "operating_margin": 0.02,
+      "cashflow_coverage": 0.8,
+      "payment_history": 12
+    },
+    {
+      "asset_id": "L003",
+      "borrower": "高风险房企",
+      "amount": 500000,
+      "remaining_amount": 400000,
+      "industry": "房地产",
+      "collateral_type": "信用",
+      "term_months": 60,
+      "debt_ratio": 0.8,
+      "current_ratio": 0.8,
+      "operating_margin": -0.05,
+      "cashflow_coverage": 0.5,
+      "payment_history": 2
+    },
+    {
+      "asset_id": "L004",
+      "borrower": "困境建筑企业",
+      "amount": 200000,
+      "remaining_amount": 150000,
+      "industry": "建筑业",
+      "collateral_type": "设备",
+      "term_months": 12,
+      "debt_ratio": 1.0,
+      "current_ratio": 0.3,
+      "operating_margin": -0.2,
+      "cashflow_coverage": 0.1,
+      "payment_history": 1
+    }
+  ]
+}

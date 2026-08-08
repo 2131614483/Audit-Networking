@@ -1,0 +1,2743 @@
+{
+  "version": "2.0",
+  "description": "审计智能化平台模块组网接口契约（v2.0 强类型+多模态）",
+  "modules": {
+    "fa_02": {
+      "name": "多源数据自动标准化",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "多源原始数据",
+          "format": "jsonl",
+          "description": "来自企业ERP、银行流水、业务系统的多源异构原始数据",
+          "fields": [
+            "company_code",
+            "source_system",
+            "raw_record",
+            "period",
+            "currency"
+          ],
+          "fields_typed": [
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "公司代码"
+            },
+            {
+              "name": "source_system",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "数据来源系统"
+            },
+            {
+              "name": "raw_record",
+              "dtype": "dict",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "原始记录(可含多模态引用)"
+            },
+            {
+              "name": "period",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "业务期间"
+            },
+            {
+              "name": "currency",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "币种"
+            },
+            {
+              "name": "text_content",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "text",
+              "description": "文本内容(财报/舆情/合同文本)"
+            },
+            {
+              "name": "image_ref",
+              "dtype": "blob",
+              "nullable": true,
+              "modality": "image",
+              "description": "图片引用(uri+hash+mime)"
+            },
+            {
+              "name": "video_ref",
+              "dtype": "blob",
+              "nullable": true,
+              "modality": "video",
+              "description": "视频引用"
+            },
+            {
+              "name": "event_time",
+              "dtype": "datetime",
+              "nullable": true,
+              "modality": "timeseries",
+              "sample_rate": "事件驱动",
+              "description": "事件时间戳(时序数据用)"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fa_03",
+          "data_type": "标准化数据集",
+          "format": "json/dict",
+          "description": "字段名标准化、类型转换、去重后的多源数据 records",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "source"
+          ],
+          "fields_typed": [
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "account_code",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "period",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "amount",
+              "dtype": "float",
+              "unit": "CNY",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "currency",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "voucher_no",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "source",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "text_content",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "text"
+            },
+            {
+              "name": "media_ref",
+              "dtype": "blob",
+              "nullable": true,
+              "modality": "image"
+            },
+            {
+              "name": "event_time",
+              "dtype": "datetime",
+              "nullable": true,
+              "modality": "timeseries"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ]
+    },
+    "fa_03": {
+      "name": "审计数据湖建设",
+      "inputs": [
+        {
+          "module": "fa_02",
+          "data_type": "标准化数据集",
+          "format": "json/dict",
+          "description": "标准化后的多源数据 records，入库为 ODS/DWD/ADS 分层",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "source"
+          ],
+          "fields_typed": [
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "account_code",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "period",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "amount",
+              "dtype": "float",
+              "unit": "CNY",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "currency",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "voucher_no",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "source",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "text_content",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "text"
+            },
+            {
+              "name": "media_ref",
+              "dtype": "blob",
+              "nullable": true,
+              "modality": "image"
+            },
+            {
+              "name": "event_time",
+              "dtype": "datetime",
+              "nullable": true,
+              "modality": "timeseries"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fa_07",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "底稿生成所需的 ADS 宽表（财务科目余额与明细）",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "layer",
+            "partition_date"
+          ]
+        },
+        {
+          "module": "fa_10",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "关联方发现所需的股东、交易对手等实体数据",
+          "fields": [
+            "company_code",
+            "entity_id",
+            "entity_name",
+            "transaction_id",
+            "counterparty",
+            "amount",
+            "period",
+            "layer"
+          ],
+          "fields_typed": [
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "entity_id",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "对齐后规范实体ID"
+            },
+            {
+              "name": "entity_name",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "规范实体名称"
+            },
+            {
+              "name": "transaction_id",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "counterparty",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "交易对手(待对齐)"
+            },
+            {
+              "name": "amount",
+              "dtype": "float",
+              "unit": "CNY",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "period",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "layer",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            }
+          ],
+          "schema_version": "2.0"
+        },
+        {
+          "module": "fo_02",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "舞弊网络分析所需的全量交易明细数据",
+          "fields": [
+            "company_code",
+            "transaction_id",
+            "counterparty",
+            "amount",
+            "period",
+            "voucher_no",
+            "layer"
+          ]
+        },
+        {
+          "module": "cm_01",
+          "data_type": "数据湖分区数据",
+          "format": "stream",
+          "description": "持续审计平台订阅的实时与近实时审计数据流",
+          "fields": [
+            "company_code",
+            "transaction_id",
+            "amount",
+            "period",
+            "event_time",
+            "source_system",
+            "layer"
+          ],
+          "fields_typed": [
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "transaction_id",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "amount",
+              "dtype": "float",
+              "unit": "CNY",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "period",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            },
+            {
+              "name": "event_time",
+              "dtype": "datetime",
+              "nullable": false,
+              "modality": "timeseries",
+              "sample_rate": "事件驱动",
+              "description": "事件时间戳(UTC)"
+            },
+            {
+              "name": "source_system",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "layer",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            }
+          ],
+          "schema_version": "2.0"
+        },
+        {
+          "module": "ip_01",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "IPO 审计所需的财务规范性诊断数据",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "layer"
+          ]
+        }
+      ]
+    },
+    "fa_04": {
+      "name": "智能函证管理平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "函证请求与回函数据",
+          "format": "json/dict",
+          "description": "审计人员录入的函证请求及银行回函数据",
+          "fields": [
+            "confirmation_id",
+            "bank_code",
+            "account_no",
+            "request_type",
+            "request_date",
+            "reply_date",
+            "reply_amount"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fa_05": {
+      "name": "区块链银行函证",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "银行函证请求",
+          "format": "json/dict",
+          "description": "区块链网络上的银行函证请求与链上回函",
+          "fields": [
+            "confirmation_id",
+            "bank_code",
+            "account_no",
+            "request_hash",
+            "tx_hash",
+            "block_height",
+            "reply_amount"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fa_06": {
+      "name": "AI函证差异智能分析",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "函证回函数据",
+          "format": "json/dict",
+          "description": "外部采集的函证回函及账面记录，用于差异比对",
+          "fields": [
+            "confirmation_id",
+            "bank_code",
+            "item",
+            "book_amount",
+            "confirmed_amount",
+            "period"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fa_07",
+          "data_type": "函证差异分析结果",
+          "format": "json/dict",
+          "description": "函证回函与账面差异的智能分析结果，供底稿生成引用",
+          "fields": [
+            "confirmation_id",
+            "bank_code",
+            "item",
+            "expected_amount",
+            "confirmed_amount",
+            "difference",
+            "diff_reason"
+          ]
+        }
+      ]
+    },
+    "fa_07": {
+      "name": "智能底稿自动生成平台",
+      "inputs": [
+        {
+          "module": "fa_03",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "底稿生成所需的 ADS 宽表（财务科目余额与明细）",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "layer",
+            "partition_date"
+          ]
+        },
+        {
+          "module": "fa_06",
+          "data_type": "函证差异分析结果",
+          "format": "json/dict",
+          "description": "函证差异分析结果，作为底稿差异说明的依据",
+          "fields": [
+            "confirmation_id",
+            "bank_code",
+            "item",
+            "expected_amount",
+            "confirmed_amount",
+            "difference",
+            "diff_reason"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ip_01",
+          "data_type": "审计底稿文档",
+          "format": "json/dict",
+          "description": "自动生成的审计底稿文档，供 IPO 审计引用",
+          "fields": [
+            "workpaper_id",
+            "title",
+            "content",
+            "checklist",
+            "prepared_by",
+            "review_status"
+          ]
+        }
+      ]
+    },
+    "fa_08": {
+      "name": "底稿自动勾稽检查",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "审计底稿",
+          "format": "json/dict",
+          "description": "外部导入的待勾稽审计底稿及勾稽规则",
+          "fields": [
+            "workpaper_id",
+            "title",
+            "content",
+            "checklist",
+            "prepared_by"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fa_09",
+          "data_type": "底稿勾稽结果",
+          "format": "json/dict",
+          "description": "底稿勾稽检查结果，供 AI 底稿质量复核使用",
+          "fields": [
+            "workpaper_id",
+            "check_item",
+            "expected_value",
+            "actual_value",
+            "is_match",
+            "variance",
+            "check_status"
+          ]
+        }
+      ]
+    },
+    "fa_09": {
+      "name": "AI底稿质量复核助手",
+      "inputs": [
+        {
+          "module": "fa_08",
+          "data_type": "底稿勾稽结果",
+          "format": "json/dict",
+          "description": "底稿勾稽检查结果，作为质量复核输入",
+          "fields": [
+            "workpaper_id",
+            "check_item",
+            "expected_value",
+            "actual_value",
+            "is_match",
+            "variance",
+            "check_status"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fa_10": {
+      "name": "知识图谱关联方发现引擎",
+      "inputs": [
+        {
+          "module": "fa_03",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "关联方发现所需的股东、交易对手等实体数据",
+          "fields": [
+            "company_code",
+            "entity_id",
+            "entity_name",
+            "transaction_id",
+            "counterparty",
+            "amount",
+            "period",
+            "layer"
+          ],
+          "fields_typed": [
+            {
+              "name": "shareholders",
+              "dtype": "list",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "股东信息(含USCC用于实体对齐)"
+            },
+            {
+              "name": "records",
+              "dtype": "list",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "交易记录(含交易对手)"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ip_01",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方知识图谱，供 IPO 审计识别关联关系",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ],
+          "fields_typed": [
+            {
+              "name": "entity_id",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "对齐后规范实体ID"
+            },
+            {
+              "name": "entity_name",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "tabular"
+            },
+            {
+              "name": "relation_type",
+              "dtype": "str",
+              "nullable": false,
+              "modality": "graph"
+            },
+            {
+              "name": "confidence",
+              "dtype": "float",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "关联置信度"
+            }
+          ],
+          "schema_version": "2.0"
+        },
+        {
+          "module": "fa_11",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方图谱，供关联交易定价公允性分析",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        },
+        {
+          "module": "fa_12",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方图谱，供关联交易披露完整性检查",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        }
+      ]
+    },
+    "fa_11": {
+      "name": "关联交易定价公允性AI分析",
+      "inputs": [
+        {
+          "module": "fa_10",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方图谱，用于定位关联交易并分析定价公允性",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fa_12": {
+      "name": "关联交易披露完整性检查",
+      "inputs": [
+        {
+          "module": "fa_10",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方图谱，用于核对关联交易披露是否完整",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ia_01": {
+      "name": "动态风险地图与智能审计计划",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "企业风险与历史审计数据",
+          "format": "json/dict",
+          "description": "企业风险登记册、历史审计发现及业务环境数据",
+          "fields": [
+            "company_code",
+            "risk_category",
+            "business_unit",
+            "historical_findings",
+            "period"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ia_02",
+          "data_type": "风险地图",
+          "format": "json/dict",
+          "description": "动态风险地图，驱动持续风险监控平台",
+          "fields": [
+            "risk_id",
+            "risk_category",
+            "risk_level",
+            "business_unit",
+            "likelihood",
+            "impact",
+            "trend"
+          ]
+        }
+      ]
+    },
+    "ia_02": {
+      "name": "持续风险监控平台",
+      "inputs": [
+        {
+          "module": "ia_01",
+          "data_type": "风险地图",
+          "format": "json/dict",
+          "description": "动态风险地图，作为持续监控的基线",
+          "fields": [
+            "risk_id",
+            "risk_category",
+            "risk_level",
+            "business_unit",
+            "likelihood",
+            "impact",
+            "trend"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ia_06",
+          "data_type": "风险监控信号",
+          "format": "stream",
+          "description": "风险阈值触发信号，供内审价值量化模型使用",
+          "fields": [
+            "signal_id",
+            "risk_id",
+            "signal_type",
+            "triggered_at",
+            "threshold",
+            "current_value",
+            "severity"
+          ]
+        }
+      ]
+    },
+    "ia_03": {
+      "name": "审计资源智能分配引擎",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "审计项目与人员资源数据",
+          "format": "json/dict",
+          "description": "审计项目计划、人员技能库与工时数据",
+          "fields": [
+            "project_id",
+            "auditor_id",
+            "skill",
+            "availability",
+            "priority",
+            "period"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ia_04": {
+      "name": "审计价值仪表板",
+      "inputs": [
+        {
+          "module": "ia_06",
+          "data_type": "内审价值指标",
+          "format": "json/dict",
+          "description": "内审价值量化指标，用于仪表板可视化",
+          "fields": [
+            "metric_id",
+            "metric_name",
+            "value",
+            "period",
+            "target",
+            "achievement_rate",
+            "value_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ia_05": {
+      "name": "AI驱动的管理建议书",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "审计发现与管理层访谈",
+          "format": "json/dict",
+          "description": "审计发现、管理层访谈记录及行业最佳实践",
+          "fields": [
+            "finding_id",
+            "finding_title",
+            "severity",
+            "interview_notes",
+            "recommendation"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ia_06": {
+      "name": "内审价值量化模型",
+      "inputs": [
+        {
+          "module": "ia_02",
+          "data_type": "风险监控信号",
+          "format": "stream",
+          "description": "风险监控信号，作为内审价值量化输入",
+          "fields": [
+            "signal_id",
+            "risk_id",
+            "signal_type",
+            "triggered_at",
+            "threshold",
+            "current_value",
+            "severity"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ia_04",
+          "data_type": "内审价值指标",
+          "format": "json/dict",
+          "description": "量化后的内审价值指标，供审计价值仪表板展示",
+          "fields": [
+            "metric_id",
+            "metric_name",
+            "value",
+            "period",
+            "target",
+            "achievement_rate",
+            "value_type"
+          ]
+        }
+      ]
+    },
+    "ia_07": {
+      "name": "智能整改跟踪平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "整改任务与审计发现",
+          "format": "json/dict",
+          "description": "审计发现对应的整改任务清单及责任人",
+          "fields": [
+            "task_id",
+            "finding_id",
+            "owner",
+            "due_date",
+            "status",
+            "priority"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ia_08": {
+      "name": "整改效果自动验证",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "整改记录与验证数据",
+          "format": "json/dict",
+          "description": "整改完成记录及验证所需的业务数据",
+          "fields": [
+            "task_id",
+            "finding_id",
+            "remediation_evidence",
+            "verify_method",
+            "verify_date"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "co_01": {
+      "name": "全球法规智能监控平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "全球法规数据源",
+          "format": "jsonl",
+          "description": "全球各地区监管机构发布的法规更新数据流",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "publish_date",
+            "source_url",
+            "raw_text"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "co_02",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "结构化法规变更事件，供影响评估引擎使用",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        },
+        {
+          "module": "co_03",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，驱动合规审计程序更新",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        },
+        {
+          "module": "co_07",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，触发数据资产分类调整",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        },
+        {
+          "module": "co_09",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，触发隐私合规审计",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        },
+        {
+          "module": "ip_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，供 IPO 审计评估合规影响",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        }
+      ]
+    },
+    "co_02": {
+      "name": "AI法规影响评估引擎",
+      "inputs": [
+        {
+          "module": "co_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，作为影响评估输入",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "co_03",
+          "data_type": "法规影响评估",
+          "format": "json/dict",
+          "description": "法规影响评估结果，辅助合规审计程序更新",
+          "fields": [
+            "regulation_id",
+            "affected_processes",
+            "impact_score",
+            "recommended_actions",
+            "assessment_date"
+          ]
+        }
+      ]
+    },
+    "co_03": {
+      "name": "合规审计程序自动更新",
+      "inputs": [
+        {
+          "module": "co_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，驱动审计程序更新",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        },
+        {
+          "module": "co_02",
+          "data_type": "法规影响评估",
+          "format": "json/dict",
+          "description": "法规影响评估结果，指导审计程序调整方向",
+          "fields": [
+            "regulation_id",
+            "affected_processes",
+            "impact_score",
+            "recommended_actions",
+            "assessment_date"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "co_04": {
+      "name": "AML智能交易监控引擎",
+      "inputs": [
+        {
+          "module": "co_05",
+          "data_type": "洗钱网络图谱",
+          "format": "graph",
+          "description": "洗钱网络图谱反馈，用于增强 AML 监控规则",
+          "fields": [
+            "network_id",
+            "entity_id",
+            "relation_type",
+            "path",
+            "risk_score",
+            "graph_nodes",
+            "graph_edges"
+          ],
+          "fields_typed": [
+            {
+              "name": "transactions",
+              "dtype": "list",
+              "nullable": false,
+              "modality": "timeseries",
+              "sample_rate": "事件驱动",
+              "description": "交易流水(时序)"
+            },
+            {
+              "name": "customers",
+              "dtype": "list",
+              "nullable": true,
+              "modality": "tabular",
+              "description": "客户主数据"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": [
+        {
+          "module": "co_05",
+          "data_type": "AML告警",
+          "format": "stream",
+          "description": "AML 告警事件，供洗钱网络发现构建图谱",
+          "fields": [
+            "alert_id",
+            "transaction_id",
+            "alert_type",
+            "risk_score",
+            "alert_time",
+            "entity_id"
+          ]
+        },
+        {
+          "module": "co_06",
+          "data_type": "AML告警",
+          "format": "json/dict",
+          "description": "AML 告警，供可疑交易报告自动生成",
+          "fields": [
+            "alert_id",
+            "transaction_id",
+            "alert_type",
+            "risk_score",
+            "alert_time",
+            "entity_id"
+          ]
+        }
+      ]
+    },
+    "co_05": {
+      "name": "知识图谱洗钱网络发现",
+      "inputs": [
+        {
+          "module": "co_04",
+          "data_type": "AML告警",
+          "format": "stream",
+          "description": "AML 告警事件，作为洗钱网络构建输入",
+          "fields": [
+            "alert_id",
+            "transaction_id",
+            "alert_type",
+            "risk_score",
+            "alert_time",
+            "entity_id"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "co_04",
+          "data_type": "洗钱网络图谱",
+          "format": "graph",
+          "description": "洗钱网络图谱，反馈给 AML 监控优化规则",
+          "fields": [
+            "network_id",
+            "entity_id",
+            "relation_type",
+            "path",
+            "risk_score",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        },
+        {
+          "module": "co_06",
+          "data_type": "洗钱网络图谱",
+          "format": "graph",
+          "description": "洗钱网络图谱，供可疑交易报告生成引用",
+          "fields": [
+            "network_id",
+            "entity_id",
+            "relation_type",
+            "path",
+            "risk_score",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        }
+      ]
+    },
+    "co_06": {
+      "name": "AI可疑交易报告自动生成",
+      "inputs": [
+        {
+          "module": "co_04",
+          "data_type": "AML告警",
+          "format": "json/dict",
+          "description": "AML 告警，作为可疑交易报告生成依据",
+          "fields": [
+            "alert_id",
+            "transaction_id",
+            "alert_type",
+            "risk_score",
+            "alert_time",
+            "entity_id"
+          ]
+        },
+        {
+          "module": "co_05",
+          "data_type": "洗钱网络图谱",
+          "format": "graph",
+          "description": "洗钱网络图谱，用于报告中的网络关系描述",
+          "fields": [
+            "network_id",
+            "entity_id",
+            "relation_type",
+            "path",
+            "risk_score",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "co_07": {
+      "name": "AI数据资产自动发现与分类",
+      "inputs": [
+        {
+          "module": "co_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，触发数据资产分类标准调整",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "co_08": {
+      "name": "知识图谱数据流分析",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "数据流元数据",
+          "format": "json/dict",
+          "description": "系统间数据流转的元数据与血缘信息",
+          "fields": [
+            "data_flow_id",
+            "source_system",
+            "target_system",
+            "data_element",
+            "frequency",
+            "sensitivity"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "co_09": {
+      "name": "隐私合规自动审计引擎",
+      "inputs": [
+        {
+          "module": "co_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，驱动隐私合规审计规则更新",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "it_01": {
+      "name": "IT审计自动化平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "IT系统配置与拓扑",
+          "format": "json/dict",
+          "description": "IT系统配置、网络拓扑及访问控制清单",
+          "fields": [
+            "system_id",
+            "config_item",
+            "control_type",
+            "owner",
+            "last_audit_date"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "it_02": {
+      "name": "AI配置合规扫描引擎",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "系统配置文件",
+          "format": "jsonl",
+          "description": "服务器、数据库、中间件的配置文件快照",
+          "fields": [
+            "system_id",
+            "config_file",
+            "config_key",
+            "config_value",
+            "scan_time"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "it_03": {
+      "name": "AI代码审计助手",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "源代码",
+          "format": "jsonl",
+          "description": "待审计的应用源代码及依赖清单",
+          "fields": [
+            "repo_id",
+            "file_path",
+            "language",
+            "commit_hash",
+            "code_snippet"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "it_04": {
+      "name": "IT持续审计平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "IT日志",
+          "format": "stream",
+          "description": "系统日志、变更日志与访问日志流",
+          "fields": [
+            "system_id",
+            "log_type",
+            "event",
+            "user",
+            "timestamp",
+            "ip"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "it_05": {
+      "name": "区块链审计日志存证",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "审计日志",
+          "format": "jsonl",
+          "description": "需上链存证的审计操作日志",
+          "fields": [
+            "log_id",
+            "operator",
+            "action",
+            "timestamp",
+            "payload_hash"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fo_01": {
+      "name": "全量交易智能舞弊扫描",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "全量交易数据",
+          "format": "parquet",
+          "description": "全量交易明细，用于舞弊模式扫描",
+          "fields": [
+            "transaction_id",
+            "account_code",
+            "amount",
+            "transaction_time",
+            "counterparty",
+            "channel"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fo_02": {
+      "name": "知识图谱舞弊网络分析",
+      "inputs": [
+        {
+          "module": "fa_03",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "舞弊网络分析所需的全量交易明细数据",
+          "fields": [
+            "company_code",
+            "transaction_id",
+            "counterparty",
+            "amount",
+            "period",
+            "voucher_no",
+            "layer"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fo_03": {
+      "name": "NLP文本舞弊信号检测",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "文本数据",
+          "format": "jsonl",
+          "description": "邮件、合同、备忘录等文本，用于舞弊信号检测",
+          "fields": [
+            "doc_id",
+            "doc_type",
+            "author",
+            "content",
+            "created_at"
+          ],
+          "fields_typed": [
+            {
+              "name": "documents",
+              "dtype": "list",
+              "nullable": false,
+              "modality": "text",
+              "description": "待分析文本(财报/公告/合同/舆情)"
+            },
+            {
+              "name": "company_code",
+              "dtype": "str",
+              "nullable": true,
+              "modality": "tabular"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": []
+    },
+    "fo_04": {
+      "name": "AI电子取证平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "电子证据",
+          "format": "jsonl",
+          "description": "硬盘镜像、聊天记录、文件系统等电子证据",
+          "fields": [
+            "evidence_id",
+            "device_id",
+            "file_path",
+            "hash",
+            "collected_at",
+            "collector"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fo_05": {
+      "name": "多语言智能翻译与分析",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "多语言文档",
+          "format": "jsonl",
+          "description": "多语种审计相关文档，需翻译与分析",
+          "fields": [
+            "doc_id",
+            "language",
+            "content",
+            "doc_type",
+            "period"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fo_06": {
+      "name": "证据链智能构建",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "证据材料",
+          "format": "json/dict",
+          "description": "分散的审计证据材料，需构建完整证据链",
+          "fields": [
+            "evidence_id",
+            "evidence_type",
+            "source",
+            "collected_at",
+            "relates_to"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ta_01": {
+      "name": "AI发票智能审计平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "发票图像",
+          "format": "json/dict",
+          "description": "扫描或电子发票图像，经 OCR 识别结构化",
+          "fields": [
+            "invoice_id",
+            "image_url",
+            "ocr_text",
+            "invoice_type"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "ta_02",
+          "data_type": "发票结构化数据",
+          "format": "json/dict",
+          "description": "OCR 识别后的发票结构化数据，供四单匹配",
+          "fields": [
+            "invoice_id",
+            "invoice_no",
+            "invoice_date",
+            "buyer",
+            "seller",
+            "amount",
+            "tax_amount",
+            "items"
+          ]
+        }
+      ]
+    },
+    "ta_02": {
+      "name": "发票四单自动匹配引擎",
+      "inputs": [
+        {
+          "module": "ta_01",
+          "data_type": "发票结构化数据",
+          "format": "json/dict",
+          "description": "发票结构化数据，与合同/入库/付款单匹配",
+          "fields": [
+            "invoice_id",
+            "invoice_no",
+            "invoice_date",
+            "buyer",
+            "seller",
+            "amount",
+            "tax_amount",
+            "items"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ta_03": {
+      "name": "进项税额转出AI计算",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "进项税数据",
+          "format": "json/dict",
+          "description": "进项税明细及用途分类，用于转出计算",
+          "fields": [
+            "voucher_no",
+            "tax_amount",
+            "use_type",
+            "period",
+            "account_code"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ta_04": {
+      "name": "AI转让定价文档自动生成",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "转让定价数据",
+          "format": "json/dict",
+          "description": "关联企业交易、功能风险及定价政策数据",
+          "fields": [
+            "related_party",
+            "transaction_type",
+            "amount",
+            "pricing_method",
+            "period"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ta_05": {
+      "name": "ML可比公司智能筛选",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "可比公司数据库",
+          "format": "jsonl",
+          "description": "上市公司财务及行业可比公司数据",
+          "fields": [
+            "company_id",
+            "industry",
+            "revenue",
+            "period",
+            "financial_metrics"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ta_06": {
+      "name": "知识图谱全球关联交易分析",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "全球关联交易数据",
+          "format": "json/dict",
+          "description": "跨国关联交易数据及各国税率信息",
+          "fields": [
+            "transaction_id",
+            "counterparty_country",
+            "amount",
+            "tax_rate",
+            "transaction_type",
+            "period"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "sc_01": {
+      "name": "供应商风险智能评分平台",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据中的供应商相关环境与社会指标",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "sc_03",
+          "data_type": "供应商风险评分",
+          "format": "json/dict",
+          "description": "供应商风险评分，驱动持续监控基线",
+          "fields": [
+            "supplier_id",
+            "supplier_name",
+            "risk_score",
+            "risk_level",
+            "risk_factors",
+            "score_date"
+          ]
+        }
+      ]
+    },
+    "sc_02": {
+      "name": "知识图谱供应链网络分析",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "供应链数据",
+          "format": "json/dict",
+          "description": "供应商、采购订单、物流节点构成的供应链数据",
+          "fields": [
+            "supplier_id",
+            "node_id",
+            "node_type",
+            "parent_node",
+            "order_id",
+            "amount"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "sc_03": {
+      "name": "供应商持续风险监控平台",
+      "inputs": [
+        {
+          "module": "sc_01",
+          "data_type": "供应商风险评分",
+          "format": "json/dict",
+          "description": "供应商风险评分基线，用于持续监控",
+          "fields": [
+            "supplier_id",
+            "supplier_name",
+            "risk_score",
+            "risk_level",
+            "risk_factors",
+            "score_date"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "sc_04",
+          "data_type": "供应商监控告警",
+          "format": "stream",
+          "description": "供应商风险监控告警，供采购价格异常检测",
+          "fields": [
+            "alert_id",
+            "supplier_id",
+            "alert_type",
+            "threshold",
+            "current_value",
+            "alert_date",
+            "severity"
+          ]
+        }
+      ]
+    },
+    "sc_04": {
+      "name": "ML采购价格异常检测平台",
+      "inputs": [
+        {
+          "module": "sc_03",
+          "data_type": "供应商监控告警",
+          "format": "stream",
+          "description": "供应商监控告警，触发采购价格异常检测",
+          "fields": [
+            "alert_id",
+            "supplier_id",
+            "alert_type",
+            "threshold",
+            "current_value",
+            "alert_date",
+            "severity"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "sc_05": {
+      "name": "AI采购价格基准平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "采购价格数据",
+          "format": "jsonl",
+          "description": "历史采购价格及市场价格基准数据",
+          "fields": [
+            "item_id",
+            "supplier_id",
+            "unit_price",
+            "market_price",
+            "period"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "es_01": {
+      "name": "ESG多源数据智能采集平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "ESG多源数据",
+          "format": "jsonl",
+          "description": "卫星遥感、企业报告、传感器、公开披露等多源 ESG 数据",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ],
+          "fields_typed": [
+            {
+              "name": "esg_data",
+              "dtype": "list",
+              "nullable": false,
+              "modality": "tabular",
+              "description": "ESG结构化数据"
+            },
+            {
+              "name": "text_reports",
+              "dtype": "list",
+              "nullable": true,
+              "modality": "text",
+              "description": "ESG报告文本"
+            },
+            {
+              "name": "satellite_images",
+              "dtype": "list",
+              "nullable": true,
+              "modality": "image",
+              "description": "卫星遥感图片引用"
+            }
+          ],
+          "schema_version": "2.0"
+        }
+      ],
+      "outputs": [
+        {
+          "module": "sc_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，供供应商风险评分使用",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        },
+        {
+          "module": "es_02",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，供碳排放自动核算",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        },
+        {
+          "module": "es_03",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据中的遥感影像，供环境监测",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        },
+        {
+          "module": "es_04",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，供绿色漂洗检测",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        },
+        {
+          "module": "es_05",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，供 ESG 审计知识库构建",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        },
+        {
+          "module": "es_06",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，供 ESG 审计方法论引擎",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ]
+    },
+    "es_02": {
+      "name": "AI碳排放自动核算引擎",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，用于碳排放核算",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "es_03": {
+      "name": "卫星遥感AI环境监测平台",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据中的遥感影像，用于环境监测",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "es_04": {
+      "name": "知识图谱绿色漂洗检测平台",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，用于绿色漂洗检测",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "es_05": {
+      "name": "ESG审计知识库与AI助手",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，用于构建审计知识库",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "es_06": {
+      "name": "AI-ESG审计方法论引擎",
+      "inputs": [
+        {
+          "module": "es_01",
+          "data_type": "ESG原始数据",
+          "format": "json/dict",
+          "description": "ESG 原始数据，用于审计方法论构建",
+          "fields": [
+            "data_source",
+            "region",
+            "period",
+            "indicator",
+            "value",
+            "unit",
+            "data_type"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_01": {
+      "name": "IPO审计智能加速平台",
+      "inputs": [
+        {
+          "module": "fa_03",
+          "data_type": "数据湖分区数据",
+          "format": "parquet",
+          "description": "IPO 审计所需的财务规范性诊断数据",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no",
+            "layer"
+          ]
+        },
+        {
+          "module": "fa_07",
+          "data_type": "审计底稿文档",
+          "format": "json/dict",
+          "description": "审计底稿文档，供 IPO 审计引用",
+          "fields": [
+            "workpaper_id",
+            "title",
+            "content",
+            "checklist",
+            "prepared_by",
+            "review_status"
+          ]
+        },
+        {
+          "module": "fa_10",
+          "data_type": "关联方图谱",
+          "format": "graph",
+          "description": "关联方图谱，供 IPO 审计识别关联关系",
+          "fields": [
+            "entity_id",
+            "entity_name",
+            "relation_type",
+            "related_entity",
+            "shareholding_ratio",
+            "graph_nodes",
+            "graph_edges"
+          ]
+        },
+        {
+          "module": "co_01",
+          "data_type": "法规变更事件",
+          "format": "json/dict",
+          "description": "法规变更事件，供 IPO 审计评估合规影响",
+          "fields": [
+            "regulation_id",
+            "title",
+            "jurisdiction",
+            "effective_date",
+            "impact_level",
+            "change_summary"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_02": {
+      "name": "AI监管反馈智能回复系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "监管反馈意见",
+          "format": "json/dict",
+          "description": "证监会/交易所反馈意见及问询函",
+          "fields": [
+            "feedback_id",
+            "regulator",
+            "question",
+            "deadline",
+            "category"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_03": {
+      "name": "知识图谱历史沿革梳理系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "历史沿革资料",
+          "format": "jsonl",
+          "description": "企业工商变更、股权沿革等历史资料",
+          "fields": [
+            "event_id",
+            "event_type",
+            "event_date",
+            "entity_before",
+            "entity_after",
+            "description"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_04": {
+      "name": "AI财务规范性智能诊断系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "财务数据",
+          "format": "json/dict",
+          "description": "申报期财务报表及明细账数据",
+          "fields": [
+            "company_code",
+            "account_code",
+            "period",
+            "amount",
+            "currency",
+            "voucher_no"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_05": {
+      "name": "IPO案例知识库与RAG系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "IPO案例库",
+          "format": "jsonl",
+          "description": "历史 IPO 案例、问询回复及审核要点",
+          "fields": [
+            "case_id",
+            "company_name",
+            "industry",
+            "question",
+            "answer",
+            "result"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "ip_06": {
+      "name": "整改方案AI推荐引擎",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "审计发现",
+          "format": "json/dict",
+          "description": "审计发现清单，用于推荐整改方案",
+          "fields": [
+            "finding_id",
+            "finding_title",
+            "severity",
+            "category",
+            "root_cause"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fi_01": {
+      "name": "AI信贷资产质量评估引擎",
+      "inputs": [
+        {
+          "module": "fi_02",
+          "data_type": "担保链图谱",
+          "format": "graph",
+          "description": "担保链图谱，用于评估信贷资产连带风险",
+          "fields": [
+            "guarantor_id",
+            "debtor_id",
+            "guarantee_amount",
+            "guarantee_type",
+            "chain_depth",
+            "graph_nodes"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fi_03",
+          "data_type": "信贷资产评分",
+          "format": "json/dict",
+          "description": "信贷资产质量评分，供违约预测验证",
+          "fields": [
+            "loan_id",
+            "borrower_id",
+            "asset_quality_rating",
+            "default_probability",
+            "rating_date",
+            "risk_factors"
+          ]
+        }
+      ]
+    },
+    "fi_02": {
+      "name": "知识图谱担保链风险分析系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "担保关系数据",
+          "format": "json/dict",
+          "description": "银行担保合同与担保关系数据",
+          "fields": [
+            "guarantor_id",
+            "debtor_id",
+            "guarantee_amount",
+            "guarantee_type",
+            "contract_no"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "fi_01",
+          "data_type": "担保链图谱",
+          "format": "graph",
+          "description": "担保链知识图谱，供信贷资产质量评估",
+          "fields": [
+            "guarantor_id",
+            "debtor_id",
+            "guarantee_amount",
+            "guarantee_type",
+            "chain_depth",
+            "graph_nodes"
+          ]
+        }
+      ]
+    },
+    "fi_03": {
+      "name": "ML贷款违约预测验证系统",
+      "inputs": [
+        {
+          "module": "fi_01",
+          "data_type": "信贷资产评分",
+          "format": "json/dict",
+          "description": "信贷资产评分，作为违约预测验证输入",
+          "fields": [
+            "loan_id",
+            "borrower_id",
+            "asset_quality_rating",
+            "default_probability",
+            "rating_date",
+            "risk_factors"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fi_04": {
+      "name": "监管报表智能核对平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "监管报表",
+          "format": "jsonl",
+          "description": "各类监管报表及底层数据",
+          "fields": [
+            "report_id",
+            "report_type",
+            "period",
+            "cell_id",
+            "value",
+            "source"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "fi_05": {
+      "name": "AI监管口径自动更新系统",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "监管口径文件",
+          "format": "json/dict",
+          "description": "监管机构下发的口径调整文件",
+          "fields": [
+            "caliber_id",
+            "regulator",
+            "report_type",
+            "effective_date",
+            "change_desc"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cb_01": {
+      "name": "联邦学习跨境审计平台",
+      "inputs": [
+        {
+          "module": "external",
+          "data_type": "跨境审计数据分片",
+          "format": "json/dict",
+          "description": "各法域参与方本地化的审计数据分片，不出域参与联邦训练",
+          "fields": [
+            "client_id",
+            "jurisdiction",
+            "dataset_hash",
+            "sample_count",
+            "period"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "cb_02",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦聚合模型参数，经脱敏网关分发",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        },
+        {
+          "module": "cb_03",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，供多法域合规知识库校验",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        },
+        {
+          "module": "cb_04",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，供多准则自动转换引擎使用",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        },
+        {
+          "module": "cb_05",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，供多语言审计协作平台使用",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        },
+        {
+          "module": "cb_06",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，供集团审计智能协作平台使用",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ]
+    },
+    "cb_02": {
+      "name": "数据脱敏网关与合规路由系统",
+      "inputs": [
+        {
+          "module": "cb_01",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，经脱敏网关处理分发",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cb_03": {
+      "name": "多法域合规知识库",
+      "inputs": [
+        {
+          "module": "cb_01",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，供合规知识库校验合规性",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cb_04": {
+      "name": "AI多准则自动转换引擎",
+      "inputs": [
+        {
+          "module": "cb_01",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，驱动多准则转换",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cb_05": {
+      "name": "AI多语言审计协作平台",
+      "inputs": [
+        {
+          "module": "cb_01",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，支持多语言协作",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cb_06": {
+      "name": "集团审计智能协作平台",
+      "inputs": [
+        {
+          "module": "cb_01",
+          "data_type": "联邦模型参数",
+          "format": "json/dict",
+          "description": "联邦模型参数，支持集团审计协作",
+          "fields": [
+            "model_id",
+            "round",
+            "weights",
+            "gradients",
+            "client_id",
+            "aggregation_meta"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cm_01": {
+      "name": "持续审计技术平台",
+      "inputs": [
+        {
+          "module": "fa_03",
+          "data_type": "数据湖分区数据",
+          "format": "stream",
+          "description": "持续审计平台订阅的实时与近实时审计数据流",
+          "fields": [
+            "company_code",
+            "transaction_id",
+            "amount",
+            "period",
+            "event_time",
+            "source_system",
+            "layer"
+          ]
+        }
+      ],
+      "outputs": [
+        {
+          "module": "cm_02",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供预警分级与自动处理",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        },
+        {
+          "module": "cm_03",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供方法论框架沉淀",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        },
+        {
+          "module": "cm_04",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供价值量化模型计算",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        },
+        {
+          "module": "cm_05",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供持续审计仪表板展示",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        }
+      ]
+    },
+    "cm_02": {
+      "name": "智能预警分级与自动处理系统",
+      "inputs": [
+        {
+          "module": "cm_01",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供预警分级与自动处理",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cm_03": {
+      "name": "持续审计方法论框架",
+      "inputs": [
+        {
+          "module": "cm_01",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供方法论框架沉淀",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cm_04": {
+      "name": "持续审计价值量化模型",
+      "inputs": [
+        {
+          "module": "cm_01",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供价值量化模型计算",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        }
+      ],
+      "outputs": []
+    },
+    "cm_05": {
+      "name": "持续审计仪表板",
+      "inputs": [
+        {
+          "module": "cm_01",
+          "data_type": "实时审计事件流",
+          "format": "stream",
+          "description": "实时审计事件流，供持续审计仪表板展示",
+          "fields": [
+            "event_id",
+            "event_type",
+            "source_system",
+            "timestamp",
+            "severity",
+            "payload",
+            "rule_id"
+          ]
+        }
+      ],
+      "outputs": []
+    }
+  }
+}

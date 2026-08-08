@@ -1,0 +1,57 @@
+{
+  "status": "ok",
+  "module": "FA-04",
+  "dashboard": {
+    "total": 8,
+    "status_counts": {
+      "已核对": 1,
+      "有差异": 3,
+      "超时": 1,
+      "已送达": 1,
+      "草稿": 1,
+      "已闭环": 1
+    },
+    "replied_count": 4,
+    "diff_count": 3,
+    "timeout_count": 1,
+    "escalations": 1,
+    "transition_count": 1
+  },
+  "confirmations": [
+    {"confirmation_id": "CF-2024-0001", "type": "bank", "status": "reconciled", "diff_count": 0, "overdue_severity": "none", "exception_level": "none", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0002", "type": "bank", "status": "difference", "diff_count": 1, "overdue_severity": "none", "exception_level": "medium", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0003", "type": "trade", "status": "difference", "diff_count": 1, "overdue_severity": "none", "exception_level": "high", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0004", "type": "bank", "status": "timeout", "diff_count": 0, "overdue_severity": "critical", "exception_level": "none", "needs_escalation": true},
+    {"confirmation_id": "CF-2024-0005", "type": "bank", "status": "delivered", "diff_count": 0, "overdue_severity": "none", "exception_level": "none", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0006", "type": "lawyer", "status": "draft", "diff_count": 0, "overdue_severity": "none", "exception_level": "none", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0007", "type": "bank", "status": "closed", "diff_count": 0, "overdue_severity": "none", "exception_level": "none", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0008", "type": "bank", "status": "difference", "diff_count": 1, "overdue_severity": "none", "exception_level": "low", "needs_escalation": false}
+  ],
+  "exceptions": [
+    {"confirmation_id": "CF-2024-0002", "bank": "中国建设银行上海分行", "diff_type": "amount", "assignee": "审计师A", "material": true},
+    {"confirmation_id": "CF-2024-0003", "bank": "应收账款客户丙", "diff_type": "amount", "assignee": "审计师A", "material": true},
+    {"confirmation_id": "CF-2024-0008", "bank": "中国农业银行成都分行", "diff_type": "account", "assignee": "审计师B", "material": false}
+  ],
+  "follow_up_list": [
+    {"confirmation_id": "CF-2024-0004", "status": "timeout", "needs_escalation": true},
+    {"confirmation_id": "CF-2024-0005", "status": "delivered", "needs_escalation": false},
+    {"confirmation_id": "CF-2024-0006", "status": "draft", "needs_escalation": false}
+  ],
+  "escalations": [
+    {"confirmation_id": "CF-2024-0004", "bank": "招商银行深圳分行", "level": 1, "channel": "email", "hours_elapsed": null}
+  ],
+  "transitions": [
+    {"confirmation_id": "CF-2024-0004", "from": "sent", "to": "timeout", "reason": "超过48小时未回函"}
+  ],
+  "grading": {
+    "severity_distribution": {"critical": 1, "high": 0, "medium": 0, "low": 0, "none": 6},
+    "exception_distribution": {"high": 1, "medium": 1, "low": 1, "none": 5}
+  },
+  "custom_rules": {
+    "response_rate": 0.5,
+    "follow_up_campaign": true,
+    "escalated_count": 1,
+    "material_diff_count": 2,
+    "follow_up_count": 3
+  }
+}

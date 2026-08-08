@@ -1,0 +1,9 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: CO-03
+  name: 合规审计程序自动更新
+  lsb:
+    base_url: http://localhost:8080   # LLM 服务总线
+  llm:
+    prompt_template: templates/prompt.txt
+    temperature: 0.2

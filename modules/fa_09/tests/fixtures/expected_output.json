@@ -1,0 +1,128 @@
+{
+  "items": [
+    {
+      "wp_id": "WP001",
+      "wp_type": "bank",
+      "title": "银行存款审计底稿",
+      "dimension_scores": {
+        "completeness": 100.0,
+        "accuracy": 80.0,
+        "logic": 75.0,
+        "compliance": 90.0,
+        "quality": 85.0
+      },
+      "overall_score": 86.5,
+      "grade": "B",
+      "issues": [],
+      "compliance_hits": [
+        "中国注册会计师审计准则第1131号",
+        "中国注册会计师审计准则第1301号",
+        "中国注册会计师审计准则第1312号",
+        "中国注册会计师审计准则第1101号"
+      ],
+      "compliance_rate": 0.8
+    },
+    {
+      "wp_id": "WP002",
+      "wp_type": "ar",
+      "title": "应收账款底稿",
+      "dimension_scores": {
+        "completeness": 50.0,
+        "accuracy": 50.0,
+        "logic": 40.0,
+        "compliance": 50.0,
+        "quality": 85.0
+      },
+      "overall_score": 51.5,
+      "grade": "F",
+      "issues": [
+        {
+          "dimension": "completeness",
+          "dimension_cn": "完整性",
+          "severity": "major",
+          "score": 50.0,
+          "issue": "完整性严重不足（50.0分）",
+          "suggestion": "补充 ['账龄分析', '函证控制表', '坏账准备测算', '期后回款']",
+          "wp_id": "WP002"
+        },
+        {
+          "dimension": "accuracy",
+          "dimension_cn": "准确性",
+          "severity": "major",
+          "score": 50.0,
+          "issue": "准确性严重不足（50.0分）",
+          "suggestion": "复核借贷平衡与金额精度",
+          "wp_id": "WP002"
+        },
+        {
+          "dimension": "logic",
+          "dimension_cn": "逻辑性",
+          "severity": "major",
+          "score": 40.0,
+          "issue": "逻辑性严重不足（40.0分）",
+          "suggestion": "补充明确的审计结论并链接至程序",
+          "wp_id": "WP002"
+        },
+        {
+          "dimension": "compliance",
+          "dimension_cn": "合规性",
+          "severity": "major",
+          "score": 50.0,
+          "issue": "合规性严重不足（50.0分）",
+          "suggestion": "在底稿中显式引用审计准则条款",
+          "wp_id": "WP002"
+        }
+      ],
+      "compliance_hits": [],
+      "compliance_rate": 0.0
+    },
+    {
+      "wp_id": "WP003",
+      "wp_type": "inventory",
+      "title": "存货审计底稿",
+      "dimension_scores": {
+        "completeness": 100.0,
+        "accuracy": 80.0,
+        "logic": 75.0,
+        "compliance": 70.0,
+        "quality": 85.0
+      },
+      "overall_score": 82.5,
+      "grade": "B",
+      "issues": [
+        {
+          "dimension": "compliance",
+          "dimension_cn": "合规性",
+          "severity": "minor",
+          "score": 70.0,
+          "issue": "合规性待加强（70.0分）",
+          "suggestion": "在底稿中显式引用审计准则条款",
+          "wp_id": "WP003"
+        }
+      ],
+      "compliance_hits": [
+        "中国注册会计师审计准则第1131号",
+        "中国注册会计师审计准则第1101号"
+      ],
+      "compliance_rate": 0.4
+    }
+  ],
+  "summary": {
+    "total_workpapers": 3,
+    "average_score": 73.5,
+    "grade_distribution": {
+      "B": 2,
+      "F": 1
+    },
+    "total_issues": 5,
+    "critical_issues_count": 0,
+    "major_issues_count": 4
+  },
+  "critical_issues": [],
+  "improvement_tips": [
+    "【完整性】补充 ['账龄分析', '函证控制表', '坏账准备测算', '期后回款']",
+    "【准确性】复核借贷平衡与金额精度",
+    "【逻辑性】补充明确的审计结论并链接至程序",
+    "【合规性】在底稿中显式引用审计准则条款"
+  ]
+}

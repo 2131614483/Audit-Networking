@@ -1,0 +1,6606 @@
+{
+  "nodes": [
+    {
+      "id": "N0001",
+      "label": "懋达实业发展有限公司",
+      "type": "person",
+      "uscc": "THCDNF4QFNYUWB0KRC"
+    },
+    {
+      "id": "N0002",
+      "label": "金徽矿业科技股份有限公司",
+      "type": "account",
+      "uscc": "0QWNJRRC37G0QT99A3"
+    },
+    {
+      "id": "N0003",
+      "label": "北方华创科技集团",
+      "type": "transaction",
+      "uscc": "FPB1UL37T24BNCKK8N"
+    },
+    {
+      "id": "N0004",
+      "label": "中天科技控股集团",
+      "type": "transaction",
+      "uscc": "L15WMCW99TM3GHW8YE"
+    },
+    {
+      "id": "N0005",
+      "label": "北方华创科技集团",
+      "type": "account",
+      "uscc": "L0L17FHBECQJPB3ED6"
+    },
+    {
+      "id": "N0006",
+      "label": "海尔智家股份有限公司",
+      "type": "account",
+      "uscc": "WHB8E9FKG8GD6PH5FN"
+    },
+    {
+      "id": "N0007",
+      "label": "卓郎智能机械股份有限公司",
+      "type": "transaction",
+      "uscc": "3GG61BUPUEUPF24HU9"
+    },
+    {
+      "id": "N0008",
+      "label": "海尔智家股份有限公司",
+      "type": "company",
+      "uscc": "5T21DK39G24JFQCDR6"
+    },
+    {
+      "id": "N0009",
+      "label": "兴业银行股份有限公司",
+      "type": "account",
+      "uscc": "K0N4B5LMJL3B4WXT40"
+    },
+    {
+      "id": "N0010",
+      "label": "卓郎智能机械股份有限公司",
+      "type": "company",
+      "uscc": "6M7CQRAB6CLTF3YDMJ"
+    },
+    {
+      "id": "N0011",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "6KH69K6RYXA84PAJ9W"
+    },
+    {
+      "id": "N0012",
+      "label": "卓郎科技",
+      "type": "person",
+      "uscc": "6WGMUK71KB35P0RGMY"
+    },
+    {
+      "id": "N0013",
+      "label": "懋达实业",
+      "type": "person",
+      "uscc": "MQNH2TGUKLQHHPC696"
+    },
+    {
+      "id": "N0014",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "FETQE15G12HUFE2A6M"
+    },
+    {
+      "id": "N0015",
+      "label": "懋达实业",
+      "type": "person",
+      "uscc": "DM2EL8F5UNMP2738C4"
+    },
+    {
+      "id": "N0016",
+      "label": "供应商B",
+      "type": "account",
+      "uscc": "LMY7YAHD2K8AEMNLMG"
+    },
+    {
+      "id": "N0017",
+      "label": "代理商G",
+      "type": "account",
+      "uscc": "F35XDXGFRXERRGRQH1"
+    },
+    {
+      "id": "N0018",
+      "label": "华信投资",
+      "type": "person",
+      "uscc": "GTF11BYX876RKH2XLD"
+    },
+    {
+      "id": "N0019",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "X3Q8A8Y15MFCKJNA4Q"
+    },
+    {
+      "id": "N0020",
+      "label": "客户D",
+      "type": "account",
+      "uscc": "EPU0GX0B6E60CU5393"
+    },
+    {
+      "id": "N0021",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "J8NUGR9R95X60447CH"
+    },
+    {
+      "id": "N0022",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "HBQA5ML8HLYRMLC9G6"
+    },
+    {
+      "id": "N0023",
+      "label": "中天科技",
+      "type": "person",
+      "uscc": "2PDMNDP0DKY6BN75D8"
+    },
+    {
+      "id": "N0024",
+      "label": "供应商A",
+      "type": "transaction",
+      "uscc": "6LD6E757URRKX9F8R8"
+    },
+    {
+      "id": "N0025",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "6Y6L6RMYR81DBEARHN"
+    },
+    {
+      "id": "N0026",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "8BUWC1CUUMCME4PEQQ"
+    },
+    {
+      "id": "N0027",
+      "label": "中天科技",
+      "type": "account",
+      "uscc": "77LJ9GJ91JKP36NUB7"
+    },
+    {
+      "id": "N0028",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "5TR7DQWND1APH3D117"
+    },
+    {
+      "id": "N0029",
+      "label": "分包商F",
+      "type": "person",
+      "uscc": "7D9UKC0J68WB98JEC1"
+    },
+    {
+      "id": "N0030",
+      "label": "供应商B",
+      "type": "transaction",
+      "uscc": "N9UR1T6RK4KCXHQ401"
+    },
+    {
+      "id": "N0031",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "WA08JFE4XKT5UX39UK"
+    },
+    {
+      "id": "N0032",
+      "label": "实控人王某",
+      "type": "company",
+      "uscc": "HWDM5TXHP84MPJGYYU"
+    },
+    {
+      "id": "N0033",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "F5TKKEGNX6B6TET7NR"
+    },
+    {
+      "id": "N0034",
+      "label": "分包商F",
+      "type": "account",
+      "uscc": "HD223TEH9EFW9WK0WE"
+    },
+    {
+      "id": "N0035",
+      "label": "北方华创",
+      "type": "transaction",
+      "uscc": "RY6BN0Q2MKMAABMBYR"
+    },
+    {
+      "id": "N0036",
+      "label": "分包商F",
+      "type": "account",
+      "uscc": "M6F44HG18E817GE6U8"
+    },
+    {
+      "id": "N0037",
+      "label": "兴业银行",
+      "type": "company",
+      "uscc": "U7RCURLDXYMXJWHARY"
+    },
+    {
+      "id": "N0038",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "46GY35T07LWGPUD4G0"
+    },
+    {
+      "id": "N0039",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "XQEXRPWG517BPW77GL"
+    },
+    {
+      "id": "N0040",
+      "label": "供应商A",
+      "type": "transaction",
+      "uscc": "GF69P68PX2YPDW2PRF"
+    },
+    {
+      "id": "N0041",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "27MGB96CUL2PHA2HB5"
+    },
+    {
+      "id": "N0042",
+      "label": "瑞达期货",
+      "type": "person",
+      "uscc": "R1TUY7JEK1W3KMN3Q8"
+    },
+    {
+      "id": "N0043",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "776U9FQENEU012ENUB"
+    },
+    {
+      "id": "N0044",
+      "label": "代理商G",
+      "type": "person",
+      "uscc": "MTG3P99W2MT1LE80LU"
+    },
+    {
+      "id": "N0045",
+      "label": "关联方E",
+      "type": "transaction",
+      "uscc": "19LL4B0CDRCD1JAGR1"
+    },
+    {
+      "id": "N0046",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "LEGBC40EEG20TWRP94"
+    },
+    {
+      "id": "N0047",
+      "label": "实控人王某",
+      "type": "transaction",
+      "uscc": "BFKNY6R9D1LK77UGH1"
+    },
+    {
+      "id": "N0048",
+      "label": "北方华创",
+      "type": "account",
+      "uscc": "PLLPWY7WXT1J3QRYJA"
+    },
+    {
+      "id": "N0049",
+      "label": "卓郎科技",
+      "type": "company",
+      "uscc": "F9NADLJXNTQEY60PKU"
+    },
+    {
+      "id": "N0050",
+      "label": "兴业银行",
+      "type": "company",
+      "uscc": "97NJ2YYCK0PNHYJMGE"
+    },
+    {
+      "id": "N0051",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "E6BGJWQKT1KLER5YBD"
+    },
+    {
+      "id": "N0052",
+      "label": "客户C",
+      "type": "account",
+      "uscc": "7YTPNUUMAE948B5R0B"
+    },
+    {
+      "id": "N0053",
+      "label": "卓郎科技",
+      "type": "person",
+      "uscc": "7AU4GX5FY02L5EQPR6"
+    },
+    {
+      "id": "N0054",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "R80F4Y9KMAX83THM0P"
+    },
+    {
+      "id": "N0055",
+      "label": "代理商G",
+      "type": "person",
+      "uscc": "L8N3GT0N3WE8TBQNLJ"
+    },
+    {
+      "id": "N0056",
+      "label": "中天科技",
+      "type": "person",
+      "uscc": "MM75RBRJ5YL8JTC021"
+    },
+    {
+      "id": "N0057",
+      "label": "关联方E",
+      "type": "person",
+      "uscc": "MKAFDN5B0C40BRHHDC"
+    },
+    {
+      "id": "N0058",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "52X2Y4U94TF7PP41XK"
+    },
+    {
+      "id": "N0059",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "KQG9Y9KWFR4PA41LQB"
+    },
+    {
+      "id": "N0060",
+      "label": "中天科技",
+      "type": "transaction",
+      "uscc": "K72G8WGD0PA5141P7N"
+    },
+    {
+      "id": "N0061",
+      "label": "供应商A",
+      "type": "transaction",
+      "uscc": "CJJ4QMEL5NPJBWT3N0"
+    },
+    {
+      "id": "N0062",
+      "label": "北方华创",
+      "type": "account",
+      "uscc": "56RUA0X4BY9NX1DLE5"
+    },
+    {
+      "id": "N0063",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "BE8E7PADLAF5TWTH6N"
+    },
+    {
+      "id": "N0064",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "JMF0GLLAH0HPN2Q9BL"
+    },
+    {
+      "id": "N0065",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "7JWQ9N3YLP7KMR78TW"
+    },
+    {
+      "id": "N0066",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "JGEDN86WQYFA7BC4FR"
+    },
+    {
+      "id": "N0067",
+      "label": "懋达实业",
+      "type": "company",
+      "uscc": "WHUYHHY64HA5DAW4XE"
+    },
+    {
+      "id": "N0068",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "J4AB8PF34PKT8XYDYQ"
+    },
+    {
+      "id": "N0069",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "90WYYJXCY5MNMKWB75"
+    },
+    {
+      "id": "N0070",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "Y62FAE04G0AMA2J5WX"
+    },
+    {
+      "id": "N0071",
+      "label": "客户C",
+      "type": "person",
+      "uscc": "025F2GN9DEGD650JJM"
+    },
+    {
+      "id": "N0072",
+      "label": "北方华创",
+      "type": "account",
+      "uscc": "32BBKHJ925G0H1WT13"
+    },
+    {
+      "id": "N0073",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "6BRBQLX6DXFYK7U7GR"
+    },
+    {
+      "id": "N0074",
+      "label": "宁德时代",
+      "type": "account",
+      "uscc": "CC8ERTPCTM10N4WPE6"
+    },
+    {
+      "id": "N0075",
+      "label": "瑞达期货",
+      "type": "account",
+      "uscc": "W9C91N1DP991XK9WGJ"
+    },
+    {
+      "id": "N0076",
+      "label": "客户D",
+      "type": "company",
+      "uscc": "TF3D4U42LYUPARALPU"
+    },
+    {
+      "id": "N0077",
+      "label": "关联方E",
+      "type": "company",
+      "uscc": "GNJA53307H26WP0H9D"
+    },
+    {
+      "id": "N0078",
+      "label": "供应商B",
+      "type": "company",
+      "uscc": "FJR07CP2624PJF280W"
+    },
+    {
+      "id": "N0079",
+      "label": "实控人王某",
+      "type": "company",
+      "uscc": "GD7XBKT4DW8B0Q01DF"
+    },
+    {
+      "id": "N0080",
+      "label": "供应商A",
+      "type": "company",
+      "uscc": "RDXLXEB317FQT97R6P"
+    },
+    {
+      "id": "N0081",
+      "label": "客户C",
+      "type": "company",
+      "uscc": "4JNMXXGBURDAY5H136"
+    },
+    {
+      "id": "N0082",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "1TYCE9AC39H2CDF0RK"
+    },
+    {
+      "id": "N0083",
+      "label": "实控人王某",
+      "type": "company",
+      "uscc": "8YWBD7WC054BA7E0MK"
+    },
+    {
+      "id": "N0084",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "16C8GXRD95U8JU2T3W"
+    },
+    {
+      "id": "N0085",
+      "label": "瑞达期货",
+      "type": "person",
+      "uscc": "B01W9B4WP1KC9JRDEE"
+    },
+    {
+      "id": "N0086",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "7XPWDJ6L2DMB150DDA"
+    },
+    {
+      "id": "N0087",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "PHBJU72J8D31DN6R42"
+    },
+    {
+      "id": "N0088",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "TXDN0R9NKQH9K2L7N0"
+    },
+    {
+      "id": "N0089",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "UR9C02HH1BC33GARK2"
+    },
+    {
+      "id": "N0090",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "B5ETRN8PH6MEAHNJCU"
+    },
+    {
+      "id": "N0091",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "975E2XEKT5XQ003JKU"
+    },
+    {
+      "id": "N0092",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "YGNWQMN1FXQG8HKAR9"
+    },
+    {
+      "id": "N0093",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "X1LGC20HF040DC9RX3"
+    },
+    {
+      "id": "N0094",
+      "label": "代理商G",
+      "type": "company",
+      "uscc": "4EA6DXDBH6KCFT91YQ"
+    },
+    {
+      "id": "N0095",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "C7RCDA4CKPUQ0W496L"
+    },
+    {
+      "id": "N0096",
+      "label": "客户C",
+      "type": "person",
+      "uscc": "AW2A8T2H79UBH2EH72"
+    },
+    {
+      "id": "N0097",
+      "label": "供应商B",
+      "type": "transaction",
+      "uscc": "RFAY87CMLAQXGG4HHN"
+    },
+    {
+      "id": "N0098",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "L8QF0TWXRKHU6QLPFR"
+    },
+    {
+      "id": "N0099",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "4LTAM2X7GW7PTPDKF2"
+    },
+    {
+      "id": "N0100",
+      "label": "卓郎科技",
+      "type": "company",
+      "uscc": "XWE4W8AXR58LNBA716"
+    },
+    {
+      "id": "N0101",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "GYQ506QXEL7AK99GFQ"
+    },
+    {
+      "id": "N0102",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "U9D250G4QLE194ALL3"
+    },
+    {
+      "id": "N0103",
+      "label": "关联方E",
+      "type": "person",
+      "uscc": "F59TK8YYWY7P55Y2AW"
+    },
+    {
+      "id": "N0104",
+      "label": "供应商B",
+      "type": "account",
+      "uscc": "GXCGX5JCEMAL1WFBPL"
+    },
+    {
+      "id": "N0105",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "8T0EFFDYU41MHDUN2J"
+    },
+    {
+      "id": "N0106",
+      "label": "金徽矿业",
+      "type": "account",
+      "uscc": "7KLF0T1RH990ACP3UY"
+    },
+    {
+      "id": "N0107",
+      "label": "卓郎科技",
+      "type": "person",
+      "uscc": "WUUREDDXQAMX6F6CA3"
+    },
+    {
+      "id": "N0108",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "DQPCUEHJ6PT6M3C78A"
+    },
+    {
+      "id": "N0109",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "G39FA1XRW1D4T0CFBX"
+    },
+    {
+      "id": "N0110",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "QJHTDPLXLT6DP5G0E3"
+    },
+    {
+      "id": "N0111",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "Q42CT7KX90FNR77083"
+    },
+    {
+      "id": "N0112",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "MJWXN7WM403XFYA7XC"
+    },
+    {
+      "id": "N0113",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "G1KU48BLMTFQRH7THW"
+    },
+    {
+      "id": "N0114",
+      "label": "关联方E",
+      "type": "account",
+      "uscc": "PNQ2TYPUY0EC24636D"
+    },
+    {
+      "id": "N0115",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "BF30TUYAWC4AD2TYLB"
+    },
+    {
+      "id": "N0116",
+      "label": "供应商B",
+      "type": "company",
+      "uscc": "4RKKME9AY13CQK90X0"
+    },
+    {
+      "id": "N0117",
+      "label": "供应商B",
+      "type": "company",
+      "uscc": "NYKG86AA04TKYX9QEF"
+    },
+    {
+      "id": "N0118",
+      "label": "卓郎科技",
+      "type": "transaction",
+      "uscc": "MRWC5YFLBCE3YCBGWY"
+    },
+    {
+      "id": "N0119",
+      "label": "北方华创",
+      "type": "account",
+      "uscc": "2JA6LMBY5LJ1HPY8X3"
+    },
+    {
+      "id": "N0120",
+      "label": "北方华创",
+      "type": "person",
+      "uscc": "GED9DGU1740QNU0J8E"
+    },
+    {
+      "id": "N0121",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "G88HLPPALN84QJCD40"
+    },
+    {
+      "id": "N0122",
+      "label": "金徽矿业",
+      "type": "transaction",
+      "uscc": "AW1Y8XYYQA3N0ALBGW"
+    },
+    {
+      "id": "N0123",
+      "label": "北方华创",
+      "type": "person",
+      "uscc": "XTJB31N978WY7AY4X5"
+    },
+    {
+      "id": "N0124",
+      "label": "兴业银行",
+      "type": "company",
+      "uscc": "FHKUJ2MFJ5E84G9CBJ"
+    },
+    {
+      "id": "N0125",
+      "label": "关联方E",
+      "type": "company",
+      "uscc": "GR2ULAUEQ08J5L96QU"
+    },
+    {
+      "id": "N0126",
+      "label": "华信投资",
+      "type": "transaction",
+      "uscc": "NYE8TX0FJ4GKLDR24U"
+    },
+    {
+      "id": "N0127",
+      "label": "供应商A",
+      "type": "person",
+      "uscc": "URW4RMDQFMQF8T46A6"
+    },
+    {
+      "id": "N0128",
+      "label": "供应商B",
+      "type": "company",
+      "uscc": "Q5C7AUH6XQ9DEE88A3"
+    },
+    {
+      "id": "N0129",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "YKHXXP0P203XG11FBN"
+    },
+    {
+      "id": "N0130",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "KYNXH2L1F6YG2K01WN"
+    },
+    {
+      "id": "N0131",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "5WFB6L974MCHBU6M7G"
+    },
+    {
+      "id": "N0132",
+      "label": "供应商A",
+      "type": "person",
+      "uscc": "JYF0N15TGA2D8A7HQF"
+    },
+    {
+      "id": "N0133",
+      "label": "实控人王某",
+      "type": "person",
+      "uscc": "XMDHFMB7R0DP5TX2H1"
+    },
+    {
+      "id": "N0134",
+      "label": "瑞达期货",
+      "type": "account",
+      "uscc": "03NTJ2LDRPF2MKTAWM"
+    },
+    {
+      "id": "N0135",
+      "label": "金徽矿业",
+      "type": "account",
+      "uscc": "CYJ14UA67XNCR4HB8L"
+    },
+    {
+      "id": "N0136",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "FM1QEEM7906B8CFYW6"
+    },
+    {
+      "id": "N0137",
+      "label": "卓郎科技",
+      "type": "person",
+      "uscc": "2M44TF5NJNJ28T5K1L"
+    },
+    {
+      "id": "N0138",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "X1YWYF0EG7486BDCKB"
+    },
+    {
+      "id": "N0139",
+      "label": "海尔智家",
+      "type": "person",
+      "uscc": "9FKUBUGCQJBARAJ623"
+    },
+    {
+      "id": "N0140",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "73M1RKQ7W65EMRNG5X"
+    },
+    {
+      "id": "N0141",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "N8G7Q6EY8WEC649Q0D"
+    },
+    {
+      "id": "N0142",
+      "label": "金徽矿业",
+      "type": "account",
+      "uscc": "W12BD529NLDRANAF1C"
+    },
+    {
+      "id": "N0143",
+      "label": "客户D",
+      "type": "company",
+      "uscc": "5YMM2PNR04RGWQAD7T"
+    },
+    {
+      "id": "N0144",
+      "label": "分包商F",
+      "type": "account",
+      "uscc": "E6JLU3TJ8125D2U0NG"
+    },
+    {
+      "id": "N0145",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "X8E9XQ2Y6MN7NMP2U3"
+    },
+    {
+      "id": "N0146",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "CL26XMDRA58XUXJ0ET"
+    },
+    {
+      "id": "N0147",
+      "label": "代理商G",
+      "type": "transaction",
+      "uscc": "UDNEA1RQD586QAH0D6"
+    },
+    {
+      "id": "N0148",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "0R9PHMATKNNYE34U61"
+    },
+    {
+      "id": "N0149",
+      "label": "客户C",
+      "type": "transaction",
+      "uscc": "B1DD8DRU7BRFQCNFXT"
+    },
+    {
+      "id": "N0150",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "LRX8T8JDN3PAMDDXWW"
+    },
+    {
+      "id": "N0151",
+      "label": "瑞达期货",
+      "type": "account",
+      "uscc": "C2A91PKABK31A0UPJX"
+    },
+    {
+      "id": "N0152",
+      "label": "宁德时代",
+      "type": "account",
+      "uscc": "226KPMCK739Q5BAR40"
+    },
+    {
+      "id": "N0153",
+      "label": "卓郎科技",
+      "type": "transaction",
+      "uscc": "UKL2WAYURH659DCGDL"
+    },
+    {
+      "id": "N0154",
+      "label": "海尔智家",
+      "type": "account",
+      "uscc": "5M62XWLLTT2LBKWUM2"
+    },
+    {
+      "id": "N0155",
+      "label": "实控人王某",
+      "type": "transaction",
+      "uscc": "11XU15BFRXCFHW4323"
+    },
+    {
+      "id": "N0156",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "N14B8J9422XCUXJWK2"
+    },
+    {
+      "id": "N0157",
+      "label": "海尔智家",
+      "type": "transaction",
+      "uscc": "6KWFWWPKHEGWFH2G7Q"
+    },
+    {
+      "id": "N0158",
+      "label": "代理商G",
+      "type": "account",
+      "uscc": "GKXH6HWFBQGLBT1BB6"
+    },
+    {
+      "id": "N0159",
+      "label": "中天科技",
+      "type": "transaction",
+      "uscc": "PF4WXHT4P86C31YGPG"
+    },
+    {
+      "id": "N0160",
+      "label": "海尔智家",
+      "type": "account",
+      "uscc": "W5N8U1HERDFJP3DXRY"
+    },
+    {
+      "id": "N0161",
+      "label": "关联方E",
+      "type": "account",
+      "uscc": "DE97NCATGB6A1LAC3M"
+    },
+    {
+      "id": "N0162",
+      "label": "实控人王某",
+      "type": "person",
+      "uscc": "T6BF2Q5H2P59P7Q4DE"
+    },
+    {
+      "id": "N0163",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "UK0Y5BLM0XD27QRE43"
+    },
+    {
+      "id": "N0164",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "G0JF5X2TU2LC0LW76E"
+    },
+    {
+      "id": "N0165",
+      "label": "供应商A",
+      "type": "transaction",
+      "uscc": "6J4T5N0HQ057G7L1BY"
+    },
+    {
+      "id": "N0166",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "0DC9PX071PJX6T5C43"
+    },
+    {
+      "id": "N0167",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "UNHUM6PENYKMG5NUE9"
+    },
+    {
+      "id": "N0168",
+      "label": "客户D",
+      "type": "account",
+      "uscc": "FRW99UXTWB3NK5E97X"
+    },
+    {
+      "id": "N0169",
+      "label": "兴业银行",
+      "type": "person",
+      "uscc": "RNF9581XW9713HR8DK"
+    },
+    {
+      "id": "N0170",
+      "label": "兴业银行",
+      "type": "person",
+      "uscc": "CRUGBFML57EH5CCP9H"
+    },
+    {
+      "id": "N0171",
+      "label": "金徽矿业",
+      "type": "company",
+      "uscc": "P0YE8K1PXW468LNNYU"
+    },
+    {
+      "id": "N0172",
+      "label": "供应商A",
+      "type": "company",
+      "uscc": "RRLGR04NLDY1FXGCRF"
+    },
+    {
+      "id": "N0173",
+      "label": "代理商G",
+      "type": "company",
+      "uscc": "QWCPQCE0W8596D5RRB"
+    },
+    {
+      "id": "N0174",
+      "label": "供应商B",
+      "type": "transaction",
+      "uscc": "YPFAE0D5CBTEW4ACNE"
+    },
+    {
+      "id": "N0175",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "85QG2GM4HM6PMKTLU3"
+    },
+    {
+      "id": "N0176",
+      "label": "供应商A",
+      "type": "transaction",
+      "uscc": "D5APD56MF4QPJ51DK0"
+    },
+    {
+      "id": "N0177",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "0C34YE8U9F10CCW676"
+    },
+    {
+      "id": "N0178",
+      "label": "实控人王某",
+      "type": "person",
+      "uscc": "NUAELDM81682DFTGPG"
+    },
+    {
+      "id": "N0179",
+      "label": "北方华创",
+      "type": "person",
+      "uscc": "G0KGYXKBEQ99CH8CB8"
+    },
+    {
+      "id": "N0180",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "LRTCKU2BDHTKTF76YM"
+    },
+    {
+      "id": "N0181",
+      "label": "金徽矿业",
+      "type": "transaction",
+      "uscc": "N9WENJM0NNTP2EQA08"
+    },
+    {
+      "id": "N0182",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "6H3THG522GD6P0XHWD"
+    },
+    {
+      "id": "N0183",
+      "label": "客户C",
+      "type": "transaction",
+      "uscc": "YM7JB1RDEF776GXKDW"
+    },
+    {
+      "id": "N0184",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "JGHUKNRK72MU4BHGGW"
+    },
+    {
+      "id": "N0185",
+      "label": "中天科技",
+      "type": "person",
+      "uscc": "2MD8NM7KEBK62N4CGL"
+    },
+    {
+      "id": "N0186",
+      "label": "中天科技",
+      "type": "person",
+      "uscc": "65U7YBNDBHT3HLUFK3"
+    },
+    {
+      "id": "N0187",
+      "label": "宁德时代",
+      "type": "account",
+      "uscc": "5NKANAPHGPU2E0N1D5"
+    },
+    {
+      "id": "N0188",
+      "label": "实控人王某",
+      "type": "person",
+      "uscc": "FFKTH4F24FYUK327LK"
+    },
+    {
+      "id": "N0189",
+      "label": "金徽矿业",
+      "type": "transaction",
+      "uscc": "E41EGFPL1R4WX1FFB1"
+    },
+    {
+      "id": "N0190",
+      "label": "代理商G",
+      "type": "company",
+      "uscc": "EMLFLHNPHWCB5HRXN5"
+    },
+    {
+      "id": "N0191",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "G8G5UA9J37F2DHAK2J"
+    },
+    {
+      "id": "N0192",
+      "label": "客户D",
+      "type": "account",
+      "uscc": "C7ULDDU0353C457T6N"
+    },
+    {
+      "id": "N0193",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "71LM69LW2LN9YJ1YFB"
+    },
+    {
+      "id": "N0194",
+      "label": "华信投资",
+      "type": "account",
+      "uscc": "CAGY36P7YYWPLUFMQ8"
+    },
+    {
+      "id": "N0195",
+      "label": "实控人王某",
+      "type": "company",
+      "uscc": "3JHXXNB829D6CFX80E"
+    },
+    {
+      "id": "N0196",
+      "label": "客户D",
+      "type": "person",
+      "uscc": "TLA31D1RWJW69TMFT9"
+    },
+    {
+      "id": "N0197",
+      "label": "兴业银行",
+      "type": "person",
+      "uscc": "XRN8BL05TTRNFEKKN8"
+    },
+    {
+      "id": "N0198",
+      "label": "懋达实业",
+      "type": "company",
+      "uscc": "2RCAD8U6GXE3N529L1"
+    },
+    {
+      "id": "N0199",
+      "label": "关联方E",
+      "type": "company",
+      "uscc": "1BNB8CBGP7LPWC5MRY"
+    },
+    {
+      "id": "N0200",
+      "label": "兴业银行",
+      "type": "company",
+      "uscc": "2DK2G76J9DJJ2LPJY2"
+    },
+    {
+      "id": "N0201",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "Q7FABCDREDRH0XWDF7"
+    },
+    {
+      "id": "N0202",
+      "label": "金徽矿业",
+      "type": "transaction",
+      "uscc": "8N07EUHLJYW0TALM5F"
+    },
+    {
+      "id": "N0203",
+      "label": "分包商F",
+      "type": "person",
+      "uscc": "MQU0TM9F8ELKRH8HXQ"
+    },
+    {
+      "id": "N0204",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "KH5RUKT58YUCC2FCAL"
+    },
+    {
+      "id": "N0205",
+      "label": "实控人王某",
+      "type": "company",
+      "uscc": "MHXWH3BQQDUAGHRCQC"
+    },
+    {
+      "id": "N0206",
+      "label": "海尔智家",
+      "type": "account",
+      "uscc": "T201G49Q29PMXCFLN9"
+    },
+    {
+      "id": "N0207",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "HX57ER073BA2RY35PX"
+    },
+    {
+      "id": "N0208",
+      "label": "海尔智家",
+      "type": "person",
+      "uscc": "4T1LC7MYJJ2L31LL79"
+    },
+    {
+      "id": "N0209",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "G3UALY1KD8H8NHDFLA"
+    },
+    {
+      "id": "N0210",
+      "label": "瑞达期货",
+      "type": "transaction",
+      "uscc": "PXB50FJU182K0RTQ86"
+    },
+    {
+      "id": "N0211",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "39JC1WHPQ5CTCK03F8"
+    },
+    {
+      "id": "N0212",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "KHK5JFX46KM8FA23PL"
+    },
+    {
+      "id": "N0213",
+      "label": "客户C",
+      "type": "company",
+      "uscc": "122UK0XWG9XL6Q34TH"
+    },
+    {
+      "id": "N0214",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "HGK5R1JKNJGL9TAYX3"
+    },
+    {
+      "id": "N0215",
+      "label": "兴业银行",
+      "type": "company",
+      "uscc": "U8DH34R1282Y0DLJWA"
+    },
+    {
+      "id": "N0216",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "ANJ9P0HX5QT07DXH81"
+    },
+    {
+      "id": "N0217",
+      "label": "北方华创",
+      "type": "account",
+      "uscc": "X9NF61N198GYBQYA95"
+    },
+    {
+      "id": "N0218",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "J3RQXB0N2AEFE125RN"
+    },
+    {
+      "id": "N0219",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "EHRKCGNE2E05CMTJ60"
+    },
+    {
+      "id": "N0220",
+      "label": "卓郎科技",
+      "type": "transaction",
+      "uscc": "EGF2H5UXTYK70P2P7N"
+    },
+    {
+      "id": "N0221",
+      "label": "兴业银行",
+      "type": "transaction",
+      "uscc": "BFDLP2UGWYB70WW28G"
+    },
+    {
+      "id": "N0222",
+      "label": "代理商G",
+      "type": "company",
+      "uscc": "2U3J3CQXUY9X0PRL4M"
+    },
+    {
+      "id": "N0223",
+      "label": "分包商F",
+      "type": "account",
+      "uscc": "QTMQCJ744HQJECEK10"
+    },
+    {
+      "id": "N0224",
+      "label": "海尔智家",
+      "type": "account",
+      "uscc": "B6F4BEMXQTAMRQTC8F"
+    },
+    {
+      "id": "N0225",
+      "label": "分包商F",
+      "type": "transaction",
+      "uscc": "T54WB60A03CN2NEWXR"
+    },
+    {
+      "id": "N0226",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "U5JC45R1R33K11Q8KQ"
+    },
+    {
+      "id": "N0227",
+      "label": "供应商A",
+      "type": "person",
+      "uscc": "155RTEEQDB0YF82XPK"
+    },
+    {
+      "id": "N0228",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "45AM41MG1227FW084E"
+    },
+    {
+      "id": "N0229",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "5LA63PF67F8K2D4FMD"
+    },
+    {
+      "id": "N0230",
+      "label": "中天科技",
+      "type": "transaction",
+      "uscc": "NA84FFG6G1W5891EHM"
+    },
+    {
+      "id": "N0231",
+      "label": "关联方E",
+      "type": "company",
+      "uscc": "PQLCKAUYKEJJ856B7H"
+    },
+    {
+      "id": "N0232",
+      "label": "瑞达期货",
+      "type": "company",
+      "uscc": "GJHA5BMYH3DT193FC1"
+    },
+    {
+      "id": "N0233",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "L6Y05PQAA3LH3959H9"
+    },
+    {
+      "id": "N0234",
+      "label": "实控人王某",
+      "type": "account",
+      "uscc": "RM175D2XHW7E8CWNNW"
+    },
+    {
+      "id": "N0235",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "JYQFJFE7A1JXB0N3Y8"
+    },
+    {
+      "id": "N0236",
+      "label": "懋达实业",
+      "type": "company",
+      "uscc": "YCCXAA586J9GRLDAPU"
+    },
+    {
+      "id": "N0237",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "J57U3QDBFKBPH4G8GK"
+    },
+    {
+      "id": "N0238",
+      "label": "实控人王某",
+      "type": "transaction",
+      "uscc": "LRMRJXFC5CQCRU6X8N"
+    },
+    {
+      "id": "N0239",
+      "label": "中天科技",
+      "type": "account",
+      "uscc": "E0L3BGWUKYJ8BR8J13"
+    },
+    {
+      "id": "N0240",
+      "label": "中天科技",
+      "type": "account",
+      "uscc": "W1EYG86HUP48R0A516"
+    },
+    {
+      "id": "N0241",
+      "label": "代理商G",
+      "type": "account",
+      "uscc": "DL4HJCQ93E8JA9351K"
+    },
+    {
+      "id": "N0242",
+      "label": "分包商F",
+      "type": "company",
+      "uscc": "FW2GWJ3RA82E0HG6N4"
+    },
+    {
+      "id": "N0243",
+      "label": "中天科技",
+      "type": "transaction",
+      "uscc": "0MM8L1CEXL28MGNAKD"
+    },
+    {
+      "id": "N0244",
+      "label": "关联方E",
+      "type": "transaction",
+      "uscc": "M7N8KA4AR38N7NJDM8"
+    },
+    {
+      "id": "N0245",
+      "label": "北方华创",
+      "type": "transaction",
+      "uscc": "6E1FEUBTQLQGU0A36D"
+    },
+    {
+      "id": "N0246",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "593HKBA6CFN55DEB6R"
+    },
+    {
+      "id": "N0247",
+      "label": "客户C",
+      "type": "person",
+      "uscc": "QX6P6YJX68UQF8DJNQ"
+    },
+    {
+      "id": "N0248",
+      "label": "供应商B",
+      "type": "account",
+      "uscc": "AMDFB132FR53PCPEWH"
+    },
+    {
+      "id": "N0249",
+      "label": "北方华创",
+      "type": "company",
+      "uscc": "2MJEWGEFNRKJWCWRQ3"
+    },
+    {
+      "id": "N0250",
+      "label": "金徽矿业",
+      "type": "account",
+      "uscc": "31J2LNMCQANJB8FW7X"
+    },
+    {
+      "id": "N0251",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "GYT93KAY6YPNDT6HB7"
+    },
+    {
+      "id": "N0252",
+      "label": "兴业银行",
+      "type": "transaction",
+      "uscc": "DB8D2PLL81B1T1HH5C"
+    },
+    {
+      "id": "N0253",
+      "label": "关联方E",
+      "type": "transaction",
+      "uscc": "84R2AQQ1C9EDBUQ32W"
+    },
+    {
+      "id": "N0254",
+      "label": "瑞达期货",
+      "type": "account",
+      "uscc": "KNE0X307X2WU5183NT"
+    },
+    {
+      "id": "N0255",
+      "label": "中天科技",
+      "type": "account",
+      "uscc": "5YX3BAJABE7JDBFMWF"
+    },
+    {
+      "id": "N0256",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "A23HM9U0919UJN4HL9"
+    },
+    {
+      "id": "N0257",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "KRN20K80E4D8XU2G6T"
+    },
+    {
+      "id": "N0258",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "QYP3LMLRWLM379X46E"
+    },
+    {
+      "id": "N0259",
+      "label": "中天科技",
+      "type": "company",
+      "uscc": "7LQG83DPU1L8FNYBQF"
+    },
+    {
+      "id": "N0260",
+      "label": "海尔智家",
+      "type": "account",
+      "uscc": "LAR7U0EQ6WTEY5BJ0N"
+    },
+    {
+      "id": "N0261",
+      "label": "中天科技",
+      "type": "person",
+      "uscc": "H82C989FKE9386U6TJ"
+    },
+    {
+      "id": "N0262",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "8E97BYJFHQKQ34AQ1D"
+    },
+    {
+      "id": "N0263",
+      "label": "懋达实业",
+      "type": "company",
+      "uscc": "8FCAUQGBYCFQG2DTLQ"
+    },
+    {
+      "id": "N0264",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "CDXCHH76GMXUQX77RF"
+    },
+    {
+      "id": "N0265",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "KNPQRJB4PRAH1H0Q0Q"
+    },
+    {
+      "id": "N0266",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "H9L0E0WGJWT0DPNHAD"
+    },
+    {
+      "id": "N0267",
+      "label": "供应商B",
+      "type": "account",
+      "uscc": "DW37JWCBPDYTKEEF5P"
+    },
+    {
+      "id": "N0268",
+      "label": "分包商F",
+      "type": "company",
+      "uscc": "NYKQ2LJEUT5YN2EQ1R"
+    },
+    {
+      "id": "N0269",
+      "label": "卓郎科技",
+      "type": "transaction",
+      "uscc": "5QKUE7E2RG9TCUBX7B"
+    },
+    {
+      "id": "N0270",
+      "label": "供应商B",
+      "type": "company",
+      "uscc": "N5ULJPP1L23611583F"
+    },
+    {
+      "id": "N0271",
+      "label": "供应商A",
+      "type": "person",
+      "uscc": "HRE8TCKX4ACB512UCL"
+    },
+    {
+      "id": "N0272",
+      "label": "华信投资",
+      "type": "person",
+      "uscc": "DQ56FLDRF4HDLYTKJC"
+    },
+    {
+      "id": "N0273",
+      "label": "关联方E",
+      "type": "transaction",
+      "uscc": "1AKBTX68R94FK1ECP0"
+    },
+    {
+      "id": "N0274",
+      "label": "兴业银行",
+      "type": "account",
+      "uscc": "TP4CHWT00MANCEMF1X"
+    },
+    {
+      "id": "N0275",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "YU8D3EW8GKTBNYQTU0"
+    },
+    {
+      "id": "N0276",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "K3HXEY445P145RE2AG"
+    },
+    {
+      "id": "N0277",
+      "label": "供应商A",
+      "type": "account",
+      "uscc": "96EXPWCJEA3AJ03MTA"
+    },
+    {
+      "id": "N0278",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "BALQ77D3QWW71QX9CQ"
+    },
+    {
+      "id": "N0279",
+      "label": "分包商F",
+      "type": "account",
+      "uscc": "U5M4GMXN7GT8RK8KJG"
+    },
+    {
+      "id": "N0280",
+      "label": "海尔智家",
+      "type": "person",
+      "uscc": "6BK2QT1XJPBPN0R0G9"
+    },
+    {
+      "id": "N0281",
+      "label": "分包商F",
+      "type": "company",
+      "uscc": "BR2X2MW5JUEM1Q2KRL"
+    },
+    {
+      "id": "N0282",
+      "label": "懋达实业",
+      "type": "company",
+      "uscc": "RMDPMKRGJ0RH89N415"
+    },
+    {
+      "id": "N0283",
+      "label": "金徽矿业",
+      "type": "person",
+      "uscc": "WGNNWNBRJQRXRWUA0Y"
+    },
+    {
+      "id": "N0284",
+      "label": "华信投资",
+      "type": "company",
+      "uscc": "L7QBULFHM9RFGRCHAM"
+    },
+    {
+      "id": "N0285",
+      "label": "宁德时代",
+      "type": "person",
+      "uscc": "MM4JX2HCCRMEY28RFY"
+    },
+    {
+      "id": "N0286",
+      "label": "供应商B",
+      "type": "transaction",
+      "uscc": "ERYBFHMKT3LA03EB5G"
+    },
+    {
+      "id": "N0287",
+      "label": "宁德时代",
+      "type": "transaction",
+      "uscc": "EM9YKLJ85MW754WG2R"
+    },
+    {
+      "id": "N0288",
+      "label": "海尔智家",
+      "type": "company",
+      "uscc": "A6CNMEJCNQ7AJBL4YL"
+    },
+    {
+      "id": "N0289",
+      "label": "宁德时代",
+      "type": "company",
+      "uscc": "X070KYN4PGLMEMX4KT"
+    },
+    {
+      "id": "N0290",
+      "label": "懋达实业",
+      "type": "transaction",
+      "uscc": "LMF2JPQ28Q31GY7177"
+    },
+    {
+      "id": "N0291",
+      "label": "海尔智家",
+      "type": "transaction",
+      "uscc": "Q43RD9AC4FB315YLXT"
+    },
+    {
+      "id": "N0292",
+      "label": "金徽矿业",
+      "type": "transaction",
+      "uscc": "911P972DL8EA5EXF74"
+    },
+    {
+      "id": "N0293",
+      "label": "卓郎科技",
+      "type": "person",
+      "uscc": "E89HDC7XADFKJXBGQ4"
+    },
+    {
+      "id": "N0294",
+      "label": "供应商A",
+      "type": "person",
+      "uscc": "UHLK9WXBMJWFD4YAYK"
+    },
+    {
+      "id": "N0295",
+      "label": "懋达实业",
+      "type": "account",
+      "uscc": "FL7GH22JG18X7LJ0KU"
+    },
+    {
+      "id": "N0296",
+      "label": "客户D",
+      "type": "transaction",
+      "uscc": "FYAQRFWXTG9R38YXM6"
+    },
+    {
+      "id": "N0297",
+      "label": "供应商B",
+      "type": "person",
+      "uscc": "JNQY7GN2WGXC6A2G4W"
+    },
+    {
+      "id": "N0298",
+      "label": "卓郎科技",
+      "type": "account",
+      "uscc": "QBUX0U1L8EM76MBP9K"
+    },
+    {
+      "id": "N0299",
+      "label": "关联方E",
+      "type": "company",
+      "uscc": "DM8BYAH35KB4J5216K"
+    },
+    {
+      "id": "N0300",
+      "label": "客户D",
+      "type": "account",
+      "uscc": "TH7TE26CCMR8ALPGHD"
+    }
+  ],
+  "edges": [
+    {
+      "source": "N0173",
+      "target": "N0236",
+      "relation": "持股",
+      "weight": 0.199
+    },
+    {
+      "source": "N0025",
+      "target": "N0291",
+      "relation": "关联",
+      "weight": 0.272
+    },
+    {
+      "source": "N0085",
+      "target": "N0181",
+      "relation": "关联",
+      "weight": 0.867
+    },
+    {
+      "source": "N0019",
+      "target": "N0199",
+      "relation": "关联",
+      "weight": 0.747
+    },
+    {
+      "source": "N0294",
+      "target": "N0050",
+      "relation": "持股",
+      "weight": 0.71
+    },
+    {
+      "source": "N0249",
+      "target": "N0130",
+      "relation": "交易",
+      "weight": 0.601
+    },
+    {
+      "source": "N0206",
+      "target": "N0140",
+      "relation": "担保",
+      "weight": 0.392
+    },
+    {
+      "source": "N0282",
+      "target": "N0146",
+      "relation": "投资",
+      "weight": 0.78
+    },
+    {
+      "source": "N0163",
+      "target": "N0054",
+      "relation": "控制",
+      "weight": 0.219
+    },
+    {
+      "source": "N0160",
+      "target": "N0253",
+      "relation": "关联",
+      "weight": 0.429
+    },
+    {
+      "source": "N0099",
+      "target": "N0141",
+      "relation": "担保",
+      "weight": 0.538
+    },
+    {
+      "source": "N0260",
+      "target": "N0253",
+      "relation": "持股",
+      "weight": 0.276
+    },
+    {
+      "source": "N0073",
+      "target": "N0192",
+      "relation": "交易",
+      "weight": 0.071
+    },
+    {
+      "source": "N0042",
+      "target": "N0125",
+      "relation": "投资",
+      "weight": 0.963
+    },
+    {
+      "source": "N0078",
+      "target": "N0053",
+      "relation": "关联",
+      "weight": 0.794
+    },
+    {
+      "source": "N0130",
+      "target": "N0095",
+      "relation": "控制",
+      "weight": 0.241
+    },
+    {
+      "source": "N0004",
+      "target": "N0204",
+      "relation": "担保",
+      "weight": 0.361
+    },
+    {
+      "source": "N0105",
+      "target": "N0178",
+      "relation": "持股",
+      "weight": 0.891
+    },
+    {
+      "source": "N0121",
+      "target": "N0034",
+      "relation": "关联",
+      "weight": 0.954
+    },
+    {
+      "source": "N0079",
+      "target": "N0064",
+      "relation": "持股",
+      "weight": 0.036
+    },
+    {
+      "source": "N0243",
+      "target": "N0170",
+      "relation": "担保",
+      "weight": 0.337
+    },
+    {
+      "source": "N0136",
+      "target": "N0155",
+      "relation": "关联",
+      "weight": 0.86
+    },
+    {
+      "source": "N0267",
+      "target": "N0075",
+      "relation": "投资",
+      "weight": 0.856
+    },
+    {
+      "source": "N0014",
+      "target": "N0095",
+      "relation": "交易",
+      "weight": 0.559
+    },
+    {
+      "source": "N0133",
+      "target": "N0083",
+      "relation": "关联",
+      "weight": 0.237
+    },
+    {
+      "source": "N0246",
+      "target": "N0106",
+      "relation": "交易",
+      "weight": 0.326
+    },
+    {
+      "source": "N0062",
+      "target": "N0043",
+      "relation": "担保",
+      "weight": 0.767
+    },
+    {
+      "source": "N0263",
+      "target": "N0221",
+      "relation": "关联",
+      "weight": 0.258
+    },
+    {
+      "source": "N0134",
+      "target": "N0042",
+      "relation": "担保",
+      "weight": 0.261
+    },
+    {
+      "source": "N0227",
+      "target": "N0010",
+      "relation": "投资",
+      "weight": 0.927
+    },
+    {
+      "source": "N0172",
+      "target": "N0123",
+      "relation": "关联",
+      "weight": 0.761
+    },
+    {
+      "source": "N0233",
+      "target": "N0077",
+      "relation": "控制",
+      "weight": 0.716
+    },
+    {
+      "source": "N0109",
+      "target": "N0222",
+      "relation": "控制",
+      "weight": 0.926
+    },
+    {
+      "source": "N0057",
+      "target": "N0043",
+      "relation": "持股",
+      "weight": 0.035
+    },
+    {
+      "source": "N0017",
+      "target": "N0088",
+      "relation": "担保",
+      "weight": 0.026
+    },
+    {
+      "source": "N0009",
+      "target": "N0279",
+      "relation": "关联",
+      "weight": 0.965
+    },
+    {
+      "source": "N0147",
+      "target": "N0094",
+      "relation": "持股",
+      "weight": 0.818
+    },
+    {
+      "source": "N0079",
+      "target": "N0095",
+      "relation": "担保",
+      "weight": 0.962
+    },
+    {
+      "source": "N0179",
+      "target": "N0010",
+      "relation": "控制",
+      "weight": 0.343
+    },
+    {
+      "source": "N0086",
+      "target": "N0251",
+      "relation": "控制",
+      "weight": 0.041
+    },
+    {
+      "source": "N0156",
+      "target": "N0209",
+      "relation": "控制",
+      "weight": 0.422
+    },
+    {
+      "source": "N0044",
+      "target": "N0171",
+      "relation": "控制",
+      "weight": 0.133
+    },
+    {
+      "source": "N0013",
+      "target": "N0077",
+      "relation": "持股",
+      "weight": 0.479
+    },
+    {
+      "source": "N0253",
+      "target": "N0084",
+      "relation": "控制",
+      "weight": 0.687
+    },
+    {
+      "source": "N0145",
+      "target": "N0243",
+      "relation": "投资",
+      "weight": 0.767
+    },
+    {
+      "source": "N0221",
+      "target": "N0137",
+      "relation": "投资",
+      "weight": 0.119
+    },
+    {
+      "source": "N0292",
+      "target": "N0195",
+      "relation": "关联",
+      "weight": 0.247
+    },
+    {
+      "source": "N0079",
+      "target": "N0069",
+      "relation": "控制",
+      "weight": 0.846
+    },
+    {
+      "source": "N0194",
+      "target": "N0281",
+      "relation": "持股",
+      "weight": 0.462
+    },
+    {
+      "source": "N0144",
+      "target": "N0048",
+      "relation": "交易",
+      "weight": 0.752
+    },
+    {
+      "source": "N0145",
+      "target": "N0100",
+      "relation": "控制",
+      "weight": 0.46
+    },
+    {
+      "source": "N0114",
+      "target": "N0045",
+      "relation": "交易",
+      "weight": 0.656
+    },
+    {
+      "source": "N0221",
+      "target": "N0015",
+      "relation": "控制",
+      "weight": 0.631
+    },
+    {
+      "source": "N0133",
+      "target": "N0024",
+      "relation": "控制",
+      "weight": 0.94
+    },
+    {
+      "source": "N0009",
+      "target": "N0186",
+      "relation": "担保",
+      "weight": 0.923
+    },
+    {
+      "source": "N0245",
+      "target": "N0044",
+      "relation": "担保",
+      "weight": 0.516
+    },
+    {
+      "source": "N0052",
+      "target": "N0182",
+      "relation": "控制",
+      "weight": 0.783
+    },
+    {
+      "source": "N0013",
+      "target": "N0149",
+      "relation": "担保",
+      "weight": 0.608
+    },
+    {
+      "source": "N0042",
+      "target": "N0240",
+      "relation": "控制",
+      "weight": 0.84
+    },
+    {
+      "source": "N0279",
+      "target": "N0152",
+      "relation": "控制",
+      "weight": 0.764
+    },
+    {
+      "source": "N0003",
+      "target": "N0085",
+      "relation": "持股",
+      "weight": 0.133
+    },
+    {
+      "source": "N0237",
+      "target": "N0252",
+      "relation": "交易",
+      "weight": 0.232
+    },
+    {
+      "source": "N0072",
+      "target": "N0003",
+      "relation": "交易",
+      "weight": 0.087
+    },
+    {
+      "source": "N0172",
+      "target": "N0150",
+      "relation": "投资",
+      "weight": 0.851
+    },
+    {
+      "source": "N0187",
+      "target": "N0007",
+      "relation": "投资",
+      "weight": 0.543
+    },
+    {
+      "source": "N0242",
+      "target": "N0161",
+      "relation": "担保",
+      "weight": 0.52
+    },
+    {
+      "source": "N0288",
+      "target": "N0001",
+      "relation": "交易",
+      "weight": 0.204
+    },
+    {
+      "source": "N0045",
+      "target": "N0094",
+      "relation": "担保",
+      "weight": 0.96
+    },
+    {
+      "source": "N0014",
+      "target": "N0180",
+      "relation": "持股",
+      "weight": 0.073
+    },
+    {
+      "source": "N0093",
+      "target": "N0272",
+      "relation": "交易",
+      "weight": 0.796
+    },
+    {
+      "source": "N0087",
+      "target": "N0046",
+      "relation": "交易",
+      "weight": 0.717
+    },
+    {
+      "source": "N0234",
+      "target": "N0200",
+      "relation": "持股",
+      "weight": 0.584
+    },
+    {
+      "source": "N0186",
+      "target": "N0155",
+      "relation": "关联",
+      "weight": 0.008
+    },
+    {
+      "source": "N0186",
+      "target": "N0286",
+      "relation": "担保",
+      "weight": 0.51
+    },
+    {
+      "source": "N0087",
+      "target": "N0095",
+      "relation": "投资",
+      "weight": 0.29
+    },
+    {
+      "source": "N0064",
+      "target": "N0114",
+      "relation": "控制",
+      "weight": 0.397
+    },
+    {
+      "source": "N0019",
+      "target": "N0129",
+      "relation": "持股",
+      "weight": 0.708
+    },
+    {
+      "source": "N0175",
+      "target": "N0275",
+      "relation": "交易",
+      "weight": 0.53
+    },
+    {
+      "source": "N0209",
+      "target": "N0221",
+      "relation": "持股",
+      "weight": 0.352
+    },
+    {
+      "source": "N0037",
+      "target": "N0067",
+      "relation": "担保",
+      "weight": 0.236
+    },
+    {
+      "source": "N0092",
+      "target": "N0141",
+      "relation": "交易",
+      "weight": 0.687
+    },
+    {
+      "source": "N0018",
+      "target": "N0002",
+      "relation": "持股",
+      "weight": 0.614
+    },
+    {
+      "source": "N0011",
+      "target": "N0120",
+      "relation": "控制",
+      "weight": 0.478
+    },
+    {
+      "source": "N0058",
+      "target": "N0176",
+      "relation": "投资",
+      "weight": 0.207
+    },
+    {
+      "source": "N0260",
+      "target": "N0243",
+      "relation": "投资",
+      "weight": 0.03
+    },
+    {
+      "source": "N0295",
+      "target": "N0022",
+      "relation": "控制",
+      "weight": 0.251
+    },
+    {
+      "source": "N0012",
+      "target": "N0043",
+      "relation": "担保",
+      "weight": 0.417
+    },
+    {
+      "source": "N0175",
+      "target": "N0112",
+      "relation": "关联",
+      "weight": 0.64
+    },
+    {
+      "source": "N0100",
+      "target": "N0002",
+      "relation": "关联",
+      "weight": 0.319
+    },
+    {
+      "source": "N0139",
+      "target": "N0039",
+      "relation": "持股",
+      "weight": 0.863
+    },
+    {
+      "source": "N0296",
+      "target": "N0230",
+      "relation": "投资",
+      "weight": 0.534
+    },
+    {
+      "source": "N0246",
+      "target": "N0169",
+      "relation": "关联",
+      "weight": 0.049
+    },
+    {
+      "source": "N0010",
+      "target": "N0052",
+      "relation": "控制",
+      "weight": 0.353
+    },
+    {
+      "source": "N0270",
+      "target": "N0102",
+      "relation": "交易",
+      "weight": 0.636
+    },
+    {
+      "source": "N0060",
+      "target": "N0052",
+      "relation": "交易",
+      "weight": 0.317
+    },
+    {
+      "source": "N0048",
+      "target": "N0278",
+      "relation": "交易",
+      "weight": 0.031
+    },
+    {
+      "source": "N0084",
+      "target": "N0134",
+      "relation": "投资",
+      "weight": 0.568
+    },
+    {
+      "source": "N0037",
+      "target": "N0189",
+      "relation": "控制",
+      "weight": 0.421
+    },
+    {
+      "source": "N0015",
+      "target": "N0252",
+      "relation": "投资",
+      "weight": 0.797
+    },
+    {
+      "source": "N0036",
+      "target": "N0159",
+      "relation": "担保",
+      "weight": 0.385
+    },
+    {
+      "source": "N0031",
+      "target": "N0138",
+      "relation": "控制",
+      "weight": 0.505
+    },
+    {
+      "source": "N0027",
+      "target": "N0132",
+      "relation": "关联",
+      "weight": 0.392
+    },
+    {
+      "source": "N0121",
+      "target": "N0154",
+      "relation": "控制",
+      "weight": 0.782
+    },
+    {
+      "source": "N0075",
+      "target": "N0091",
+      "relation": "交易",
+      "weight": 0.19
+    },
+    {
+      "source": "N0260",
+      "target": "N0143",
+      "relation": "控制",
+      "weight": 0.632
+    },
+    {
+      "source": "N0259",
+      "target": "N0122",
+      "relation": "控制",
+      "weight": 0.889
+    },
+    {
+      "source": "N0058",
+      "target": "N0143",
+      "relation": "交易",
+      "weight": 0.954
+    },
+    {
+      "source": "N0271",
+      "target": "N0279",
+      "relation": "担保",
+      "weight": 0.985
+    },
+    {
+      "source": "N0057",
+      "target": "N0070",
+      "relation": "持股",
+      "weight": 0.982
+    },
+    {
+      "source": "N0262",
+      "target": "N0131",
+      "relation": "关联",
+      "weight": 0.222
+    },
+    {
+      "source": "N0181",
+      "target": "N0234",
+      "relation": "控制",
+      "weight": 0.977
+    },
+    {
+      "source": "N0058",
+      "target": "N0140",
+      "relation": "投资",
+      "weight": 0.273
+    },
+    {
+      "source": "N0165",
+      "target": "N0098",
+      "relation": "控制",
+      "weight": 0.332
+    },
+    {
+      "source": "N0114",
+      "target": "N0077",
+      "relation": "投资",
+      "weight": 0.941
+    },
+    {
+      "source": "N0135",
+      "target": "N0056",
+      "relation": "持股",
+      "weight": 0.671
+    },
+    {
+      "source": "N0192",
+      "target": "N0253",
+      "relation": "交易",
+      "weight": 0.386
+    },
+    {
+      "source": "N0268",
+      "target": "N0295",
+      "relation": "关联",
+      "weight": 0.813
+    },
+    {
+      "source": "N0097",
+      "target": "N0047",
+      "relation": "关联",
+      "weight": 0.829
+    },
+    {
+      "source": "N0134",
+      "target": "N0104",
+      "relation": "交易",
+      "weight": 0.529
+    },
+    {
+      "source": "N0287",
+      "target": "N0069",
+      "relation": "关联",
+      "weight": 0.073
+    },
+    {
+      "source": "N0061",
+      "target": "N0050",
+      "relation": "担保",
+      "weight": 0.528
+    },
+    {
+      "source": "N0193",
+      "target": "N0288",
+      "relation": "交易",
+      "weight": 0.648
+    },
+    {
+      "source": "N0018",
+      "target": "N0249",
+      "relation": "控制",
+      "weight": 0.864
+    },
+    {
+      "source": "N0097",
+      "target": "N0112",
+      "relation": "持股",
+      "weight": 0.966
+    },
+    {
+      "source": "N0118",
+      "target": "N0176",
+      "relation": "交易",
+      "weight": 0.097
+    },
+    {
+      "source": "N0115",
+      "target": "N0035",
+      "relation": "交易",
+      "weight": 0.74
+    },
+    {
+      "source": "N0080",
+      "target": "N0181",
+      "relation": "交易",
+      "weight": 0.17
+    },
+    {
+      "source": "N0057",
+      "target": "N0144",
+      "relation": "控制",
+      "weight": 0.676
+    },
+    {
+      "source": "N0287",
+      "target": "N0237",
+      "relation": "投资",
+      "weight": 0.27
+    },
+    {
+      "source": "N0028",
+      "target": "N0055",
+      "relation": "交易",
+      "weight": 0.068
+    },
+    {
+      "source": "N0016",
+      "target": "N0248",
+      "relation": "关联",
+      "weight": 0.106
+    },
+    {
+      "source": "N0140",
+      "target": "N0117",
+      "relation": "投资",
+      "weight": 0.93
+    },
+    {
+      "source": "N0296",
+      "target": "N0055",
+      "relation": "关联",
+      "weight": 0.594
+    },
+    {
+      "source": "N0060",
+      "target": "N0079",
+      "relation": "投资",
+      "weight": 0.057
+    },
+    {
+      "source": "N0296",
+      "target": "N0154",
+      "relation": "持股",
+      "weight": 0.479
+    },
+    {
+      "source": "N0089",
+      "target": "N0233",
+      "relation": "交易",
+      "weight": 0.141
+    },
+    {
+      "source": "N0044",
+      "target": "N0210",
+      "relation": "持股",
+      "weight": 0.323
+    },
+    {
+      "source": "N0093",
+      "target": "N0017",
+      "relation": "持股",
+      "weight": 0.263
+    },
+    {
+      "source": "N0272",
+      "target": "N0286",
+      "relation": "控制",
+      "weight": 0.051
+    },
+    {
+      "source": "N0096",
+      "target": "N0082",
+      "relation": "控制",
+      "weight": 0.327
+    },
+    {
+      "source": "N0066",
+      "target": "N0187",
+      "relation": "关联",
+      "weight": 0.501
+    },
+    {
+      "source": "N0051",
+      "target": "N0243",
+      "relation": "投资",
+      "weight": 0.651
+    },
+    {
+      "source": "N0061",
+      "target": "N0089",
+      "relation": "担保",
+      "weight": 0.955
+    },
+    {
+      "source": "N0139",
+      "target": "N0184",
+      "relation": "持股",
+      "weight": 0.507
+    },
+    {
+      "source": "N0243",
+      "target": "N0065",
+      "relation": "担保",
+      "weight": 0.58
+    },
+    {
+      "source": "N0237",
+      "target": "N0285",
+      "relation": "持股",
+      "weight": 0.973
+    },
+    {
+      "source": "N0049",
+      "target": "N0028",
+      "relation": "交易",
+      "weight": 0.058
+    },
+    {
+      "source": "N0057",
+      "target": "N0039",
+      "relation": "交易",
+      "weight": 0.329
+    },
+    {
+      "source": "N0212",
+      "target": "N0140",
+      "relation": "担保",
+      "weight": 0.05
+    },
+    {
+      "source": "N0116",
+      "target": "N0161",
+      "relation": "交易",
+      "weight": 0.657
+    },
+    {
+      "source": "N0011",
+      "target": "N0048",
+      "relation": "关联",
+      "weight": 0.265
+    },
+    {
+      "source": "N0259",
+      "target": "N0056",
+      "relation": "控制",
+      "weight": 0.311
+    },
+    {
+      "source": "N0218",
+      "target": "N0127",
+      "relation": "控制",
+      "weight": 0.728
+    },
+    {
+      "source": "N0182",
+      "target": "N0273",
+      "relation": "关联",
+      "weight": 0.431
+    },
+    {
+      "source": "N0095",
+      "target": "N0018",
+      "relation": "担保",
+      "weight": 0.978
+    },
+    {
+      "source": "N0167",
+      "target": "N0021",
+      "relation": "控制",
+      "weight": 0.028
+    },
+    {
+      "source": "N0090",
+      "target": "N0239",
+      "relation": "持股",
+      "weight": 0.712
+    },
+    {
+      "source": "N0097",
+      "target": "N0081",
+      "relation": "持股",
+      "weight": 0.342
+    },
+    {
+      "source": "N0281",
+      "target": "N0260",
+      "relation": "投资",
+      "weight": 0.023
+    },
+    {
+      "source": "N0215",
+      "target": "N0167",
+      "relation": "交易",
+      "weight": 0.145
+    },
+    {
+      "source": "N0137",
+      "target": "N0085",
+      "relation": "关联",
+      "weight": 0.263
+    },
+    {
+      "source": "N0282",
+      "target": "N0071",
+      "relation": "担保",
+      "weight": 0.431
+    },
+    {
+      "source": "N0200",
+      "target": "N0239",
+      "relation": "交易",
+      "weight": 0.875
+    },
+    {
+      "source": "N0126",
+      "target": "N0054",
+      "relation": "关联",
+      "weight": 0.354
+    },
+    {
+      "source": "N0042",
+      "target": "N0188",
+      "relation": "交易",
+      "weight": 0.275
+    },
+    {
+      "source": "N0115",
+      "target": "N0099",
+      "relation": "关联",
+      "weight": 0.035
+    },
+    {
+      "source": "N0218",
+      "target": "N0264",
+      "relation": "担保",
+      "weight": 0.845
+    },
+    {
+      "source": "N0143",
+      "target": "N0118",
+      "relation": "控制",
+      "weight": 0.404
+    },
+    {
+      "source": "N0162",
+      "target": "N0199",
+      "relation": "关联",
+      "weight": 0.508
+    },
+    {
+      "source": "N0033",
+      "target": "N0238",
+      "relation": "控制",
+      "weight": 0.411
+    },
+    {
+      "source": "N0284",
+      "target": "N0204",
+      "relation": "控制",
+      "weight": 0.418
+    },
+    {
+      "source": "N0292",
+      "target": "N0281",
+      "relation": "关联",
+      "weight": 0.508
+    },
+    {
+      "source": "N0231",
+      "target": "N0230",
+      "relation": "关联",
+      "weight": 0.677
+    },
+    {
+      "source": "N0192",
+      "target": "N0025",
+      "relation": "关联",
+      "weight": 0.418
+    },
+    {
+      "source": "N0061",
+      "target": "N0078",
+      "relation": "控制",
+      "weight": 0.9
+    },
+    {
+      "source": "N0237",
+      "target": "N0190",
+      "relation": "投资",
+      "weight": 0.37
+    },
+    {
+      "source": "N0181",
+      "target": "N0146",
+      "relation": "关联",
+      "weight": 0.83
+    },
+    {
+      "source": "N0172",
+      "target": "N0211",
+      "relation": "关联",
+      "weight": 0.73
+    },
+    {
+      "source": "N0008",
+      "target": "N0284",
+      "relation": "担保",
+      "weight": 0.443
+    },
+    {
+      "source": "N0017",
+      "target": "N0131",
+      "relation": "控制",
+      "weight": 0.639
+    },
+    {
+      "source": "N0292",
+      "target": "N0296",
+      "relation": "持股",
+      "weight": 0.205
+    },
+    {
+      "source": "N0211",
+      "target": "N0058",
+      "relation": "投资",
+      "weight": 0.053
+    },
+    {
+      "source": "N0280",
+      "target": "N0153",
+      "relation": "关联",
+      "weight": 0.919
+    },
+    {
+      "source": "N0134",
+      "target": "N0053",
+      "relation": "关联",
+      "weight": 0.334
+    },
+    {
+      "source": "N0263",
+      "target": "N0084",
+      "relation": "投资",
+      "weight": 0.385
+    },
+    {
+      "source": "N0242",
+      "target": "N0013",
+      "relation": "持股",
+      "weight": 0.452
+    },
+    {
+      "source": "N0132",
+      "target": "N0166",
+      "relation": "交易",
+      "weight": 0.117
+    },
+    {
+      "source": "N0209",
+      "target": "N0298",
+      "relation": "投资",
+      "weight": 0.28
+    },
+    {
+      "source": "N0137",
+      "target": "N0058",
+      "relation": "担保",
+      "weight": 0.232
+    },
+    {
+      "source": "N0135",
+      "target": "N0163",
+      "relation": "控制",
+      "weight": 0.58
+    },
+    {
+      "source": "N0136",
+      "target": "N0166",
+      "relation": "关联",
+      "weight": 0.015
+    },
+    {
+      "source": "N0092",
+      "target": "N0221",
+      "relation": "控制",
+      "weight": 0.579
+    },
+    {
+      "source": "N0265",
+      "target": "N0189",
+      "relation": "关联",
+      "weight": 0.704
+    },
+    {
+      "source": "N0290",
+      "target": "N0220",
+      "relation": "担保",
+      "weight": 0.869
+    },
+    {
+      "source": "N0116",
+      "target": "N0063",
+      "relation": "担保",
+      "weight": 0.673
+    },
+    {
+      "source": "N0036",
+      "target": "N0092",
+      "relation": "担保",
+      "weight": 0.06
+    },
+    {
+      "source": "N0018",
+      "target": "N0158",
+      "relation": "担保",
+      "weight": 0.626
+    },
+    {
+      "source": "N0154",
+      "target": "N0256",
+      "relation": "持股",
+      "weight": 0.34
+    },
+    {
+      "source": "N0110",
+      "target": "N0252",
+      "relation": "担保",
+      "weight": 0.692
+    },
+    {
+      "source": "N0151",
+      "target": "N0036",
+      "relation": "控制",
+      "weight": 0.583
+    },
+    {
+      "source": "N0172",
+      "target": "N0300",
+      "relation": "交易",
+      "weight": 0.321
+    },
+    {
+      "source": "N0219",
+      "target": "N0069",
+      "relation": "控制",
+      "weight": 0.382
+    },
+    {
+      "source": "N0270",
+      "target": "N0262",
+      "relation": "投资",
+      "weight": 0.905
+    },
+    {
+      "source": "N0282",
+      "target": "N0104",
+      "relation": "交易",
+      "weight": 0.727
+    },
+    {
+      "source": "N0045",
+      "target": "N0189",
+      "relation": "持股",
+      "weight": 0.636
+    },
+    {
+      "source": "N0295",
+      "target": "N0173",
+      "relation": "持股",
+      "weight": 0.915
+    },
+    {
+      "source": "N0233",
+      "target": "N0026",
+      "relation": "持股",
+      "weight": 0.818
+    },
+    {
+      "source": "N0186",
+      "target": "N0210",
+      "relation": "关联",
+      "weight": 0.444
+    },
+    {
+      "source": "N0041",
+      "target": "N0085",
+      "relation": "投资",
+      "weight": 0.688
+    },
+    {
+      "source": "N0250",
+      "target": "N0030",
+      "relation": "关联",
+      "weight": 0.784
+    },
+    {
+      "source": "N0272",
+      "target": "N0051",
+      "relation": "控制",
+      "weight": 0.592
+    },
+    {
+      "source": "N0245",
+      "target": "N0195",
+      "relation": "投资",
+      "weight": 0.833
+    },
+    {
+      "source": "N0251",
+      "target": "N0163",
+      "relation": "交易",
+      "weight": 0.866
+    },
+    {
+      "source": "N0252",
+      "target": "N0167",
+      "relation": "关联",
+      "weight": 0.313
+    },
+    {
+      "source": "N0123",
+      "target": "N0097",
+      "relation": "交易",
+      "weight": 0.624
+    },
+    {
+      "source": "N0191",
+      "target": "N0001",
+      "relation": "关联",
+      "weight": 0.189
+    },
+    {
+      "source": "N0140",
+      "target": "N0138",
+      "relation": "担保",
+      "weight": 0.498
+    },
+    {
+      "source": "N0017",
+      "target": "N0089",
+      "relation": "关联",
+      "weight": 0.93
+    },
+    {
+      "source": "N0067",
+      "target": "N0213",
+      "relation": "持股",
+      "weight": 0.257
+    },
+    {
+      "source": "N0039",
+      "target": "N0021",
+      "relation": "担保",
+      "weight": 0.502
+    },
+    {
+      "source": "N0290",
+      "target": "N0267",
+      "relation": "投资",
+      "weight": 0.65
+    },
+    {
+      "source": "N0295",
+      "target": "N0196",
+      "relation": "交易",
+      "weight": 0.269
+    },
+    {
+      "source": "N0151",
+      "target": "N0222",
+      "relation": "投资",
+      "weight": 0.18
+    },
+    {
+      "source": "N0057",
+      "target": "N0027",
+      "relation": "持股",
+      "weight": 0.916
+    },
+    {
+      "source": "N0248",
+      "target": "N0036",
+      "relation": "控制",
+      "weight": 0.24
+    },
+    {
+      "source": "N0061",
+      "target": "N0106",
+      "relation": "持股",
+      "weight": 0.619
+    },
+    {
+      "source": "N0220",
+      "target": "N0061",
+      "relation": "交易",
+      "weight": 0.404
+    },
+    {
+      "source": "N0292",
+      "target": "N0081",
+      "relation": "投资",
+      "weight": 0.358
+    },
+    {
+      "source": "N0098",
+      "target": "N0053",
+      "relation": "交易",
+      "weight": 0.107
+    },
+    {
+      "source": "N0178",
+      "target": "N0117",
+      "relation": "关联",
+      "weight": 0.01
+    },
+    {
+      "source": "N0036",
+      "target": "N0055",
+      "relation": "控制",
+      "weight": 0.393
+    },
+    {
+      "source": "N0194",
+      "target": "N0300",
+      "relation": "持股",
+      "weight": 0.704
+    },
+    {
+      "source": "N0187",
+      "target": "N0128",
+      "relation": "投资",
+      "weight": 0.557
+    },
+    {
+      "source": "N0248",
+      "target": "N0263",
+      "relation": "控制",
+      "weight": 0.629
+    },
+    {
+      "source": "N0057",
+      "target": "N0267",
+      "relation": "控制",
+      "weight": 0.208
+    },
+    {
+      "source": "N0026",
+      "target": "N0185",
+      "relation": "担保",
+      "weight": 0.058
+    },
+    {
+      "source": "N0045",
+      "target": "N0037",
+      "relation": "担保",
+      "weight": 0.382
+    },
+    {
+      "source": "N0143",
+      "target": "N0206",
+      "relation": "关联",
+      "weight": 0.375
+    },
+    {
+      "source": "N0281",
+      "target": "N0258",
+      "relation": "关联",
+      "weight": 0.644
+    },
+    {
+      "source": "N0117",
+      "target": "N0289",
+      "relation": "担保",
+      "weight": 0.898
+    },
+    {
+      "source": "N0036",
+      "target": "N0019",
+      "relation": "投资",
+      "weight": 0.659
+    },
+    {
+      "source": "N0178",
+      "target": "N0146",
+      "relation": "投资",
+      "weight": 0.267
+    },
+    {
+      "source": "N0284",
+      "target": "N0151",
+      "relation": "投资",
+      "weight": 0.576
+    },
+    {
+      "source": "N0107",
+      "target": "N0298",
+      "relation": "关联",
+      "weight": 0.057
+    },
+    {
+      "source": "N0071",
+      "target": "N0287",
+      "relation": "交易",
+      "weight": 0.193
+    },
+    {
+      "source": "N0044",
+      "target": "N0010",
+      "relation": "关联",
+      "weight": 0.636
+    },
+    {
+      "source": "N0263",
+      "target": "N0175",
+      "relation": "投资",
+      "weight": 0.528
+    },
+    {
+      "source": "N0215",
+      "target": "N0102",
+      "relation": "投资",
+      "weight": 0.426
+    },
+    {
+      "source": "N0040",
+      "target": "N0254",
+      "relation": "交易",
+      "weight": 0.729
+    },
+    {
+      "source": "N0006",
+      "target": "N0206",
+      "relation": "持股",
+      "weight": 0.086
+    },
+    {
+      "source": "N0245",
+      "target": "N0217",
+      "relation": "持股",
+      "weight": 0.218
+    },
+    {
+      "source": "N0183",
+      "target": "N0042",
+      "relation": "交易",
+      "weight": 0.728
+    },
+    {
+      "source": "N0180",
+      "target": "N0139",
+      "relation": "关联",
+      "weight": 0.556
+    },
+    {
+      "source": "N0285",
+      "target": "N0102",
+      "relation": "担保",
+      "weight": 0.544
+    },
+    {
+      "source": "N0254",
+      "target": "N0097",
+      "relation": "关联",
+      "weight": 0.002
+    },
+    {
+      "source": "N0097",
+      "target": "N0256",
+      "relation": "担保",
+      "weight": 0.122
+    },
+    {
+      "source": "N0075",
+      "target": "N0285",
+      "relation": "关联",
+      "weight": 0.546
+    },
+    {
+      "source": "N0195",
+      "target": "N0001",
+      "relation": "控制",
+      "weight": 0.371
+    },
+    {
+      "source": "N0135",
+      "target": "N0022",
+      "relation": "担保",
+      "weight": 0.642
+    },
+    {
+      "source": "N0036",
+      "target": "N0179",
+      "relation": "控制",
+      "weight": 0.506
+    },
+    {
+      "source": "N0010",
+      "target": "N0248",
+      "relation": "持股",
+      "weight": 0.336
+    },
+    {
+      "source": "N0195",
+      "target": "N0112",
+      "relation": "担保",
+      "weight": 0.785
+    },
+    {
+      "source": "N0070",
+      "target": "N0170",
+      "relation": "持股",
+      "weight": 0.67
+    },
+    {
+      "source": "N0133",
+      "target": "N0119",
+      "relation": "投资",
+      "weight": 0.095
+    },
+    {
+      "source": "N0167",
+      "target": "N0171",
+      "relation": "持股",
+      "weight": 0.532
+    },
+    {
+      "source": "N0191",
+      "target": "N0099",
+      "relation": "交易",
+      "weight": 0.28
+    },
+    {
+      "source": "N0257",
+      "target": "N0101",
+      "relation": "控制",
+      "weight": 0.256
+    },
+    {
+      "source": "N0250",
+      "target": "N0015",
+      "relation": "交易",
+      "weight": 0.893
+    },
+    {
+      "source": "N0136",
+      "target": "N0116",
+      "relation": "控制",
+      "weight": 0.381
+    },
+    {
+      "source": "N0115",
+      "target": "N0144",
+      "relation": "持股",
+      "weight": 0.29
+    },
+    {
+      "source": "N0047",
+      "target": "N0058",
+      "relation": "投资",
+      "weight": 0.491
+    },
+    {
+      "source": "N0190",
+      "target": "N0172",
+      "relation": "担保",
+      "weight": 0.205
+    },
+    {
+      "source": "N0033",
+      "target": "N0084",
+      "relation": "持股",
+      "weight": 0.01
+    },
+    {
+      "source": "N0107",
+      "target": "N0179",
+      "relation": "交易",
+      "weight": 0.766
+    },
+    {
+      "source": "N0053",
+      "target": "N0230",
+      "relation": "投资",
+      "weight": 0.452
+    },
+    {
+      "source": "N0283",
+      "target": "N0039",
+      "relation": "持股",
+      "weight": 0.646
+    },
+    {
+      "source": "N0064",
+      "target": "N0240",
+      "relation": "投资",
+      "weight": 0.108
+    },
+    {
+      "source": "N0147",
+      "target": "N0143",
+      "relation": "交易",
+      "weight": 0.021
+    },
+    {
+      "source": "N0137",
+      "target": "N0008",
+      "relation": "关联",
+      "weight": 0.476
+    },
+    {
+      "source": "N0192",
+      "target": "N0113",
+      "relation": "担保",
+      "weight": 0.943
+    },
+    {
+      "source": "N0188",
+      "target": "N0230",
+      "relation": "控制",
+      "weight": 0.116
+    },
+    {
+      "source": "N0223",
+      "target": "N0055",
+      "relation": "交易",
+      "weight": 0.076
+    },
+    {
+      "source": "N0073",
+      "target": "N0226",
+      "relation": "交易",
+      "weight": 0.946
+    },
+    {
+      "source": "N0020",
+      "target": "N0225",
+      "relation": "投资",
+      "weight": 0.324
+    },
+    {
+      "source": "N0218",
+      "target": "N0203",
+      "relation": "持股",
+      "weight": 0.695
+    },
+    {
+      "source": "N0235",
+      "target": "N0181",
+      "relation": "交易",
+      "weight": 0.215
+    },
+    {
+      "source": "N0107",
+      "target": "N0247",
+      "relation": "交易",
+      "weight": 0.419
+    },
+    {
+      "source": "N0123",
+      "target": "N0162",
+      "relation": "投资",
+      "weight": 0.789
+    },
+    {
+      "source": "N0188",
+      "target": "N0046",
+      "relation": "关联",
+      "weight": 0.39
+    },
+    {
+      "source": "N0201",
+      "target": "N0075",
+      "relation": "担保",
+      "weight": 0.869
+    },
+    {
+      "source": "N0177",
+      "target": "N0287",
+      "relation": "关联",
+      "weight": 0.591
+    },
+    {
+      "source": "N0220",
+      "target": "N0019",
+      "relation": "交易",
+      "weight": 0.134
+    },
+    {
+      "source": "N0221",
+      "target": "N0194",
+      "relation": "投资",
+      "weight": 0.817
+    },
+    {
+      "source": "N0289",
+      "target": "N0292",
+      "relation": "担保",
+      "weight": 0.944
+    },
+    {
+      "source": "N0034",
+      "target": "N0150",
+      "relation": "投资",
+      "weight": 0.674
+    },
+    {
+      "source": "N0062",
+      "target": "N0134",
+      "relation": "交易",
+      "weight": 0.868
+    },
+    {
+      "source": "N0041",
+      "target": "N0009",
+      "relation": "担保",
+      "weight": 0.697
+    },
+    {
+      "source": "N0275",
+      "target": "N0133",
+      "relation": "投资",
+      "weight": 0.543
+    },
+    {
+      "source": "N0209",
+      "target": "N0255",
+      "relation": "关联",
+      "weight": 0.924
+    },
+    {
+      "source": "N0185",
+      "target": "N0298",
+      "relation": "担保",
+      "weight": 0.955
+    },
+    {
+      "source": "N0082",
+      "target": "N0297",
+      "relation": "关联",
+      "weight": 0.121
+    },
+    {
+      "source": "N0235",
+      "target": "N0019",
+      "relation": "交易",
+      "weight": 0.003
+    },
+    {
+      "source": "N0139",
+      "target": "N0003",
+      "relation": "控制",
+      "weight": 0.86
+    },
+    {
+      "source": "N0255",
+      "target": "N0176",
+      "relation": "投资",
+      "weight": 0.739
+    },
+    {
+      "source": "N0280",
+      "target": "N0017",
+      "relation": "控制",
+      "weight": 0.408
+    },
+    {
+      "source": "N0081",
+      "target": "N0027",
+      "relation": "交易",
+      "weight": 0.046
+    },
+    {
+      "source": "N0102",
+      "target": "N0196",
+      "relation": "持股",
+      "weight": 0.552
+    },
+    {
+      "source": "N0156",
+      "target": "N0094",
+      "relation": "交易",
+      "weight": 0.608
+    },
+    {
+      "source": "N0057",
+      "target": "N0171",
+      "relation": "担保",
+      "weight": 0.702
+    },
+    {
+      "source": "N0297",
+      "target": "N0269",
+      "relation": "交易",
+      "weight": 0.996
+    },
+    {
+      "source": "N0270",
+      "target": "N0117",
+      "relation": "控制",
+      "weight": 0.215
+    },
+    {
+      "source": "N0238",
+      "target": "N0037",
+      "relation": "担保",
+      "weight": 0.127
+    },
+    {
+      "source": "N0018",
+      "target": "N0073",
+      "relation": "担保",
+      "weight": 0.944
+    },
+    {
+      "source": "N0206",
+      "target": "N0091",
+      "relation": "关联",
+      "weight": 0.96
+    },
+    {
+      "source": "N0240",
+      "target": "N0082",
+      "relation": "投资",
+      "weight": 0.898
+    },
+    {
+      "source": "N0215",
+      "target": "N0153",
+      "relation": "关联",
+      "weight": 0.816
+    },
+    {
+      "source": "N0011",
+      "target": "N0104",
+      "relation": "担保",
+      "weight": 0.56
+    },
+    {
+      "source": "N0221",
+      "target": "N0262",
+      "relation": "交易",
+      "weight": 0.704
+    },
+    {
+      "source": "N0261",
+      "target": "N0160",
+      "relation": "控制",
+      "weight": 0.447
+    },
+    {
+      "source": "N0241",
+      "target": "N0113",
+      "relation": "关联",
+      "weight": 0.204
+    },
+    {
+      "source": "N0041",
+      "target": "N0077",
+      "relation": "持股",
+      "weight": 0.722
+    },
+    {
+      "source": "N0155",
+      "target": "N0141",
+      "relation": "投资",
+      "weight": 0.837
+    },
+    {
+      "source": "N0157",
+      "target": "N0059",
+      "relation": "担保",
+      "weight": 0.176
+    },
+    {
+      "source": "N0127",
+      "target": "N0037",
+      "relation": "控制",
+      "weight": 0.696
+    },
+    {
+      "source": "N0088",
+      "target": "N0282",
+      "relation": "交易",
+      "weight": 0.655
+    },
+    {
+      "source": "N0063",
+      "target": "N0296",
+      "relation": "关联",
+      "weight": 0.439
+    },
+    {
+      "source": "N0284",
+      "target": "N0177",
+      "relation": "投资",
+      "weight": 0.024
+    },
+    {
+      "source": "N0294",
+      "target": "N0078",
+      "relation": "关联",
+      "weight": 0.826
+    },
+    {
+      "source": "N0139",
+      "target": "N0217",
+      "relation": "持股",
+      "weight": 0.422
+    },
+    {
+      "source": "N0176",
+      "target": "N0255",
+      "relation": "担保",
+      "weight": 0.745
+    },
+    {
+      "source": "N0115",
+      "target": "N0294",
+      "relation": "投资",
+      "weight": 0.667
+    },
+    {
+      "source": "N0129",
+      "target": "N0109",
+      "relation": "控制",
+      "weight": 0.16
+    },
+    {
+      "source": "N0136",
+      "target": "N0002",
+      "relation": "担保",
+      "weight": 0.79
+    },
+    {
+      "source": "N0095",
+      "target": "N0133",
+      "relation": "持股",
+      "weight": 0.354
+    },
+    {
+      "source": "N0112",
+      "target": "N0158",
+      "relation": "关联",
+      "weight": 0.428
+    },
+    {
+      "source": "N0276",
+      "target": "N0183",
+      "relation": "担保",
+      "weight": 0.199
+    },
+    {
+      "source": "N0196",
+      "target": "N0033",
+      "relation": "投资",
+      "weight": 0.153
+    },
+    {
+      "source": "N0268",
+      "target": "N0107",
+      "relation": "投资",
+      "weight": 0.494
+    },
+    {
+      "source": "N0049",
+      "target": "N0011",
+      "relation": "持股",
+      "weight": 0.333
+    },
+    {
+      "source": "N0202",
+      "target": "N0019",
+      "relation": "投资",
+      "weight": 0.099
+    },
+    {
+      "source": "N0096",
+      "target": "N0283",
+      "relation": "担保",
+      "weight": 0.077
+    },
+    {
+      "source": "N0251",
+      "target": "N0041",
+      "relation": "投资",
+      "weight": 0.359
+    },
+    {
+      "source": "N0157",
+      "target": "N0186",
+      "relation": "担保",
+      "weight": 0.17
+    },
+    {
+      "source": "N0283",
+      "target": "N0242",
+      "relation": "控制",
+      "weight": 0.966
+    },
+    {
+      "source": "N0221",
+      "target": "N0200",
+      "relation": "控制",
+      "weight": 0.988
+    },
+    {
+      "source": "N0235",
+      "target": "N0004",
+      "relation": "担保",
+      "weight": 0.864
+    },
+    {
+      "source": "N0119",
+      "target": "N0016",
+      "relation": "投资",
+      "weight": 0.487
+    },
+    {
+      "source": "N0107",
+      "target": "N0184",
+      "relation": "交易",
+      "weight": 0.749
+    },
+    {
+      "source": "N0089",
+      "target": "N0067",
+      "relation": "控制",
+      "weight": 0.232
+    },
+    {
+      "source": "N0098",
+      "target": "N0116",
+      "relation": "持股",
+      "weight": 0.871
+    },
+    {
+      "source": "N0241",
+      "target": "N0031",
+      "relation": "交易",
+      "weight": 0.076
+    },
+    {
+      "source": "N0003",
+      "target": "N0087",
+      "relation": "关联",
+      "weight": 0.275
+    },
+    {
+      "source": "N0290",
+      "target": "N0068",
+      "relation": "投资",
+      "weight": 0.973
+    },
+    {
+      "source": "N0195",
+      "target": "N0294",
+      "relation": "控制",
+      "weight": 0.053
+    },
+    {
+      "source": "N0148",
+      "target": "N0037",
+      "relation": "交易",
+      "weight": 0.239
+    },
+    {
+      "source": "N0010",
+      "target": "N0238",
+      "relation": "关联",
+      "weight": 0.699
+    },
+    {
+      "source": "N0262",
+      "target": "N0068",
+      "relation": "控制",
+      "weight": 0.015
+    },
+    {
+      "source": "N0069",
+      "target": "N0136",
+      "relation": "控制",
+      "weight": 0.019
+    },
+    {
+      "source": "N0270",
+      "target": "N0017",
+      "relation": "担保",
+      "weight": 0.636
+    },
+    {
+      "source": "N0293",
+      "target": "N0012",
+      "relation": "关联",
+      "weight": 0.982
+    },
+    {
+      "source": "N0283",
+      "target": "N0135",
+      "relation": "交易",
+      "weight": 0.626
+    },
+    {
+      "source": "N0260",
+      "target": "N0049",
+      "relation": "持股",
+      "weight": 0.301
+    },
+    {
+      "source": "N0077",
+      "target": "N0272",
+      "relation": "控制",
+      "weight": 0.691
+    },
+    {
+      "source": "N0117",
+      "target": "N0012",
+      "relation": "担保",
+      "weight": 0.128
+    },
+    {
+      "source": "N0287",
+      "target": "N0025",
+      "relation": "持股",
+      "weight": 0.905
+    },
+    {
+      "source": "N0029",
+      "target": "N0065",
+      "relation": "持股",
+      "weight": 0.68
+    },
+    {
+      "source": "N0268",
+      "target": "N0250",
+      "relation": "控制",
+      "weight": 0.116
+    },
+    {
+      "source": "N0250",
+      "target": "N0071",
+      "relation": "持股",
+      "weight": 0.577
+    },
+    {
+      "source": "N0057",
+      "target": "N0275",
+      "relation": "控制",
+      "weight": 0.444
+    },
+    {
+      "source": "N0106",
+      "target": "N0206",
+      "relation": "控制",
+      "weight": 0.819
+    },
+    {
+      "source": "N0195",
+      "target": "N0149",
+      "relation": "投资",
+      "weight": 0.975
+    },
+    {
+      "source": "N0006",
+      "target": "N0206",
+      "relation": "交易",
+      "weight": 0.173
+    },
+    {
+      "source": "N0119",
+      "target": "N0296",
+      "relation": "控制",
+      "weight": 0.576
+    },
+    {
+      "source": "N0143",
+      "target": "N0193",
+      "relation": "持股",
+      "weight": 0.389
+    },
+    {
+      "source": "N0296",
+      "target": "N0284",
+      "relation": "投资",
+      "weight": 0.014
+    },
+    {
+      "source": "N0035",
+      "target": "N0276",
+      "relation": "持股",
+      "weight": 0.588
+    },
+    {
+      "source": "N0167",
+      "target": "N0270",
+      "relation": "持股",
+      "weight": 0.385
+    },
+    {
+      "source": "N0056",
+      "target": "N0013",
+      "relation": "投资",
+      "weight": 0.196
+    },
+    {
+      "source": "N0244",
+      "target": "N0090",
+      "relation": "关联",
+      "weight": 0.866
+    },
+    {
+      "source": "N0221",
+      "target": "N0109",
+      "relation": "持股",
+      "weight": 0.012
+    },
+    {
+      "source": "N0293",
+      "target": "N0042",
+      "relation": "担保",
+      "weight": 0.588
+    },
+    {
+      "source": "N0174",
+      "target": "N0085",
+      "relation": "关联",
+      "weight": 0.872
+    },
+    {
+      "source": "N0054",
+      "target": "N0021",
+      "relation": "担保",
+      "weight": 0.677
+    },
+    {
+      "source": "N0154",
+      "target": "N0186",
+      "relation": "控制",
+      "weight": 0.943
+    },
+    {
+      "source": "N0221",
+      "target": "N0029",
+      "relation": "担保",
+      "weight": 0.511
+    },
+    {
+      "source": "N0069",
+      "target": "N0171",
+      "relation": "交易",
+      "weight": 0.198
+    },
+    {
+      "source": "N0127",
+      "target": "N0182",
+      "relation": "交易",
+      "weight": 0.156
+    },
+    {
+      "source": "N0137",
+      "target": "N0205",
+      "relation": "交易",
+      "weight": 0.663
+    },
+    {
+      "source": "N0271",
+      "target": "N0053",
+      "relation": "交易",
+      "weight": 0.631
+    },
+    {
+      "source": "N0211",
+      "target": "N0284",
+      "relation": "投资",
+      "weight": 0.872
+    },
+    {
+      "source": "N0297",
+      "target": "N0160",
+      "relation": "控制",
+      "weight": 0.58
+    },
+    {
+      "source": "N0206",
+      "target": "N0065",
+      "relation": "持股",
+      "weight": 0.339
+    },
+    {
+      "source": "N0227",
+      "target": "N0099",
+      "relation": "关联",
+      "weight": 0.24
+    },
+    {
+      "source": "N0171",
+      "target": "N0174",
+      "relation": "投资",
+      "weight": 0.064
+    },
+    {
+      "source": "N0104",
+      "target": "N0101",
+      "relation": "持股",
+      "weight": 0.156
+    },
+    {
+      "source": "N0269",
+      "target": "N0051",
+      "relation": "关联",
+      "weight": 0.262
+    },
+    {
+      "source": "N0011",
+      "target": "N0223",
+      "relation": "关联",
+      "weight": 0.387
+    },
+    {
+      "source": "N0229",
+      "target": "N0089",
+      "relation": "担保",
+      "weight": 0.383
+    },
+    {
+      "source": "N0052",
+      "target": "N0201",
+      "relation": "持股",
+      "weight": 0.05
+    },
+    {
+      "source": "N0204",
+      "target": "N0073",
+      "relation": "关联",
+      "weight": 0.392
+    },
+    {
+      "source": "N0283",
+      "target": "N0169",
+      "relation": "控制",
+      "weight": 0.556
+    },
+    {
+      "source": "N0257",
+      "target": "N0002",
+      "relation": "持股",
+      "weight": 0.96
+    },
+    {
+      "source": "N0265",
+      "target": "N0033",
+      "relation": "关联",
+      "weight": 0.092
+    },
+    {
+      "source": "N0079",
+      "target": "N0101",
+      "relation": "交易",
+      "weight": 0.499
+    },
+    {
+      "source": "N0224",
+      "target": "N0193",
+      "relation": "投资",
+      "weight": 0.116
+    },
+    {
+      "source": "N0041",
+      "target": "N0272",
+      "relation": "担保",
+      "weight": 0.965
+    },
+    {
+      "source": "N0286",
+      "target": "N0138",
+      "relation": "控制",
+      "weight": 0.603
+    },
+    {
+      "source": "N0098",
+      "target": "N0231",
+      "relation": "控制",
+      "weight": 0.864
+    },
+    {
+      "source": "N0186",
+      "target": "N0290",
+      "relation": "关联",
+      "weight": 0.442
+    },
+    {
+      "source": "N0090",
+      "target": "N0114",
+      "relation": "交易",
+      "weight": 0.933
+    },
+    {
+      "source": "N0235",
+      "target": "N0168",
+      "relation": "关联",
+      "weight": 0.572
+    },
+    {
+      "source": "N0114",
+      "target": "N0245",
+      "relation": "担保",
+      "weight": 0.474
+    },
+    {
+      "source": "N0176",
+      "target": "N0275",
+      "relation": "控制",
+      "weight": 0.685
+    },
+    {
+      "source": "N0230",
+      "target": "N0294",
+      "relation": "控制",
+      "weight": 0.318
+    },
+    {
+      "source": "N0198",
+      "target": "N0186",
+      "relation": "交易",
+      "weight": 0.431
+    },
+    {
+      "source": "N0195",
+      "target": "N0098",
+      "relation": "交易",
+      "weight": 0.279
+    },
+    {
+      "source": "N0291",
+      "target": "N0133",
+      "relation": "关联",
+      "weight": 0.913
+    },
+    {
+      "source": "N0027",
+      "target": "N0191",
+      "relation": "控制",
+      "weight": 0.746
+    },
+    {
+      "source": "N0036",
+      "target": "N0008",
+      "relation": "担保",
+      "weight": 0.746
+    },
+    {
+      "source": "N0261",
+      "target": "N0255",
+      "relation": "交易",
+      "weight": 0.116
+    },
+    {
+      "source": "N0070",
+      "target": "N0177",
+      "relation": "持股",
+      "weight": 0.469
+    },
+    {
+      "source": "N0132",
+      "target": "N0122",
+      "relation": "持股",
+      "weight": 0.075
+    },
+    {
+      "source": "N0299",
+      "target": "N0279",
+      "relation": "担保",
+      "weight": 0.07
+    },
+    {
+      "source": "N0215",
+      "target": "N0281",
+      "relation": "关联",
+      "weight": 0.937
+    },
+    {
+      "source": "N0082",
+      "target": "N0158",
+      "relation": "控制",
+      "weight": 0.304
+    },
+    {
+      "source": "N0109",
+      "target": "N0114",
+      "relation": "交易",
+      "weight": 0.072
+    },
+    {
+      "source": "N0155",
+      "target": "N0217",
+      "relation": "持股",
+      "weight": 0.596
+    },
+    {
+      "source": "N0037",
+      "target": "N0162",
+      "relation": "交易",
+      "weight": 0.47
+    },
+    {
+      "source": "N0032",
+      "target": "N0125",
+      "relation": "关联",
+      "weight": 0.651
+    },
+    {
+      "source": "N0202",
+      "target": "N0224",
+      "relation": "投资",
+      "weight": 0.194
+    },
+    {
+      "source": "N0141",
+      "target": "N0137",
+      "relation": "担保",
+      "weight": 0.758
+    },
+    {
+      "source": "N0204",
+      "target": "N0244",
+      "relation": "担保",
+      "weight": 0.464
+    },
+    {
+      "source": "N0221",
+      "target": "N0291",
+      "relation": "持股",
+      "weight": 0.222
+    },
+    {
+      "source": "N0236",
+      "target": "N0038",
+      "relation": "持股",
+      "weight": 0.915
+    },
+    {
+      "source": "N0132",
+      "target": "N0070",
+      "relation": "担保",
+      "weight": 0.224
+    },
+    {
+      "source": "N0211",
+      "target": "N0125",
+      "relation": "担保",
+      "weight": 0.484
+    },
+    {
+      "source": "N0036",
+      "target": "N0150",
+      "relation": "投资",
+      "weight": 0.291
+    },
+    {
+      "source": "N0179",
+      "target": "N0203",
+      "relation": "关联",
+      "weight": 0.283
+    },
+    {
+      "source": "N0071",
+      "target": "N0164",
+      "relation": "持股",
+      "weight": 0.788
+    },
+    {
+      "source": "N0012",
+      "target": "N0156",
+      "relation": "交易",
+      "weight": 0.78
+    },
+    {
+      "source": "N0184",
+      "target": "N0196",
+      "relation": "持股",
+      "weight": 0.628
+    },
+    {
+      "source": "N0172",
+      "target": "N0083",
+      "relation": "持股",
+      "weight": 0.934
+    },
+    {
+      "source": "N0263",
+      "target": "N0274",
+      "relation": "控制",
+      "weight": 0.592
+    },
+    {
+      "source": "N0038",
+      "target": "N0082",
+      "relation": "担保",
+      "weight": 0.521
+    },
+    {
+      "source": "N0132",
+      "target": "N0289",
+      "relation": "担保",
+      "weight": 0.343
+    },
+    {
+      "source": "N0041",
+      "target": "N0064",
+      "relation": "关联",
+      "weight": 0.935
+    },
+    {
+      "source": "N0115",
+      "target": "N0183",
+      "relation": "担保",
+      "weight": 0.673
+    },
+    {
+      "source": "N0163",
+      "target": "N0228",
+      "relation": "交易",
+      "weight": 0.441
+    },
+    {
+      "source": "N0066",
+      "target": "N0193",
+      "relation": "担保",
+      "weight": 0.197
+    },
+    {
+      "source": "N0164",
+      "target": "N0244",
+      "relation": "控制",
+      "weight": 0.737
+    },
+    {
+      "source": "N0243",
+      "target": "N0140",
+      "relation": "担保",
+      "weight": 0.935
+    },
+    {
+      "source": "N0185",
+      "target": "N0185",
+      "relation": "投资",
+      "weight": 0.349
+    },
+    {
+      "source": "N0047",
+      "target": "N0093",
+      "relation": "关联",
+      "weight": 0.01
+    },
+    {
+      "source": "N0111",
+      "target": "N0202",
+      "relation": "控制",
+      "weight": 0.645
+    },
+    {
+      "source": "N0286",
+      "target": "N0032",
+      "relation": "交易",
+      "weight": 0.141
+    },
+    {
+      "source": "N0050",
+      "target": "N0049",
+      "relation": "控制",
+      "weight": 0.022
+    },
+    {
+      "source": "N0128",
+      "target": "N0188",
+      "relation": "担保",
+      "weight": 0.636
+    },
+    {
+      "source": "N0058",
+      "target": "N0050",
+      "relation": "持股",
+      "weight": 0.016
+    },
+    {
+      "source": "N0154",
+      "target": "N0021",
+      "relation": "关联",
+      "weight": 0.004
+    },
+    {
+      "source": "N0055",
+      "target": "N0276",
+      "relation": "交易",
+      "weight": 0.242
+    },
+    {
+      "source": "N0292",
+      "target": "N0056",
+      "relation": "交易",
+      "weight": 0.355
+    },
+    {
+      "source": "N0239",
+      "target": "N0036",
+      "relation": "担保",
+      "weight": 0.854
+    },
+    {
+      "source": "N0043",
+      "target": "N0284",
+      "relation": "投资",
+      "weight": 0.731
+    },
+    {
+      "source": "N0260",
+      "target": "N0082",
+      "relation": "控制",
+      "weight": 0.739
+    },
+    {
+      "source": "N0051",
+      "target": "N0294",
+      "relation": "持股",
+      "weight": 0.843
+    },
+    {
+      "source": "N0037",
+      "target": "N0288",
+      "relation": "关联",
+      "weight": 0.773
+    },
+    {
+      "source": "N0111",
+      "target": "N0187",
+      "relation": "交易",
+      "weight": 0.899
+    },
+    {
+      "source": "N0045",
+      "target": "N0230",
+      "relation": "担保",
+      "weight": 0.478
+    },
+    {
+      "source": "N0079",
+      "target": "N0215",
+      "relation": "关联",
+      "weight": 0.464
+    },
+    {
+      "source": "N0073",
+      "target": "N0222",
+      "relation": "持股",
+      "weight": 0.256
+    },
+    {
+      "source": "N0195",
+      "target": "N0288",
+      "relation": "持股",
+      "weight": 0.483
+    },
+    {
+      "source": "N0217",
+      "target": "N0056",
+      "relation": "关联",
+      "weight": 0.429
+    },
+    {
+      "source": "N0185",
+      "target": "N0242",
+      "relation": "担保",
+      "weight": 0.336
+    },
+    {
+      "source": "N0062",
+      "target": "N0079",
+      "relation": "持股",
+      "weight": 0.037
+    },
+    {
+      "source": "N0095",
+      "target": "N0296",
+      "relation": "交易",
+      "weight": 0.213
+    },
+    {
+      "source": "N0084",
+      "target": "N0170",
+      "relation": "担保",
+      "weight": 0.327
+    },
+    {
+      "source": "N0174",
+      "target": "N0254",
+      "relation": "持股",
+      "weight": 0.484
+    },
+    {
+      "source": "N0039",
+      "target": "N0049",
+      "relation": "交易",
+      "weight": 0.644
+    },
+    {
+      "source": "N0145",
+      "target": "N0162",
+      "relation": "担保",
+      "weight": 0.396
+    },
+    {
+      "source": "N0005",
+      "target": "N0258",
+      "relation": "交易",
+      "weight": 0.003
+    },
+    {
+      "source": "N0023",
+      "target": "N0290",
+      "relation": "关联",
+      "weight": 0.685
+    },
+    {
+      "source": "N0098",
+      "target": "N0021",
+      "relation": "关联",
+      "weight": 0.862
+    },
+    {
+      "source": "N0171",
+      "target": "N0154",
+      "relation": "持股",
+      "weight": 0.703
+    },
+    {
+      "source": "N0099",
+      "target": "N0277",
+      "relation": "投资",
+      "weight": 0.262
+    },
+    {
+      "source": "N0187",
+      "target": "N0076",
+      "relation": "担保",
+      "weight": 0.973
+    },
+    {
+      "source": "N0135",
+      "target": "N0003",
+      "relation": "投资",
+      "weight": 0.782
+    },
+    {
+      "source": "N0118",
+      "target": "N0151",
+      "relation": "控制",
+      "weight": 0.772
+    },
+    {
+      "source": "N0298",
+      "target": "N0076",
+      "relation": "持股",
+      "weight": 0.928
+    },
+    {
+      "source": "N0054",
+      "target": "N0136",
+      "relation": "担保",
+      "weight": 0.247
+    },
+    {
+      "source": "N0165",
+      "target": "N0120",
+      "relation": "持股",
+      "weight": 0.373
+    },
+    {
+      "source": "N0265",
+      "target": "N0037",
+      "relation": "投资",
+      "weight": 0.929
+    },
+    {
+      "source": "N0013",
+      "target": "N0033",
+      "relation": "控制",
+      "weight": 0.544
+    },
+    {
+      "source": "N0118",
+      "target": "N0279",
+      "relation": "担保",
+      "weight": 0.168
+    },
+    {
+      "source": "N0058",
+      "target": "N0263",
+      "relation": "投资",
+      "weight": 0.944
+    },
+    {
+      "source": "N0184",
+      "target": "N0110",
+      "relation": "关联",
+      "weight": 0.637
+    },
+    {
+      "source": "N0079",
+      "target": "N0081",
+      "relation": "关联",
+      "weight": 0.444
+    },
+    {
+      "source": "N0143",
+      "target": "N0263",
+      "relation": "交易",
+      "weight": 0.241
+    },
+    {
+      "source": "N0183",
+      "target": "N0113",
+      "relation": "关联",
+      "weight": 0.995
+    },
+    {
+      "source": "N0158",
+      "target": "N0214",
+      "relation": "持股",
+      "weight": 0.476
+    },
+    {
+      "source": "N0146",
+      "target": "N0065",
+      "relation": "投资",
+      "weight": 0.836
+    },
+    {
+      "source": "N0201",
+      "target": "N0232",
+      "relation": "关联",
+      "weight": 0.026
+    },
+    {
+      "source": "N0209",
+      "target": "N0088",
+      "relation": "控制",
+      "weight": 0.917
+    },
+    {
+      "source": "N0092",
+      "target": "N0285",
+      "relation": "关联",
+      "weight": 0.043
+    },
+    {
+      "source": "N0178",
+      "target": "N0093",
+      "relation": "关联",
+      "weight": 0.415
+    },
+    {
+      "source": "N0291",
+      "target": "N0045",
+      "relation": "担保",
+      "weight": 0.037
+    },
+    {
+      "source": "N0276",
+      "target": "N0185",
+      "relation": "持股",
+      "weight": 0.162
+    },
+    {
+      "source": "N0184",
+      "target": "N0117",
+      "relation": "投资",
+      "weight": 0.544
+    },
+    {
+      "source": "N0100",
+      "target": "N0230",
+      "relation": "投资",
+      "weight": 0.214
+    },
+    {
+      "source": "N0100",
+      "target": "N0159",
+      "relation": "投资",
+      "weight": 0.149
+    },
+    {
+      "source": "N0165",
+      "target": "N0006",
+      "relation": "控制",
+      "weight": 0.928
+    },
+    {
+      "source": "N0126",
+      "target": "N0221",
+      "relation": "投资",
+      "weight": 0.428
+    },
+    {
+      "source": "N0167",
+      "target": "N0024",
+      "relation": "关联",
+      "weight": 0.772
+    },
+    {
+      "source": "N0082",
+      "target": "N0037",
+      "relation": "交易",
+      "weight": 0.633
+    },
+    {
+      "source": "N0169",
+      "target": "N0205",
+      "relation": "担保",
+      "weight": 0.224
+    },
+    {
+      "source": "N0256",
+      "target": "N0011",
+      "relation": "控制",
+      "weight": 0.426
+    },
+    {
+      "source": "N0116",
+      "target": "N0293",
+      "relation": "投资",
+      "weight": 0.018
+    },
+    {
+      "source": "N0102",
+      "target": "N0190",
+      "relation": "担保",
+      "weight": 0.102
+    },
+    {
+      "source": "N0043",
+      "target": "N0144",
+      "relation": "控制",
+      "weight": 0.577
+    },
+    {
+      "source": "N0119",
+      "target": "N0022",
+      "relation": "关联",
+      "weight": 0.917
+    },
+    {
+      "source": "N0031",
+      "target": "N0113",
+      "relation": "投资",
+      "weight": 0.759
+    },
+    {
+      "source": "N0226",
+      "target": "N0013",
+      "relation": "控制",
+      "weight": 0.436
+    },
+    {
+      "source": "N0164",
+      "target": "N0154",
+      "relation": "交易",
+      "weight": 0.12
+    },
+    {
+      "source": "N0159",
+      "target": "N0156",
+      "relation": "关联",
+      "weight": 0.721
+    },
+    {
+      "source": "N0012",
+      "target": "N0030",
+      "relation": "控制",
+      "weight": 0.586
+    },
+    {
+      "source": "N0010",
+      "target": "N0055",
+      "relation": "交易",
+      "weight": 0.734
+    },
+    {
+      "source": "N0141",
+      "target": "N0141",
+      "relation": "投资",
+      "weight": 0.484
+    },
+    {
+      "source": "N0112",
+      "target": "N0233",
+      "relation": "交易",
+      "weight": 0.266
+    },
+    {
+      "source": "N0189",
+      "target": "N0089",
+      "relation": "投资",
+      "weight": 0.731
+    },
+    {
+      "source": "N0025",
+      "target": "N0214",
+      "relation": "交易",
+      "weight": 0.739
+    },
+    {
+      "source": "N0227",
+      "target": "N0013",
+      "relation": "投资",
+      "weight": 0.794
+    },
+    {
+      "source": "N0155",
+      "target": "N0129",
+      "relation": "担保",
+      "weight": 0.171
+    },
+    {
+      "source": "N0125",
+      "target": "N0017",
+      "relation": "交易",
+      "weight": 0.098
+    },
+    {
+      "source": "N0245",
+      "target": "N0006",
+      "relation": "关联",
+      "weight": 0.78
+    },
+    {
+      "source": "N0173",
+      "target": "N0264",
+      "relation": "控制",
+      "weight": 0.256
+    },
+    {
+      "source": "N0227",
+      "target": "N0055",
+      "relation": "控制",
+      "weight": 0.387
+    },
+    {
+      "source": "N0050",
+      "target": "N0099",
+      "relation": "控制",
+      "weight": 0.323
+    },
+    {
+      "source": "N0027",
+      "target": "N0011",
+      "relation": "交易",
+      "weight": 0.44
+    },
+    {
+      "source": "N0188",
+      "target": "N0044",
+      "relation": "担保",
+      "weight": 0.956
+    },
+    {
+      "source": "N0172",
+      "target": "N0093",
+      "relation": "持股",
+      "weight": 0.495
+    },
+    {
+      "source": "N0207",
+      "target": "N0264",
+      "relation": "关联",
+      "weight": 0.761
+    },
+    {
+      "source": "N0185",
+      "target": "N0164",
+      "relation": "持股",
+      "weight": 0.612
+    },
+    {
+      "source": "N0189",
+      "target": "N0204",
+      "relation": "控制",
+      "weight": 0.691
+    },
+    {
+      "source": "N0066",
+      "target": "N0064",
+      "relation": "担保",
+      "weight": 0.467
+    },
+    {
+      "source": "N0198",
+      "target": "N0205",
+      "relation": "关联",
+      "weight": 0.603
+    },
+    {
+      "source": "N0061",
+      "target": "N0207",
+      "relation": "控制",
+      "weight": 0.693
+    },
+    {
+      "source": "N0154",
+      "target": "N0140",
+      "relation": "担保",
+      "weight": 0.589
+    },
+    {
+      "source": "N0179",
+      "target": "N0219",
+      "relation": "交易",
+      "weight": 0.241
+    },
+    {
+      "source": "N0155",
+      "target": "N0072",
+      "relation": "担保",
+      "weight": 0.558
+    },
+    {
+      "source": "N0187",
+      "target": "N0287",
+      "relation": "投资",
+      "weight": 0.279
+    },
+    {
+      "source": "N0044",
+      "target": "N0171",
+      "relation": "交易",
+      "weight": 0.094
+    },
+    {
+      "source": "N0023",
+      "target": "N0228",
+      "relation": "关联",
+      "weight": 0.76
+    },
+    {
+      "source": "N0072",
+      "target": "N0221",
+      "relation": "控制",
+      "weight": 0.876
+    },
+    {
+      "source": "N0033",
+      "target": "N0118",
+      "relation": "关联",
+      "weight": 0.324
+    },
+    {
+      "source": "N0106",
+      "target": "N0055",
+      "relation": "控制",
+      "weight": 0.967
+    },
+    {
+      "source": "N0271",
+      "target": "N0266",
+      "relation": "控制",
+      "weight": 0.783
+    },
+    {
+      "source": "N0200",
+      "target": "N0195",
+      "relation": "担保",
+      "weight": 0.314
+    },
+    {
+      "source": "N0287",
+      "target": "N0097",
+      "relation": "担保",
+      "weight": 0.009
+    },
+    {
+      "source": "N0035",
+      "target": "N0296",
+      "relation": "持股",
+      "weight": 0.24
+    },
+    {
+      "source": "N0283",
+      "target": "N0053",
+      "relation": "担保",
+      "weight": 0.3
+    },
+    {
+      "source": "N0210",
+      "target": "N0139",
+      "relation": "控制",
+      "weight": 0.711
+    },
+    {
+      "source": "N0132",
+      "target": "N0055",
+      "relation": "投资",
+      "weight": 0.17
+    },
+    {
+      "source": "N0279",
+      "target": "N0245",
+      "relation": "担保",
+      "weight": 0.859
+    },
+    {
+      "source": "N0262",
+      "target": "N0077",
+      "relation": "投资",
+      "weight": 0.91
+    },
+    {
+      "source": "N0233",
+      "target": "N0168",
+      "relation": "控制",
+      "weight": 0.078
+    },
+    {
+      "source": "N0073",
+      "target": "N0170",
+      "relation": "交易",
+      "weight": 0.121
+    },
+    {
+      "source": "N0203",
+      "target": "N0224",
+      "relation": "担保",
+      "weight": 0.084
+    },
+    {
+      "source": "N0101",
+      "target": "N0122",
+      "relation": "控制",
+      "weight": 0.449
+    },
+    {
+      "source": "N0146",
+      "target": "N0114",
+      "relation": "投资",
+      "weight": 0.209
+    },
+    {
+      "source": "N0215",
+      "target": "N0285",
+      "relation": "交易",
+      "weight": 0.668
+    },
+    {
+      "source": "N0043",
+      "target": "N0166",
+      "relation": "持股",
+      "weight": 0.744
+    },
+    {
+      "source": "N0072",
+      "target": "N0023",
+      "relation": "控制",
+      "weight": 0.655
+    },
+    {
+      "source": "N0137",
+      "target": "N0174",
+      "relation": "持股",
+      "weight": 0.225
+    },
+    {
+      "source": "N0060",
+      "target": "N0130",
+      "relation": "担保",
+      "weight": 0.117
+    },
+    {
+      "source": "N0064",
+      "target": "N0259",
+      "relation": "交易",
+      "weight": 0.334
+    },
+    {
+      "source": "N0049",
+      "target": "N0075",
+      "relation": "持股",
+      "weight": 0.82
+    },
+    {
+      "source": "N0158",
+      "target": "N0180",
+      "relation": "交易",
+      "weight": 0.884
+    },
+    {
+      "source": "N0076",
+      "target": "N0159",
+      "relation": "担保",
+      "weight": 0.779
+    },
+    {
+      "source": "N0149",
+      "target": "N0276",
+      "relation": "投资",
+      "weight": 0.758
+    },
+    {
+      "source": "N0227",
+      "target": "N0195",
+      "relation": "投资",
+      "weight": 0.564
+    },
+    {
+      "source": "N0136",
+      "target": "N0108",
+      "relation": "担保",
+      "weight": 0.107
+    },
+    {
+      "source": "N0145",
+      "target": "N0195",
+      "relation": "担保",
+      "weight": 0.85
+    },
+    {
+      "source": "N0299",
+      "target": "N0165",
+      "relation": "投资",
+      "weight": 0.967
+    },
+    {
+      "source": "N0184",
+      "target": "N0165",
+      "relation": "投资",
+      "weight": 0.931
+    },
+    {
+      "source": "N0112",
+      "target": "N0028",
+      "relation": "持股",
+      "weight": 0.334
+    },
+    {
+      "source": "N0227",
+      "target": "N0207",
+      "relation": "投资",
+      "weight": 0.155
+    },
+    {
+      "source": "N0298",
+      "target": "N0106",
+      "relation": "担保",
+      "weight": 0.492
+    },
+    {
+      "source": "N0249",
+      "target": "N0150",
+      "relation": "投资",
+      "weight": 0.002
+    },
+    {
+      "source": "N0267",
+      "target": "N0068",
+      "relation": "交易",
+      "weight": 0.441
+    },
+    {
+      "source": "N0156",
+      "target": "N0095",
+      "relation": "投资",
+      "weight": 0.888
+    },
+    {
+      "source": "N0208",
+      "target": "N0277",
+      "relation": "担保",
+      "weight": 0.094
+    },
+    {
+      "source": "N0083",
+      "target": "N0279",
+      "relation": "投资",
+      "weight": 0.491
+    },
+    {
+      "source": "N0127",
+      "target": "N0226",
+      "relation": "控制",
+      "weight": 0.349
+    },
+    {
+      "source": "N0266",
+      "target": "N0021",
+      "relation": "关联",
+      "weight": 0.893
+    },
+    {
+      "source": "N0040",
+      "target": "N0094",
+      "relation": "控制",
+      "weight": 0.351
+    },
+    {
+      "source": "N0294",
+      "target": "N0237",
+      "relation": "投资",
+      "weight": 0.921
+    },
+    {
+      "source": "N0187",
+      "target": "N0087",
+      "relation": "控制",
+      "weight": 0.754
+    },
+    {
+      "source": "N0169",
+      "target": "N0209",
+      "relation": "关联",
+      "weight": 0.827
+    },
+    {
+      "source": "N0049",
+      "target": "N0112",
+      "relation": "持股",
+      "weight": 0.432
+    },
+    {
+      "source": "N0076",
+      "target": "N0042",
+      "relation": "持股",
+      "weight": 0.917
+    },
+    {
+      "source": "N0153",
+      "target": "N0250",
+      "relation": "担保",
+      "weight": 0.087
+    },
+    {
+      "source": "N0174",
+      "target": "N0083",
+      "relation": "交易",
+      "weight": 0.373
+    },
+    {
+      "source": "N0048",
+      "target": "N0087",
+      "relation": "交易",
+      "weight": 0.244
+    },
+    {
+      "source": "N0065",
+      "target": "N0101",
+      "relation": "担保",
+      "weight": 0.491
+    },
+    {
+      "source": "N0271",
+      "target": "N0111",
+      "relation": "投资",
+      "weight": 0.757
+    },
+    {
+      "source": "N0089",
+      "target": "N0096",
+      "relation": "持股",
+      "weight": 0.261
+    },
+    {
+      "source": "N0256",
+      "target": "N0068",
+      "relation": "控制",
+      "weight": 0.327
+    },
+    {
+      "source": "N0073",
+      "target": "N0160",
+      "relation": "交易",
+      "weight": 0.456
+    },
+    {
+      "source": "N0225",
+      "target": "N0208",
+      "relation": "担保",
+      "weight": 0.396
+    },
+    {
+      "source": "N0018",
+      "target": "N0011",
+      "relation": "持股",
+      "weight": 0.326
+    },
+    {
+      "source": "N0003",
+      "target": "N0260",
+      "relation": "担保",
+      "weight": 0.133
+    },
+    {
+      "source": "N0235",
+      "target": "N0158",
+      "relation": "投资",
+      "weight": 0.348
+    },
+    {
+      "source": "N0085",
+      "target": "N0276",
+      "relation": "关联",
+      "weight": 0.997
+    },
+    {
+      "source": "N0179",
+      "target": "N0235",
+      "relation": "关联",
+      "weight": 0.379
+    },
+    {
+      "source": "N0129",
+      "target": "N0186",
+      "relation": "持股",
+      "weight": 0.263
+    },
+    {
+      "source": "N0085",
+      "target": "N0167",
+      "relation": "控制",
+      "weight": 0.044
+    },
+    {
+      "source": "N0229",
+      "target": "N0062",
+      "relation": "投资",
+      "weight": 0.839
+    },
+    {
+      "source": "N0180",
+      "target": "N0055",
+      "relation": "控制",
+      "weight": 0.378
+    },
+    {
+      "source": "N0045",
+      "target": "N0192",
+      "relation": "关联",
+      "weight": 0.231
+    },
+    {
+      "source": "N0130",
+      "target": "N0226",
+      "relation": "交易",
+      "weight": 0.312
+    },
+    {
+      "source": "N0045",
+      "target": "N0175",
+      "relation": "担保",
+      "weight": 0.135
+    },
+    {
+      "source": "N0185",
+      "target": "N0185",
+      "relation": "控制",
+      "weight": 0.425
+    },
+    {
+      "source": "N0281",
+      "target": "N0166",
+      "relation": "投资",
+      "weight": 0.885
+    },
+    {
+      "source": "N0196",
+      "target": "N0145",
+      "relation": "交易",
+      "weight": 0.062
+    },
+    {
+      "source": "N0250",
+      "target": "N0259",
+      "relation": "控制",
+      "weight": 0.164
+    },
+    {
+      "source": "N0116",
+      "target": "N0261",
+      "relation": "控制",
+      "weight": 0.603
+    },
+    {
+      "source": "N0022",
+      "target": "N0117",
+      "relation": "持股",
+      "weight": 0.693
+    },
+    {
+      "source": "N0210",
+      "target": "N0030",
+      "relation": "交易",
+      "weight": 0.67
+    },
+    {
+      "source": "N0057",
+      "target": "N0020",
+      "relation": "控制",
+      "weight": 0.178
+    },
+    {
+      "source": "N0147",
+      "target": "N0095",
+      "relation": "交易",
+      "weight": 0.229
+    },
+    {
+      "source": "N0174",
+      "target": "N0227",
+      "relation": "交易",
+      "weight": 0.537
+    },
+    {
+      "source": "N0101",
+      "target": "N0041",
+      "relation": "担保",
+      "weight": 0.961
+    },
+    {
+      "source": "N0107",
+      "target": "N0058",
+      "relation": "关联",
+      "weight": 0.282
+    },
+    {
+      "source": "N0174",
+      "target": "N0004",
+      "relation": "投资",
+      "weight": 0.91
+    },
+    {
+      "source": "N0124",
+      "target": "N0158",
+      "relation": "交易",
+      "weight": 0.033
+    },
+    {
+      "source": "N0006",
+      "target": "N0141",
+      "relation": "交易",
+      "weight": 0.439
+    },
+    {
+      "source": "N0163",
+      "target": "N0099",
+      "relation": "投资",
+      "weight": 0.918
+    },
+    {
+      "source": "N0195",
+      "target": "N0269",
+      "relation": "关联",
+      "weight": 0.228
+    },
+    {
+      "source": "N0177",
+      "target": "N0066",
+      "relation": "投资",
+      "weight": 0.104
+    },
+    {
+      "source": "N0280",
+      "target": "N0289",
+      "relation": "控制",
+      "weight": 0.983
+    },
+    {
+      "source": "N0010",
+      "target": "N0260",
+      "relation": "持股",
+      "weight": 0.609
+    },
+    {
+      "source": "N0138",
+      "target": "N0156",
+      "relation": "交易",
+      "weight": 0.905
+    },
+    {
+      "source": "N0186",
+      "target": "N0185",
+      "relation": "担保",
+      "weight": 0.874
+    },
+    {
+      "source": "N0044",
+      "target": "N0101",
+      "relation": "担保",
+      "weight": 0.01
+    },
+    {
+      "source": "N0222",
+      "target": "N0284",
+      "relation": "投资",
+      "weight": 0.491
+    },
+    {
+      "source": "N0030",
+      "target": "N0221",
+      "relation": "投资",
+      "weight": 0.915
+    },
+    {
+      "source": "N0108",
+      "target": "N0161",
+      "relation": "担保",
+      "weight": 0.505
+    },
+    {
+      "source": "N0160",
+      "target": "N0257",
+      "relation": "持股",
+      "weight": 0.912
+    },
+    {
+      "source": "N0213",
+      "target": "N0211",
+      "relation": "关联",
+      "weight": 0.561
+    },
+    {
+      "source": "N0202",
+      "target": "N0171",
+      "relation": "关联",
+      "weight": 0.483
+    },
+    {
+      "source": "N0204",
+      "target": "N0018",
+      "relation": "投资",
+      "weight": 0.65
+    },
+    {
+      "source": "N0057",
+      "target": "N0100",
+      "relation": "关联",
+      "weight": 0.384
+    },
+    {
+      "source": "N0029",
+      "target": "N0226",
+      "relation": "控制",
+      "weight": 0.268
+    },
+    {
+      "source": "N0150",
+      "target": "N0063",
+      "relation": "担保",
+      "weight": 0.144
+    },
+    {
+      "source": "N0198",
+      "target": "N0053",
+      "relation": "投资",
+      "weight": 0.269
+    },
+    {
+      "source": "N0260",
+      "target": "N0032",
+      "relation": "投资",
+      "weight": 0.462
+    },
+    {
+      "source": "N0224",
+      "target": "N0292",
+      "relation": "关联",
+      "weight": 0.668
+    },
+    {
+      "source": "N0219",
+      "target": "N0063",
+      "relation": "交易",
+      "weight": 0.508
+    },
+    {
+      "source": "N0022",
+      "target": "N0184",
+      "relation": "投资",
+      "weight": 0.526
+    },
+    {
+      "source": "N0018",
+      "target": "N0044",
+      "relation": "担保",
+      "weight": 0.467
+    },
+    {
+      "source": "N0132",
+      "target": "N0018",
+      "relation": "持股",
+      "weight": 0.175
+    },
+    {
+      "source": "N0203",
+      "target": "N0174",
+      "relation": "投资",
+      "weight": 0.323
+    },
+    {
+      "source": "N0272",
+      "target": "N0267",
+      "relation": "控制",
+      "weight": 0.317
+    },
+    {
+      "source": "N0126",
+      "target": "N0027",
+      "relation": "投资",
+      "weight": 0.658
+    },
+    {
+      "source": "N0065",
+      "target": "N0104",
+      "relation": "投资",
+      "weight": 0.692
+    },
+    {
+      "source": "N0150",
+      "target": "N0205",
+      "relation": "关联",
+      "weight": 0.817
+    },
+    {
+      "source": "N0234",
+      "target": "N0098",
+      "relation": "关联",
+      "weight": 0.208
+    },
+    {
+      "source": "N0253",
+      "target": "N0111",
+      "relation": "关联",
+      "weight": 0.367
+    },
+    {
+      "source": "N0112",
+      "target": "N0031",
+      "relation": "关联",
+      "weight": 0.559
+    },
+    {
+      "source": "N0292",
+      "target": "N0179",
+      "relation": "担保",
+      "weight": 0.359
+    },
+    {
+      "source": "N0146",
+      "target": "N0287",
+      "relation": "投资",
+      "weight": 0.627
+    },
+    {
+      "source": "N0070",
+      "target": "N0175",
+      "relation": "关联",
+      "weight": 0.248
+    },
+    {
+      "source": "N0137",
+      "target": "N0281",
+      "relation": "控制",
+      "weight": 0.885
+    },
+    {
+      "source": "N0157",
+      "target": "N0096",
+      "relation": "担保",
+      "weight": 0.863
+    },
+    {
+      "source": "N0266",
+      "target": "N0256",
+      "relation": "关联",
+      "weight": 0.358
+    },
+    {
+      "source": "N0196",
+      "target": "N0118",
+      "relation": "投资",
+      "weight": 0.447
+    },
+    {
+      "source": "N0111",
+      "target": "N0050",
+      "relation": "担保",
+      "weight": 0.637
+    },
+    {
+      "source": "N0252",
+      "target": "N0222",
+      "relation": "持股",
+      "weight": 0.744
+    },
+    {
+      "source": "N0055",
+      "target": "N0088",
+      "relation": "控制",
+      "weight": 0.119
+    },
+    {
+      "source": "N0225",
+      "target": "N0147",
+      "relation": "交易",
+      "weight": 0.324
+    },
+    {
+      "source": "N0058",
+      "target": "N0255",
+      "relation": "交易",
+      "weight": 0.274
+    },
+    {
+      "source": "N0254",
+      "target": "N0187",
+      "relation": "投资",
+      "weight": 0.444
+    },
+    {
+      "source": "N0194",
+      "target": "N0121",
+      "relation": "担保",
+      "weight": 0.874
+    },
+    {
+      "source": "N0270",
+      "target": "N0119",
+      "relation": "担保",
+      "weight": 0.346
+    },
+    {
+      "source": "N0220",
+      "target": "N0242",
+      "relation": "交易",
+      "weight": 0.006
+    },
+    {
+      "source": "N0163",
+      "target": "N0098",
+      "relation": "持股",
+      "weight": 0.897
+    },
+    {
+      "source": "N0033",
+      "target": "N0044",
+      "relation": "投资",
+      "weight": 0.862
+    },
+    {
+      "source": "N0169",
+      "target": "N0265",
+      "relation": "交易",
+      "weight": 0.7
+    },
+    {
+      "source": "N0125",
+      "target": "N0179",
+      "relation": "关联",
+      "weight": 0.757
+    },
+    {
+      "source": "N0095",
+      "target": "N0224",
+      "relation": "控制",
+      "weight": 0.229
+    },
+    {
+      "source": "N0138",
+      "target": "N0139",
+      "relation": "关联",
+      "weight": 0.319
+    },
+    {
+      "source": "N0076",
+      "target": "N0227",
+      "relation": "投资",
+      "weight": 0.841
+    },
+    {
+      "source": "N0058",
+      "target": "N0242",
+      "relation": "持股",
+      "weight": 0.73
+    },
+    {
+      "source": "N0254",
+      "target": "N0105",
+      "relation": "交易",
+      "weight": 0.035
+    },
+    {
+      "source": "N0297",
+      "target": "N0108",
+      "relation": "关联",
+      "weight": 0.895
+    },
+    {
+      "source": "N0270",
+      "target": "N0191",
+      "relation": "担保",
+      "weight": 0.89
+    },
+    {
+      "source": "N0256",
+      "target": "N0275",
+      "relation": "持股",
+      "weight": 0.989
+    },
+    {
+      "source": "N0165",
+      "target": "N0208",
+      "relation": "担保",
+      "weight": 0.37
+    },
+    {
+      "source": "N0082",
+      "target": "N0040",
+      "relation": "控制",
+      "weight": 0.069
+    },
+    {
+      "source": "N0251",
+      "target": "N0016",
+      "relation": "投资",
+      "weight": 0.306
+    },
+    {
+      "source": "N0102",
+      "target": "N0229",
+      "relation": "持股",
+      "weight": 0.937
+    },
+    {
+      "source": "N0001",
+      "target": "N0060",
+      "relation": "担保",
+      "weight": 0.55
+    },
+    {
+      "source": "N0078",
+      "target": "N0254",
+      "relation": "交易",
+      "weight": 0.009
+    },
+    {
+      "source": "N0160",
+      "target": "N0284",
+      "relation": "持股",
+      "weight": 0.777
+    },
+    {
+      "source": "N0141",
+      "target": "N0180",
+      "relation": "关联",
+      "weight": 0.854
+    },
+    {
+      "source": "N0223",
+      "target": "N0099",
+      "relation": "持股",
+      "weight": 0.184
+    },
+    {
+      "source": "N0022",
+      "target": "N0269",
+      "relation": "交易",
+      "weight": 0.537
+    },
+    {
+      "source": "N0195",
+      "target": "N0292",
+      "relation": "控制",
+      "weight": 0.099
+    },
+    {
+      "source": "N0188",
+      "target": "N0224",
+      "relation": "投资",
+      "weight": 0.51
+    },
+    {
+      "source": "N0082",
+      "target": "N0121",
+      "relation": "关联",
+      "weight": 0.382
+    },
+    {
+      "source": "N0277",
+      "target": "N0090",
+      "relation": "交易",
+      "weight": 0.099
+    },
+    {
+      "source": "N0209",
+      "target": "N0034",
+      "relation": "担保",
+      "weight": 0.529
+    },
+    {
+      "source": "N0066",
+      "target": "N0198",
+      "relation": "持股",
+      "weight": 0.986
+    },
+    {
+      "source": "N0228",
+      "target": "N0135",
+      "relation": "交易",
+      "weight": 0.745
+    },
+    {
+      "source": "N0037",
+      "target": "N0061",
+      "relation": "控制",
+      "weight": 0.908
+    },
+    {
+      "source": "N0291",
+      "target": "N0089",
+      "relation": "控制",
+      "weight": 0.454
+    },
+    {
+      "source": "N0165",
+      "target": "N0073",
+      "relation": "担保",
+      "weight": 0.988
+    },
+    {
+      "source": "N0030",
+      "target": "N0259",
+      "relation": "关联",
+      "weight": 0.415
+    },
+    {
+      "source": "N0202",
+      "target": "N0028",
+      "relation": "投资",
+      "weight": 0.973
+    },
+    {
+      "source": "N0005",
+      "target": "N0289",
+      "relation": "关联",
+      "weight": 0.032
+    },
+    {
+      "source": "N0249",
+      "target": "N0011",
+      "relation": "投资",
+      "weight": 0.501
+    },
+    {
+      "source": "N0122",
+      "target": "N0114",
+      "relation": "控制",
+      "weight": 0.71
+    },
+    {
+      "source": "N0238",
+      "target": "N0095",
+      "relation": "担保",
+      "weight": 0.08
+    },
+    {
+      "source": "N0133",
+      "target": "N0252",
+      "relation": "投资",
+      "weight": 0.864
+    },
+    {
+      "source": "N0298",
+      "target": "N0047",
+      "relation": "交易",
+      "weight": 0.94
+    },
+    {
+      "source": "N0066",
+      "target": "N0108",
+      "relation": "持股",
+      "weight": 0.34
+    },
+    {
+      "source": "N0200",
+      "target": "N0276",
+      "relation": "持股",
+      "weight": 0.965
+    },
+    {
+      "source": "N0101",
+      "target": "N0111",
+      "relation": "交易",
+      "weight": 0.477
+    },
+    {
+      "source": "N0227",
+      "target": "N0072",
+      "relation": "交易",
+      "weight": 0.288
+    },
+    {
+      "source": "N0077",
+      "target": "N0183",
+      "relation": "担保",
+      "weight": 0.579
+    },
+    {
+      "source": "N0126",
+      "target": "N0063",
+      "relation": "担保",
+      "weight": 0.577
+    },
+    {
+      "source": "N0036",
+      "target": "N0012",
+      "relation": "关联",
+      "weight": 0.509
+    },
+    {
+      "source": "N0046",
+      "target": "N0015",
+      "relation": "投资",
+      "weight": 0.809
+    },
+    {
+      "source": "N0089",
+      "target": "N0179",
+      "relation": "投资",
+      "weight": 0.942
+    },
+    {
+      "source": "N0287",
+      "target": "N0225",
+      "relation": "控制",
+      "weight": 0.367
+    },
+    {
+      "source": "N0180",
+      "target": "N0205",
+      "relation": "持股",
+      "weight": 0.621
+    },
+    {
+      "source": "N0173",
+      "target": "N0242",
+      "relation": "交易",
+      "weight": 0.918
+    },
+    {
+      "source": "N0035",
+      "target": "N0067",
+      "relation": "持股",
+      "weight": 0.733
+    },
+    {
+      "source": "N0265",
+      "target": "N0288",
+      "relation": "交易",
+      "weight": 0.764
+    },
+    {
+      "source": "N0250",
+      "target": "N0146",
+      "relation": "关联",
+      "weight": 0.333
+    },
+    {
+      "source": "N0008",
+      "target": "N0227",
+      "relation": "担保",
+      "weight": 0.881
+    },
+    {
+      "source": "N0037",
+      "target": "N0204",
+      "relation": "控制",
+      "weight": 0.445
+    },
+    {
+      "source": "N0276",
+      "target": "N0177",
+      "relation": "持股",
+      "weight": 0.828
+    },
+    {
+      "source": "N0232",
+      "target": "N0087",
+      "relation": "持股",
+      "weight": 0.539
+    },
+    {
+      "source": "N0096",
+      "target": "N0177",
+      "relation": "控制",
+      "weight": 0.919
+    },
+    {
+      "source": "N0285",
+      "target": "N0188",
+      "relation": "交易",
+      "weight": 0.219
+    },
+    {
+      "source": "N0002",
+      "target": "N0105",
+      "relation": "担保",
+      "weight": 0.915
+    },
+    {
+      "source": "N0215",
+      "target": "N0155",
+      "relation": "控制",
+      "weight": 0.258
+    },
+    {
+      "source": "N0254",
+      "target": "N0160",
+      "relation": "投资",
+      "weight": 0.693
+    },
+    {
+      "source": "N0141",
+      "target": "N0194",
+      "relation": "担保",
+      "weight": 0.611
+    },
+    {
+      "source": "N0083",
+      "target": "N0282",
+      "relation": "投资",
+      "weight": 0.303
+    },
+    {
+      "source": "N0076",
+      "target": "N0255",
+      "relation": "持股",
+      "weight": 0.878
+    },
+    {
+      "source": "N0038",
+      "target": "N0005",
+      "relation": "担保",
+      "weight": 0.081
+    },
+    {
+      "source": "N0143",
+      "target": "N0070",
+      "relation": "持股",
+      "weight": 0.965
+    },
+    {
+      "source": "N0276",
+      "target": "N0145",
+      "relation": "交易",
+      "weight": 0.531
+    },
+    {
+      "source": "N0107",
+      "target": "N0079",
+      "relation": "担保",
+      "weight": 0.873
+    },
+    {
+      "source": "N0264",
+      "target": "N0216",
+      "relation": "持股",
+      "weight": 0.781
+    },
+    {
+      "source": "N0108",
+      "target": "N0045",
+      "relation": "担保",
+      "weight": 0.044
+    },
+    {
+      "source": "N0246",
+      "target": "N0229",
+      "relation": "持股",
+      "weight": 0.722
+    },
+    {
+      "source": "N0259",
+      "target": "N0147",
+      "relation": "交易",
+      "weight": 0.937
+    },
+    {
+      "source": "N0257",
+      "target": "N0286",
+      "relation": "关联",
+      "weight": 0.826
+    },
+    {
+      "source": "N0226",
+      "target": "N0019",
+      "relation": "担保",
+      "weight": 0.282
+    },
+    {
+      "source": "N0032",
+      "target": "N0208",
+      "relation": "担保",
+      "weight": 0.744
+    },
+    {
+      "source": "N0102",
+      "target": "N0032",
+      "relation": "担保",
+      "weight": 0.841
+    },
+    {
+      "source": "N0039",
+      "target": "N0223",
+      "relation": "持股",
+      "weight": 0.843
+    },
+    {
+      "source": "N0296",
+      "target": "N0176",
+      "relation": "投资",
+      "weight": 0.082
+    },
+    {
+      "source": "N0296",
+      "target": "N0036",
+      "relation": "投资",
+      "weight": 0.391
+    },
+    {
+      "source": "N0197",
+      "target": "N0018",
+      "relation": "关联",
+      "weight": 0.586
+    },
+    {
+      "source": "N0162",
+      "target": "N0059",
+      "relation": "关联",
+      "weight": 0.184
+    },
+    {
+      "source": "N0150",
+      "target": "N0111",
+      "relation": "控制",
+      "weight": 0.917
+    },
+    {
+      "source": "N0075",
+      "target": "N0229",
+      "relation": "投资",
+      "weight": 0.954
+    },
+    {
+      "source": "N0209",
+      "target": "N0061",
+      "relation": "持股",
+      "weight": 0.943
+    },
+    {
+      "source": "N0135",
+      "target": "N0131",
+      "relation": "关联",
+      "weight": 0.782
+    },
+    {
+      "source": "N0194",
+      "target": "N0116",
+      "relation": "持股",
+      "weight": 0.208
+    },
+    {
+      "source": "N0102",
+      "target": "N0190",
+      "relation": "交易",
+      "weight": 0.124
+    },
+    {
+      "source": "N0216",
+      "target": "N0147",
+      "relation": "控制",
+      "weight": 0.419
+    },
+    {
+      "source": "N0055",
+      "target": "N0004",
+      "relation": "持股",
+      "weight": 0.778
+    },
+    {
+      "source": "N0030",
+      "target": "N0260",
+      "relation": "交易",
+      "weight": 0.161
+    },
+    {
+      "source": "N0030",
+      "target": "N0118",
+      "relation": "交易",
+      "weight": 0.804
+    },
+    {
+      "source": "N0064",
+      "target": "N0047",
+      "relation": "控制",
+      "weight": 0.088
+    },
+    {
+      "source": "N0263",
+      "target": "N0007",
+      "relation": "持股",
+      "weight": 0.04
+    },
+    {
+      "source": "N0076",
+      "target": "N0262",
+      "relation": "交易",
+      "weight": 0.268
+    },
+    {
+      "source": "N0031",
+      "target": "N0097",
+      "relation": "担保",
+      "weight": 0.46
+    },
+    {
+      "source": "N0003",
+      "target": "N0216",
+      "relation": "关联",
+      "weight": 0.59
+    },
+    {
+      "source": "N0119",
+      "target": "N0058",
+      "relation": "持股",
+      "weight": 0.517
+    },
+    {
+      "source": "N0277",
+      "target": "N0283",
+      "relation": "控制",
+      "weight": 0.009
+    },
+    {
+      "source": "N0141",
+      "target": "N0043",
+      "relation": "关联",
+      "weight": 0.166
+    },
+    {
+      "source": "N0107",
+      "target": "N0247",
+      "relation": "交易",
+      "weight": 0.27
+    },
+    {
+      "source": "N0134",
+      "target": "N0113",
+      "relation": "投资",
+      "weight": 0.93
+    },
+    {
+      "source": "N0137",
+      "target": "N0076",
+      "relation": "担保",
+      "weight": 0.717
+    },
+    {
+      "source": "N0021",
+      "target": "N0292",
+      "relation": "持股",
+      "weight": 0.941
+    },
+    {
+      "source": "N0114",
+      "target": "N0057",
+      "relation": "投资",
+      "weight": 0.028
+    },
+    {
+      "source": "N0209",
+      "target": "N0058",
+      "relation": "交易",
+      "weight": 0.148
+    },
+    {
+      "source": "N0071",
+      "target": "N0286",
+      "relation": "关联",
+      "weight": 0.949
+    },
+    {
+      "source": "N0244",
+      "target": "N0192",
+      "relation": "关联",
+      "weight": 0.926
+    },
+    {
+      "source": "N0274",
+      "target": "N0097",
+      "relation": "控制",
+      "weight": 0.704
+    },
+    {
+      "source": "N0062",
+      "target": "N0272",
+      "relation": "控制",
+      "weight": 0.261
+    },
+    {
+      "source": "N0276",
+      "target": "N0106",
+      "relation": "持股",
+      "weight": 0.007
+    },
+    {
+      "source": "N0163",
+      "target": "N0086",
+      "relation": "关联",
+      "weight": 0.344
+    },
+    {
+      "source": "N0207",
+      "target": "N0083",
+      "relation": "投资",
+      "weight": 0.809
+    },
+    {
+      "source": "N0167",
+      "target": "N0211",
+      "relation": "持股",
+      "weight": 0.445
+    }
+  ]
+}

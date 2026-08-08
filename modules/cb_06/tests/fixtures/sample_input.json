@@ -1,0 +1,14 @@
+{
+  "action": "generate_orders",
+  "group_name": "测试集团",
+  "audit_period": "2024年度",
+  "start_date": "2024-01-01",
+  "end_date": "2024-12-31",
+  "deadline": "2025-03-15",
+  "audit_focus": "收入确认与关联交易",
+  "subsidiaries": [
+    {"id": "SUB-01", "name": "北京子公司", "risk_level": "high", "country": "CN"},
+    {"id": "SUB-02", "name": "上海子公司", "risk_level": "medium", "country": "CN"},
+    {"id": "SUB-03", "name": "香港子公司", "risk_level": "low", "country": "HK"}
+  ]
+}

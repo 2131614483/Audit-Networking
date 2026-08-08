@@ -1,0 +1,55 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CO-08
+  name: 知识图谱数据流分析
+  name_en: co_08
+  version: 1.0.0
+  category: compliance_audit
+  family: kg_gnn
+  family_display: Knowledge Graph / GNN
+  difficulty: 4
+  priority: medium
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    知识图谱数据流分析平台通过自动构建数据血缘图谱，可视化展示数据从采集、存储、处理、传输到销毁的全生命周期。系统自动识别跨境数据传输路径，评估数据流转过程中的合规风险，为数据合规审计提供全景式视图。实现跨境数据流的自动可视化。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.co_08
+  port: 8208
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - akg
+  modules:
+      - CO-01
+      - CO-07
+      - CO-09
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

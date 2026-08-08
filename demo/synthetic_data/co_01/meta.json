@@ -1,0 +1,37 @@
+{
+  "slug": "co_01",
+  "family": "co",
+  "module_name": "",
+  "total_bytes": 14270583,
+  "total_mb": 13.61,
+  "files": [
+    {
+      "file": "regulations.jsonl",
+      "bytes": 4343044
+    },
+    {
+      "file": "transactions.jsonl",
+      "bytes": 7696127
+    },
+    {
+      "file": "text_corpus.txt",
+      "bytes": 1955020
+    },
+    {
+      "file": "media_refs.jsonl",
+      "bytes": 141853
+    },
+    {
+      "file": "graph.json",
+      "bytes": 134539
+    }
+  ],
+  "modalities": [
+    "regulations",
+    "media_refs",
+    "transactions",
+    "text_corpus",
+    "graph"
+  ],
+  "generated_at": "2026-08-08T14:59:42.443721"
+}

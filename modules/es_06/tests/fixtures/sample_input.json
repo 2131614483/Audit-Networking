@@ -1,0 +1,5 @@
+[
+  {"company": "绿能制造公司", "industry": "制造业", "audit_goal": "碳排放", "period": "2024年度", "standards": ["ISSB IFRS S2", "GRI 305"]},
+  {"company": "环球金融银行", "industry": "金融业", "audit_goal": "气候风险", "period": "2024年度"},
+  {"company": "通用服务公司", "industry": "其他行业", "audit_goal": "全面ESG", "period": "2024年度"}
+]

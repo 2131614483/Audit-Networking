@@ -1,0 +1,9 @@
+{
+  "action": "dashboard",
+  "total_findings": 3,
+  "total_projects": 2,
+  "strategic": {
+    "risk_coverage": 100.0,
+    "high_risk_findings": 2
+  }
+}

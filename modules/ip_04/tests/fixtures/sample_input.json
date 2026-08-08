@@ -1,0 +1,16 @@
+{
+  "company_name": "示例制造科技股份有限公司",
+  "industry": "制造业",
+  "financials": {
+    "gross_margin": 0.40,
+    "net_margin": 0.08,
+    "roe": 0.12,
+    "debt_ratio": 0.75,
+    "ar_turnover": 3.0,
+    "inv_turnover": 2.5,
+    "ocf_to_net_profit": 0.5,
+    "rev_yoy": 0.5,
+    "tax_rate": 0.03,
+    "related_party_ratio": 0.4
+  }
+}

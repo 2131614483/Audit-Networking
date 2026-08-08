@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: SC-01
+  name: 供应商风险智能评分平台
+  name_en: sc_01
+  version: 1.0.0
+  category: supply_chain_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "6个月"
+  budget: ""
+  description: >
+    本方案构建基于机器学习、自然语言处理和多方数据融合的供应商风险智能评分平台。平台通过自动化采集工商信息、司法数据、财务数据、ESG数据和舆情数据等五大维度数据，利用ML模型进行风险评分，实现对供应商风险的全面覆盖和实时感知，将评估周期从传统的季度/年度评估压缩至T+1天，显著提升供应链审计的覆盖面和时效性。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.sc_01
+  port: 8601
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

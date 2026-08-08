@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: TA-03
+  name: 进项税额转出AI计算
+  name_en: ta_03
+  version: 1.0.0
+  category: tax_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 2
+  priority: medium
+  roi: ""
+  duration: "3个月"
+  budget: "约180万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于ML+规则+LLM的进项税额转出AI计算平台，实现进项税额转出的智能化计算和合规管理。平台利用ML模型进行采购用途的智能分类，利用规则引擎自动匹配转出规则和计算方法，利用LLM提供政策解读和计算过程解释。方案实施后，进项税额转出的计算准确率提升至98%以上，计算效率提升90%以上，同时提供完整的计算依据和追溯证据。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ta_03
+  port: 8503
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

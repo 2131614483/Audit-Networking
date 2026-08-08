@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审计智能化平台 · 全景星图</title>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<style>
+  :root{
+    --bg:#ffffff; --bg2:#f5f7fa;
+    --text:#1a1d29; --dim:#6c757d; --accent:#4A90D9;
+    --ml:#4A90D9; --llm:#E67E22; --kg:#27AE60; --rpa:#9B59B6;
+    --cv:#E74C3C; --bc:#F39C12; --fl:#1ABC9C; --st:#5D6D7E;
+    --rs:#16A085; --db:#D35400;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+  #app{position:relative;width:100%;height:100%}
+  svg{width:100%;height:100%;display:block}
+
+  /* 背景星空 */
+  #starfield{position:absolute;inset:0;z-index:0}
+
+  /* 主画布 */
+  #galaxy{position:absolute;inset:0;z-index:1}
+
+  /* 顶部标题 */
+  #title-bar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;pointer-events:none}
+  #title-bar .title{font-size:22px;font-weight:800;background:linear-gradient(90deg,#4A90D9,#27AE60,#E67E22,#9B59B6);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px;text-shadow:0 0 30px rgba(74,144,217,.3)}
+  #title-bar .subtitle{font-size:11px;color:var(--dim);letter-spacing:1px;margin-top:2px}
+  #title-bar .right{display:flex;gap:12px;align-items:center;pointer-events:auto}
+  #title-bar .toggle{background:rgba(248,249,250,.7);border:1px solid #d8dde5;border-radius:8px;padding:6px 14px;font-size:12px;color:var(--dim);cursor:pointer;transition:.2s;backdrop-filter:blur(8px)}
+  #title-bar .toggle:hover{border-color:var(--accent);color:var(--text);box-shadow:0 0 12px rgba(74,144,217,.3)}
+  #title-bar .toggle.active{background:rgba(74,144,217,.15);border-color:var(--accent);color:var(--accent)}
+
+  /* 统计 HUD */
+  #hud{position:absolute;top:72px;left:28px;z-index:10;pointer-events:none}
+  #hud .stat{background:rgba(248,249,250,.75);border:1px solid #dee2e6;border-radius:6px;padding:6px 12px;margin-bottom:6px;font-size:12px;backdrop-filter:blur(8px);display:flex;align-items:center;gap:8px}
+  #hud .stat .num{font-size:18px;font-weight:700;color:var(--accent)}
+  #hud .stat .lbl{color:var(--dim);font-size:11px}
+
+  /* 图例 */
+  #legend{position:absolute;bottom:24px;left:28px;z-index:10;background:rgba(248,249,250,.8);border:1px solid #dee2e6;border-radius:10px;padding:14px 16px;backdrop-filter:blur(10px);pointer-events:auto}
+  #legend .lg-title{font-size:11px;color:var(--dim);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
+  .lg-row{display:flex;align-items:center;gap:8px;padding:2px 0;cursor:pointer;transition:.15s;border-radius:4px;padding-left:4px}
+  .lg-row:hover{background:rgba(74,144,217,.1)}
+  .lg-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor}
+
+  /* 提示 */
+  #hint{position:absolute;bottom:24px;right:28px;z-index:10;background:rgba(74,144,217,.1);border:1px solid var(--accent);border-radius:20px;padding:8px 18px;font-size:11px;color:var(--accent);pointer-events:none;backdrop-filter:blur(8px)}
+
+  /* tooltip */
+  #tooltip{position:absolute;pointer-events:none;background:rgba(248,249,250,.95);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:12px;max-width:280px;z-index:100;opacity:0;transition:opacity .15s;box-shadow:0 4px 24px rgba(0,0,0,.15);backdrop-filter:blur(10px)}
+  #tooltip .tt-title{font-weight:700;margin-bottom:4px;font-size:13px}
+  #tooltip .tt-sub{color:var(--dim);line-height:1.5}
+  #tooltip .tt-dep{margin-top:4px;padding-top:4px;border-top:1px solid #dee2e6;color:var(--dim);font-size:11px}
+
+  /* 节点样式 */
+  .orbit-ring{fill:none;stroke:#d8dde5;stroke-width:1;stroke-dasharray:2 4;opacity:.5}
+  .orbit-glow{fill:none;stroke-width:2;opacity:.25}
+  .module-node{cursor:pointer}
+  .module-node circle.glow{transition:r .3s,opacity .3s}
+  .module-node:hover circle.glow{opacity:.6}
+  .module-node text{pointer-events:none;text-anchor:middle;fill:#6c757d;font-size:9px;text-shadow:0 1px 4px rgba(255,255,255,.8);opacity:0;transition:opacity .2s}
+  .module-node:hover text{opacity:1;fill:var(--text)}
+  .core-node text{pointer-events:none;text-anchor:middle;fill:var(--text);font-weight:700}
+
+  /* 粒子流 */
+  .particle{pointer-events:none}
+
+  /* 依赖连线 */
+  .dep-link{fill:none;stroke-width:1;opacity:0;transition:opacity .3s}
+  .dep-link.active{opacity:.55}
+
+  @keyframes pulse{0%,100%{opacity:.3}50%{opacity:.8}}
+  .pulse{animation:pulse 3s ease-in-out infinite}
+
+  /* 面板 */
+  #panel{position:absolute;top:0;right:0;bottom:0;width:360px;background:rgba(248,249,250,.92);border-left:1px solid #dee2e6;z-index:20;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(16px);overflow-y:auto;padding:20px}
+  #panel.open{transform:translateX(0)}
+  #panel .close{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:#e9ecef;border:none;color:var(--dim);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.15s}
+  #panel .close:hover{background:#dfe3ea;color:var(--text)}
+  #panel h2{font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.3}
+  #panel .slug{font-size:12px;color:var(--dim);margin-bottom:14px;font-family:monospace}
+  #panel .section-title{font-size:12px;color:var(--accent);margin:16px 0 8px;padding-bottom:6px;border-bottom:1px solid #dee2e6;letter-spacing:1px;text-transform:uppercase}
+  #panel .row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+  #panel .row .k{color:var(--dim)}
+  #panel .row .v{color:var(--text);font-weight:500;text-align:right}
+  #panel .dep-item{padding:6px 10px;margin:3px 0;background:rgba(248,249,250,.6);border-radius:6px;font-size:12px;cursor:pointer;transition:.15s;border-left:2px solid transparent}
+  #panel .dep-item:hover{background:rgba(233,236,239,.9);border-left-color:var(--accent)}
+  #panel .enter-btn{display:block;width:100%;margin-top:16px;padding:10px;background:linear-gradient(135deg,var(--accent),#27AE60);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;transition:.2s}
+  #panel .enter-btn:hover{filter:brightness(1.2);box-shadow:0 4px 16px rgba(74,144,217,.4)}
+
+  /* loading */
+  #loader{position:absolute;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity .6s}
+  #loader.hide{opacity:0;pointer-events:none}
+  #loader .spinner{width:48px;height:48px;border:3px solid #e9ecef;border-top-color:var(--accent);border-radius:50%;animation:spin 1s linear infinite}
+  #loader .txt{font-size:13px;color:var(--dim);letter-spacing:2px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="app">
+  <canvas id="starfield"></canvas>
+  <svg id="galaxy"></svg>
+
+  <div id="title-bar">
+    <div>
+      <div class="title">审计智能化平台 · 全景星图</div>
+      <div class="subtitle">AUDIT INTELLIGENCE GALAXY · 78 MODULES · 12 DOMAINS · 10 TECH FAMILIES</div>
+    </div>
+    <div class="right">
+      <div class="toggle active" id="t-rotate">自动旋转</div>
+      <div class="toggle active" id="t-particles">数据流</div>
+      <div class="toggle" id="t-links">依赖连线</div>
+      <div class="toggle" id="t-labels">显示标签</div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div class="stat"><span class="num" id="s-mods">78</span><span class="lbl">模块</span></div>
+    <div class="stat"><span class="num" id="s-doms">12</span><span class="lbl">业务域</span></div>
+    <div class="stat"><span class="num" id="s-deps">44</span><span class="lbl">数据依赖</span></div>
+    <div class="stat"><span class="num" id="s-plats">5</span><span class="lbl">共享平台</span></div>
+  </div>
+
+  <div id="legend"></div>
+  <div id="hint">悬停高亮 · 点击模块查看详情 · 滚轮缩放 · 拖拽旋转</div>
+  <div id="tooltip"></div>
+
+  <div id="panel">
+    <button class="close" onclick="closePanel()">×</button>
+    <div id="panel-content"></div>
+  </div>
+
+  <div id="loader">
+    <div class="spinner"></div>
+    <div class="txt">INITIALIZING GALAXY...</div>
+  </div>
+</div>
+
+<script>
+/* ======================= 数据 ======================= */
+const FC = {"机器学习":"#4A90D9","大语言模型":"#E67E22","知识图谱":"#27AE60","RPA流程自动化":"#9B59B6","计算机视觉":"#E74C3C","区块链":"#F39C12","联邦学习":"#1ABC9C","流处理":"#5D6D7E","资源调度":"#16A085","数据看板":"#D35400"};
+const DN = {fa:"财务审计",ia:"内部审计",co:"合规审计",it:"IT审计",fo:"法务审计",ta:"税务审计",sc:"供应链审计",es:"ESG审计",ip:"IPO审计",fi:"金融审计",cb:"跨境审计",cm:"持续审计"};
+const RAW = [
+  ["fa_02","多源数据自动标准化","机器学习","MLEngine"],["fa_03","审计数据湖建设","机器学习","MLEngine"],
+  ["fa_04","智能函证管理平台","区块链","BlockchainEngine"],["fa_05","区块链银行函证","区块链","BlockchainEngine"],
+  ["fa_06","AI函证差异智能分析","知识图谱","KGEngine"],["fa_07","智能底稿自动生成平台","知识图谱","KGEngine"],
+  ["fa_08","底稿自动勾稽检查","机器学习","MLEngine"],["fa_09","AI底稿质量复核助手","大语言模型","LLMEngine"],
+  ["fa_10","知识图谱关联方发现引擎","机器学习","MLEngine"],["fa_11","关联交易定价公允性AI分析","机器学习","MLEngine"],
+  ["fa_12","关联交易披露完整性检查","知识图谱","KGEngine"],
+  ["ia_01","动态风险地图与智能审计计划","大语言模型","LLMEngine"],["ia_02","持续风险监控平台","知识图谱","KGEngine"],
+  ["ia_03","审计资源智能分配引擎","资源调度","ResourceEngine"],["ia_04","审计价值仪表板","数据看板","DashboardEngine"],
+  ["ia_05","AI驱动的管理建议书","大语言模型","LLMEngine"],["ia_06","内审价值量化模型","机器学习","MLEngine"],
+  ["ia_07","智能整改跟踪平台","RPA流程自动化","RPAEngine"],["ia_08","整改效果自动验证","RPA流程自动化","RPAEngine"],
+  ["co_01","全球法规智能监控平台","知识图谱","KGEngine"],["co_02","AI法规影响评估引擎","大语言模型","LLMEngine"],
+  ["co_03","合规审计程序自动更新","大语言模型","LLMEngine"],["co_04","AML智能交易监控引擎","知识图谱","KGEngine"],
+  ["co_05","知识图谱洗钱网络发现","知识图谱","KGEngine"],["co_06","AI可疑交易报告自动生成","知识图谱","KGEngine"],
+  ["co_07","AI数据资产自动发现与分类","机器学习","MLEngine"],["co_08","知识图谱数据流分析","知识图谱","KGEngine"],
+  ["co_09","隐私合规自动审计引擎","大语言模型","LLMEngine"],
+  ["it_01","IT审计自动化平台","RPA流程自动化","RPAEngine"],["it_02","AI配置合规扫描引擎","机器学习","MLEngine"],
+  ["it_03","AI代码审计助手","知识图谱","KGEngine"],["it_04","IT持续审计平台","机器学习","MLEngine"],
+  ["it_05","区块链审计日志存证","区块链","BlockchainEngine"],
+  ["fo_01","全量交易智能舞弊扫描","机器学习","MLEngine"],["fo_02","知识图谱舞弊网络分析","知识图谱","KGEngine"],
+  ["fo_03","NLP文本舞弊信号检测","大语言模型","LLMEngine"],["fo_04","AI电子取证平台","计算机视觉","CVEngine"],
+  ["fo_05","多语言智能翻译与分析","大语言模型","LLMEngine"],["fo_06","证据链智能构建","大语言模型","LLMEngine"],
+  ["ta_01","AI发票智能审计平台","计算机视觉","CVEngine"],["ta_02","发票四单自动匹配引擎","机器学习","MLEngine"],
+  ["ta_03","进项税额转出AI计算","大语言模型","LLMEngine"],["ta_04","AI转让定价文档自动生成","大语言模型","LLMEngine"],
+  ["ta_05","ML可比公司智能筛选","机器学习","MLEngine"],["ta_06","知识图谱全球关联交易分析","知识图谱","KGEngine"],
+  ["sc_01","供应商风险智能评分平台","机器学习","MLEngine"],["sc_02","知识图谱供应链网络分析","知识图谱","KGEngine"],
+  ["sc_03","供应商持续风险监控平台","机器学习","MLEngine"],["sc_04","ML采购价格异常检测平台","机器学习","MLEngine"],
+  ["sc_05","AI采购价格基准平台","机器学习","MLEngine"],
+  ["es_01","ESG多源数据智能采集平台","计算机视觉","CVEngine"],["es_02","AI碳排放自动核算引擎","机器学习","MLEngine"],
+  ["es_03","卫星遥感AI环境监测平台","计算机视觉","CVEngine"],["es_04","知识图谱绿色漂洗检测平台","知识图谱","KGEngine"],
+  ["es_05","ESG审计知识库与AI助手","大语言模型","LLMEngine"],["es_06","AI-ESG审计方法论引擎","大语言模型","LLMEngine"],
+  ["ip_01","IPO审计智能加速平台","大语言模型","LLMEngine"],["ip_02","AI监管反馈智能回复系统","大语言模型","LLMEngine"],
+  ["ip_03","知识图谱历史沿革梳理系统","知识图谱","KGEngine"],["ip_04","AI财务规范性智能诊断系统","机器学习","MLEngine"],
+  ["ip_05","IPO案例知识库与RAG系统","大语言模型","LLMEngine"],["ip_06","整改方案AI推荐引擎","大语言模型","LLMEngine"],
+  ["fi_01","AI信贷资产质量评估引擎","机器学习","MLEngine"],["fi_02","知识图谱担保链风险分析系统","知识图谱","KGEngine"],
+  ["fi_03","ML贷款违约预测验证系统","机器学习","MLEngine"],["fi_04","监管报表智能核对平台","大语言模型","LLMEngine"],
+  ["fi_05","AI监管口径自动更新系统","大语言模型","LLMEngine"],
+  ["cb_01","联邦学习跨境审计平台","联邦学习","FederationEngine"],["cb_02","数据脱敏网关与合规路由系统","机器学习","MLEngine"],
+  ["cb_03","多法域合规知识库","大语言模型","LLMEngine"],["cb_04","AI多准则自动转换引擎","大语言模型","LLMEngine"],
+  ["cb_05","AI多语言审计协作平台","大语言模型","LLMEngine"],["cb_06","集团审计智能协作平台","大语言模型","LLMEngine"],
+  ["cm_01","持续审计技术平台","流处理","StreamingEngine"],["cm_02","智能预警分级与自动处理系统","RPA流程自动化","RPAEngine"],
+  ["cm_03","持续审计方法论框架","大语言模型","LLMEngine"],["cm_04","持续审计价值量化模型","机器学习","MLEngine"],
+  ["cm_05","持续审计仪表板","机器学习","MLEngine"]
+];
+const INFRA = ["fa_03","cb_01","co_01","es_01","cm_01"];
+const MODULES = RAW.map(([s,n,f,e])=>({slug:s,name:n,family:f,engine:e,domain:DN[s.slice(0,2)],layer:INFRA.includes(s)?"基础平台层":"应用层",color:FC[f]}));
+const M = {}; MODULES.forEach(m=>M[m.slug]=m);
+const DATA_EDGES = [["fa_02","fa_03"],["fa_03","fa_07"],["fa_03","fa_10"],["fa_03","fo_02"],["fa_03","cm_01"],["fa_03","ip_01"],["fa_06","fa_07"],["fa_07","ip_01"],["fa_10","ip_01"],["fa_10","fa_11"],["fa_10","fa_12"],["fa_08","fa_09"],["co_01","co_02"],["co_01","co_03"],["co_01","co_07"],["co_01","co_09"],["co_01","ip_01"],["co_04","co_05"],["co_05","co_04"],["co_04","co_06"],["co_05","co_06"],["co_02","co_03"],["es_01","sc_01"],["es_01","es_02"],["es_01","es_03"],["es_01","es_04"],["es_01","es_05"],["es_01","es_06"],["cb_01","cb_02"],["cb_01","cb_03"],["cb_01","cb_04"],["cb_01","cb_05"],["cb_01","cb_06"],["cm_01","cm_02"],["cm_01","cm_03"],["cm_01","cm_04"],["cm_01","cm_05"],["ta_01","ta_02"],["fi_01","fi_03"],["fi_02","fi_01"],["ia_01","ia_02"],["ia_02","ia_06"],["ia_06","ia_04"],["sc_01","sc_03"],["sc_03","sc_04"]];
+const DEP_MAP = {}; MODULES.forEach(m=>DEP_MAP[m.slug]={up:[],down:[]});
+DATA_EDGES.forEach(([s,t])=>{if(M[s]&&M[t]){DEP_MAP[s].down.push(t);DEP_MAP[t].up.push(s);}});
+
+/* ======================= 星空背景 ======================= */
+const starCanvas = document.getElementById('starfield');
+const sctx = starCanvas.getContext('2d');
+let stars = [];
+function initStars(){
+  starCanvas.width = window.innerWidth;
+  starCanvas.height = window.innerHeight;
+  stars = [];
+  for(let i=0;i<200;i++){
+    stars.push({x:Math.random()*starCanvas.width, y:Math.random()*starCanvas.height, r:Math.random()*1.2, o:Math.random()*0.5+0.1, tw:Math.random()*0.02});
+  }
+}
+function drawStars(t){
+  sctx.clearRect(0,0,starCanvas.width,starCanvas.height);
+  stars.forEach(s=>{
+    s.o += Math.sin(t*s.tw)*0.005;
+    sctx.beginPath();
+    sctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+    sctx.fillStyle = `rgba(120,130,160,${Math.abs(s.o)})`;
+    sctx.fill();
+  });
+}
+initStars();
+window.addEventListener('resize',initStars);
+
+/* ======================= D3 画布 ======================= */
+const svg = d3.select("#galaxy");
+let W = window.innerWidth, H = window.innerHeight;
+svg.attr("viewBox",`0 0 ${W} ${H}`);
+const defs = svg.append("defs");
+let g = svg.append("g");
+const zoom = d3.zoom().scaleExtent([0.3,4]).on("zoom",e=>g.attr("transform",e.transform));
+svg.call(zoom).on("dblclick.zoom",null);
+
+/* ======================= 轨道布局 ======================= */
+// 中心 + 3 条轨道（基础平台层内圈、应用层中外圈按域分组）
+const domains = Object.keys(DN);
+const cx = W/2, cy = H/2;
+// 每个域在轨道上的角度段
+const domainModules = domains.map(d=>MODULES.filter(m=>m.domain===DN[d]));
+const orbitR = [0, 180, 320, 460]; // 中心+3环
+
+// 基础平台层 → 内圈（R1）
+const infraMods = INFRA.map(s=>M[s]);
+
+// 应用层 → 外圈按域分段（R3），中圈放域标签（R2）
+const positions = {};
+// 中心
+positions._core = {x:cx, y:cy, r:40};
+// 基础平台层：内圈均匀分布
+infraMods.forEach((m,i)=>{
+  const a = (i/infraMods.length)*Math.PI*2 - Math.PI/2;
+  positions[m.slug] = {x:cx+Math.cos(a)*orbitR[1], y:cy+Math.sin(a)*orbitR[1], r:18, angle:a, orbit:1};
+});
+// 应用层：每域占一段弧
+const arcPerDomain = (Math.PI*2)/domains.length;
+domainModules.forEach((mods,di)=>{
+  const baseAngle = di*arcPerDomain - Math.PI/2;
+  const halfArc = arcPerDomain/2;
+  mods.forEach((m,mi)=>{
+    const sub = mods.length===1?0:(mi/(mods.length-1)-0.5)*arcPerDomain*0.75;
+    const a = baseAngle + sub;
+    positions[m.slug] = {x:cx+Math.cos(a)*orbitR[3], y:cy+Math.sin(a)*orbitR[3], r:14, angle:a, orbit:3, domainIdx:di};
+  });
+  // 域标签位置
+  const la = baseAngle;
+  positions["D_"+domains[di]] = {x:cx+Math.cos(la)*orbitR[2], y:cy+Math.sin(la)*orbitR[2], domain:DN[domains[di]], count:mods.length, angle:la};
+});
+
+/* ======================= 渐变/滤镜 ======================= */
+// 发光滤镜
+const glow = defs.append("filter").attr("id","glow").attr("x","-50%").attr("y","-50%").attr("width","200%").attr("height","200%");
+glow.append("feGaussianBlur").attr("stdDeviation","4").attr("result","b");
+const fm = glow.append("feMerge"); fm.append("feMergeNode").attr("in","b"); fm.append("feMergeNode").attr("in","SourceGraphic");
+
+const glow2 = defs.append("filter").attr("id","glow2").attr("x","-100%").attr("y","-100%").attr("width","300%").attr("height","300%");
+glow2.append("feGaussianBlur").attr("stdDeviation","8").attr("result","b");
+const fm2 = glow2.append("feMerge"); fm2.append("feMergeNode").attr("in","b"); fm2.append("feMergeNode").attr("in","SourceGraphic");
+
+// 径向渐变（每个家族一个）
+Object.entries(FC).forEach(([f,c])=>{
+  const rg = defs.append("radialGradient").attr("id","rg_"+f);
+  rg.append("stop").attr("offset","0%").attr("stop-color",c).attr("stop-opacity",1);
+  rg.append("stop").attr("offset","60%").attr("stop-color",c).attr("stop-opacity",0.6);
+  rg.append("stop").attr("offset","100%").attr("stop-color",c).attr("stop-opacity",0.1);
+});
+
+// 中心核渐变
+const coreGrad = defs.append("radialGradient").attr("id","coreGrad");
+coreGrad.append("stop").attr("offset","0%").attr("stop-color","#fff").attr("stop-opacity",0.9);
+coreGrad.append("stop").attr("offset","30%").attr("stop-color","#4A90D9").attr("stop-opacity",0.8);
+coreGrad.append("stop").attr("offset","70%").attr("stop-color","#27AE60").attr("stop-opacity",0.4);
+coreGrad.append("stop").attr("offset","100%").attr("stop-color","#4A90D9").attr("stop-opacity",0);
+
+/* ======================= 绘制 ======================= */
+// 轨道环
+const orbitG = g.append("g").attr("class","orbits");
+[orbitR[1],orbitR[2],orbitR[3]].forEach((r,i)=>{
+  orbitG.append("circle").attr("class","orbit-ring").attr("cx",cx).attr("cy",cy).attr("r",r);
+  // 轨道光晕
+  orbitG.append("circle").attr("class","orbit-glow").attr("cx",cx).attr("cy",cy).attr("r",r)
+    .attr("stroke",["#4A90D9","#27AE60","#E67E22"][i]);
+});
+
+// 域标签
+const domG = g.append("g").attr("class","domain-labels");
+domains.forEach(d=>{
+  const p = positions["D_"+d];
+  const dg = domG.append("g").attr("transform",`translate(${p.x},${p.y})`);
+  dg.append("circle").attr("r",4).attr("fill",FC[MODULES.find(m=>m.domain===DN[d]).family]).attr("opacity",0.4);
+  dg.append("text").attr("y",-8).attr("text-anchor","middle").text(p.domain)
+    .style("font-size","11px").style("fill","#6c757d").style("font-weight","600");
+  dg.append("text").attr("y",16).attr("text-anchor","middle").text(p.count+"模块")
+    .style("font-size","9px").style("fill","#6c757d");
+});
+
+// 依赖连线
+const linkG = g.append("g").attr("class","links");
+const depLinks = linkG.selectAll(".dep-link").data(DATA_EDGES).enter().append("path")
+  .attr("class","dep-link")
+  .attr("stroke",d=>{
+    const c = M[d[0]].color;
+    return c;
+  })
+  .attr("d",d=>{
+    const s = positions[d[0]], t = positions[d[1]];
+    if(!s||!t) return "";
+    // 曲线连接
+    const mx = (s.x+t.x)/2, my = (s.y+t.y)/2;
+    const dx = t.x-s.x, dy = t.y-s.y;
+    const dist = Math.sqrt(dx*dx+dy*dy);
+    const curve = dist*0.15;
+    const nx = -dy/dist*curve, ny = dx/dist*curve;
+    return `M${s.x},${s.y} Q${mx+nx},${my+ny} ${t.x},${t.y}`;
+  });
+
+// 粒子流（沿依赖线流动的光点）
+const particleG = g.append("g").attr("class","particles");
+const particles = [];
+DATA_EDGES.forEach((edge,i)=>{
+  for(let k=0;k<2;k++){
+    particles.push({edge, t:Math.random(), speed:0.002+Math.random()*0.003, color:M[edge[0]].color, delay:k*0.5});
+  }
+});
+
+// 模块节点
+const nodeG = g.append("g").attr("class","nodes");
+const nodes = nodeG.selectAll(".module-node").data(MODULES).enter().append("g")
+  .attr("class","module-node")
+  .attr("transform",d=>`translate(${positions[d.slug].x},${positions[d.slug].y})`);
+
+// 外层发光圈（脉冲）
+nodes.append("circle").attr("class","glow")
+  .attr("r",d=>positions[d.slug].r+8)
+  .attr("fill","none")
+  .attr("stroke",d=>d.color)
+  .attr("stroke-width",2)
+  .attr("opacity",0.15)
+  .attr("filter","url(#glow2)");
+
+// 主体圆
+nodes.append("circle")
+  .attr("r",d=>positions[d.slug].r)
+  .attr("fill",d=>`url(#rg_${d.family})`)
+  .attr("stroke",d=>d.color)
+  .attr("stroke-width",d=>INFRA.includes(d.slug)?2.5:1.2)
+  .attr("filter","url(#glow)");
+
+// 内核
+nodes.append("circle")
+  .attr("r",d=>positions[d.slug].r*0.4)
+  .attr("fill",d=>d.color)
+  .attr("opacity",0.8);
+
+// 编号文字
+nodes.append("text").attr("y",d=>positions[d.slug].r+12)
+  .text(d=>d.slug.toUpperCase().slice(3,5))
+  .style("font-size","8px").style("fill","#6c757d");
+
+// 中心核
+const core = g.append("g").attr("class","core-node").attr("transform",`translate(${cx},${cy})`);
+core.append("circle").attr("r",60).attr("fill","url(#coreGrad)").attr("filter","url(#glow2)");
+core.append("circle").attr("r",28).attr("fill","#f5f7fa").attr("stroke","#4A90D9").attr("stroke-width",1.5).attr("opacity",0.8);
+core.append("text").attr("y",-4).text("审计").style("font-size","14px").style("font-weight","700");
+core.append("text").attr("y",12).text("智能化").style("font-size","14px").style("font-weight","700");
+
+// 中心脉冲环
+for(let i=0;i<3;i++){
+  core.append("circle").attr("class","pulse-ring-"+i).attr("r",28).attr("fill","none")
+    .attr("stroke","#4A90D9").attr("stroke-width",1.5).attr("opacity",0);
+}
+
+/* ======================= 交互 ======================= */
+const tooltip = d3.select("#tooltip");
+let hovered = null;
+
+nodes.on("mouseover",(e,d)=>{
+  hovered = d.slug;
+  // 高亮
+  d3.select(e.currentTarget).select("circle:nth-child(2)").transition().duration(200).attr("r",positions[d.slug].r+4);
+  d3.select(e.currentTarget).select(".glow").transition().duration(200).attr("opacity",0.5);
+  d3.select(e.currentTarget).select("text").style("opacity",1);
+  // 高亮依赖连线
+  depLinks.attr("opacity",l=>(l[0]===d.slug||l[1]===d.slug)?0.8:0.05).attr("stroke-width",l=>(l[0]===d.slug||l[1]===d.slug)?2:1);
+  // tooltip
+  const up = DEP_MAP[d.slug].up, down = DEP_MAP[d.slug].down;
+  tooltip.html(`<div class="tt-title">${d.name}</div><div class="tt-sub">${d.slug.toUpperCase()} · ${d.domain}<br>${d.family} · ${d.engine}<br>${d.layer}</div>
+    ${up.length||down.length?`<div class="tt-dep">↑ 上游 ${up.length} · ↓ 下游 ${down.length}</div>`:""}`).style("opacity",1)
+    .style("left",(e.clientX+14)+"px").style("top",(e.clientY+14)+"px");
+})
+.on("mousemove",e=>tooltip.style("left",(e.clientX+14)+"px").style("top",(e.clientY+14)+"px"))
+.on("mouseout",(e,d)=>{
+  hovered = null;
+  d3.select(e.currentTarget).select("circle:nth-child(2)").transition().duration(200).attr("r",positions[d.slug].r);
+  d3.select(e.currentTarget).select(".glow").transition().duration(200).attr("opacity",0.15);
+  d3.select(e.currentTarget).select("text").style("opacity",showLabels?1:0);
+  depLinks.attr("opacity",showLinks?0.55:0).attr("stroke-width",1);
+  tooltip.style("opacity",0);
+})
+.on("click",(e,d)=>openPanel(d));
+
+/* ======================= 面板 ======================= */
+function openPanel(m){
+  const up = DEP_MAP[m.slug].up, down = DEP_MAP[m.slug].down;
+  let html = `<h2 style="color:${m.color}">${m.name}</h2>
+    <div class="slug">${m.slug.toUpperCase()} · ${m.engine}</div>
+    <div class="row"><span class="k">业务域</span><span class="v">${m.domain}</span></div>
+    <div class="row"><span class="k">技术家族</span><span class="v"><span class="lg-dot" style="display:inline-block;width:8px;height:8px;background:${m.color};box-shadow:0 0 4px ${m.color}"></span> ${m.family}</span></div>
+    <div class="row"><span class="k">架构层</span><span class="v">${m.layer}</span></div>
+    <div class="row"><span class="k">上游依赖</span><span class="v">${up.length}</span></div>
+    <div class="row"><span class="k">下游被依赖</span><span class="v">${down.length}</span></div>`;
+  if(up.length){
+    html+=`<div class="section-title">上游依赖</div>`;
+    up.forEach(s=>html+=`<div class="dep-item" onclick="openPanel(M['${s}'])" onmouseover="highlightNode('${s}')" onmouseout="clearHighlight()"><span style="color:${M[s].color}">●</span> ${M[s].name} <span style="color:var(--dim);float:right">${s.toUpperCase()}</span></div>`);
+  }
+  if(down.length){
+    html+=`<div class="section-title">下游被依赖</div>`;
+    down.forEach(s=>html+=`<div class="dep-item" onclick="openPanel(M['${s}'])" onmouseover="highlightNode('${s}')" onmouseout="clearHighlight()"><span style="color:${M[s].color}">●</span> ${M[s].name} <span style="color:var(--dim);float:right">${s.toUpperCase()}</span></div>`);
+  }
+  html+=`<a class="enter-btn" href="知识图谱可视化.html" target="_blank">进入知识图谱详情 →</a>`;
+  document.getElementById("panel-content").innerHTML = html;
+  d3.select("#panel").classed("open",true);
+}
+window.openPanel = openPanel;
+window.M = M;
+window.closePanel = ()=>d3.select("#panel").classed("open",false);
+window.highlightNode = function(s){
+  nodes.filter(d=>d.slug===s).select("circle:nth-child(2)").transition().duration(150).attr("r",positions[s].r+6);
+};
+window.clearHighlight = function(){
+  if(!hovered) nodes.select("circle:nth-child(2)").transition().duration(150).attr("r",d=>positions[d.slug].r);
+};
+
+/* ======================= 图例 ======================= */
+const lg = d3.select("#legend");
+lg.html('<div class="lg-title">技术家族</div>');
+Object.entries(FC).forEach(([f,c])=>{
+  const cnt = MODULES.filter(m=>m.family===f).length;
+  if(!cnt) return;
+  lg.append("div").attr("class","lg-row")
+    .html(`<span class="lg-dot" style="background:${c};color:${c}"></span><span style="font-size:12px">${f} <span style="color:var(--dim);font-size:11px">(${cnt})</span></span>`);
+});
+
+/* ======================= 开关 ======================= */
+let autoRotate = true, showParticles = true, showLinks = false, showLabels = false;
+
+d3.select("#t-rotate").on("click",function(){autoRotate=!autoRotate;d3.select(this).classed("active",autoRotate);});
+d3.select("#t-particles").on("click",function(){
+  showParticles=!showParticles;d3.select(this).classed("active",showParticles);
+  particleG.style("display",showParticles?null:"none");
+});
+d3.select("#t-links").on("click",function(){
+  showLinks=!showLinks;d3.select(this).classed("active",showLinks);
+  depLinks.attr("opacity",showLinks?0.55:0);
+});
+d3.select("#t-labels").on("click",function(){
+  showLabels=!showLabels;d3.select(this).classed("active",showLabels);
+  nodes.select("text").style("opacity",showLabels?1:0);
+});
+
+/* ======================= 动画循环 ======================= */
+let rotation = 0;
+let pulseT = 0;
+
+function animate(t){
+  // 星空
+  drawStars(t);
+
+  // 自动旋转
+  if(autoRotate){
+    rotation += 0.0003;
+    g.attr("transform",`rotate(${rotation*180/Math.PI} ${cx} ${cy})`);
+  }
+
+  // 脉冲环
+  pulseT += 0.015;
+  for(let i=0;i<3;i++){
+    const phase = (pulseT + i*0.7) % 2.1;
+    const prog = phase / 2.1;
+    if(prog < 1){
+      d3.select(".pulse-ring-"+i)
+        .attr("r", 28 + prog*80)
+        .attr("opacity", (1-prog)*0.5)
+        .attr("stroke-width", 2*(1-prog));
+    }
+  }
+
+  // 粒子流
+  if(showParticles){
+    const ps = particleG.selectAll(".particle").data(particles);
+    ps.exit().remove();
+    ps.enter().append("circle").attr("class","particle").merge(ps)
+      .each(function(p){
+        p.t += p.speed;
+        if(p.t > 1) p.t -= 1;
+        const s = positions[p.edge[0]], tg = positions[p.edge[1]];
+        if(!s||!tg) return;
+        const mx = (s.x+tg.x)/2, my = (s.y+tg.y)/2;
+        const dx = tg.x-s.x, dy = tg.y-s.y;
+        const dist = Math.sqrt(dx*dx+dy*dy);
+        const curve = dist*0.15;
+        const nx = -dy/dist*curve, ny = dx/dist*curve;
+        // 二次贝塞尔曲线上的点
+        const tt = p.t;
+        const x = (1-tt)*(1-tt)*s.x + 2*(1-tt)*tt*(mx+nx) + tt*tt*tg.x;
+        const y = (1-tt)*(1-tt)*s.y + 2*(1-tt)*tt*(my+ny) + tt*tt*tg.y;
+        d3.select(this).attr("cx",x).attr("cy",y)
+          .attr("r",2+Math.sin(tt*Math.PI)*1.5)
+          .attr("fill",p.color)
+          .attr("opacity",Math.sin(tt*Math.PI)*0.9)
+          .attr("filter","url(#glow)");
+      });
+  }
+
+  requestAnimationFrame(animate);
+}
+
+window.addEventListener("resize",()=>{
+  W=window.innerWidth;H=window.innerHeight;
+  svg.attr("viewBox",`0 0 ${W} ${H}`);
+  initStars();
+});
+
+// 启动
+setTimeout(()=>{
+  document.getElementById("loader").classList.add("hide");
+},800);
+requestAnimationFrame(animate);
+</script>
+</body>
+</html>

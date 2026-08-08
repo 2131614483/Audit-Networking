@@ -1,0 +1,70 @@
+{
+  "audit_date": "2026-08-01",
+  "invoices": [
+    {
+      "invoice_id": "INV-001",
+      "invoice_no": "12345678",
+      "invoice_code": "1100",
+      "invoice_type": "增值税专用发票",
+      "seller_name": "供应商A",
+      "buyer_name": "采购方B",
+      "amount_excl_tax": 1000.00,
+      "tax_rate": 0.13,
+      "tax_amount": 130.00,
+      "amount_incl_tax": 1130.00,
+      "invoice_date": "2026-07-15"
+    },
+    {
+      "invoice_id": "INV-002",
+      "invoice_no": "ABC123",
+      "invoice_code": "1101",
+      "invoice_type": "增值税普通发票",
+      "seller_name": "供应商C",
+      "buyer_name": "采购方D",
+      "amount_excl_tax": 2000.00,
+      "tax_rate": 0.05,
+      "tax_amount": 100.00,
+      "amount_incl_tax": 2100.00,
+      "invoice_date": "2026-07-20"
+    },
+    {
+      "invoice_id": "INV-003",
+      "invoice_no": "87654321",
+      "invoice_code": "1102",
+      "invoice_type": "电子增值税普通发票",
+      "seller_name": "供应商E",
+      "buyer_name": "采购方F",
+      "amount_excl_tax": 5000.00,
+      "tax_rate": 0.06,
+      "tax_amount": 300.00,
+      "amount_incl_tax": 5300.00,
+      "invoice_date": "2026-07-25"
+    },
+    {
+      "invoice_id": "INV-004",
+      "invoice_no": "11223344",
+      "invoice_code": "1103",
+      "invoice_type": "增值税专用发票",
+      "seller_name": "供应商G",
+      "buyer_name": "采购方H",
+      "amount_excl_tax": 800.00,
+      "tax_rate": 0.09,
+      "tax_amount": 72.00,
+      "amount_incl_tax": 872.00,
+      "invoice_date": "2026-09-01"
+    },
+    {
+      "invoice_id": "INV-005",
+      "invoice_no": "99887766",
+      "invoice_code": "1104",
+      "invoice_type": "增值税专用发票",
+      "seller_name": "供应商A",
+      "buyer_name": "采购方B",
+      "amount_excl_tax": 1000.00,
+      "tax_rate": 0.13,
+      "tax_amount": 130.00,
+      "amount_incl_tax": 1130.00,
+      "invoice_date": "2026-07-20"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: ES-03
+  name: 卫星遥感AI环境监测平台
+  ocr:
+    lang: ch
+    use_angle_cls: true

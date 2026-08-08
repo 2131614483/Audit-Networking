@@ -1,0 +1,27 @@
+{
+  "slug": "it_01",
+  "family": "it",
+  "module_name": "",
+  "total_bytes": 13955739,
+  "total_mb": 13.31,
+  "files": [
+    {
+      "file": "configs.jsonl",
+      "bytes": 2882383
+    },
+    {
+      "file": "logs.jsonl",
+      "bytes": 9033044
+    },
+    {
+      "file": "code_issues.jsonl",
+      "bytes": 2040312
+    }
+  ],
+  "modalities": [
+    "code_issues",
+    "logs",
+    "configs"
+  ],
+  "generated_at": "2026-08-08T15:00:21.251865"
+}

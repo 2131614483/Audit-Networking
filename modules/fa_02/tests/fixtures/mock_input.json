@@ -1,0 +1,29 @@
+{
+  "source": "ERP-A",
+  "fields": [
+    {
+      "raw_name": "应收账款",
+      "value": 1250000
+    },
+    {
+      "raw_name": "A/R",
+      "value": 380000
+    },
+    {
+      "raw_name": "Accounts Receivable",
+      "value": 870000
+    },
+    {
+      "raw_name": "营业收入",
+      "value": 9800000
+    },
+    {
+      "raw_name": "Revenue",
+      "value": 4100000
+    },
+    {
+      "raw_name": "Pending Settlement XYZQQ",
+      "value": 0
+    }
+  ]
+}

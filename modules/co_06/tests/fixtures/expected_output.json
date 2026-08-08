@@ -1,0 +1,42 @@
+{
+  "report_id": "SAR-DYNAMIC",
+  "status": "generated",
+  "template": {
+    "regulator": "中国人民银行",
+    "name": "可疑交易报告（中国央行）",
+    "deadline_days": 5,
+    "format": "HTML/PDF via RPA"
+  },
+  "submission_deadline": "2025-06-20T08:00:00+00:00",
+  "risk_level": "high",
+  "risk_score": 100,
+  "report_quality": {
+    "total_score": 85.5,
+    "grade": "良好",
+    "breakdown": {
+      "completeness": {"score": 28.5, "max": 30, "sub_scores": {"mandatory_fill": 13.5, "attachments": 10.0, "data_source": 5.0}},
+      "accuracy": {"score": 15.0, "max": 25, "sub_scores": {"amount_match": 0, "date_match": 5.0, "identity_match": 5.0, "regulation_cite": 5.0}},
+      "logic": {"score": 25.0, "max": 25, "sub_scores": {"reason_sufficient": 10.0, "analysis_depth": 10.0, "conclusion_consistency": 5.0}},
+      "compliance": {"score": 17.0, "max": 20, "sub_scores": {"format_compliance": 7.0, "timeliness": 5.0, "confidentiality": 5.0}}
+    },
+    "mandatory_fill_rate": 90.0,
+    "auto_fill_rate": 76.7
+  },
+  "suspicious_patterns_codes": ["STRUCTURING", "LAYERING", "SMURFING", "MONEY_LAUNDRY", "HIGH_RISK_JURISDICTION"],
+  "narrative_contains": ["主体：张某", "涉及交易 8 笔", "频繁跨境", "关联账户 3 个"],
+  "conclusion": {
+    "verdict": "建议提交 SAR",
+    "confidence": 1.0,
+    "suggested_actions_count": 4
+  },
+  "summary": {
+    "subject_count": 2,
+    "tx_count": 8,
+    "tx_amount_total": 321300.0,
+    "tx_currency": "CNY",
+    "related_accounts_count": 3,
+    "related_parties_count": 4
+  },
+  "output_note": "分析师快速复核后提交",
+  "attachments_suggested_min_count": 3
+}

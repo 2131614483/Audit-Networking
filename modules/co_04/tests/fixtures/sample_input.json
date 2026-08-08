@@ -1,0 +1,41 @@
+{
+  "customers": [
+    {"customer_id": "C001", "name": "张三", "risk_level": "medium"},
+    {"customer_id": "C002", "name": "李四", "risk_level": "low"},
+    {"customer_id": "C003", "name": "王五", "risk_level": "low"},
+    {"customer_id": "C004", "name": "赵六", "risk_level": "high"},
+    {"customer_id": "C005", "name": "孙七", "risk_level": "medium"},
+    {"customer_id": "C006", "name": "周八", "risk_level": "low"},
+    {"customer_id": "C007", "name": "吴九", "risk_level": "low"},
+    {"customer_id": "C008", "name": "郑十", "risk_level": "high"},
+    {"customer_id": "C009", "name": "钱十一", "risk_level": "medium"}
+  ],
+  "transactions": [
+    {"tx_id": "TX001", "customer_id": "C001", "amount": 47000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP001", "hour": 10, "tx_type": "transfer", "tx_date": "2025-06-10"},
+    {"tx_id": "TX002", "customer_id": "C001", "amount": 48000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP002", "hour": 11, "tx_type": "transfer", "tx_date": "2025-06-11"},
+    {"tx_id": "TX003", "customer_id": "C001", "amount": 49000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP003", "hour": 12, "tx_type": "transfer", "tx_date": "2025-06-12"},
+    {"tx_id": "TX004", "customer_id": "C001", "amount": 46000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP004", "hour": 13, "tx_type": "transfer", "tx_date": "2025-06-13"},
+
+    {"tx_id": "TX005", "customer_id": "C002", "amount": 100000, "channel": "online", "jurisdiction": "CN", "counterparty": "C003", "hour": 14, "tx_type": "transfer", "tx_date": "2025-06-15"},
+    {"tx_id": "TX006", "customer_id": "C003", "amount": 90000, "channel": "online", "jurisdiction": "CN", "counterparty": "C002", "hour": 15, "tx_type": "transfer", "tx_date": "2025-06-15"},
+
+    {"tx_id": "TX007", "customer_id": "C004", "amount": 50000, "channel": "online", "jurisdiction": "IRAN", "counterparty": "CP_IRAN", "hour": 11, "tx_type": "transfer", "tx_date": "2025-06-16"},
+
+    {"tx_id": "TX008", "customer_id": "C005", "amount": 300000, "channel": "cash", "jurisdiction": "CN", "counterparty": "CP005", "hour": 12, "tx_type": "withdrawal", "tx_date": "2025-06-17"},
+
+    {"tx_id": "TX009", "customer_id": "C006", "amount": 5000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP006", "hour": 2, "tx_type": "transfer", "tx_date": "2025-06-18"},
+    {"tx_id": "TX010", "customer_id": "C006", "amount": 5000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP007", "hour": 3, "tx_type": "transfer", "tx_date": "2025-06-18"},
+    {"tx_id": "TX011", "customer_id": "C006", "amount": 5000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP008", "hour": 23, "tx_type": "transfer", "tx_date": "2025-06-19"},
+    {"tx_id": "TX012", "customer_id": "C006", "amount": 5000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP009", "hour": 1, "tx_type": "transfer", "tx_date": "2025-06-19"},
+    {"tx_id": "TX013", "customer_id": "C006", "amount": 5000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP010", "hour": 4, "tx_type": "transfer", "tx_date": "2025-06-20"},
+
+    {"tx_id": "TX014", "customer_id": "C007", "amount": 1000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP011", "hour": 10, "tx_type": "transfer", "tx_date": "2025-06-21"},
+    {"tx_id": "TX015", "customer_id": "C007", "amount": 2000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP012", "hour": 11, "tx_type": "transfer", "tx_date": "2025-06-21"},
+
+    {"tx_id": "TX016", "customer_id": "C008", "amount": 46000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP013", "hour": 10, "tx_type": "transfer", "tx_date": "2025-06-22"},
+    {"tx_id": "TX017", "customer_id": "C008", "amount": 47000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP014", "hour": 11, "tx_type": "transfer", "tx_date": "2025-06-22"},
+    {"tx_id": "TX018", "customer_id": "C008", "amount": 48000, "channel": "online", "jurisdiction": "CN", "counterparty": "CP015", "hour": 12, "tx_type": "transfer", "tx_date": "2025-06-23"},
+    {"tx_id": "TX019", "customer_id": "C008", "amount": 100000, "channel": "online", "jurisdiction": "CN", "counterparty": "C009", "hour": 14, "tx_type": "transfer", "tx_date": "2025-06-24"},
+    {"tx_id": "TX020", "customer_id": "C009", "amount": 85000, "channel": "online", "jurisdiction": "CN", "counterparty": "C008", "hour": 15, "tx_type": "transfer", "tx_date": "2025-06-24"}
+  ]
+}

@@ -1,0 +1,2652 @@
+{
+  "requirement": "对拟上市企业进行IPO财务规范性审计，审查关联方识别、历史沿革、财务规范性和披露完整性",
+  "plan": {
+    "modules": [
+      {
+        "slug": "ip_04",
+        "name": "AI财务规范性智能诊断系统",
+        "family": "IPO审计",
+        "status": "done",
+        "duration": 0.005,
+        "error": null,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "slug": "ip_03",
+        "name": "知识图谱历史沿革梳理系统",
+        "family": "IPO审计",
+        "status": "done",
+        "duration": 0.007,
+        "error": null,
+        "inputs": [],
+        "outputs": []
+      },
+      {
+        "slug": "fa_02",
+        "name": "多源数据自动标准化",
+        "family": "财务审计",
+        "status": "done",
+        "duration": 0.055,
+        "error": null,
+        "inputs": [],
+        "outputs": [
+          "fa_03"
+        ]
+      },
+      {
+        "slug": "fa_03",
+        "name": "审计数据湖建设",
+        "family": "财务审计",
+        "status": "done",
+        "duration": 0.133,
+        "error": null,
+        "inputs": [
+          "fa_02"
+        ],
+        "outputs": [
+          "fa_10"
+        ]
+      },
+      {
+        "slug": "fa_10",
+        "name": "知识图谱关联方发现引擎",
+        "family": "财务审计",
+        "status": "done",
+        "duration": 0.006,
+        "error": null,
+        "inputs": [
+          "fa_03"
+        ],
+        "outputs": [
+          "fa_12"
+        ]
+      },
+      {
+        "slug": "fa_12",
+        "name": "关联交易披露完整性检查",
+        "family": "财务审计",
+        "status": "done",
+        "duration": 0.005,
+        "error": null,
+        "inputs": [
+          "fa_10"
+        ],
+        "outputs": []
+      }
+    ],
+    "edges": [
+      [
+        "fa_02",
+        "fa_03"
+      ],
+      [
+        "fa_03",
+        "fa_10"
+      ],
+      [
+        "fa_10",
+        "fa_12"
+      ]
+    ],
+    "reasoning": "【LLM 需求理解】\n用户需求聚焦IPO财务规范性审计，涵盖关联方识别、历史沿革、财务规范性和披露完整性。优先选择直接相关的模块：fa_10关联方发现、ip_03历史沿革梳理、ip_04财务规范性诊断。根据依赖关系，fa_10需要fa_03和fa_02作为上游，同时fa_10支持fa_12用于披露完整性检查，故纳入fa_12。这样共6个模块，覆盖核心需求且控制数量。\n\n【关键词】IPO审计, 财务规范性, 关联方识别, 历史沿革, 披露完整性\n【LLM 选定模块】\n  • fa_02(多源数据自动标准化) - 多源数据标准化，为审计数据湖提供标准化数据接入\n  • fa_03(审计数据湖建设) - 审计数据湖建设，存储和整合IPO审计所需的多方数据\n  • fa_10(知识图谱关联方发现引擎) - 知识图谱关联方发现引擎，识别关联方关系及图谱\n  • fa_12(关联交易披露完整性检查) - 关联交易披露完整性检查，验证关联交易披露是否完整\n  • ip_03(知识图谱历史沿革梳理系统) - 知识图谱历史沿革梳理系统，梳理企业历史沿革信息\n  • ip_04(AI财务规范性智能诊断系统) - AI财务规范性智能诊断系统，诊断财务处理的规范性\n【数据流】fa_02→fa_03, fa_03→fa_10, fa_10→fa_12\n【执行顺序】ip_04 → ip_03 → fa_02 → fa_03 → fa_10 → fa_12"
+  },
+  "findings": [
+    {
+      "source": "ip_04",
+      "severity": "高",
+      "title": "财务规范性：收入确认",
+      "detail": "",
+      "source_records": {
+        "records.jsonl": [
+          {
+            "id": "IP_04-000001",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600001",
+            "company_name": "卓郎智能机械股份有限公司",
+            "uscc": "91110000MA0ABC12X1",
+            "source": "卫星",
+            "source_type": "ocr",
+            "account_code": "1002",
+            "account_name": "银行存款",
+            "period": "2023-08",
+            "event_time": "2025-01-20T10:00:00",
+            "amount": 46866149.82,
+            "currency": "HKD",
+            "voucher_no": "V308135",
+            "counterparty": "实控人王某",
+            "counterparty_uscc": "1PRDPNH16EX3MUKE6A",
+            "description": "借款-大额",
+            "quality_flags": [
+              "type_converted"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 0,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000002",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600004",
+            "company_name": "金徽矿业科技股份有限公司",
+            "uscc": "91620000MA3JKL78X9",
+            "source": "会议",
+            "source_type": "ocr",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-11",
+            "event_time": "2026-01-14T10:00:00",
+            "amount": 6571092.9,
+            "currency": "JPY",
+            "voucher_no": "V627225",
+            "counterparty": "卓郎科技",
+            "counterparty_uscc": "2GXR810QRM1HX3LKQA",
+            "description": "采购-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 1,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000003",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600009",
+            "company_name": "海尔智家股份有限公司",
+            "uscc": "91370000MA8YZA78X9",
+            "source": "卫星",
+            "source_type": "stream",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-02",
+            "event_time": "2023-03-23T10:00:00",
+            "amount": 46450026.94,
+            "currency": "CNY",
+            "voucher_no": "V294364",
+            "counterparty": "代理商G",
+            "counterparty_uscc": "A1LM0CTY6CE4TDCB8L",
+            "description": "收款-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 2,
+              "dataset": "ip_04"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "records.jsonl"
+      ]
+    },
+    {
+      "source": "ip_04",
+      "severity": "高",
+      "title": "财务规范性：收入确认",
+      "detail": "",
+      "source_records": {
+        "records.jsonl": [
+          {
+            "id": "IP_04-000001",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600001",
+            "company_name": "卓郎智能机械股份有限公司",
+            "uscc": "91110000MA0ABC12X1",
+            "source": "卫星",
+            "source_type": "ocr",
+            "account_code": "1002",
+            "account_name": "银行存款",
+            "period": "2023-08",
+            "event_time": "2025-01-20T10:00:00",
+            "amount": 46866149.82,
+            "currency": "HKD",
+            "voucher_no": "V308135",
+            "counterparty": "实控人王某",
+            "counterparty_uscc": "1PRDPNH16EX3MUKE6A",
+            "description": "借款-大额",
+            "quality_flags": [
+              "type_converted"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 0,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000002",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600004",
+            "company_name": "金徽矿业科技股份有限公司",
+            "uscc": "91620000MA3JKL78X9",
+            "source": "会议",
+            "source_type": "ocr",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-11",
+            "event_time": "2026-01-14T10:00:00",
+            "amount": 6571092.9,
+            "currency": "JPY",
+            "voucher_no": "V627225",
+            "counterparty": "卓郎科技",
+            "counterparty_uscc": "2GXR810QRM1HX3LKQA",
+            "description": "采购-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 1,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000003",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600009",
+            "company_name": "海尔智家股份有限公司",
+            "uscc": "91370000MA8YZA78X9",
+            "source": "卫星",
+            "source_type": "stream",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-02",
+            "event_time": "2023-03-23T10:00:00",
+            "amount": 46450026.94,
+            "currency": "CNY",
+            "voucher_no": "V294364",
+            "counterparty": "代理商G",
+            "counterparty_uscc": "A1LM0CTY6CE4TDCB8L",
+            "description": "收款-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 2,
+              "dataset": "ip_04"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "records.jsonl"
+      ]
+    },
+    {
+      "source": "ip_04",
+      "severity": "中",
+      "title": "财务规范性：成本费用",
+      "detail": "",
+      "source_records": {
+        "records.jsonl": [
+          {
+            "id": "IP_04-000001",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600001",
+            "company_name": "卓郎智能机械股份有限公司",
+            "uscc": "91110000MA0ABC12X1",
+            "source": "卫星",
+            "source_type": "ocr",
+            "account_code": "1002",
+            "account_name": "银行存款",
+            "period": "2023-08",
+            "event_time": "2025-01-20T10:00:00",
+            "amount": 46866149.82,
+            "currency": "HKD",
+            "voucher_no": "V308135",
+            "counterparty": "实控人王某",
+            "counterparty_uscc": "1PRDPNH16EX3MUKE6A",
+            "description": "借款-大额",
+            "quality_flags": [
+              "type_converted"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 0,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000002",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600004",
+            "company_name": "金徽矿业科技股份有限公司",
+            "uscc": "91620000MA3JKL78X9",
+            "source": "会议",
+            "source_type": "ocr",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-11",
+            "event_time": "2026-01-14T10:00:00",
+            "amount": 6571092.9,
+            "currency": "JPY",
+            "voucher_no": "V627225",
+            "counterparty": "卓郎科技",
+            "counterparty_uscc": "2GXR810QRM1HX3LKQA",
+            "description": "采购-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 1,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000003",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600009",
+            "company_name": "海尔智家股份有限公司",
+            "uscc": "91370000MA8YZA78X9",
+            "source": "卫星",
+            "source_type": "stream",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-02",
+            "event_time": "2023-03-23T10:00:00",
+            "amount": 46450026.94,
+            "currency": "CNY",
+            "voucher_no": "V294364",
+            "counterparty": "代理商G",
+            "counterparty_uscc": "A1LM0CTY6CE4TDCB8L",
+            "description": "收款-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 2,
+              "dataset": "ip_04"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "records.jsonl"
+      ]
+    },
+    {
+      "source": "ip_04",
+      "severity": "中",
+      "title": "财务规范性：资产质量",
+      "detail": "",
+      "source_records": {
+        "records.jsonl": [
+          {
+            "id": "IP_04-000001",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600001",
+            "company_name": "卓郎智能机械股份有限公司",
+            "uscc": "91110000MA0ABC12X1",
+            "source": "卫星",
+            "source_type": "ocr",
+            "account_code": "1002",
+            "account_name": "银行存款",
+            "period": "2023-08",
+            "event_time": "2025-01-20T10:00:00",
+            "amount": 46866149.82,
+            "currency": "HKD",
+            "voucher_no": "V308135",
+            "counterparty": "实控人王某",
+            "counterparty_uscc": "1PRDPNH16EX3MUKE6A",
+            "description": "借款-大额",
+            "quality_flags": [
+              "type_converted"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 0,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000002",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600004",
+            "company_name": "金徽矿业科技股份有限公司",
+            "uscc": "91620000MA3JKL78X9",
+            "source": "会议",
+            "source_type": "ocr",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-11",
+            "event_time": "2026-01-14T10:00:00",
+            "amount": 6571092.9,
+            "currency": "JPY",
+            "voucher_no": "V627225",
+            "counterparty": "卓郎科技",
+            "counterparty_uscc": "2GXR810QRM1HX3LKQA",
+            "description": "采购-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 1,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000003",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600009",
+            "company_name": "海尔智家股份有限公司",
+            "uscc": "91370000MA8YZA78X9",
+            "source": "卫星",
+            "source_type": "stream",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-02",
+            "event_time": "2023-03-23T10:00:00",
+            "amount": 46450026.94,
+            "currency": "CNY",
+            "voucher_no": "V294364",
+            "counterparty": "代理商G",
+            "counterparty_uscc": "A1LM0CTY6CE4TDCB8L",
+            "description": "收款-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 2,
+              "dataset": "ip_04"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "records.jsonl"
+      ]
+    },
+    {
+      "source": "ip_04",
+      "severity": "中",
+      "title": "财务规范性：资产质量",
+      "detail": "",
+      "source_records": {
+        "records.jsonl": [
+          {
+            "id": "IP_04-000001",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600001",
+            "company_name": "卓郎智能机械股份有限公司",
+            "uscc": "91110000MA0ABC12X1",
+            "source": "卫星",
+            "source_type": "ocr",
+            "account_code": "1002",
+            "account_name": "银行存款",
+            "period": "2023-08",
+            "event_time": "2025-01-20T10:00:00",
+            "amount": 46866149.82,
+            "currency": "HKD",
+            "voucher_no": "V308135",
+            "counterparty": "实控人王某",
+            "counterparty_uscc": "1PRDPNH16EX3MUKE6A",
+            "description": "借款-大额",
+            "quality_flags": [
+              "type_converted"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 0,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000002",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600004",
+            "company_name": "金徽矿业科技股份有限公司",
+            "uscc": "91620000MA3JKL78X9",
+            "source": "会议",
+            "source_type": "ocr",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-11",
+            "event_time": "2026-01-14T10:00:00",
+            "amount": 6571092.9,
+            "currency": "JPY",
+            "voucher_no": "V627225",
+            "counterparty": "卓郎科技",
+            "counterparty_uscc": "2GXR810QRM1HX3LKQA",
+            "description": "采购-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 1,
+              "dataset": "ip_04"
+            }
+          },
+          {
+            "id": "IP_04-000003",
+            "batch_id": "BATCH-IP_04",
+            "company_code": "600009",
+            "company_name": "海尔智家股份有限公司",
+            "uscc": "91370000MA8YZA78X9",
+            "source": "卫星",
+            "source_type": "stream",
+            "account_code": "6601",
+            "account_name": "销售费用",
+            "period": "2026-02",
+            "event_time": "2023-03-23T10:00:00",
+            "amount": 46450026.94,
+            "currency": "CNY",
+            "voucher_no": "V294364",
+            "counterparty": "代理商G",
+            "counterparty_uscc": "A1LM0CTY6CE4TDCB8L",
+            "description": "收款-常规",
+            "quality_flags": [
+              "cross_source"
+            ],
+            "_ref": {
+              "file": "records.jsonl",
+              "row": 2,
+              "dataset": "ip_04"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "records.jsonl"
+      ]
+    },
+    {
+      "source": "ip_03",
+      "severity": "高",
+      "title": "沿革异常：?",
+      "detail": "减资事件 2021-12-15 标记 has_resolution=False",
+      "source_records": {
+        "history_events.jsonl": [
+          {
+            "event_id": "HIS-00001",
+            "company_code": "600002",
+            "event_date": "2021-02-23",
+            "event_type": "并购",
+            "description": "公司发生业务调整",
+            "amount": 4010673.43,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 0,
+              "dataset": "ip_03"
+            }
+          },
+          {
+            "event_id": "HIS-00002",
+            "company_code": "600004",
+            "event_date": "2023-07-10",
+            "event_type": "增资",
+            "description": "公司发生业务调整",
+            "amount": 17226603.27,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 1,
+              "dataset": "ip_03"
+            }
+          },
+          {
+            "event_id": "HIS-00003",
+            "company_code": "600002",
+            "event_date": "2020-06-04",
+            "event_type": "重组",
+            "description": "公司发生业务调整",
+            "amount": 36264468.24,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 2,
+              "dataset": "ip_03"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "history_events.jsonl"
+      ]
+    },
+    {
+      "source": "ip_03",
+      "severity": "高",
+      "title": "沿革异常：?",
+      "detail": "改制事件 2023-05-20 标记 has_resolution=False",
+      "source_records": {
+        "history_events.jsonl": [
+          {
+            "event_id": "HIS-00001",
+            "company_code": "600002",
+            "event_date": "2021-02-23",
+            "event_type": "并购",
+            "description": "公司发生业务调整",
+            "amount": 4010673.43,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 0,
+              "dataset": "ip_03"
+            }
+          },
+          {
+            "event_id": "HIS-00002",
+            "company_code": "600004",
+            "event_date": "2023-07-10",
+            "event_type": "增资",
+            "description": "公司发生业务调整",
+            "amount": 17226603.27,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 1,
+              "dataset": "ip_03"
+            }
+          },
+          {
+            "event_id": "HIS-00003",
+            "company_code": "600002",
+            "event_date": "2020-06-04",
+            "event_type": "重组",
+            "description": "公司发生业务调整",
+            "amount": 36264468.24,
+            "_ref": {
+              "file": "history_events.jsonl",
+              "row": 2,
+              "dataset": "ip_03"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "history_events.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 45990854.02，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000001",
+            "counterparty": "中天科技",
+            "amount": 45990854.02,
+            "market_price": 42335411.28,
+            "deviation": 29.0,
+            "pricing": "市场价",
+            "period": "2026-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 0,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000098",
+            "counterparty": "兴业银行",
+            "amount": 46022567.64,
+            "market_price": 31268068.3,
+            "deviation": 91.1,
+            "pricing": "市场价",
+            "period": "2025-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 97,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000244",
+            "counterparty": "客户C",
+            "amount": 45973142.58,
+            "market_price": 45071817.55,
+            "deviation": 117.0,
+            "pricing": "协议价",
+            "period": "2023-03",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 243,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 26077066.88，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000002",
+            "counterparty": "兴业银行",
+            "amount": 26077066.88,
+            "market_price": 26606395.27,
+            "deviation": -11.7,
+            "pricing": "市场价",
+            "period": "2024-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 1,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000047",
+            "counterparty": "代理商G",
+            "amount": 26059678.38,
+            "market_price": 7249252.64,
+            "deviation": 108.2,
+            "pricing": "市场价",
+            "period": "2025-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 46,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 44552590.6，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000003",
+            "counterparty": "懋达实业",
+            "amount": 44552590.6,
+            "market_price": 36925024.22,
+            "deviation": 96.4,
+            "pricing": "协议价",
+            "period": "2025-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 2,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000145",
+            "counterparty": "海尔智家",
+            "amount": 44562444.56,
+            "market_price": 37817692.77,
+            "deviation": 56.4,
+            "pricing": "协议价",
+            "period": "2025-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 144,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000226",
+            "counterparty": "金徽矿业",
+            "amount": 44515153.42,
+            "market_price": 49703069.31,
+            "deviation": 39.6,
+            "pricing": "市场价",
+            "period": "2023-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 225,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 43384315.06，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000004",
+            "counterparty": "供应商A",
+            "amount": 43384315.06,
+            "market_price": 33633128.63,
+            "deviation": 106.3,
+            "pricing": "市场价",
+            "period": "2023-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 3,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000007",
+            "counterparty": "金徽矿业",
+            "amount": 43341401.72,
+            "market_price": 8345780.04,
+            "deviation": 38.8,
+            "pricing": "市场价",
+            "period": "2025-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 6,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 37786568.71，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000005",
+            "counterparty": "分包商F",
+            "amount": 37786568.71,
+            "market_price": 21438447.37,
+            "deviation": 94.2,
+            "pricing": "市场价",
+            "period": "2024-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 4,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000438",
+            "counterparty": "供应商A",
+            "amount": 37814446.1,
+            "market_price": 27575617.91,
+            "deviation": 15.7,
+            "pricing": "协议价",
+            "period": "2026-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 437,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 10888515.24，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000006",
+            "counterparty": "懋达实业",
+            "amount": 10888515.24,
+            "market_price": 49486625.37,
+            "deviation": -3.4,
+            "pricing": "市场价",
+            "period": "2026-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 5,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 43341401.72，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000004",
+            "counterparty": "供应商A",
+            "amount": 43384315.06,
+            "market_price": 33633128.63,
+            "deviation": 106.3,
+            "pricing": "市场价",
+            "period": "2023-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 3,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000007",
+            "counterparty": "金徽矿业",
+            "amount": 43341401.72,
+            "market_price": 8345780.04,
+            "deviation": 38.8,
+            "pricing": "市场价",
+            "period": "2025-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 6,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000035",
+            "counterparty": "瑞达期货",
+            "amount": 43301087.25,
+            "market_price": 46088035.87,
+            "deviation": 118.1,
+            "pricing": "协议价",
+            "period": "2024-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 34,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 8249238.24，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000008",
+            "counterparty": "华信投资",
+            "amount": 8249238.24,
+            "market_price": 33603857.54,
+            "deviation": 70.9,
+            "pricing": "市场价",
+            "period": "2025-05",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 7,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 39855554.69，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000009",
+            "counterparty": "宁德时代",
+            "amount": 39855554.69,
+            "market_price": 27062330.21,
+            "deviation": 84.8,
+            "pricing": "协议价",
+            "period": "2023-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 8,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000415",
+            "counterparty": "兴业银行",
+            "amount": 39850274.96,
+            "market_price": 48326044.25,
+            "deviation": 33.4,
+            "pricing": "协议价",
+            "period": "2026-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 414,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 5380336.8，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000010",
+            "counterparty": "客户C",
+            "amount": 5380336.8,
+            "market_price": 39827627.62,
+            "deviation": 84.5,
+            "pricing": "协议价",
+            "period": "2024-03",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 9,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000239",
+            "counterparty": "华信投资",
+            "amount": 5385608.94,
+            "market_price": 21266296.46,
+            "deviation": 14.5,
+            "pricing": "协议价",
+            "period": "2025-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 238,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000332",
+            "counterparty": "卓郎科技",
+            "amount": 5379867.64,
+            "market_price": 16019003.83,
+            "deviation": -15.8,
+            "pricing": "市场价",
+            "period": "2024-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 331,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 14291111.46，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000011",
+            "counterparty": "客户D",
+            "amount": 14291111.46,
+            "market_price": 28173985.36,
+            "deviation": 47.9,
+            "pricing": "协议价",
+            "period": "2024-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 10,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000160",
+            "counterparty": "瑞达期货",
+            "amount": 14292278.96,
+            "market_price": 39681492.58,
+            "deviation": 43.0,
+            "pricing": "协议价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 159,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 37962054.61，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000012",
+            "counterparty": "关联方E",
+            "amount": 37962054.61,
+            "market_price": 31766290.35,
+            "deviation": 8.6,
+            "pricing": "协议价",
+            "period": "2025-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 11,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 43539814.09，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000013",
+            "counterparty": "中天科技",
+            "amount": 43539814.09,
+            "market_price": 41490184.26,
+            "deviation": 75.2,
+            "pricing": "协议价",
+            "period": "2025-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 12,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000345",
+            "counterparty": "关联方E",
+            "amount": 43540160.48,
+            "market_price": 15081223.84,
+            "deviation": 13.3,
+            "pricing": "市场价",
+            "period": "2025-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 344,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 44845719.36，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000014",
+            "counterparty": "海尔智家",
+            "amount": 44845719.36,
+            "market_price": 8881560.84,
+            "deviation": -8.3,
+            "pricing": "协议价",
+            "period": "2025-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 13,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000360",
+            "counterparty": "北方华创",
+            "amount": 44877008.39,
+            "market_price": 47767350.7,
+            "deviation": 33.1,
+            "pricing": "协议价",
+            "period": "2025-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 359,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 36568697.75，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000015",
+            "counterparty": "供应商B",
+            "amount": 36568697.75,
+            "market_price": 39347186.71,
+            "deviation": 65.5,
+            "pricing": "协议价",
+            "period": "2023-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 14,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000389",
+            "counterparty": "客户C",
+            "amount": 36563993.21,
+            "market_price": 15330545.51,
+            "deviation": -13.5,
+            "pricing": "市场价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 388,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 33494357.79，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000016",
+            "counterparty": "瑞达期货",
+            "amount": 33494357.79,
+            "market_price": 20044769.79,
+            "deviation": 90.3,
+            "pricing": "市场价",
+            "period": "2024-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 15,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000087",
+            "counterparty": "分包商F",
+            "amount": 33483737.58,
+            "market_price": 33910016.4,
+            "deviation": 48.7,
+            "pricing": "市场价",
+            "period": "2026-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 86,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000446",
+            "counterparty": "卓郎科技",
+            "amount": 33472866.17,
+            "market_price": 24502791.19,
+            "deviation": 23.4,
+            "pricing": "协议价",
+            "period": "2024-07",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 445,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 26445172.53，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000017",
+            "counterparty": "金徽矿业",
+            "amount": 26445172.53,
+            "market_price": 34557271.1,
+            "deviation": 103.7,
+            "pricing": "市场价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 16,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 24961998.01，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000018",
+            "counterparty": "代理商G",
+            "amount": 24961998.01,
+            "market_price": 12239532.71,
+            "deviation": 4.6,
+            "pricing": "协议价",
+            "period": "2023-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 17,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 30946648.23，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000019",
+            "counterparty": "分包商F",
+            "amount": 30946648.23,
+            "market_price": 36930791.73,
+            "deviation": 98.5,
+            "pricing": "协议价",
+            "period": "2023-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 18,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 45837359.68，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000020",
+            "counterparty": "海尔智家",
+            "amount": 45837359.68,
+            "market_price": 4622429.15,
+            "deviation": 88.4,
+            "pricing": "市场价",
+            "period": "2024-07",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 19,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 26756954.26，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000021",
+            "counterparty": "瑞达期货",
+            "amount": 26756954.26,
+            "market_price": 7803911.06,
+            "deviation": 95.6,
+            "pricing": "市场价",
+            "period": "2023-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 20,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 26593354.31，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000022",
+            "counterparty": "分包商F",
+            "amount": 26593354.31,
+            "market_price": 16668848.83,
+            "deviation": 112.1,
+            "pricing": "协议价",
+            "period": "2025-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 21,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 38541355.47，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000023",
+            "counterparty": "兴业银行",
+            "amount": 38541355.47,
+            "market_price": 19737773.86,
+            "deviation": 70.1,
+            "pricing": "市场价",
+            "period": "2024-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 22,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 32947282.15，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000024",
+            "counterparty": "代理商G",
+            "amount": 32947282.15,
+            "market_price": 40431580.89,
+            "deviation": 103.6,
+            "pricing": "市场价",
+            "period": "2026-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 23,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 14618312.98，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000025",
+            "counterparty": "供应商A",
+            "amount": 14618312.98,
+            "market_price": 33343963.71,
+            "deviation": 111.4,
+            "pricing": "市场价",
+            "period": "2025-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 24,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 47392446.72，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000026",
+            "counterparty": "中天科技",
+            "amount": 47392446.72,
+            "market_price": 44744777.43,
+            "deviation": 59.6,
+            "pricing": "市场价",
+            "period": "2024-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 25,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 37236943.44，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000027",
+            "counterparty": "北方华创",
+            "amount": 37236943.44,
+            "market_price": 26939826.1,
+            "deviation": 76.4,
+            "pricing": "协议价",
+            "period": "2025-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 26,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000110",
+            "counterparty": "关联方E",
+            "amount": 37217948.9,
+            "market_price": 5124789.77,
+            "deviation": 20.7,
+            "pricing": "市场价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 109,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000220",
+            "counterparty": "宁德时代",
+            "amount": 37240943.01,
+            "market_price": 7065061.1,
+            "deviation": 81.1,
+            "pricing": "协议价",
+            "period": "2023-05",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 219,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000352",
+            "counterparty": "分包商F",
+            "amount": 37261990.3,
+            "market_price": 40415293.49,
+            "deviation": 63.7,
+            "pricing": "协议价",
+            "period": "2026-03",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 351,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 43455229.56，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000028",
+            "counterparty": "宁德时代",
+            "amount": 43455229.56,
+            "market_price": 46536357.6,
+            "deviation": 9.1,
+            "pricing": "市场价",
+            "period": "2023-07",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 27,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000058",
+            "counterparty": "宁德时代",
+            "amount": 43446611.51,
+            "market_price": 42906140.61,
+            "deviation": 106.0,
+            "pricing": "协议价",
+            "period": "2024-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 57,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000152",
+            "counterparty": "客户C",
+            "amount": 43445684.38,
+            "market_price": 44279065.71,
+            "deviation": 46.9,
+            "pricing": "协议价",
+            "period": "2025-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 151,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000186",
+            "counterparty": "供应商A",
+            "amount": 43445702.75,
+            "market_price": 7444525.03,
+            "deviation": 6.5,
+            "pricing": "市场价",
+            "period": "2024-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 185,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 9664770.55，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000029",
+            "counterparty": "客户D",
+            "amount": 9664770.55,
+            "market_price": 20454726.12,
+            "deviation": 37.3,
+            "pricing": "市场价",
+            "period": "2024-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 28,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 15830036.07，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000030",
+            "counterparty": "分包商F",
+            "amount": 15830036.07,
+            "market_price": 17510736.76,
+            "deviation": 65.7,
+            "pricing": "协议价",
+            "period": "2024-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 29,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 19383669.08，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000031",
+            "counterparty": "关联方E",
+            "amount": 19383669.08,
+            "market_price": 11271289.9,
+            "deviation": 107.1,
+            "pricing": "市场价",
+            "period": "2024-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 30,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000106",
+            "counterparty": "客户C",
+            "amount": 19385872.25,
+            "market_price": 14805872.09,
+            "deviation": 39.3,
+            "pricing": "协议价",
+            "period": "2026-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 105,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 36333951.14，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000032",
+            "counterparty": "兴业银行",
+            "amount": 36333951.14,
+            "market_price": 33901421.97,
+            "deviation": 69.7,
+            "pricing": "协议价",
+            "period": "2023-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 31,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000072",
+            "counterparty": "关联方E",
+            "amount": 36305336.05,
+            "market_price": 3390982.67,
+            "deviation": 111.5,
+            "pricing": "市场价",
+            "period": "2023-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 71,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 8566012.34，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000033",
+            "counterparty": "兴业银行",
+            "amount": 8566012.34,
+            "market_price": 43237187.69,
+            "deviation": 38.1,
+            "pricing": "市场价",
+            "period": "2023-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 32,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 16640738.78，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000034",
+            "counterparty": "代理商G",
+            "amount": 16640738.78,
+            "market_price": 19980323.48,
+            "deviation": 27.2,
+            "pricing": "市场价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 33,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 43301087.25，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000007",
+            "counterparty": "金徽矿业",
+            "amount": 43341401.72,
+            "market_price": 8345780.04,
+            "deviation": 38.8,
+            "pricing": "市场价",
+            "period": "2025-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 6,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000035",
+            "counterparty": "瑞达期货",
+            "amount": 43301087.25,
+            "market_price": 46088035.87,
+            "deviation": 118.1,
+            "pricing": "协议价",
+            "period": "2024-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 34,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 20302209.4，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000036",
+            "counterparty": "供应商A",
+            "amount": 20302209.4,
+            "market_price": 47730537.77,
+            "deviation": -16.5,
+            "pricing": "协议价",
+            "period": "2023-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 35,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 28480833.84，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000037",
+            "counterparty": "懋达实业",
+            "amount": 28480833.84,
+            "market_price": 19290038.95,
+            "deviation": -15.7,
+            "pricing": "协议价",
+            "period": "2024-01",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 36,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 16415812.88，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000038",
+            "counterparty": "北方华创",
+            "amount": 16415812.88,
+            "market_price": 24508021.19,
+            "deviation": 0.2,
+            "pricing": "协议价",
+            "period": "2026-12",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 37,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000450",
+            "counterparty": "实控人王某",
+            "amount": 16421131.72,
+            "market_price": 4996650.76,
+            "deviation": 47.3,
+            "pricing": "市场价",
+            "period": "2023-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 449,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 14405940.69，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000039",
+            "counterparty": "分包商F",
+            "amount": 14405940.69,
+            "market_price": 8112655.54,
+            "deviation": 1.9,
+            "pricing": "协议价",
+            "period": "2023-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 38,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 20490781.03，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000040",
+            "counterparty": "中天科技",
+            "amount": 20490781.03,
+            "market_price": 23671361.06,
+            "deviation": 62.6,
+            "pricing": "协议价",
+            "period": "2024-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 39,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000393",
+            "counterparty": "客户C",
+            "amount": 20506941.67,
+            "market_price": 15843757.69,
+            "deviation": 85.8,
+            "pricing": "协议价",
+            "period": "2023-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 392,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 42716841.95，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000041",
+            "counterparty": "客户C",
+            "amount": 42716841.95,
+            "market_price": 41469965.47,
+            "deviation": -8.0,
+            "pricing": "市场价",
+            "period": "2023-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 40,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000101",
+            "counterparty": "金徽矿业",
+            "amount": 42735859.69,
+            "market_price": 1759229.07,
+            "deviation": 53.0,
+            "pricing": "协议价",
+            "period": "2024-09",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 100,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 9409007.8，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000042",
+            "counterparty": "供应商A",
+            "amount": 9409007.8,
+            "market_price": 24100768.1,
+            "deviation": 77.0,
+            "pricing": "市场价",
+            "period": "2026-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 41,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000085",
+            "counterparty": "卓郎科技",
+            "amount": 9402191.92,
+            "market_price": 17307450.94,
+            "deviation": 54.3,
+            "pricing": "市场价",
+            "period": "2023-02",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 84,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 9033497.61，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000043",
+            "counterparty": "代理商G",
+            "amount": 9033497.61,
+            "market_price": 34672986.04,
+            "deviation": 60.7,
+            "pricing": "协议价",
+            "period": "2026-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 42,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000075",
+            "counterparty": "宁德时代",
+            "amount": 9038937.78,
+            "market_price": 668752.99,
+            "deviation": 14.5,
+            "pricing": "市场价",
+            "period": "2026-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 74,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 7931758.59，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000044",
+            "counterparty": "分包商F",
+            "amount": 7931758.59,
+            "market_price": 32008480.58,
+            "deviation": 15.2,
+            "pricing": "协议价",
+            "period": "2026-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 43,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 17810221.19，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000045",
+            "counterparty": "供应商B",
+            "amount": 17810221.19,
+            "market_price": 16976391.04,
+            "deviation": 78.6,
+            "pricing": "市场价",
+            "period": "2024-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 44,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000377",
+            "counterparty": "中天科技",
+            "amount": 17815970.04,
+            "market_price": 13953400.1,
+            "deviation": 33.9,
+            "pricing": "市场价",
+            "period": "2023-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 376,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 12895904.51，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000046",
+            "counterparty": "懋达实业",
+            "amount": 12895904.51,
+            "market_price": 19558151.08,
+            "deviation": 116.9,
+            "pricing": "协议价",
+            "period": "2026-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 45,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000399",
+            "counterparty": "客户D",
+            "amount": 12900753.4,
+            "market_price": 26195508.88,
+            "deviation": 108.7,
+            "pricing": "市场价",
+            "period": "2023-10",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 398,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 26059678.38，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000002",
+            "counterparty": "兴业银行",
+            "amount": 26077066.88,
+            "market_price": 26606395.27,
+            "deviation": -11.7,
+            "pricing": "市场价",
+            "period": "2024-08",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 1,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000047",
+            "counterparty": "代理商G",
+            "amount": 26059678.38,
+            "market_price": 7249252.64,
+            "deviation": 108.2,
+            "pricing": "市场价",
+            "period": "2025-11",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 46,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 32283294.97，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000048",
+            "counterparty": "实控人王某",
+            "amount": 32283294.97,
+            "market_price": 9705290.42,
+            "deviation": 117.6,
+            "pricing": "协议价",
+            "period": "2024-04",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 47,
+              "dataset": "fa_12"
+            }
+          },
+          {
+            "tx_id": "TX-000490",
+            "counterparty": "关联方E",
+            "amount": 32257317.92,
+            "market_price": 38605394.87,
+            "deviation": 6.8,
+            "pricing": "市场价",
+            "period": "2024-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 489,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 21031699.11，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000049",
+            "counterparty": "客户D",
+            "amount": 21031699.11,
+            "market_price": 21039264.94,
+            "deviation": 3.5,
+            "pricing": "市场价",
+            "period": "2025-07",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 48,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    },
+    {
+      "source": "fa_12",
+      "severity": "高",
+      "title": "关联交易未披露",
+      "detail": "交易对手 ，金额 24855867.0，原因：未声明关联方名称；交易金额未披露",
+      "source_records": {
+        "transactions.jsonl": [
+          {
+            "tx_id": "TX-000050",
+            "counterparty": "懋达实业",
+            "amount": 24855867.0,
+            "market_price": 16758310.92,
+            "deviation": 102.3,
+            "pricing": "协议价",
+            "period": "2025-06",
+            "_ref": {
+              "file": "transactions.jsonl",
+              "row": 49,
+              "dataset": "fa_12"
+            }
+          }
+        ]
+      },
+      "datasets": [
+        "transactions.jsonl"
+      ]
+    }
+  ],
+  "module_results": {
+    "ip_04": {
+      "name": "AI财务规范性智能诊断系统",
+      "family": "IPO审计",
+      "status": "done",
+      "duration": 0.005,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "keys": [
+          "diagnosis_score",
+          "risk_level",
+          "industry_benchmark",
+          "problems",
+          "statistics",
+          "suggestions"
+        ]
+      }
+    },
+    "ip_03": {
+      "name": "知识图谱历史沿革梳理系统",
+      "family": "IPO审计",
+      "status": "done",
+      "duration": 0.007,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "keys": [
+          "timeline",
+          "equity_snapshots",
+          "anomalies",
+          "compliance",
+          "company",
+          "statistics",
+          "verdict"
+        ]
+      }
+    },
+    "fa_02": {
+      "name": "多源数据自动标准化",
+      "family": "财务审计",
+      "status": "done",
+      "duration": 0.055,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "keys": [
+          "status",
+          "standardized_fields",
+          "statistics"
+        ]
+      }
+    },
+    "fa_03": {
+      "name": "审计数据湖建设",
+      "family": "财务审计",
+      "status": "done",
+      "duration": 0.133,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "keys": [
+          "module",
+          "name",
+          "status",
+          "batch_id",
+          "project_code",
+          "三区统计",
+          "质量分布",
+          "血缘摘要",
+          "复用率",
+          "去重移除",
+          "阈值",
+          "治理动作",
+          "generated_at"
+        ]
+      }
+    },
+    "fa_10": {
+      "name": "知识图谱关联方发现引擎",
+      "family": "财务审计",
+      "status": "done",
+      "duration": 0.006,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "stats": {
+          "targets": 0,
+          "related": 0,
+          "hidden": 0,
+          "cycles": 0
+        }
+      }
+    },
+    "fa_12": {
+      "name": "关联交易披露完整性检查",
+      "family": "财务审计",
+      "status": "done",
+      "duration": 0.005,
+      "is_mock": false,
+      "error": null,
+      "summary": {
+        "stats": {
+          "total": 50,
+          "undisclosed": 50,
+          "completeness_score": 0.0,
+          "risk_level": "low"
+        }
+      }
+    }
+  },
+  "execution_log": [
+    "=== 开始执行审计编排（共 6 个模块）===",
+    "[1/6] ip_04 AI财务规范性智能诊断系统 → 运行中...",
+    "[1/6] ip_04 AI财务规范性智能诊断系统 → ✓ 完成 (0.005s)",
+    "[2/6] ip_03 知识图谱历史沿革梳理系统 → 运行中...",
+    "[2/6] ip_03 知识图谱历史沿革梳理系统 → ✓ 完成 (0.007s)",
+    "[3/6] fa_02 多源数据自动标准化 → 运行中...",
+    "[3/6] fa_02 多源数据自动标准化 → ✓ 完成 (0.055s)",
+    "[4/6] fa_03 审计数据湖建设 → 运行中...",
+    "[4/6] fa_03 审计数据湖建设 → ✓ 完成 (0.133s)",
+    "[5/6] fa_10 知识图谱关联方发现引擎 → 运行中...",
+    "[5/6] fa_10 知识图谱关联方发现引擎 → ✓ 完成 (0.006s)",
+    "[6/6] fa_12 关联交易披露完整性检查 → 运行中...",
+    "[6/6] fa_12 关联交易披露完整性检查 → ✓ 完成 (0.005s)",
+    "=== 执行完成：成功 6/失败 0/总计 6，总耗时 0.215s ==="
+  ],
+  "total_duration": 0.215
+}

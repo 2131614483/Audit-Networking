@@ -1,0 +1,26 @@
+{
+  "entities": [
+    {"entity_id": "E1", "name": "壳公司甲", "type": "公司", "industry": "贸易", "country": "中国", "regist_date": "2020-03-15"},
+    {"entity_id": "E2", "name": "壳公司乙", "type": "公司", "industry": "咨询", "country": "中国", "regist_date": "2020-05-20"},
+    {"entity_id": "E3", "name": "离岸公司丙", "type": "公司", "industry": "投资", "country": "开曼群岛", "regist_date": "2019-11-10"},
+    {"entity_id": "E4", "name": "张某", "type": "个人", "industry": "", "country": "中国", "regist_date": ""},
+    {"entity_id": "E5", "name": "科技公司丁", "type": "公司", "industry": "科技", "country": "英属维尔京群岛", "regist_date": "2021-02-28"},
+    {"entity_id": "E6", "name": "李某", "type": "个人", "industry": "", "country": "中国", "regist_date": ""},
+    {"entity_id": "E7", "name": "独立贸易公司", "type": "公司", "industry": "贸易", "country": "美国", "regist_date": "2018-07-01"}
+  ],
+  "transactions": [
+    {"from": "E1", "to": "E2", "amount": 100000, "time": "2025-06-01T10:00:00", "txn_type": "转账", "note": "货款"},
+    {"from": "E2", "to": "E3", "amount": 95000, "time": "2025-06-02T11:00:00", "txn_type": "转账", "note": "咨询费"},
+    {"from": "E3", "to": "E1", "amount": 90000, "time": "2025-06-03T14:00:00", "txn_type": "转账", "note": "投资回流"},
+    {"from": "E1", "to": "E4", "amount": 50000, "time": "2025-06-04T09:30:00", "txn_type": "转账", "note": "借款"},
+    {"from": "E4", "to": "E1", "amount": 48000, "time": "2025-06-05T15:20:00", "txn_type": "转账", "note": "还款"},
+    {"from": "E1", "to": "E2", "amount": 20000, "time": "2025-06-06T10:00:00", "txn_type": "转账", "note": "货款"},
+    {"from": "E1", "to": "E2", "amount": 15000, "time": "2025-06-07T10:00:00", "txn_type": "转账", "note": "货款"},
+    {"from": "E1", "to": "E2", "amount": 10000, "time": "2025-06-08T10:00:00", "txn_type": "转账", "note": "货款"},
+    {"from": "E1", "to": "E2", "amount": 30000, "time": "2025-06-09T10:00:00", "txn_type": "转账", "note": "货款"},
+    {"from": "E5", "to": "E6", "amount": 80000, "time": "2025-06-10T13:00:00", "txn_type": "转账", "note": "服务费"},
+    {"from": "E6", "to": "E5", "amount": 75000, "time": "2025-06-11T16:00:00", "txn_type": "转账", "note": "退款"},
+    {"from": "E1", "to": "E5", "amount": 5000000, "time": "2025-06-12T08:45:00", "txn_type": "大额转账", "note": "异常大额"},
+    {"from": "E7", "to": "E1", "amount": 80000, "time": "2025-06-13T11:30:00", "txn_type": "转账", "note": "采购款"}
+  ]
+}

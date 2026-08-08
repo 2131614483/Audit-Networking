@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>审计智能化平台 · 电子云星系</title>
+<style>
+  :root{
+    --bg:#ffffff; --text:#1a1d29; --dim:#6c757d; --accent:#4A90D9;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;overflow:hidden;font-family:"PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text)}
+  #app{position:relative;width:100%;height:100%}
+  canvas{position:absolute;inset:0;display:block}
+  #bg-canvas{z-index:0}
+  #main-canvas{z-index:1;cursor:crosshair}
+
+  /* 顶部 */
+  #topbar{position:absolute;top:0;left:0;right:0;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:16px 28px;pointer-events:none}
+  #topbar .brand{pointer-events:none}
+  #topbar .title{font-size:20px;font-weight:800;background:linear-gradient(90deg,#4A90D9,#27AE60,#E67E22);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:2px}
+  #topbar .sub{font-size:10px;color:var(--dim);letter-spacing:1px;margin-top:3px}
+  #topbar .controls{display:flex;gap:10px;pointer-events:auto}
+  .btn{background:rgba(248,249,250,.6);border:1px solid #e9ecef;border-radius:8px;padding:7px 14px;font-size:12px;color:var(--dim);cursor:pointer;transition:.2s;backdrop-filter:blur(8px);user-select:none}
+  .btn:hover{border-color:var(--accent);color:var(--text);box-shadow:0 0 10px rgba(74,144,217,.25)}
+  .btn.on{background:rgba(74,144,217,.12);border-color:var(--accent);color:var(--accent)}
+
+  /* HUD */
+  #hud{position:absolute;top:70px;left:28px;z-index:10;pointer-events:none;display:flex;gap:12px}
+  .stat{background:rgba(248,249,250,.65);border:1px solid #e9ecef;border-radius:6px;padding:7px 14px;font-size:12px;backdrop-filter:blur(8px)}
+  .stat .n{font-size:18px;font-weight:700;color:var(--accent)}
+  .stat .l{color:var(--dim);font-size:10px;margin-left:4px}
+
+  /* 图例 */
+  #legend{position:absolute;bottom:24px;left:28px;z-index:10;background:rgba(248,249,250,.75);border:1px solid #e9ecef;border-radius:10px;padding:13px 16px;backdrop-filter:blur(10px)}
+  #legend .lt{font-size:10px;color:var(--dim);margin-bottom:8px;letter-spacing:1px;text-transform:uppercase}
+  .lr{display:flex;align-items:center;gap:8px;padding:2px 0}
+  .ld{width:9px;height:9px;border-radius:50%;flex-shrink:0;box-shadow:0 0 6px currentColor}
+
+  /* 提示 */
+  #hint{position:absolute;bottom:24px;right:28px;z-index:10;background:rgba(74,144,217,.08);border:1px solid var(--accent);border-radius:20px;padding:7px 16px;font-size:11px;color:var(--accent);backdrop-filter:blur(8px)}
+
+  /* tooltip */
+  #tip{position:absolute;pointer-events:none;background:rgba(248,249,250,.95);border:1px solid var(--accent);border-radius:8px;padding:10px 14px;font-size:12px;max-width:260px;z-index:100;opacity:0;transition:opacity .12s;box-shadow:0 4px 20px rgba(0,0,0,.5);backdrop-filter:blur(10px)}
+  #tip .tt{font-weight:700;font-size:13px;margin-bottom:3px}
+  #tip .ts{color:var(--dim);line-height:1.5}
+  #tip .td{margin-top:4px;padding-top:4px;border-top:1px solid #e9ecef;color:var(--dim);font-size:11px}
+
+  /* 面板 */
+  #panel{position:absolute;top:0;right:0;bottom:0;width:360px;background:rgba(248,249,250,.93);border-left:1px solid #e9ecef;z-index:20;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);backdrop-filter:blur(16px);overflow-y:auto;padding:20px}
+  #panel.open{transform:translateX(0)}
+  #panel .close{position:absolute;top:14px;right:14px;width:28px;height:28px;border-radius:50%;background:#e9ecef;border:none;color:var(--dim);cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:.15s}
+  #panel .close:hover{background:#dfe3ea;color:var(--text)}
+  #panel h2{font-size:18px;font-weight:700;margin-bottom:4px;line-height:1.3}
+  #panel .slug{font-size:12px;color:var(--dim);margin-bottom:14px;font-family:monospace}
+  #panel .st{font-size:11px;color:var(--accent);margin:14px 0 8px;padding-bottom:6px;border-bottom:1px solid #e9ecef;letter-spacing:1px;text-transform:uppercase}
+  #panel .row{display:flex;justify-content:space-between;padding:5px 0;font-size:13px}
+  #panel .row .k{color:var(--dim)}
+  #panel .row .v{color:var(--text);font-weight:500;text-align:right}
+  #panel .di{padding:6px 10px;margin:3px 0;background:rgba(241,243,245,.6);border-radius:6px;font-size:12px;cursor:pointer;transition:.15s;border-left:2px solid transparent}
+  #panel .di:hover{background:rgba(222,226,230,.7);border-left-color:var(--accent)}
+  #panel .eb{display:block;width:100%;margin-top:16px;padding:10px;background:linear-gradient(135deg,var(--accent),#27AE60);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-align:center;text-decoration:none;transition:.2s}
+  #panel .eb:hover{filter:brightness(1.2);box-shadow:0 4px 14px rgba(74,144,217,.35)}
+
+  /* loader */
+  #loader{position:absolute;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:16px;transition:opacity .6s}
+
+  /* 模态层 */
+  #modal{position:absolute;inset:0;z-index:30;display:none;flex-direction:column;background:rgba(255,255,255,.85);backdrop-filter:blur(6px)}
+  #modal.open{display:flex}
+  #modal-bar{display:flex;align-items:center;justify-content:space-between;padding:10px 20px;background:rgba(248,249,250,.95);border-bottom:1px solid #e9ecef}
+  #modal-title{font-size:15px;font-weight:700;color:var(--text)}
+  #modal-close{width:32px;height:32px;border-radius:50%;background:#e9ecef;border:none;color:var(--dim);cursor:pointer;font-size:18px;display:flex;align-items:center;justify-content:center;transition:.15s}
+  #modal-close:hover{background:#dfe3ea;color:var(--text)}
+  #modal-body{flex:1;overflow-y:auto;padding:24px 28px}
+  #modal-body .mb-head{margin-bottom:20px}
+  #modal-body .mb-title{font-size:24px;font-weight:800;line-height:1.3}
+  #modal-body .mb-slug{font-size:13px;color:var(--dim);margin-top:4px;font-family:monospace;letter-spacing:1px}
+  #modal-body .mb-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-bottom:24px}
+  #modal-body .mb-card{background:rgba(241,243,245,.6);border:1px solid #e9ecef;border-radius:8px;padding:12px 14px}
+  #modal-body .mb-card .k{font-size:11px;color:var(--dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px}
+  #modal-body .mb-card .v{font-size:14px;color:var(--text);font-weight:600}
+  #modal-body .mb-section{margin-bottom:24px}
+  #modal-body .mb-section-title{font-size:13px;font-weight:700;color:var(--accent);margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid #e9ecef;letter-spacing:1px;text-transform:uppercase}
+  #modal-body .mb-dep-item{display:flex;align-items:center;gap:8px;padding:8px 12px;margin:4px 0;background:rgba(241,243,245,.5);border-radius:6px;cursor:pointer;transition:.15s;border-left:2px solid transparent}
+  #modal-body .mb-dep-item:hover{background:rgba(222,226,230,.7);border-left-color:var(--accent)}
+  #modal-body .mb-dep-item .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+  #modal-body .mb-dep-item .arrow{color:var(--dim);font-size:12px;margin:0 4px}
+  #modal-body .mb-open-btn{display:inline-block;margin-top:8px;padding:10px 20px;background:linear-gradient(135deg,var(--accent),#27AE60);border:none;border-radius:8px;color:#fff;font-size:13px;font-weight:600;cursor:pointer;text-decoration:none;transition:.2s}
+  #modal-body .mb-open-btn:hover{filter:brightness(1.2);box-shadow:0 4px 14px rgba(74,144,217,.35)}
+  #modal-body .mb-graph{width:100%;min-height:180px;background:rgba(248,249,250,.4);border:1px solid #e9ecef;border-radius:10px;margin-bottom:16px}
+  #modal-body .mb-iface{padding:10px 12px;margin:4px 0;background:rgba(241,243,245,.6);border-radius:8px;border-left:3px solid var(--accent)}
+  #modal-body .mb-iface-head{display:flex;align-items:center;gap:8px;margin-bottom:4px;flex-wrap:wrap}
+  #modal-body .mb-iface-module{font-size:13px;font-weight:600;cursor:pointer;color:var(--accent)}
+  #modal-body .mb-iface-module:hover{text-decoration:underline}
+  #modal-body .mb-iface-type{font-size:11px;padding:2px 8px;border-radius:10px;color:#fff}
+  #modal-body .mb-iface-fmt{font-size:10px;padding:1px 6px;border-radius:8px;border:1px solid #e9ecef;color:var(--dim)}
+  #modal-body .mb-iface-desc{font-size:11px;color:var(--dim);line-height:1.5;margin:4px 0}
+  #modal-body .mb-iface-fields{display:flex;flex-wrap:wrap;gap:3px;margin-top:4px}
+  #modal-body .mb-iface-field{font-size:10px;padding:1px 6px;background:rgba(74,144,217,.1);border-radius:4px;color:var(--accent);font-family:monospace}
+  #loader.hide{opacity:0;pointer-events:none}
+  #loader .sp{width:44px;height:44px;border:2px solid #e9ecef;border-top-color:var(--accent);border-radius:50%;animation:sp 1s linear infinite}
+  #loader .tx{font-size:12px;color:var(--dim);letter-spacing:2px}
+  @keyframes sp{to{transform:rotate(360deg)}}
+</style>
+</head>
+<body>
+<div id="app">
+  <canvas id="bg-canvas"></canvas>
+  <canvas id="main-canvas"></canvas>
+
+  <div id="topbar">
+    <div class="brand">
+      <div class="title">审计智能化平台 · 电子云星系</div>
+      <div class="sub">PARTICLE NETWORK · 78 NODES · 12 DOMAINS · 10 FAMILIES</div>
+    </div>
+    <div class="controls">
+      <div class="btn on" id="b-dynamic">动态</div>
+      <div class="btn on" id="b-cloud">电子云连线</div>
+      <div class="btn on" id="b-flow">数据流</div>
+      <div class="btn" id="b-dep">依赖连线</div>
+      <div class="btn" id="b-label">标签</div>
+      <div class="btn on" id="b-attract">鼠标引力</div>
+    </div>
+  </div>
+
+  <div id="hud">
+    <div class="stat"><span class="n">78</span><span class="l">节点</span></div>
+    <div class="stat"><span class="n">12</span><span class="l">业务域</span></div>
+    <div class="stat"><span class="n">44</span><span class="l">依赖</span></div>
+  </div>
+
+  <div id="legend"></div>
+  <div id="hint">移动鼠标产生引力 · 滚轮缩放 · 拖拽平移 · 点击节点查看详情</div>
+  <div id="tip"></div>
+
+  <div id="panel">
+    <button class="close" onclick="closePanel()">×</button>
+    <div id="panel-content"></div>
+  </div>
+
+  <!-- 知识图谱模态层 -->
+  <div id="modal">
+    <div id="modal-bar">
+      <span id="modal-title">知识图谱详情</span>
+      <button id="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modal-body"></div>
+  </div>
+
+  <div id="loader">
+    <div class="sp"></div>
+    <div class="tx">FORMING PARTICLE CLOUD...</div>
+  </div>
+</div>
+
+<script>
+/* ======================= 数据 ======================= */
+const FC = {"机器学习":"#4A90D9","大语言模型":"#E67E22","知识图谱":"#27AE60","RPA流程自动化":"#9B59B6","计算机视觉":"#E74C3C","区块链":"#F39C12","联邦学习":"#1ABC9C","流处理":"#5D6D7E","资源调度":"#16A085","数据看板":"#D35400"};
+const DN = {fa:"财务审计",ia:"内部审计",co:"合规审计",it:"IT审计",fo:"法务审计",ta:"税务审计",sc:"供应链审计",es:"ESG审计",ip:"IPO审计",fi:"金融审计",cb:"跨境审计",cm:"持续审计"};
+const RAW = [
+  ["fa_02","多源数据自动标准化","机器学习","MLEngine"],["fa_03","审计数据湖建设","机器学习","MLEngine"],
+  ["fa_04","智能函证管理平台","区块链","BlockchainEngine"],["fa_05","区块链银行函证","区块链","BlockchainEngine"],
+  ["fa_06","AI函证差异智能分析","知识图谱","KGEngine"],["fa_07","智能底稿自动生成平台","知识图谱","KGEngine"],
+  ["fa_08","底稿自动勾稽检查","机器学习","MLEngine"],["fa_09","AI底稿质量复核助手","大语言模型","LLMEngine"],
+  ["fa_10","知识图谱关联方发现引擎","机器学习","MLEngine"],["fa_11","关联交易定价公允性AI分析","机器学习","MLEngine"],
+  ["fa_12","关联交易披露完整性检查","知识图谱","KGEngine"],
+  ["ia_01","动态风险地图与智能审计计划","大语言模型","LLMEngine"],["ia_02","持续风险监控平台","知识图谱","KGEngine"],
+  ["ia_03","审计资源智能分配引擎","资源调度","ResourceEngine"],["ia_04","审计价值仪表板","数据看板","DashboardEngine"],
+  ["ia_05","AI驱动的管理建议书","大语言模型","LLMEngine"],["ia_06","内审价值量化模型","机器学习","MLEngine"],
+  ["ia_07","智能整改跟踪平台","RPA流程自动化","RPAEngine"],["ia_08","整改效果自动验证","RPA流程自动化","RPAEngine"],
+  ["co_01","全球法规智能监控平台","知识图谱","KGEngine"],["co_02","AI法规影响评估引擎","大语言模型","LLMEngine"],
+  ["co_03","合规审计程序自动更新","大语言模型","LLMEngine"],["co_04","AML智能交易监控引擎","知识图谱","KGEngine"],
+  ["co_05","知识图谱洗钱网络发现","知识图谱","KGEngine"],["co_06","AI可疑交易报告自动生成","知识图谱","KGEngine"],
+  ["co_07","AI数据资产自动发现与分类","机器学习","MLEngine"],["co_08","知识图谱数据流分析","知识图谱","KGEngine"],
+  ["co_09","隐私合规自动审计引擎","大语言模型","LLMEngine"],
+  ["it_01","IT审计自动化平台","RPA流程自动化","RPAEngine"],["it_02","AI配置合规扫描引擎","机器学习","MLEngine"],
+  ["it_03","AI代码审计助手","知识图谱","KGEngine"],["it_04","IT持续审计平台","机器学习","MLEngine"],
+  ["it_05","区块链审计日志存证","区块链","BlockchainEngine"],
+  ["fo_01","全量交易智能舞弊扫描","机器学习","MLEngine"],["fo_02","知识图谱舞弊网络分析","知识图谱","KGEngine"],
+  ["fo_03","NLP文本舞弊信号检测","大语言模型","LLMEngine"],["fo_04","AI电子取证平台","计算机视觉","CVEngine"],
+  ["fo_05","多语言智能翻译与分析","大语言模型","LLMEngine"],["fo_06","证据链智能构建","大语言模型","LLMEngine"],
+  ["ta_01","AI发票智能审计平台","计算机视觉","CVEngine"],["ta_02","发票四单自动匹配引擎","机器学习","MLEngine"],
+  ["ta_03","进项税额转出AI计算","大语言模型","LLMEngine"],["ta_04","AI转让定价文档自动生成","大语言模型","LLMEngine"],
+  ["ta_05","ML可比公司智能筛选","机器学习","MLEngine"],["ta_06","知识图谱全球关联交易分析","知识图谱","KGEngine"],
+  ["sc_01","供应商风险智能评分平台","机器学习","MLEngine"],["sc_02","知识图谱供应链网络分析","知识图谱","KGEngine"],
+  ["sc_03","供应商持续风险监控平台","机器学习","MLEngine"],["sc_04","ML采购价格异常检测平台","机器学习","MLEngine"],
+  ["sc_05","AI采购价格基准平台","机器学习","MLEngine"],
+  ["es_01","ESG多源数据智能采集平台","计算机视觉","CVEngine"],["es_02","AI碳排放自动核算引擎","机器学习","MLEngine"],
+  ["es_03","卫星遥感AI环境监测平台","计算机视觉","CVEngine"],["es_04","知识图谱绿色漂洗检测平台","知识图谱","KGEngine"],
+  ["es_05","ESG审计知识库与AI助手","大语言模型","LLMEngine"],["es_06","AI-ESG审计方法论引擎","大语言模型","LLMEngine"],
+  ["ip_01","IPO审计智能加速平台","大语言模型","LLMEngine"],["ip_02","AI监管反馈智能回复系统","大语言模型","LLMEngine"],
+  ["ip_03","知识图谱历史沿革梳理系统","知识图谱","KGEngine"],["ip_04","AI财务规范性智能诊断系统","机器学习","MLEngine"],
+  ["ip_05","IPO案例知识库与RAG系统","大语言模型","LLMEngine"],["ip_06","整改方案AI推荐引擎","大语言模型","LLMEngine"],
+  ["fi_01","AI信贷资产质量评估引擎","机器学习","MLEngine"],["fi_02","知识图谱担保链风险分析系统","知识图谱","KGEngine"],
+  ["fi_03","ML贷款违约预测验证系统","机器学习","MLEngine"],["fi_04","监管报表智能核对平台","大语言模型","LLMEngine"],
+  ["fi_05","AI监管口径自动更新系统","大语言模型","LLMEngine"],
+  ["cb_01","联邦学习跨境审计平台","联邦学习","FederationEngine"],["cb_02","数据脱敏网关与合规路由系统","机器学习","MLEngine"],
+  ["cb_03","多法域合规知识库","大语言模型","LLMEngine"],["cb_04","AI多准则自动转换引擎","大语言模型","LLMEngine"],
+  ["cb_05","AI多语言审计协作平台","大语言模型","LLMEngine"],["cb_06","集团审计智能协作平台","大语言模型","LLMEngine"],
+  ["cm_01","持续审计技术平台","流处理","StreamingEngine"],["cm_02","智能预警分级与自动处理系统","RPA流程自动化","RPAEngine"],
+  ["cm_03","持续审计方法论框架","大语言模型","LLMEngine"],["cm_04","持续审计价值量化模型","机器学习","MLEngine"],
+  ["cm_05","持续审计仪表板","机器学习","MLEngine"]
+];
+const INFRA = ["fa_03","cb_01","co_01","es_01","cm_01"];
+const MODULES = RAW.map(([s,n,f,e])=>({slug:s,name:n,family:f,engine:e,domain:DN[s.slice(0,2)],layer:INFRA.includes(s)?"基础平台层":"应用层",color:FC[f]}));
+const M = {}; MODULES.forEach(m=>M[m.slug]=m);
+const DATA_EDGES = [["fa_02","fa_03"],["fa_03","fa_07"],["fa_03","fa_10"],["fa_03","fo_02"],["fa_03","cm_01"],["fa_03","ip_01"],["fa_06","fa_07"],["fa_07","ip_01"],["fa_10","ip_01"],["fa_10","fa_11"],["fa_10","fa_12"],["fa_08","fa_09"],["co_01","co_02"],["co_01","co_03"],["co_01","co_07"],["co_01","co_09"],["co_01","ip_01"],["co_04","co_05"],["co_05","co_04"],["co_04","co_06"],["co_05","co_06"],["co_02","co_03"],["es_01","sc_01"],["es_01","es_02"],["es_01","es_03"],["es_01","es_04"],["es_01","es_05"],["es_01","es_06"],["cb_01","cb_02"],["cb_01","cb_03"],["cb_01","cb_04"],["cb_01","cb_05"],["cb_01","cb_06"],["cm_01","cm_02"],["cm_01","cm_03"],["cm_01","cm_04"],["cm_01","cm_05"],["ta_01","ta_02"],["fi_01","fi_03"],["fi_02","fi_01"],["ia_01","ia_02"],["ia_02","ia_06"],["ia_06","ia_04"],["sc_01","sc_03"],["sc_03","sc_04"]];
+const DEP = {}; MODULES.forEach(m=>DEP[m.slug]={up:[],down:[]});
+DATA_EDGES.forEach(([s,t])=>{if(M[s]&&M[t]){DEP[s].down.push(t);DEP[t].up.push(s);}});
+
+/* ======================= 接口契约数据（内嵌，78 模块） ======================= */
+const FMT_COLOR = {"json/dict":"#4A90D9","parquet":"#27AE60","stream":"#E67E22","graph":"#9B59B6","jsonl":"#16A085","api":"#E74C3C"};
+const NETWORK_SCHEMA = {
+  fa_02:{name:"多源数据自动标准化",inputs:[{module:"external",data_type:"多源原始数据",format:"jsonl",description:"来自企业ERP、银行流水、业务系统的多源异构原始数据",fields:["company_code","source_system","raw_record","period","currency"]}],outputs:[{module:"fa_03",data_type:"标准化数据集",format:"json/dict",description:"字段名标准化、类型转换、去重后的多源数据 records",fields:["company_code","account_code","period","amount","currency","voucher_no","source"]}]},
+  fa_03:{name:"审计数据湖建设",inputs:[{module:"fa_02",data_type:"标准化数据集",format:"json/dict",description:"标准化后的多源数据 records，入库为 ODS/DWD/ADS 分层",fields:["company_code","account_code","period","amount","currency","voucher_no","source"]}],outputs:[{module:"fa_07",data_type:"数据湖分区数据",format:"parquet",description:"底稿生成所需的 ADS 宽表（财务科目余额与明细）",fields:["company_code","account_code","period","amount","currency","voucher_no","layer","partition_date"]},{module:"fa_10",data_type:"数据湖分区数据",format:"parquet",description:"关联方发现所需的股东、交易对手等实体数据",fields:["company_code","entity_id","entity_name","transaction_id","counterparty","amount","period","layer"]},{module:"fo_02",data_type:"数据湖分区数据",format:"parquet",description:"舞弊网络分析所需的全量交易明细数据",fields:["company_code","transaction_id","counterparty","amount","period","voucher_no","layer"]},{module:"cm_01",data_type:"数据湖分区数据",format:"stream",description:"持续审计平台订阅的实时与近实时审计数据流",fields:["company_code","transaction_id","amount","period","event_time","source_system","layer"]},{module:"ip_01",data_type:"数据湖分区数据",format:"parquet",description:"IPO 审计所需的财务规范性诊断数据",fields:["company_code","account_code","period","amount","currency","voucher_no","layer"]}]},
+  fa_04:{name:"智能函证管理平台",inputs:[{module:"external",data_type:"函证请求与回函数据",format:"json/dict",description:"审计人员录入的函证请求及银行回函数据",fields:["confirmation_id","bank_code","account_no","request_type","request_date","reply_date","reply_amount"]}],outputs:[]},
+  fa_05:{name:"区块链银行函证",inputs:[{module:"external",data_type:"银行函证请求",format:"json/dict",description:"区块链网络上的银行函证请求与链上回函",fields:["confirmation_id","bank_code","account_no","request_hash","tx_hash","block_height","reply_amount"]}],outputs:[]},
+  fa_06:{name:"AI函证差异智能分析",inputs:[{module:"external",data_type:"函证回函数据",format:"json/dict",description:"外部采集的函证回函及账面记录，用于差异比对",fields:["confirmation_id","bank_code","item","book_amount","confirmed_amount","period"]}],outputs:[{module:"fa_07",data_type:"函证差异分析结果",format:"json/dict",description:"函证回函与账面差异的智能分析结果，供底稿生成引用",fields:["confirmation_id","bank_code","item","expected_amount","confirmed_amount","difference","diff_reason"]}]},
+  fa_07:{name:"智能底稿自动生成平台",inputs:[{module:"fa_03",data_type:"数据湖分区数据",format:"parquet",description:"底稿生成所需的 ADS 宽表（财务科目余额与明细）",fields:["company_code","account_code","period","amount","currency","voucher_no","layer","partition_date"]},{module:"fa_06",data_type:"函证差异分析结果",format:"json/dict",description:"函证差异分析结果，作为底稿差异说明的依据",fields:["confirmation_id","bank_code","item","expected_amount","confirmed_amount","difference","diff_reason"]}],outputs:[{module:"ip_01",data_type:"审计底稿文档",format:"json/dict",description:"自动生成的审计底稿文档，供 IPO 审计引用",fields:["workpaper_id","title","content","checklist","prepared_by","review_status"]}]},
+  fa_08:{name:"底稿自动勾稽检查",inputs:[{module:"external",data_type:"审计底稿",format:"json/dict",description:"外部导入的待勾稽审计底稿及勾稽规则",fields:["workpaper_id","title","content","checklist","prepared_by"]}],outputs:[{module:"fa_09",data_type:"底稿勾稽结果",format:"json/dict",description:"底稿勾稽检查结果，供 AI 底稿质量复核使用",fields:["workpaper_id","check_item","expected_value","actual_value","is_match","variance","check_status"]}]},
+  fa_09:{name:"AI底稿质量复核助手",inputs:[{module:"fa_08",data_type:"底稿勾稽结果",format:"json/dict",description:"底稿勾稽检查结果，作为质量复核输入",fields:["workpaper_id","check_item","expected_value","actual_value","is_match","variance","check_status"]}],outputs:[]},
+  fa_10:{name:"知识图谱关联方发现引擎",inputs:[{module:"fa_03",data_type:"数据湖分区数据",format:"parquet",description:"关联方发现所需的股东、交易对手等实体数据",fields:["company_code","entity_id","entity_name","transaction_id","counterparty","amount","period","layer"]}],outputs:[{module:"ip_01",data_type:"关联方图谱",format:"graph",description:"关联方知识图谱，供 IPO 审计识别关联关系",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]},{module:"fa_11",data_type:"关联方图谱",format:"graph",description:"关联方图谱，供关联交易定价公允性分析",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]},{module:"fa_12",data_type:"关联方图谱",format:"graph",description:"关联方图谱，供关联交易披露完整性检查",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]}]},
+  fa_11:{name:"关联交易定价公允性AI分析",inputs:[{module:"fa_10",data_type:"关联方图谱",format:"graph",description:"关联方图谱，用于定位关联交易并分析定价公允性",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]}],outputs:[]},
+  fa_12:{name:"关联交易披露完整性检查",inputs:[{module:"fa_10",data_type:"关联方图谱",format:"graph",description:"关联方图谱，用于核对关联交易披露是否完整",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]}],outputs:[]},
+  ia_01:{name:"动态风险地图与智能审计计划",inputs:[{module:"external",data_type:"企业风险与历史审计数据",format:"json/dict",description:"企业风险登记册、历史审计发现及业务环境数据",fields:["company_code","risk_category","business_unit","historical_findings","period"]}],outputs:[{module:"ia_02",data_type:"风险地图",format:"json/dict",description:"动态风险地图，驱动持续风险监控平台",fields:["risk_id","risk_category","risk_level","business_unit","likelihood","impact","trend"]}]},
+  ia_02:{name:"持续风险监控平台",inputs:[{module:"ia_01",data_type:"风险地图",format:"json/dict",description:"动态风险地图，作为持续监控的基线",fields:["risk_id","risk_category","risk_level","business_unit","likelihood","impact","trend"]}],outputs:[{module:"ia_06",data_type:"风险监控信号",format:"stream",description:"风险阈值触发信号，供内审价值量化模型使用",fields:["signal_id","risk_id","signal_type","triggered_at","threshold","current_value","severity"]}]},
+  ia_03:{name:"审计资源智能分配引擎",inputs:[{module:"external",data_type:"审计项目与人员资源数据",format:"json/dict",description:"审计项目计划、人员技能库与工时数据",fields:["project_id","auditor_id","skill","availability","priority","period"]}],outputs:[]},
+  ia_04:{name:"审计价值仪表板",inputs:[{module:"ia_06",data_type:"内审价值指标",format:"json/dict",description:"内审价值量化指标，用于仪表板可视化",fields:["metric_id","metric_name","value","period","target","achievement_rate","value_type"]}],outputs:[]},
+  ia_05:{name:"AI驱动的管理建议书",inputs:[{module:"external",data_type:"审计发现与管理层访谈",format:"json/dict",description:"审计发现、管理层访谈记录及行业最佳实践",fields:["finding_id","finding_title","severity","interview_notes","recommendation"]}],outputs:[]},
+  ia_06:{name:"内审价值量化模型",inputs:[{module:"ia_02",data_type:"风险监控信号",format:"stream",description:"风险监控信号，作为内审价值量化输入",fields:["signal_id","risk_id","signal_type","triggered_at","threshold","current_value","severity"]}],outputs:[{module:"ia_04",data_type:"内审价值指标",format:"json/dict",description:"量化后的内审价值指标，供审计价值仪表板展示",fields:["metric_id","metric_name","value","period","target","achievement_rate","value_type"]}]},
+  ia_07:{name:"智能整改跟踪平台",inputs:[{module:"external",data_type:"整改任务与审计发现",format:"json/dict",description:"审计发现对应的整改任务清单及责任人",fields:["task_id","finding_id","owner","due_date","status","priority"]}],outputs:[]},
+  ia_08:{name:"整改效果自动验证",inputs:[{module:"external",data_type:"整改记录与验证数据",format:"json/dict",description:"整改完成记录及验证所需的业务数据",fields:["task_id","finding_id","remediation_evidence","verify_method","verify_date"]}],outputs:[]},
+  co_01:{name:"全球法规智能监控平台",inputs:[{module:"external",data_type:"全球法规数据源",format:"jsonl",description:"全球各地区监管机构发布的法规更新数据流",fields:["regulation_id","title","jurisdiction","publish_date","source_url","raw_text"]}],outputs:[{module:"co_02",data_type:"法规变更事件",format:"json/dict",description:"结构化法规变更事件，供影响评估引擎使用",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]},{module:"co_03",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，驱动合规审计程序更新",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]},{module:"co_07",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，触发数据资产分类调整",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]},{module:"co_09",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，触发隐私合规审计",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]},{module:"ip_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，供 IPO 审计评估合规影响",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]}]},
+  co_02:{name:"AI法规影响评估引擎",inputs:[{module:"co_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，作为影响评估输入",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]}],outputs:[{module:"co_03",data_type:"法规影响评估",format:"json/dict",description:"法规影响评估结果，辅助合规审计程序更新",fields:["regulation_id","affected_processes","impact_score","recommended_actions","assessment_date"]}]},
+  co_03:{name:"合规审计程序自动更新",inputs:[{module:"co_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，驱动审计程序更新",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]},{module:"co_02",data_type:"法规影响评估",format:"json/dict",description:"法规影响评估结果，指导审计程序调整方向",fields:["regulation_id","affected_processes","impact_score","recommended_actions","assessment_date"]}],outputs:[]},
+  co_04:{name:"AML智能交易监控引擎",inputs:[{module:"co_05",data_type:"洗钱网络图谱",format:"graph",description:"洗钱网络图谱反馈，用于增强 AML 监控规则",fields:["network_id","entity_id","relation_type","path","risk_score","graph_nodes","graph_edges"]}],outputs:[{module:"co_05",data_type:"AML告警",format:"stream",description:"AML 告警事件，供洗钱网络发现构建图谱",fields:["alert_id","transaction_id","alert_type","risk_score","alert_time","entity_id"]},{module:"co_06",data_type:"AML告警",format:"json/dict",description:"AML 告警，供可疑交易报告自动生成",fields:["alert_id","transaction_id","alert_type","risk_score","alert_time","entity_id"]}]},
+  co_05:{name:"知识图谱洗钱网络发现",inputs:[{module:"co_04",data_type:"AML告警",format:"stream",description:"AML 告警事件，作为洗钱网络构建输入",fields:["alert_id","transaction_id","alert_type","risk_score","alert_time","entity_id"]}],outputs:[{module:"co_04",data_type:"洗钱网络图谱",format:"graph",description:"洗钱网络图谱，反馈给 AML 监控优化规则",fields:["network_id","entity_id","relation_type","path","risk_score","graph_nodes","graph_edges"]},{module:"co_06",data_type:"洗钱网络图谱",format:"graph",description:"洗钱网络图谱，供可疑交易报告生成引用",fields:["network_id","entity_id","relation_type","path","risk_score","graph_nodes","graph_edges"]}]},
+  co_06:{name:"AI可疑交易报告自动生成",inputs:[{module:"co_04",data_type:"AML告警",format:"json/dict",description:"AML 告警，作为可疑交易报告生成依据",fields:["alert_id","transaction_id","alert_type","risk_score","alert_time","entity_id"]},{module:"co_05",data_type:"洗钱网络图谱",format:"graph",description:"洗钱网络图谱，用于报告中的网络关系描述",fields:["network_id","entity_id","relation_type","path","risk_score","graph_nodes","graph_edges"]}],outputs:[]},
+  co_07:{name:"AI数据资产自动发现与分类",inputs:[{module:"co_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，触发数据资产分类标准调整",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]}],outputs:[]},
+  co_08:{name:"知识图谱数据流分析",inputs:[{module:"external",data_type:"数据流元数据",format:"json/dict",description:"系统间数据流转的元数据与血缘信息",fields:["data_flow_id","source_system","target_system","data_element","frequency","sensitivity"]}],outputs:[]},
+  co_09:{name:"隐私合规自动审计引擎",inputs:[{module:"co_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，驱动隐私合规审计规则更新",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]}],outputs:[]},
+  it_01:{name:"IT审计自动化平台",inputs:[{module:"external",data_type:"IT系统配置与拓扑",format:"json/dict",description:"IT系统配置、网络拓扑及访问控制清单",fields:["system_id","config_item","control_type","owner","last_audit_date"]}],outputs:[]},
+  it_02:{name:"AI配置合规扫描引擎",inputs:[{module:"external",data_type:"系统配置文件",format:"jsonl",description:"服务器、数据库、中间件的配置文件快照",fields:["system_id","config_file","config_key","config_value","scan_time"]}],outputs:[]},
+  it_03:{name:"AI代码审计助手",inputs:[{module:"external",data_type:"源代码",format:"jsonl",description:"待审计的应用源代码及依赖清单",fields:["repo_id","file_path","language","commit_hash","code_snippet"]}],outputs:[]},
+  it_04:{name:"IT持续审计平台",inputs:[{module:"external",data_type:"IT日志",format:"stream",description:"系统日志、变更日志与访问日志流",fields:["system_id","log_type","event","user","timestamp","ip"]}],outputs:[]},
+  it_05:{name:"区块链审计日志存证",inputs:[{module:"external",data_type:"审计日志",format:"jsonl",description:"需上链存证的审计操作日志",fields:["log_id","operator","action","timestamp","payload_hash"]}],outputs:[]},
+  fo_01:{name:"全量交易智能舞弊扫描",inputs:[{module:"external",data_type:"全量交易数据",format:"parquet",description:"全量交易明细，用于舞弊模式扫描",fields:["transaction_id","account_code","amount","transaction_time","counterparty","channel"]}],outputs:[]},
+  fo_02:{name:"知识图谱舞弊网络分析",inputs:[{module:"fa_03",data_type:"数据湖分区数据",format:"parquet",description:"舞弊网络分析所需的全量交易明细数据",fields:["company_code","transaction_id","counterparty","amount","period","voucher_no","layer"]}],outputs:[]},
+  fo_03:{name:"NLP文本舞弊信号检测",inputs:[{module:"external",data_type:"文本数据",format:"jsonl",description:"邮件、合同、备忘录等文本，用于舞弊信号检测",fields:["doc_id","doc_type","author","content","created_at"]}],outputs:[]},
+  fo_04:{name:"AI电子取证平台",inputs:[{module:"external",data_type:"电子证据",format:"jsonl",description:"硬盘镜像、聊天记录、文件系统等电子证据",fields:["evidence_id","device_id","file_path","hash","collected_at","collector"]}],outputs:[]},
+  fo_05:{name:"多语言智能翻译与分析",inputs:[{module:"external",data_type:"多语言文档",format:"jsonl",description:"多语种审计相关文档，需翻译与分析",fields:["doc_id","language","content","doc_type","period"]}],outputs:[]},
+  fo_06:{name:"证据链智能构建",inputs:[{module:"external",data_type:"证据材料",format:"json/dict",description:"分散的审计证据材料，需构建完整证据链",fields:["evidence_id","evidence_type","source","collected_at","relates_to"]}],outputs:[]},
+  ta_01:{name:"AI发票智能审计平台",inputs:[{module:"external",data_type:"发票图像",format:"json/dict",description:"扫描或电子发票图像，经 OCR 识别结构化",fields:["invoice_id","image_url","ocr_text","invoice_type"]}],outputs:[{module:"ta_02",data_type:"发票结构化数据",format:"json/dict",description:"OCR 识别后的发票结构化数据，供四单匹配",fields:["invoice_id","invoice_no","invoice_date","buyer","seller","amount","tax_amount","items"]}]},
+  ta_02:{name:"发票四单自动匹配引擎",inputs:[{module:"ta_01",data_type:"发票结构化数据",format:"json/dict",description:"发票结构化数据，与合同/入库/付款单匹配",fields:["invoice_id","invoice_no","invoice_date","buyer","seller","amount","tax_amount","items"]}],outputs:[]},
+  ta_03:{name:"进项税额转出AI计算",inputs:[{module:"external",data_type:"进项税数据",format:"json/dict",description:"进项税明细及用途分类，用于转出计算",fields:["voucher_no","tax_amount","use_type","period","account_code"]}],outputs:[]},
+  ta_04:{name:"AI转让定价文档自动生成",inputs:[{module:"external",data_type:"转让定价数据",format:"json/dict",description:"关联企业交易、功能风险及定价政策数据",fields:["related_party","transaction_type","amount","pricing_method","period"]}],outputs:[]},
+  ta_05:{name:"ML可比公司智能筛选",inputs:[{module:"external",data_type:"可比公司数据库",format:"jsonl",description:"上市公司财务及行业可比公司数据",fields:["company_id","industry","revenue","period","financial_metrics"]}],outputs:[]},
+  ta_06:{name:"知识图谱全球关联交易分析",inputs:[{module:"external",data_type:"全球关联交易数据",format:"json/dict",description:"跨国关联交易数据及各国税率信息",fields:["transaction_id","counterparty_country","amount","tax_rate","transaction_type","period"]}],outputs:[]},
+  sc_01:{name:"供应商风险智能评分平台",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据中的供应商相关环境与社会指标",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[{module:"sc_03",data_type:"供应商风险评分",format:"json/dict",description:"供应商风险评分，驱动持续监控基线",fields:["supplier_id","supplier_name","risk_score","risk_level","risk_factors","score_date"]}]},
+  sc_02:{name:"知识图谱供应链网络分析",inputs:[{module:"external",data_type:"供应链数据",format:"json/dict",description:"供应商、采购订单、物流节点构成的供应链数据",fields:["supplier_id","node_id","node_type","parent_node","order_id","amount"]}],outputs:[]},
+  sc_03:{name:"供应商持续风险监控平台",inputs:[{module:"sc_01",data_type:"供应商风险评分",format:"json/dict",description:"供应商风险评分基线，用于持续监控",fields:["supplier_id","supplier_name","risk_score","risk_level","risk_factors","score_date"]}],outputs:[{module:"sc_04",data_type:"供应商监控告警",format:"stream",description:"供应商风险监控告警，供采购价格异常检测",fields:["alert_id","supplier_id","alert_type","threshold","current_value","alert_date","severity"]}]},
+  sc_04:{name:"ML采购价格异常检测平台",inputs:[{module:"sc_03",data_type:"供应商监控告警",format:"stream",description:"供应商监控告警，触发采购价格异常检测",fields:["alert_id","supplier_id","alert_type","threshold","current_value","alert_date","severity"]}],outputs:[]},
+  sc_05:{name:"AI采购价格基准平台",inputs:[{module:"external",data_type:"采购价格数据",format:"jsonl",description:"历史采购价格及市场价格基准数据",fields:["item_id","supplier_id","unit_price","market_price","period"]}],outputs:[]},
+  es_01:{name:"ESG多源数据智能采集平台",inputs:[{module:"external",data_type:"ESG多源数据",format:"jsonl",description:"卫星遥感、企业报告、传感器、公开披露等多源 ESG 数据",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[{module:"sc_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，供供应商风险评分使用",fields:["data_source","region","period","indicator","value","unit","data_type"]},{module:"es_02",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，供碳排放自动核算",fields:["data_source","region","period","indicator","value","unit","data_type"]},{module:"es_03",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据中的遥感影像，供环境监测",fields:["data_source","region","period","indicator","value","unit","data_type"]},{module:"es_04",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，供绿色漂洗检测",fields:["data_source","region","period","indicator","value","unit","data_type"]},{module:"es_05",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，供 ESG 审计知识库构建",fields:["data_source","region","period","indicator","value","unit","data_type"]},{module:"es_06",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，供 ESG 审计方法论引擎",fields:["data_source","region","period","indicator","value","unit","data_type"]}]},
+  es_02:{name:"AI碳排放自动核算引擎",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，用于碳排放核算",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[]},
+  es_03:{name:"卫星遥感AI环境监测平台",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据中的遥感影像，用于环境监测",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[]},
+  es_04:{name:"知识图谱绿色漂洗检测平台",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，用于绿色漂洗检测",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[]},
+  es_05:{name:"ESG审计知识库与AI助手",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，用于构建审计知识库",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[]},
+  es_06:{name:"AI-ESG审计方法论引擎",inputs:[{module:"es_01",data_type:"ESG原始数据",format:"json/dict",description:"ESG 原始数据，用于审计方法论构建",fields:["data_source","region","period","indicator","value","unit","data_type"]}],outputs:[]},
+  ip_01:{name:"IPO审计智能加速平台",inputs:[{module:"fa_03",data_type:"数据湖分区数据",format:"parquet",description:"IPO 审计所需的财务规范性诊断数据",fields:["company_code","account_code","period","amount","currency","voucher_no","layer"]},{module:"fa_07",data_type:"审计底稿文档",format:"json/dict",description:"审计底稿文档，供 IPO 审计引用",fields:["workpaper_id","title","content","checklist","prepared_by","review_status"]},{module:"fa_10",data_type:"关联方图谱",format:"graph",description:"关联方图谱，供 IPO 审计识别关联关系",fields:["entity_id","entity_name","relation_type","related_entity","shareholding_ratio","graph_nodes","graph_edges"]},{module:"co_01",data_type:"法规变更事件",format:"json/dict",description:"法规变更事件，供 IPO 审计评估合规影响",fields:["regulation_id","title","jurisdiction","effective_date","impact_level","change_summary"]}],outputs:[]},
+  ip_02:{name:"AI监管反馈智能回复系统",inputs:[{module:"external",data_type:"监管反馈意见",format:"json/dict",description:"证监会/交易所反馈意见及问询函",fields:["feedback_id","regulator","question","deadline","category"]}],outputs:[]},
+  ip_03:{name:"知识图谱历史沿革梳理系统",inputs:[{module:"external",data_type:"历史沿革资料",format:"jsonl",description:"企业工商变更、股权沿革等历史资料",fields:["event_id","event_type","event_date","entity_before","entity_after","description"]}],outputs:[]},
+  ip_04:{name:"AI财务规范性智能诊断系统",inputs:[{module:"external",data_type:"财务数据",format:"json/dict",description:"申报期财务报表及明细账数据",fields:["company_code","account_code","period","amount","currency","voucher_no"]}],outputs:[]},
+  ip_05:{name:"IPO案例知识库与RAG系统",inputs:[{module:"external",data_type:"IPO案例库",format:"jsonl",description:"历史 IPO 案例、问询回复及审核要点",fields:["case_id","company_name","industry","question","answer","result"]}],outputs:[]},
+  ip_06:{name:"整改方案AI推荐引擎",inputs:[{module:"external",data_type:"审计发现",format:"json/dict",description:"审计发现清单，用于推荐整改方案",fields:["finding_id","finding_title","severity","category","root_cause"]}],outputs:[]},
+  fi_01:{name:"AI信贷资产质量评估引擎",inputs:[{module:"fi_02",data_type:"担保链图谱",format:"graph",description:"担保链图谱，用于评估信贷资产连带风险",fields:["guarantor_id","debtor_id","guarantee_amount","guarantee_type","chain_depth","graph_nodes"]}],outputs:[{module:"fi_03",data_type:"信贷资产评分",format:"json/dict",description:"信贷资产质量评分，供违约预测验证",fields:["loan_id","borrower_id","asset_quality_rating","default_probability","rating_date","risk_factors"]}]},
+  fi_02:{name:"知识图谱担保链风险分析系统",inputs:[{module:"external",data_type:"担保关系数据",format:"json/dict",description:"银行担保合同与担保关系数据",fields:["guarantor_id","debtor_id","guarantee_amount","guarantee_type","contract_no"]}],outputs:[{module:"fi_01",data_type:"担保链图谱",format:"graph",description:"担保链知识图谱，供信贷资产质量评估",fields:["guarantor_id","debtor_id","guarantee_amount","guarantee_type","chain_depth","graph_nodes"]}]},
+  fi_03:{name:"ML贷款违约预测验证系统",inputs:[{module:"fi_01",data_type:"信贷资产评分",format:"json/dict",description:"信贷资产评分，作为违约预测验证输入",fields:["loan_id","borrower_id","asset_quality_rating","default_probability","rating_date","risk_factors"]}],outputs:[]},
+  fi_04:{name:"监管报表智能核对平台",inputs:[{module:"external",data_type:"监管报表",format:"jsonl",description:"各类监管报表及底层数据",fields:["report_id","report_type","period","cell_id","value","source"]}],outputs:[]},
+  fi_05:{name:"AI监管口径自动更新系统",inputs:[{module:"external",data_type:"监管口径文件",format:"json/dict",description:"监管机构下发的口径调整文件",fields:["caliber_id","regulator","report_type","effective_date","change_desc"]}],outputs:[]},
+  cb_01:{name:"联邦学习跨境审计平台",inputs:[{module:"external",data_type:"跨境审计数据分片",format:"json/dict",description:"各法域参与方本地化的审计数据分片，不出域参与联邦训练",fields:["client_id","jurisdiction","dataset_hash","sample_count","period"]}],outputs:[{module:"cb_02",data_type:"联邦模型参数",format:"json/dict",description:"联邦聚合模型参数，经脱敏网关分发",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]},{module:"cb_03",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，供多法域合规知识库校验",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]},{module:"cb_04",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，供多准则自动转换引擎使用",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]},{module:"cb_05",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，供多语言审计协作平台使用",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]},{module:"cb_06",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，供集团审计智能协作平台使用",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}]},
+  cb_02:{name:"数据脱敏网关与合规路由系统",inputs:[{module:"cb_01",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，经脱敏网关处理分发",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}],outputs:[]},
+  cb_03:{name:"多法域合规知识库",inputs:[{module:"cb_01",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，供合规知识库校验合规性",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}],outputs:[]},
+  cb_04:{name:"AI多准则自动转换引擎",inputs:[{module:"cb_01",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，驱动多准则转换",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}],outputs:[]},
+  cb_05:{name:"AI多语言审计协作平台",inputs:[{module:"cb_01",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，支持多语言协作",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}],outputs:[]},
+  cb_06:{name:"集团审计智能协作平台",inputs:[{module:"cb_01",data_type:"联邦模型参数",format:"json/dict",description:"联邦模型参数，支持集团审计协作",fields:["model_id","round","weights","gradients","client_id","aggregation_meta"]}],outputs:[]},
+  cm_01:{name:"持续审计技术平台",inputs:[{module:"fa_03",data_type:"数据湖分区数据",format:"stream",description:"持续审计平台订阅的实时与近实时审计数据流",fields:["company_code","transaction_id","amount","period","event_time","source_system","layer"]}],outputs:[{module:"cm_02",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供预警分级与自动处理",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]},{module:"cm_03",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供方法论框架沉淀",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]},{module:"cm_04",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供价值量化模型计算",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]},{module:"cm_05",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供持续审计仪表板展示",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]}]},
+  cm_02:{name:"智能预警分级与自动处理系统",inputs:[{module:"cm_01",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供预警分级与自动处理",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]}],outputs:[]},
+  cm_03:{name:"持续审计方法论框架",inputs:[{module:"cm_01",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供方法论框架沉淀",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]}],outputs:[]},
+  cm_04:{name:"持续审计价值量化模型",inputs:[{module:"cm_01",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供价值量化模型计算",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]}],outputs:[]},
+  cm_05:{name:"持续审计仪表板",inputs:[{module:"cm_01",data_type:"实时审计事件流",format:"stream",description:"实时审计事件流，供持续审计仪表板展示",fields:["event_id","event_type","source_system","timestamp","severity","payload","rule_id"]}],outputs:[]}
+};
+/* 查找两节点间的输出接口定义 */
+function findFlowIface(s,t){const sc=NETWORK_SCHEMA[s];if(!sc||!sc.outputs)return null;for(const o of sc.outputs){if(o.module===t)return o;}return null;}
+/* 渲染单个接口项 HTML */
+function renderIface(iface,dir){
+  const modSlug=iface.module;
+  const isExt=(modSlug==='external');
+  const modName=isExt?'外部数据源':(M[modSlug]?M[modSlug].name:modSlug);
+  const color=FMT_COLOR[iface.format]||'#6c757d';
+  const arrow=dir==='in'?'←':'→';
+  const click=isExt?'':' onclick="openModal(\''+modSlug+'\')"';
+  let h='<div class="mb-iface">'+
+    '<div class="mb-iface-head">'+
+      '<span class="mb-iface-module"'+click+' style="'+(isExt?'cursor:default;color:var(--dim);':'')+'">'+arrow+' '+modName+'</span>'+
+      '<span class="mb-iface-type" style="background:'+color+'">'+iface.data_type+'</span>'+
+      '<span class="mb-iface-fmt">'+iface.format+'</span>'+
+    '</div>'+
+    '<div class="mb-iface-desc">'+(iface.description||'')+'</div>';
+  if(iface.fields&&iface.fields.length){
+    h+='<div class="mb-iface-fields">';
+    iface.fields.forEach(function(fld){h+='<span class="mb-iface-field">'+fld+'</span>';});
+    h+='</div>';
+  }
+  h+='</div>';
+  return h;
+}
+
+function hexA(hex,a){const r=parseInt(hex.slice(1,3),16),g=parseInt(hex.slice(3,5),16),b=parseInt(hex.slice(5,7),16);return `rgba(${r},${g},${b},${a})`;}
+
+/* ======================= Canvas 设置 ======================= */
+const bgC = document.getElementById('bg-canvas');
+const bgX = bgC.getContext('2d');
+const mC = document.getElementById('main-canvas');
+const mx = mC.getContext('2d');
+let W,H;
+function resize(){
+  W=window.innerWidth;H=window.innerHeight;
+  bgC.width=mC.width=W; bgC.height=mC.height=H;
+}
+resize();
+window.addEventListener('resize',resize);
+
+/* ======================= 背景星点 ======================= */
+let bgStars=[];
+function initStars(){
+  bgStars=[];
+  for(let i=0;i<150;i++) bgStars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1+0.3,o:Math.random()*0.4+0.1,s:Math.random()*0.015+0.005});
+}
+initStars();
+window.addEventListener('resize',initStars);
+
+function drawBg(t){
+  bgX.fillStyle='#ffffff';
+  bgX.fillRect(0,0,W,H);
+  // 中心微光
+  const cg=bgX.createRadialGradient(W/2,H/2,0,W/2,H/2,Math.max(W,H)*0.5);
+  cg.addColorStop(0,'rgba(100,140,200,0.08)');
+  cg.addColorStop(1,'rgba(255,255,255,0)');
+  bgX.fillStyle=cg;
+  bgX.fillRect(0,0,W,H);
+  bgStars.forEach(s=>{
+    const o=Math.abs(Math.sin(t*s.s)*s.o)+0.05;
+    bgX.beginPath();
+    bgX.arc(s.x,s.y,s.r,0,Math.PI*2);
+    bgX.fillStyle=`rgba(120,130,160,${o*1.5})`;
+    bgX.fill();
+  });
+}
+
+/* ======================= 粒子节点 ======================= */
+const cx0=W/2, cy0=H/2;
+const nodes = MODULES.map(m=>{
+  const dIdx = Object.keys(DN).indexOf(m.slug.slice(0,2));
+  const baseAng = dIdx/12*Math.PI*2;
+  const isInfra = INFRA.includes(m.slug);
+  return {
+    ...m,
+    x: cx0 + Math.cos(baseAng)*(isInfra?150:340) + (Math.random()-0.5)*120,
+    y: cy0 + Math.sin(baseAng)*(isInfra?150:340) + (Math.random()-0.5)*120,
+    vx: (Math.random()-0.5)*0.3,
+    vy: (Math.random()-0.5)*0.3,
+    r: isInfra?7:4.5,
+    baseR: isInfra?7:4.5,
+    phase: Math.random()*Math.PI*2,
+    isInfra
+  };
+});
+
+// 依赖边粒子流
+const flows = [];
+DATA_EDGES.forEach((e,i)=>{
+  flows.push({s:e[0],t:e[1],p:Math.random(),sp:0.003+Math.random()*0.004,color:M[e[0]].color});
+});
+
+/* ======================= 视图变换（缩放/平移） ======================= */
+const view = {scale:1, ox:0, oy:0};
+
+/* ======================= 鼠标 ======================= */
+let mouse={x:-9999,y:-9999,active:false};
+let hoverNode=null;
+let dragging=false, dragStart=null, dragMoved=false;
+
+function screenToWorld(sx,sy){ return {x:(sx-view.ox)/view.scale, y:(sy-view.oy)/view.scale}; }
+
+mC.addEventListener('mousedown',e=>{
+  // 空白处拖拽平移（左键无节点时 / 右键 / 中键）
+  if(e.button===1 || e.button===2 || (e.button===0 && !hoverNode)){
+    dragging=true; dragMoved=false;
+    dragStart={x:e.clientX-view.ox, y:e.clientY-view.oy};
+    mC.style.cursor='grabbing';
+    e.preventDefault();
+  }
+});
+
+mC.addEventListener('mousemove',e=>{
+  const r=mC.getBoundingClientRect();
+  const sx=e.clientX-r.left, sy=e.clientY-r.top;
+  // 拖拽平移
+  if(dragging){
+    view.ox = sx - dragStart.x;
+    view.oy = sy - dragStart.y;
+    dragMoved=true;
+    return;
+  }
+  // 屏幕坐标 → 世界坐标
+  const w = screenToWorld(sx, sy);
+  mouse.x=w.x; mouse.y=w.y; mouse.active=true;
+  // hit test（世界坐标系）
+  let nearest=null,nd=999;
+  for(const n of nodes){
+    const d=Math.hypot(n.x-mouse.x,n.y-mouse.y);
+    const hitR=(n.r+10)/view.scale; // 缩放后命中范围自适应
+    if(d<hitR && d<nd){nd=d;nearest=n;}
+  }
+  if(nearest!==hoverNode){
+    hoverNode=nearest;
+    mC.style.cursor=nearest?'pointer':'crosshair';
+    if(nearest){
+      const up=DEP[nearest.slug].up,down=DEP[nearest.slug].down;
+      tip.innerHTML=`<div class="tt" style="color:${nearest.color}">${nearest.name}</div><div class="ts">${nearest.slug.toUpperCase()} · ${nearest.domain}<br>${nearest.family} · ${nearest.engine}<br>${nearest.layer}</div>${up.length||down.length?`<div class="td">↑ 上游 ${up.length} · ↓ 下游 ${down.length}</div>`:""}`;
+      tip.style.opacity=1;
+    } else { tip.style.opacity=0; }
+  }
+  if(nearest){ tip.style.left=(e.clientX+14)+'px'; tip.style.top=(e.clientY+14)+'px'; }
+});
+
+mC.addEventListener('mouseup',()=>{
+  if(dragging){dragging=false; mC.style.cursor=hoverNode?'pointer':'crosshair';}
+});
+mC.addEventListener('mouseleave',()=>{mouse.active=false;mouse.x=-9999;mouse.y=-9999;hoverNode=null;tip.style.opacity=0;dragging=false;mC.style.cursor='crosshair';});
+
+// 点击（拖拽后不触发）
+mC.addEventListener('click',e=>{
+  if(dragMoved){dragMoved=false; return;}
+  if(hoverNode) openPanel(hoverNode);
+});
+
+// 滚轮缩放（以鼠标为中心）
+mC.addEventListener('wheel',e=>{
+  e.preventDefault();
+  const r=mC.getBoundingClientRect();
+  const sx=e.clientX-r.left, sy=e.clientY-r.top;
+  const w=screenToWorld(sx,sy);
+  const delta = e.deltaY<0 ? 1.15 : 1/1.15;
+  view.scale = Math.max(0.3, Math.min(6, view.scale*delta));
+  // 保持鼠标位置不变：sx = w.x*scale + ox
+  view.ox = sx - w.x*view.scale;
+  view.oy = sy - w.y*view.scale;
+}, {passive:false});
+
+// 右键不弹菜单
+mC.addEventListener('contextmenu',e=>e.preventDefault());
+
+const tip=document.getElementById('tip');
+
+/* ======================= 开关 ======================= */
+let sw={dynamic:true,cloud:true,flow:true,dep:false,label:false,attract:true};
+function bind(id,key){document.getElementById(id).addEventListener('click',function(){sw[key]=!sw[key];this.classList.toggle('on',sw[key]);});}
+bind('b-dynamic','dynamic');bind('b-cloud','cloud');bind('b-flow','flow');bind('b-dep','dep');bind('b-label','label');bind('b-attract','attract');
+
+/* ======================= 物理模拟 ======================= */
+function physics(){
+  for(const n of nodes){
+    // 中心微弱引力
+    const dxc=cx0-n.x, dyc=cy0-n.y;
+    const dc=Math.hypot(dxc,dyc)||1;
+    const pull=Math.min(dc,600)*0.000015;
+    n.vx+=dxc/dc*pull; n.vy+=dyc/dc*pull;
+    // 鼠标引力
+    if(sw.attract&&mouse.active){
+      const dxm=mouse.x-n.x, dym=mouse.y-n.y;
+      const dm=Math.hypot(dxm,dym)||1;
+      if(dm<200){
+        const f=(1-dm/200)*0.08;
+        n.vx+=dxm/dm*f; n.vy+=dym/dm*f;
+      }
+    }
+    // 微扰
+    n.vx+=(Math.random()-0.5)*0.04;
+    n.vy+=(Math.random()-0.5)*0.04;
+    // 阻尼
+    n.vx*=0.97; n.vy*=0.97;
+    // 限速
+    const sp=Math.hypot(n.vx,n.vy);
+    if(sp>0.8){n.vx=n.vx/sp*0.8;n.vy=n.vy/sp*0.8;}
+    n.x+=n.vx; n.y+=n.vy;
+    // 边界
+    const pad=40;
+    if(n.x<pad){n.x=pad;n.vx*=-0.5;} if(n.x>W-pad){n.x=W-pad;n.vx*=-0.5;}
+    if(n.y<pad){n.y=pad;n.vy*=-0.5;} if(n.y>H-pad){n.y=H-pad;n.vy*=-0.5;}
+  }
+  // 排斥
+  for(let i=0;i<nodes.length;i++){
+    for(let j=i+1;j<nodes.length;j++){
+      const a=nodes[i],b=nodes[j];
+      const dx=b.x-a.x,dy=b.y-a.y;
+      const d=Math.hypot(dx,dy)||1;
+      const minD=(a.r+b.r+18);
+      if(d<minD){
+        const f=(minD-d)/minD*0.15;
+        a.vx-=dx/d*f; a.vy-=dy/d*f;
+        b.vx+=dx/d*f; b.vy+=dy/d*f;
+      }
+    }
+  }
+}
+
+/* ======================= 渲染 ======================= */
+function render(t){
+  mx.clearRect(0,0,W,H);
+  // 应用缩放/平移变换（背景星空不受影响，在 drawBg 中绘制）
+  mx.save();
+  mx.translate(view.ox, view.oy);
+  mx.scale(view.scale, view.scale);
+
+  // 1. 电子云连线（距离阈值）
+  if(sw.cloud){
+    const TH=150;
+    for(let i=0;i<nodes.length;i++){
+      for(let j=i+1;j<nodes.length;j++){
+        const a=nodes[i],b=nodes[j];
+        const dx=b.x-a.x,dy=b.y-a.y;
+        const d=Math.hypot(dx,dy);
+        if(d<TH){
+          const op=(1-d/TH);
+          const isHover=(hoverNode&&(a===hoverNode||b===hoverNode));
+          const boost=isHover?3:1;
+          // 混合两节点颜色
+          mx.strokeStyle=hexA(a.color, op*0.25*boost);
+          mx.lineWidth=isHover?1:0.5;
+          mx.beginPath();
+          mx.moveTo(a.x,a.y);
+          mx.lineTo(b.x,b.y);
+          mx.stroke();
+        }
+      }
+    }
+  }
+
+  // 2. 依赖连线
+  if(sw.dep){
+    DATA_EDGES.forEach(([s,tk])=>{
+      const a=M[s]?nodes.find(n=>n.slug===s):null;
+      const b=M[tk]?nodes.find(n=>n.slug===tk):null;
+      if(!a||!b) return;
+      const isHover=(hoverNode&&(a.slug===hoverNode.slug||b.slug===hoverNode.slug));
+      mx.strokeStyle=hexA(a.color, isHover?0.6:0.3);
+      mx.lineWidth=isHover?1.5:0.8;
+      mx.beginPath();
+      mx.moveTo(a.x,a.y);
+      // 微弯曲线
+      const mxp=(a.x+b.x)/2, myp=(a.y+b.y)/2;
+      const dx=b.x-a.x,dy=b.y-a.y;
+      const dl=Math.hypot(dx,dy)||1;
+      const cv=20;
+      mx.quadraticCurveTo(mxp-dy/dl*cv, myp+dx/dl*cv, b.x, b.y);
+      mx.stroke();
+    });
+  }
+
+  // 3. 数据流粒子
+  if(sw.flow){
+    flows.forEach(f=>{
+      f.p+=f.sp; if(f.p>1)f.p-=1;
+      const a=nodes.find(n=>n.slug===f.s);
+      const b=nodes.find(n=>n.slug===f.t);
+      if(!a||!b) return;
+      const mxp=(a.x+b.x)/2, myp=(a.y+b.y)/2;
+      const dx=b.x-a.x,dy=b.y-a.y;
+      const dl=Math.hypot(dx,dy)||1;
+      const cv=20;
+      const cpx=mxp-dy/dl*cv, cpy=myp+dx/dl*cv;
+      const tt=f.p;
+      const x=(1-tt)*(1-tt)*a.x+2*(1-tt)*tt*cpx+tt*tt*b.x;
+      const y=(1-tt)*(1-tt)*a.y+2*(1-tt)*tt*cpy+tt*tt*b.y;
+      const sz=2+Math.sin(tt*Math.PI)*2;
+      // 拖尾
+      for(let k=0;k<5;k++){
+        const tk=Math.max(0,tt-k*0.03);
+        const tx=(1-tk)*(1-tk)*a.x+2*(1-tk)*tk*cpx+tk*tk*b.x;
+        const ty=(1-tk)*(1-tk)*a.y+2*(1-tk)*tk*cpy+tk*tk*b.y;
+        mx.beginPath();
+        mx.arc(tx,ty,sz*(1-k*0.18),0,Math.PI*2);
+        mx.fillStyle=hexA(f.color, Math.sin(tk*Math.PI)*0.6*(1-k*0.2));
+        mx.fill();
+      }
+      // 头部光点
+      mx.beginPath();
+      mx.arc(x,y,sz,0,Math.PI*2);
+      mx.fillStyle=hexA(f.color, Math.sin(tt*Math.PI)*0.9);
+      mx.fill();
+      // data_type 标注（连线中点）
+      var iface=findFlowIface(f.s,f.t);
+      if(iface){
+        var mlx=0.25*a.x+0.5*cpx+0.25*b.x;
+        var mly=0.25*a.y+0.5*cpy+0.25*b.y;
+        mx.font='9px "PingFang SC",sans-serif';
+        mx.textAlign='center';
+        mx.textBaseline='middle';
+        mx.fillStyle=hexA(f.color,0.5);
+        mx.fillText(iface.data_type, mlx, mly);
+        mx.textBaseline='alphabetic';
+      }
+    });
+  }
+
+  // 4. 节点
+  for(const n of nodes){
+    const breath=Math.sin(t*0.002+n.phase)*0.25+1;
+    const isHover=(hoverNode===n);
+    const r=n.baseR*breath*(isHover?1.8:1);
+    // 外发光
+    const g=mx.createRadialGradient(n.x,n.y,0,n.x,n.y,r*5);
+    g.addColorStop(0,hexA(n.color, isHover?0.8:0.5));
+    g.addColorStop(0.4,hexA(n.color, isHover?0.3:0.25));
+    g.addColorStop(1,hexA(n.color,0));
+    mx.fillStyle=g;
+    mx.beginPath();
+    mx.arc(n.x,n.y,r*5,0,Math.PI*2);
+    mx.fill();
+    // 实心核
+    mx.fillStyle=n.color;
+    mx.beginPath();
+    mx.arc(n.x,n.y,r,0,Math.PI*2);
+    mx.fill();
+    // 内高光
+    mx.fillStyle='rgba(255,255,255,0.6)';
+    mx.beginPath();
+    mx.arc(n.x-r*0.2,n.y-r*0.2,r*0.35,0,Math.PI*2);
+    mx.fill();
+    // 基础平台层外环
+    if(n.isInfra){
+      mx.strokeStyle=hexA(n.color,0.6);
+      mx.lineWidth=1.5;
+      mx.beginPath();
+      mx.arc(n.x,n.y,r+4,0,Math.PI*2);
+      mx.stroke();
+    }
+    // hover 环
+    if(isHover){
+      mx.strokeStyle=hexA(n.color,0.8);
+      mx.lineWidth=2;
+      mx.beginPath();
+      mx.arc(n.x,n.y,r+8+Math.sin(t*0.005)*3,0,Math.PI*2);
+      mx.stroke();
+    }
+    // 标签
+    if(sw.label||isHover){
+      mx.font='11px "PingFang SC",sans-serif';
+      mx.fillStyle=isHover?'#1a1d29':'#6c757d';
+      mx.textAlign='center';
+      mx.fillText(n.slug.toUpperCase().slice(3,5), n.x, n.y+r+14);
+      if(isHover){
+        mx.font='12px "PingFang SC",sans-serif';
+        mx.fillStyle=n.color;
+        mx.fillText(n.name, n.x, n.y-r-12);
+      }
+    }
+  }
+  mx.restore();
+}
+
+/* ======================= 面板 ======================= */
+function openPanel(m){
+  const up=DEP[m.slug].up,down=DEP[m.slug].down;
+  let h=`<h2 style="color:${m.color}">${m.name}</h2><div class="slug">${m.slug.toUpperCase()} · ${m.engine}</div>
+    <div class="row"><span class="k">业务域</span><span class="v">${m.domain}</span></div>
+    <div class="row"><span class="k">技术家族</span><span class="v">${m.family}</span></div>
+    <div class="row"><span class="k">架构层</span><span class="v">${m.layer}</span></div>
+    <div class="row"><span class="k">上游</span><span class="v">${up.length}</span></div>
+    <div class="row"><span class="k">下游</span><span class="v">${down.length}</span></div>`;
+  if(up.length){h+=`<div class="st">上游依赖</div>`;up.forEach(s=>h+=`<div class="di" onclick="openPanel(M['${s}'])"><span style="color:${M[s].color}">●</span> ${M[s].name}</div>`);}
+  if(down.length){h+=`<div class="st">下游被依赖</div>`;down.forEach(s=>h+=`<div class="di" onclick="openPanel(M['${s}'])"><span style="color:${M[s].color}">●</span> ${M[s].name}</div>`);}
+  h+=`<button class="eb" onclick="openModal('${m.slug}')">进入知识图谱详情 →</button>`;
+  document.getElementById('panel-content').innerHTML=h;
+  document.getElementById('panel').classList.add('open');
+}
+window.openPanel=openPanel;
+window.M=M;
+window.closePanel=()=>document.getElementById('panel').classList.remove('open');
+
+/* ======================= 模态层（知识图谱详情） ======================= */
+window.openModal=function(slug){
+  const m = slug ? M[slug] : null;
+  if(!m){ return; }
+  document.getElementById('modal-title').textContent = m.name + ' · 知识图谱详情';
+  const up = DEP[m.slug].up, down = DEP[m.slug].down;
+  const body = document.getElementById('modal-body');
+
+  // 基本信息
+  let html = '<div class="mb-head">'+
+    '<div class="mb-title" style="color:'+m.color+'">'+m.name+'</div>'+
+    '<div class="mb-slug">'+m.slug.toUpperCase()+' · '+m.engine+'</div>'+
+  '</div>';
+
+  html += '<div class="mb-grid">'+
+    '<div class="mb-card"><div class="k">业务域</div><div class="v">'+m.domain+'</div></div>'+
+    '<div class="mb-card"><div class="k">技术家族</div><div class="v">'+m.family+'</div></div>'+
+    '<div class="mb-card"><div class="k">引擎类</div><div class="v">'+m.engine+'</div></div>'+
+    '<div class="mb-card"><div class="k">架构层</div><div class="v">'+m.layer+'</div></div>'+
+    '<div class="mb-card"><div class="k">上游依赖</div><div class="v">'+up.length+' 个</div></div>'+
+    '<div class="mb-card"><div class="k">下游被依赖</div><div class="v">'+down.length+' 个</div></div>'+
+  '</div>';
+
+  // 依赖关系图谱（SVG 手绘）
+  html += '<div class="mb-section">'+
+    '<div class="mb-section-title">依赖关系图谱</div>'+
+    '<svg class="mb-graph" id="dep-graph"></svg>'+
+  '</div>';
+
+  // 上游依赖列表
+  if(up.length){
+    html += '<div class="mb-section"><div class="mb-section-title">上游依赖</div>';
+    up.forEach(function(s){
+      html += '<div class="mb-dep-item" onclick="openModal(\''+s+'\')">'+
+        '<span class="dot" style="background:'+M[s].color+'"></span>'+
+        '<span>'+M[s].name+'</span>'+
+        '<span class="arrow">→</span>'+
+        '<span style="color:var(--dim);font-size:11px">'+M[s].slug.toUpperCase()+'</span>'+
+      '</div>';
+    });
+    html += '</div>';
+  }
+
+  // 下游依赖列表
+  if(down.length){
+    html += '<div class="mb-section"><div class="mb-section-title">下游被依赖</div>';
+    down.forEach(function(s){
+      html += '<div class="mb-dep-item" onclick="openModal(\''+s+'\')">'+
+        '<span style="color:var(--dim);font-size:11px">'+M[s].slug.toUpperCase()+'</span>'+
+        '<span class="arrow">→</span>'+
+        '<span class="dot" style="background:'+M[s].color+'"></span>'+
+        '<span>'+M[s].name+'</span>'+
+      '</div>';
+    });
+    html += '</div>';
+  }
+
+  // 数据流接口
+  var ns = NETWORK_SCHEMA[m.slug];
+  if(ns){
+    var ins = ns.inputs||[], outs = ns.outputs||[];
+    if(ins.length||outs.length){
+      html += '<div class="mb-section"><div class="mb-section-title">数据流接口</div>';
+      if(ins.length){
+        html += '<div style="font-size:11px;color:var(--dim);margin-bottom:6px">输入接口 · '+ins.length+'</div>';
+        ins.forEach(function(it){ html += renderIface(it,'in'); });
+      }
+      if(outs.length){
+        html += '<div style="font-size:11px;color:var(--dim);margin-bottom:6px;'+(ins.length?'margin-top:10px':'')+'">输出接口 · '+outs.length+'</div>';
+        outs.forEach(function(it){ html += renderIface(it,'out'); });
+      }
+      html += '</div>';
+    }
+  }
+
+  // 打开完整知识图谱（优先新标签页，被拦截则当前页跳转）
+  html += '<div class="mb-section">'+
+    '<button class="mb-open-btn" onclick="openFullGraph(\''+m.slug+'\')">查看完整知识图谱 →</button>'+
+  '</div>';
+
+  body.innerHTML = html;
+  document.getElementById('modal').classList.add('open');
+
+  // 绘制依赖关系 SVG
+  drawDepGraph(m, up, down);
+};
+
+// 绘制模块依赖关系 SVG
+function drawDepGraph(m, up, down){
+  const svg = document.getElementById('dep-graph');
+  if(!svg) return;
+  const w = svg.clientWidth || 600;
+  const items = up.length + 1 + down.length;
+  const h = Math.max(180, items * 50 + 40);
+  svg.setAttribute('viewBox','0 0 '+w+' '+h);
+  svg.setAttribute('height', h);
+  const cx = w/2;
+  let parts = '';
+
+  // 上游节点（左侧）
+  const upY = up.length ? 40 : 0;
+  up.forEach(function(s,i){
+    const y = 40 + i*46;
+    parts += '<line x1="20" y1="'+y+'" x2="'+(cx-50)+'" y2="'+(h/2)+'" stroke="'+M[s].color+'" stroke-width="1.5" opacity="0.5"/>';
+    parts += '<circle cx="20" cy="'+y+'" r="7" fill="'+M[s].color+'" opacity="0.85"/>';
+    parts += '<text x="34" y="'+(y+4)+'" fill="#6c757d" font-size="11" font-family="sans-serif">'+M[s].name.substring(0,10)+'</text>';
+  });
+
+  // 当前节点（中心）
+  const curY = h/2;
+  parts += '<circle cx="'+cx+'" cy="'+curY+'" r="16" fill="'+m.color+'" opacity="0.3"/>';
+  parts += '<circle cx="'+cx+'" cy="'+curY+'" r="11" fill="'+m.color+'"/>';
+  parts += '<text x="'+cx+'" y="'+(curY-26)+'" text-anchor="middle" fill="#1a1d29" font-size="13" font-weight="700" font-family="sans-serif">'+m.name.substring(0,14)+'</text>';
+  parts += '<text x="'+cx+'" y="'+(curY+34)+'" text-anchor="middle" fill="#6c757d" font-size="10" font-family="monospace">'+m.slug.toUpperCase()+'</text>';
+
+  // 下游节点（右侧）
+  down.forEach(function(s,i){
+    const y = 40 + i*46;
+    parts += '<line x1="'+(cx+50)+'" y1="'+curY+'" x2="'+(w-20)+'" y2="'+y+'" stroke="'+M[s].color+'" stroke-width="1.5" opacity="0.5"/>';
+    parts += '<circle cx="'+(w-20)+'" cy="'+y+'" r="7" fill="'+M[s].color+'" opacity="0.85"/>';
+    parts += '<text x="'+(w-34)+'" y="'+(y+4)+'" text-anchor="end" fill="#6c757d" font-size="11" font-family="sans-serif">'+M[s].name.substring(0,10)+'</text>';
+  });
+
+  // 无依赖提示
+  if(!up.length && !down.length){
+    parts += '<text x="'+cx+'" y="'+(curY+60)+'" text-anchor="middle" fill="#6c757d" font-size="12" font-family="sans-serif">该模块为独立终端节点</text>';
+  }
+
+  svg.innerHTML = parts;
+}
+
+window.closeModal=function(){
+  document.getElementById('modal').classList.remove('open');
+  document.getElementById('modal-body').innerHTML = '';
+};
+// 打开完整知识图谱：优先新标签页，被拦截则当前页跳转
+window.openFullGraph=function(slug){
+  const url = '知识图谱可视化.html#module=' + slug;
+  const w = window.open(url, '_blank');
+  if(!w){ location.href = url; }
+};
+// ESC 关闭模态层
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){window.closeModal();window.closePanel();}});
+
+/* ======================= 图例 ======================= */
+const lg=document.getElementById('legend');
+lg.innerHTML='<div class="lt">技术家族</div>';
+Object.entries(FC).forEach(([f,c])=>{
+  const cnt=MODULES.filter(m=>m.family===f).length;
+  if(!cnt)return;
+  lg.insertAdjacentHTML('beforeend',`<div class="lr"><span class="ld" style="background:${c};color:${c}"></span><span style="font-size:12px">${f} <span style="color:var(--dim);font-size:11px">(${cnt})</span></span></div>`);
+});
+
+/* ======================= 主循环 ======================= */
+function loop(t){
+  if(sw.dynamic){
+    drawBg(t);
+    physics();
+    render(t);
+  }
+  requestAnimationFrame(loop);
+}
+
+setTimeout(()=>document.getElementById('loader').classList.add('hide'),600);
+requestAnimationFrame(loop);
+</script>
+</body>
+</html>

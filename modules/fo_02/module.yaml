@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FO-02
+  name: 知识图谱舞弊网络分析
+  name_en: fo_02
+  version: 1.0.0
+  category: legal_audit
+  family: kg_gnn
+  family_display: Knowledge Graph / GNN
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "6个月"
+  budget: "约360万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于知识图谱（KG）+图神经网络（GNN）+图算法的舞弊网络分析平台，从关联关系的视角系统性发现隐蔽的舞弊网络。平台整合企业内外部数据构建交易网络图谱，利用GNN进行异常子图检测，结合图算法进行腐败模式匹配和隐藏关联发现，提供交互式网络探索分析能力。方案实施后，隐藏关联发现率提升300-500%，网络化舞弊模式的识别能力实现质的突破。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fo_02
+  port: 8402
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - akg
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

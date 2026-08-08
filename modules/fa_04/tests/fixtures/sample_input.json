@@ -1,0 +1,130 @@
+{
+  "confirmations": [
+    {
+      "confirmation_id": "CF-2024-0001",
+      "type": "bank",
+      "status": "replied",
+      "bank_name": "中国工商银行北京分行",
+      "account_number": "6222020200112345678",
+      "audit_values": {
+        "balance": 1500000.00,
+        "account_name": "审计客户A",
+        "currency": "CNY"
+      },
+      "bank_values": {
+        "balance": 1500000.00,
+        "account_name": "审计客户A",
+        "currency": "CNY"
+      },
+      "sent_at": "2024-05-10T09:00:00",
+      "replied_at": "2024-05-18T14:30:00",
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0002",
+      "type": "bank",
+      "status": "replied",
+      "bank_name": "中国建设银行上海分行",
+      "account_number": "6227000112340005678",
+      "audit_values": {
+        "balance": 1500000.00,
+        "account_name": "审计客户B"
+      },
+      "bank_values": {
+        "balance": 1480000.00,
+        "account_name": "审计客户B"
+      },
+      "sent_at": "2024-05-12T10:00:00",
+      "replied_at": "2024-05-22T11:00:00",
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0003",
+      "type": "trade",
+      "status": "replied",
+      "counterparty": "应收账款客户丙",
+      "audit_values": {
+        "amount": 500000.00,
+        "as_of_date": "2024-06-30"
+      },
+      "bank_values": {
+        "amount": 450000.00,
+        "as_of_date": "2024-06-30"
+      },
+      "sent_at": "2024-06-01T09:00:00",
+      "replied_at": "2024-06-15T16:00:00",
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0004",
+      "type": "bank",
+      "status": "sent",
+      "bank_name": "招商银行深圳分行",
+      "account_number": "6225880112349990",
+      "audit_values": {
+        "balance": 880000.00
+      },
+      "bank_values": {},
+      "sent_at": "2024-06-01T09:00:00",
+      "deadline": "2024-06-15",
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0005",
+      "type": "bank",
+      "status": "delivered",
+      "bank_name": "中国银行广州分行",
+      "account_number": "6217000110045678",
+      "audit_values": {
+        "balance": 3200000.00
+      },
+      "bank_values": {},
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0006",
+      "type": "lawyer",
+      "status": "draft",
+      "counterparty": "金杜律师事务所",
+      "audit_values": {
+        "amount_involved": 5000000.00
+      },
+      "bank_values": {},
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0007",
+      "type": "bank",
+      "status": "closed",
+      "bank_name": "交通银行北京分行",
+      "account_number": "6222600112347788",
+      "audit_values": {
+        "balance": 660000.00
+      },
+      "bank_values": {
+        "balance": 660000.00
+      },
+      "sent_at": "2024-04-01T09:00:00",
+      "replied_at": "2024-04-10T10:00:00",
+      "channel": "email"
+    },
+    {
+      "confirmation_id": "CF-2024-0008",
+      "type": "bank",
+      "status": "replied",
+      "bank_name": "中国农业银行成都分行",
+      "account_number": "6228480112346666",
+      "audit_values": {
+        "balance": 2100000.00,
+        "account_name": "审计客户E"
+      },
+      "bank_values": {
+        "balance": 2100000.00,
+        "account_name": "审计客户E（别名）"
+      },
+      "sent_at": "2024-06-05T09:00:00",
+      "replied_at": "2024-06-20T15:00:00",
+      "channel": "email"
+    }
+  ]
+}

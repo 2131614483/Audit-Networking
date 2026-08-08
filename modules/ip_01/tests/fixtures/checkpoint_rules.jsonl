@@ -1,0 +1,7 @@
+{"rule_id": "CR-FIN-01", "category": "financial", "rule_name": "Benford首位数字检验", "check_type": "benford", "params": {"max_deviation": 0.01}}
+{"rule_id": "CR-FIN-02", "category": "financial", "rule_name": "财务指标异常值检验", "check_type": "outlier", "params": {"z_threshold": 2.5}}
+{"rule_id": "CR-FIN-03", "category": "financial", "rule_name": "同比趋势异常检验", "check_type": "trend", "params": {"max_growth": 0.5}}
+{"rule_id": "CR-LEG-01", "category": "legal", "rule_name": "股权穿透复杂度检验", "check_type": "graph", "params": {"max_depth": 3}}
+{"rule_id": "CR-IC-01", "category": "internal_control", "rule_name": "内控缺陷分级检验", "check_type": "rule", "params": {"severity": "high"}}
+{"rule_id": "CR-LEG-02", "category": "legal", "rule_name": "关联交易公允性检验", "check_type": "rule", "params": {"max_amount": 5000000}}
+{"rule_id": "CR-DOC-01", "category": "legal", "rule_name": "文档风险词检验", "check_type": "rule", "params": {"risk_words": ["诉讼", "担保", "处罚", "违规", "瑕疵"]}}

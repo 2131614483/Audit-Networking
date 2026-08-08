@@ -1,0 +1,336 @@
+{
+  "status": "ok",
+  "module": "FA-06",
+  "difference_items": [
+    {
+      "item_id": "CF001",
+      "subject": "银行存款-工商银行",
+      "book_amount": 1000000.0,
+      "reply_amount": 1004000.0,
+      "diff": 4000.0,
+      "diff_pct": 0.004,
+      "category": "时间性差异",
+      "severity": "medium",
+      "materiality_grade": "immaterial",
+      "confidence": 0.55,
+      "reasons": [
+        "在途"
+      ],
+      "tolerance_pct": 0.005,
+      "audit_advice": [
+        "核对期后收支记录",
+        "关注资产负债表日后事项",
+        "检查银行余额调节表"
+      ],
+      "forensics": [
+        "关注方向异常"
+      ],
+      "is_material": false,
+      "systemic_issue": true,
+      "aged_item": false,
+      "rule_adjustments": [
+        "同科目[银行存款-工商银行]多发差异疑似系统性问题"
+      ]
+    },
+    {
+      "item_id": "CF002",
+      "subject": "银行存款-工商银行",
+      "book_amount": 2000000.0,
+      "reply_amount": 1950000.0,
+      "diff": -50000.0,
+      "diff_pct": -0.025,
+      "category": "时间性差异",
+      "severity": "critical",
+      "materiality_grade": "material",
+      "confidence": 0.25,
+      "reasons": [
+        "未达账"
+      ],
+      "tolerance_pct": 0.005,
+      "audit_advice": [
+        "核对期后收支记录",
+        "关注资产负债表日后事项",
+        "检查银行余额调节表"
+      ],
+      "forensics": [],
+      "is_material": false,
+      "systemic_issue": true,
+      "aged_item": true,
+      "rule_adjustments": [
+        "同科目[银行存款-工商银行]多发差异疑似系统性问题",
+        "时间性差异长期未清理标记aged"
+      ]
+    },
+    {
+      "item_id": "CF003",
+      "subject": "应收账款-客户A",
+      "book_amount": 500000.0,
+      "reply_amount": 400000.0,
+      "diff": -100000.0,
+      "diff_pct": -0.2,
+      "category": "舞弊风险",
+      "severity": "critical",
+      "materiality_grade": "material",
+      "confidence": 0.4,
+      "reasons": [
+        "隐瞒"
+      ],
+      "tolerance_pct": 0.02,
+      "audit_advice": [
+        "升级审计程序",
+        "扩大样本量",
+        "实施函证替代程序",
+        "关注关联方"
+      ],
+      "forensics": [],
+      "is_material": true,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": [
+        "差异占账面20.0%>10%标记重大"
+      ]
+    },
+    {
+      "item_id": "CF004",
+      "subject": "应付账款-供应商B",
+      "book_amount": 300000.0,
+      "reply_amount": 330000.0,
+      "diff": 30000.0,
+      "diff_pct": 0.1,
+      "category": "记账差错",
+      "severity": "critical",
+      "materiality_grade": "material",
+      "confidence": 0.45,
+      "reasons": [
+        "重记"
+      ],
+      "tolerance_pct": 0.02,
+      "audit_advice": [
+        "重算账面记录",
+        "与原始凭证核对",
+        "检查过账流程"
+      ],
+      "forensics": [],
+      "is_material": false,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": []
+    },
+    {
+      "item_id": "CF005",
+      "subject": "存货",
+      "book_amount": 800000.0,
+      "reply_amount": 750000.0,
+      "diff": -50000.0,
+      "diff_pct": -0.0625,
+      "category": "减值/核销",
+      "severity": "critical",
+      "materiality_grade": "material",
+      "confidence": 0.75,
+      "reasons": [
+        "坏账",
+        "核销",
+        "跌价"
+      ],
+      "tolerance_pct": 0.015,
+      "audit_advice": [
+        "检查减值测试底稿",
+        "确认核销审批手续",
+        "关注期后是否回收"
+      ],
+      "forensics": [],
+      "is_material": false,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": []
+    },
+    {
+      "item_id": "CF006",
+      "subject": "收入",
+      "book_amount": 1200000.0,
+      "reply_amount": 1212000.0,
+      "diff": 12000.0,
+      "diff_pct": 0.01,
+      "category": "汇兑/利息",
+      "severity": "high",
+      "materiality_grade": "immaterial",
+      "confidence": 0.5,
+      "reasons": [
+        "汇兑",
+        "期末调汇"
+      ],
+      "tolerance_pct": 0.01,
+      "audit_advice": [
+        "复算汇兑损益",
+        "核对银行对账单期末汇率",
+        "检查利息计提依据"
+      ],
+      "forensics": [],
+      "is_material": false,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": []
+    },
+    {
+      "item_id": "CF007",
+      "subject": "固定资产",
+      "book_amount": 2000000.0,
+      "reply_amount": 2000000.0,
+      "diff": 0.0,
+      "diff_pct": 0.0,
+      "category": "时间性差异",
+      "severity": "low",
+      "materiality_grade": "de_minimis",
+      "confidence": 0.3,
+      "reasons": [],
+      "tolerance_pct": 0.01,
+      "audit_advice": [
+        "核对期后收支记录",
+        "关注资产负债表日后事项",
+        "检查银行余额调节表"
+      ],
+      "forensics": [],
+      "is_material": false,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": []
+    },
+    {
+      "item_id": "CF008",
+      "subject": "其他应收款",
+      "book_amount": 100000.0,
+      "reply_amount": 50000.0,
+      "diff": -50000.0,
+      "diff_pct": -0.5,
+      "category": "舞弊风险",
+      "severity": "critical",
+      "materiality_grade": "material",
+      "confidence": 0.65,
+      "reasons": [
+        "虚构",
+        "伪造"
+      ],
+      "tolerance_pct": 0.01,
+      "audit_advice": [
+        "升级审计程序",
+        "扩大样本量",
+        "实施函证替代程序",
+        "关注关联方"
+      ],
+      "forensics": [],
+      "is_material": true,
+      "systemic_issue": false,
+      "aged_item": false,
+      "rule_adjustments": [
+        "差异占账面50.0%>10%标记重大"
+      ]
+    }
+  ],
+  "summary": {
+    "total_items": 8,
+    "has_diff_count": 7,
+    "category_distribution": {
+      "时间性差异": 3,
+      "舞弊风险": 2,
+      "记账差错": 1,
+      "减值/核销": 1,
+      "汇兑/利息": 1
+    },
+    "severity_distribution": {
+      "medium": 1,
+      "critical": 5,
+      "high": 1,
+      "low": 1
+    },
+    "materiality_distribution": {
+      "material": 5,
+      "immaterial": 2,
+      "de_minimis": 1
+    },
+    "total_abs_diff_amount": 296000.0,
+    "high_risk_count": 6,
+    "high_risk_ids": [
+      "CF002",
+      "CF003",
+      "CF004",
+      "CF005",
+      "CF006",
+      "CF008"
+    ],
+    "rule_flags": {
+      "material_flagged": 2,
+      "systemic_flagged": 2,
+      "aged_flagged": 1
+    },
+    "thresholds": {
+      "de_minimis_amount": 1000.0,
+      "de_minimis_pct": 0.005,
+      "material_amount": 50000.0,
+      "material_pct": 0.1
+    }
+  },
+  "workpaper_todo": [
+    {
+      "item_id": "CF002",
+      "todo": "[银行存款-工商银行] 时间性差异差异 ¥50,000.00",
+      "priority": "critical",
+      "advice": [
+        "核对期后收支记录",
+        "关注资产负债表日后事项",
+        "检查银行余额调节表"
+      ]
+    },
+    {
+      "item_id": "CF003",
+      "todo": "[应收账款-客户A] 舞弊风险差异 ¥100,000.00",
+      "priority": "critical",
+      "advice": [
+        "升级审计程序",
+        "扩大样本量",
+        "实施函证替代程序",
+        "关注关联方"
+      ]
+    },
+    {
+      "item_id": "CF004",
+      "todo": "[应付账款-供应商B] 记账差错差异 ¥30,000.00",
+      "priority": "critical",
+      "advice": [
+        "重算账面记录",
+        "与原始凭证核对",
+        "检查过账流程"
+      ]
+    },
+    {
+      "item_id": "CF005",
+      "todo": "[存货] 减值/核销差异 ¥50,000.00",
+      "priority": "critical",
+      "advice": [
+        "检查减值测试底稿",
+        "确认核销审批手续",
+        "关注期后是否回收"
+      ]
+    },
+    {
+      "item_id": "CF006",
+      "todo": "[收入] 汇兑/利息差异 ¥12,000.00",
+      "priority": "high",
+      "advice": [
+        "复算汇兑损益",
+        "核对银行对账单期末汇率",
+        "检查利息计提依据"
+      ]
+    },
+    {
+      "item_id": "CF008",
+      "todo": "[其他应收款] 舞弊风险差异 ¥50,000.00",
+      "priority": "critical",
+      "advice": [
+        "升级审计程序",
+        "扩大样本量",
+        "实施函证替代程序",
+        "关注关联方"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: FA-05
+  name: 区块链银行函证
+  chain:
+    profile: default
+    contract: audit-evidence

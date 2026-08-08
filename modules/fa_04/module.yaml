@@ -1,0 +1,54 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FA-04
+  name: 智能函证管理平台
+  name_en: fa_04
+  version: 1.0.0
+  category: financial_audit
+  family: blockchain
+  family_display: Blockchain
+  difficulty: 3
+  priority: high
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    智能函证管理平台通过电子化函证（API对接银行+区块链存证）、全流程自动化跟踪和AI差异分析，将函证周期从7-15天压缩至<1天，函证成本降低85-90%，函证覆盖率从60-80%提升至100%。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fa_04
+  port: 8004
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - bce
+    - rop
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

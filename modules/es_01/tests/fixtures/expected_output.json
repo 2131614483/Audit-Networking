@@ -1,0 +1,300 @@
+{
+  "status": "ok",
+  "module": "ES-01",
+  "data_catalog": [
+    {
+      "metric_key": "GHG_Emissions",
+      "metric_name": "温室气体排放",
+      "dimension": "E",
+      "subcategory": "气候",
+      "consolidated_value": 11350.4762,
+      "unit": "tCO2",
+      "source_count": 4,
+      "source_list": [
+        "企业ESG报告",
+        "政府平台",
+        "新闻媒体"
+      ],
+      "range": [
+        5.0,
+        25000.0
+      ],
+      "std_dev": 10207.2485,
+      "cv": 0.8993,
+      "confidence": 0.583,
+      "confidence_grade": "low",
+      "verification_flag": true,
+      "low_credibility_sources": [
+        "新闻媒体"
+      ],
+      "conflict_alert": true
+    },
+    {
+      "metric_key": "Energy_Consumption",
+      "metric_name": "能源消耗",
+      "dimension": "E",
+      "subcategory": "能源",
+      "consolidated_value": 7270.2128,
+      "unit": "MJ",
+      "source_count": 5,
+      "source_list": [
+        "IoT传感器",
+        "内部系统"
+      ],
+      "range": [
+        4800.0,
+        20100.0
+      ],
+      "std_dev": 6743.3671,
+      "cv": 0.9275,
+      "confidence": 0.654,
+      "confidence_grade": "medium",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": true
+    },
+    {
+      "metric_key": "Water_Intensity",
+      "metric_name": "用水强度",
+      "dimension": "E",
+      "subcategory": "水",
+      "consolidated_value": 85000.0,
+      "unit": "m3",
+      "source_count": 1,
+      "source_list": [
+        "企业年报"
+      ],
+      "range": [
+        85000.0,
+        85000.0
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 0.9,
+      "confidence_grade": "high",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    },
+    {
+      "metric_key": "Waste_Generated",
+      "metric_name": "废弃物产生",
+      "dimension": "E",
+      "subcategory": "废弃物",
+      "consolidated_value": 320.0,
+      "unit": "tCO2",
+      "source_count": 1,
+      "source_list": [
+        "行业数据"
+      ],
+      "range": [
+        320.0,
+        320.0
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 0.8,
+      "confidence_grade": "high",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    },
+    {
+      "metric_key": "Employee_Turnover",
+      "metric_name": "员工流失率",
+      "dimension": "S",
+      "subcategory": "劳工",
+      "consolidated_value": 12.5,
+      "unit": "%",
+      "source_count": 1,
+      "source_list": [
+        "第三方评级"
+      ],
+      "range": [
+        12.5,
+        12.5
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 1.0,
+      "confidence_grade": "high",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    },
+    {
+      "metric_key": "Diversity_Ratio",
+      "metric_name": "多元化比例",
+      "dimension": "S",
+      "subcategory": "多元化",
+      "consolidated_value": 38.0,
+      "unit": "%",
+      "source_count": 1,
+      "source_list": [
+        "企业ESG报告"
+      ],
+      "range": [
+        38.0,
+        38.0
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 0.85,
+      "confidence_grade": "high",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    },
+    {
+      "metric_key": "Board_Independence",
+      "metric_name": "董事会独立性",
+      "dimension": "G",
+      "subcategory": "治理",
+      "consolidated_value": 75.0,
+      "unit": "%",
+      "source_count": 1,
+      "source_list": [
+        "企业年报"
+      ],
+      "range": [
+        75.0,
+        75.0
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 0.9,
+      "confidence_grade": "high",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    },
+    {
+      "metric_key": "Anti_Corruption",
+      "metric_name": "反腐败",
+      "dimension": "G",
+      "subcategory": "合规",
+      "consolidated_value": 88.0,
+      "unit": "分",
+      "source_count": 1,
+      "source_list": [
+        "内部系统"
+      ],
+      "range": [
+        88.0,
+        88.0
+      ],
+      "std_dev": 0.0,
+      "cv": 0.0,
+      "confidence": 0.75,
+      "confidence_grade": "medium",
+      "verification_flag": false,
+      "low_credibility_sources": [],
+      "conflict_alert": false
+    }
+  ],
+  "dimension_summary": {
+    "E": {
+      "count": 4,
+      "metrics": [
+        "GHG_Emissions",
+        "Energy_Consumption",
+        "Water_Intensity",
+        "Waste_Generated"
+      ]
+    },
+    "S": {
+      "count": 2,
+      "metrics": [
+        "Employee_Turnover",
+        "Diversity_Ratio"
+      ]
+    },
+    "G": {
+      "count": 2,
+      "metrics": [
+        "Board_Independence",
+        "Anti_Corruption"
+      ]
+    }
+  },
+  "quality_assessment": {
+    "source_count": 8,
+    "metric_count": 8,
+    "coverage": 1.0,
+    "accuracy": 0.805,
+    "completeness": 1.0,
+    "overall": 0.932,
+    "confidence_level": "high",
+    "issues": [
+      "温室气体排放: 数据离散度高(CV=0.90)，建议人工复核",
+      "温室气体排放: 数据源可信度偏低，建议补充权威来源",
+      "能源消耗: 数据离散度高(CV=0.93)，建议人工复核"
+    ],
+    "metric_grade_distribution": {
+      "high": 5,
+      "medium": 2,
+      "low": 1
+    },
+    "thresholds": {
+      "overall_high": 0.8,
+      "overall_medium": 0.5,
+      "metric_high": 0.8,
+      "metric_medium": 0.6
+    }
+  },
+  "data_gaps": [],
+  "rule_alerts": {
+    "verification_flags": [
+      {
+        "metric_key": "GHG_Emissions",
+        "metric_name": "温室气体排放",
+        "low_credibility_sources": [
+          "新闻媒体"
+        ]
+      }
+    ],
+    "conflict_alerts": [
+      {
+        "metric_key": "GHG_Emissions",
+        "metric_name": "温室气体排放",
+        "cv": 0.8993,
+        "range": [
+          5.0,
+          25000.0
+        ],
+        "source_count": 4,
+        "source_list": [
+          "企业ESG报告",
+          "政府平台",
+          "新闻媒体"
+        ]
+      },
+      {
+        "metric_key": "Energy_Consumption",
+        "metric_name": "能源消耗",
+        "cv": 0.9275,
+        "range": [
+          4800.0,
+          20100.0
+        ],
+        "source_count": 5,
+        "source_list": [
+          "IoT传感器",
+          "内部系统"
+        ]
+      }
+    ],
+    "data_gap_count": 0,
+    "verification_flag_count": 1,
+    "conflict_alert_count": 2,
+    "flagged_metric_keys": [
+      "Energy_Consumption",
+      "GHG_Emissions"
+    ]
+  },
+  "collection_log": {
+    "total_records": 15,
+    "errors": [],
+    "generated_at": "2026-08-08T08:12:27.591004"
+  }
+}

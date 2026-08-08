@@ -1,0 +1,94 @@
+{
+  "target_company": {
+    "company_name": "目标公司",
+    "industry": "制造业",
+    "sub_industry": "电子设备",
+    "region": "华东",
+    "country": "中国",
+    "revenue": 100000000,
+    "employees": 500,
+    "operating_margin": 0.10,
+    "roa": 0.06,
+    "functions": ["研发", "生产", "营销", "管理"]
+  },
+  "candidates": [
+    {
+      "company_id": "CAND-001",
+      "company_name": "最佳可比公司",
+      "industry": "制造业",
+      "sub_industry": "电子设备",
+      "region": "华东",
+      "country": "中国",
+      "revenue": 95000000,
+      "employees": 480,
+      "operating_margin": 0.09,
+      "roa": 0.055,
+      "functions": ["研发", "生产", "营销", "管理"]
+    },
+    {
+      "company_id": "CAND-002",
+      "company_name": "良好可比公司",
+      "industry": "制造业",
+      "sub_industry": "机械设备",
+      "region": "华北",
+      "country": "中国",
+      "revenue": 80000000,
+      "employees": 400,
+      "operating_margin": 0.08,
+      "roa": 0.05,
+      "functions": ["研发", "生产", "管理"]
+    },
+    {
+      "company_id": "CAND-003",
+      "company_name": "一般可比公司",
+      "industry": "制造业",
+      "sub_industry": "汽车零件",
+      "region": "华南",
+      "country": "中国",
+      "revenue": 120000000,
+      "employees": 600,
+      "operating_margin": 0.12,
+      "roa": 0.07,
+      "functions": ["生产", "营销"]
+    },
+    {
+      "company_id": "CAND-004",
+      "company_name": "不同行业公司A",
+      "industry": "服务业",
+      "sub_industry": "咨询服务",
+      "region": "华东",
+      "country": "中国",
+      "revenue": 90000000,
+      "employees": 300,
+      "operating_margin": 0.15,
+      "roa": 0.08,
+      "functions": ["营销", "管理"]
+    },
+    {
+      "company_id": "CAND-005",
+      "company_name": "不同行业公司B",
+      "industry": "零售业",
+      "sub_industry": "电子商务",
+      "region": "华北",
+      "country": "中国",
+      "revenue": 110000000,
+      "employees": 450,
+      "operating_margin": 0.05,
+      "roa": 0.04,
+      "functions": ["营销", "分销"]
+    },
+    {
+      "company_id": "CAND-006",
+      "company_name": "海外公司",
+      "industry": "制造业",
+      "sub_industry": "电子设备",
+      "region": "北美",
+      "country": "美国",
+      "revenue": 200000000,
+      "employees": 1000,
+      "operating_margin": 0.20,
+      "roa": 0.12,
+      "functions": ["研发", "生产", "营销", "管理", "分销"]
+    }
+  ]
+}

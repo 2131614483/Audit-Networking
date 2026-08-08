@@ -1,0 +1,7 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: FA-04
+  name: 智能函证管理平台
+  chain:
+    profile: default
+    contract: audit-evidence

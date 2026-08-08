@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FO-04
+  name: AI电子取证平台
+  name_en: fo_04
+  version: 1.0.0
+  category: legal_audit
+  family: cv
+  family_display: Computer Vision
+  difficulty: 4
+  priority: medium
+  roi: ""
+  duration: "7个月"
+  budget: "约450万元（含人力、工具及基础设施）"
+  description: >
+    本方案构建一套基于NLP+LLM+KG+CV的多模态AI电子取证平台，实现电子证据的智能化审查、分析和证据链构建。平台利用NLP技术进行文档理解和分类，利用LLM进行深度语义分析和隐含线索挖掘，利用知识图谱构建证据关联网络，利用CV技术处理扫描件和图像类证据。方案实施后，文档审查效率提升90%以上，关键证据发现率显著提高，证据链构建时间大幅缩短。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fo_04
+  port: 8404
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

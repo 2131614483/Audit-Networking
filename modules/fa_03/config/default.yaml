@@ -1,0 +1,8 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: FA-03
+  name: 审计数据湖建设
+  model:
+    path: models/model.pkl
+  threshold:
+    confidence: 0.85

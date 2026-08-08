@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CM-01
+  name: 持续审计技术平台
+  name_en: cm_01
+  version: 1.0.0
+  category: continuous_audit
+  family: streaming
+  family_display: Streaming
+  difficulty: 4
+  priority: medium
+  roi: ""
+  duration: "8个月"
+  budget: ""
+  description: >
+    本方案构建基于实时流处理、机器学习和规则引擎的持续审计技术平台。通过Kafka实时数据流接入、Flink流处理、ML模型实时分析和规则引擎自动检查，实现7×24小时的持续审计能力，将审计从"事后追查"转变为"实时监控"。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.cm_01
+  port: 9101
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

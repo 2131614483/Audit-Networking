@@ -1,0 +1,9 @@
+# 出厂默认配置（请勿直接改，用 custom.yaml 覆盖）
+module:
+  id: IP-03
+  name: 知识图谱历史沿革梳理系统
+  kg:
+    uri: bolt://localhost:7687
+    user: neo4j
+  gnn:
+    model_path: models/gnn.pt

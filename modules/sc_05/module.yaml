@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: SC-05
+  name: AI采购价格基准平台
+  name_en: sc_05
+  version: 1.0.0
+  category: supply_chain_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: medium
+  roi: ""
+  duration: "5个月"
+  budget: ""
+  description: >
+    本方案构建基于机器学习、自然语言处理和电商大数据的采购价格基准平台。通过自动采集电商平台、行业网站、政府公开数据等多源价格信息，利用ML模型进行价格预测和市场基准生成，为审计人员提供全面、实时、精准的价格参考基准。平台将价格基准覆盖率提升300%，显著增强采购价格审计的数据支撑能力。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.sc_05
+  port: 8605
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

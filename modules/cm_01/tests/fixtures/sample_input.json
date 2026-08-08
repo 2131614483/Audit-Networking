@@ -1,0 +1,7 @@
+{
+  "metrics": [
+    {"metric_name": "transaction_amount", "value": 1500000, "source": "ERP", "timestamp": "2024-01-01T10:00:00"},
+    {"metric_name": "operation_count", "value": 60, "source": "System", "timestamp": "2024-01-01T10:00:00"},
+    {"metric_name": "login_count", "value": 25, "source": "Auth", "timestamp": "2024-01-01T10:00:00"}
+  ]
+}

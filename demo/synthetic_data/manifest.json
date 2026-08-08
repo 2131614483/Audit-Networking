@@ -1,0 +1,2435 @@
+{
+  "total_bytes": 1150521300,
+  "total_mb": 1097.22,
+  "total_gb": 1.072,
+  "module_count": 78,
+  "generated_at": "2026-08-08T15:00:53.951732",
+  "modules": [
+    {
+      "slug": "fa_02",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 32957882,
+      "total_mb": 31.43,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 29008738
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1762792
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 254803
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1903521
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28028
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:24.885622"
+    },
+    {
+      "slug": "fa_03",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 32951348,
+      "total_mb": 31.42,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 29011724
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1753574
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 254696
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1903065
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28289
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:27.040867"
+    },
+    {
+      "slug": "fa_04",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 21976696,
+      "total_mb": 20.96,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 19336677
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1173077
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 169774
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1268841
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28327
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:28.499558"
+    },
+    {
+      "slug": "fa_05",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 18319521,
+      "total_mb": 17.47,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 16115409
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 976406
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 141592
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1057707
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28407
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:29.663997"
+    },
+    {
+      "slug": "fa_06",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 21974997,
+      "total_mb": 20.96,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 19335117
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1172917
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 169836
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1268846
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28281
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:31.088703"
+    },
+    {
+      "slug": "fa_07",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 27465662,
+      "total_mb": 26.19,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 24174556
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1463902
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 212245
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1586231
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28728
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:32.789315"
+    },
+    {
+      "slug": "fa_08",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 21968866,
+      "total_mb": 20.95,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 19338093
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1164126
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 169759
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1268867
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28021
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:34.180822"
+    },
+    {
+      "slug": "fa_09",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 21974374,
+      "total_mb": 20.96,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 19335381
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1171546
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 169790
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1269290
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28367
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:35.673487"
+    },
+    {
+      "slug": "fa_10",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 27463379,
+      "total_mb": 26.19,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 24169178
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1467441
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 212259
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1586143
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28358
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:37.628887"
+    },
+    {
+      "slug": "fa_11",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 25633331,
+      "total_mb": 24.45,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 22561723
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1364784
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 198142
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1480472
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28210
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:39.387999"
+    },
+    {
+      "slug": "fa_12",
+      "family": "fa",
+      "module_name": "",
+      "total_bytes": 21974717,
+      "total_mb": 20.96,
+      "files": [
+        {
+          "file": "records.jsonl",
+          "bytes": 19339551
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1167945
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 169858
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 1269091
+        },
+        {
+          "file": "shareholders.jsonl",
+          "bytes": 28272
+        }
+      ],
+      "modalities": [
+        "records",
+        "media_refs",
+        "transactions",
+        "shareholders",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:40.809313"
+    },
+    {
+      "slug": "co_01",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 14270583,
+      "total_mb": 13.61,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 4343044
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 7696127
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1955020
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 141853
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134539
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:42.443721"
+    },
+    {
+      "slug": "co_02",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 12505489,
+      "total_mb": 11.93,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3800521
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 6733479
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1712850
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 124025
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134614
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:43.892784"
+    },
+    {
+      "slug": "co_03",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 10732510,
+      "total_mb": 10.24,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3256643
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 5772320
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1462472
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 106389
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134686
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:45.170078"
+    },
+    {
+      "slug": "co_04",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 16040725,
+      "total_mb": 15.3,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 4885581
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 8659104
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 2201983
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 159493
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134564
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:46.999838"
+    },
+    {
+      "slug": "co_05",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 13386744,
+      "total_mb": 12.77,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 4070001
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 7215585
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1833623
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 132949
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134586
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:48.502946"
+    },
+    {
+      "slug": "co_06",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 12499405,
+      "total_mb": 11.92,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3798906
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 6734440
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1707543
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 123952
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134564
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:49.907690"
+    },
+    {
+      "slug": "co_07",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 10732777,
+      "total_mb": 10.24,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3256972
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 5772013
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1462916
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 106364
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134512
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:51.167639"
+    },
+    {
+      "slug": "co_08",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 10733510,
+      "total_mb": 10.24,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3257394
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 5771440
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1463829
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 106300
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134547
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:52.421753"
+    },
+    {
+      "slug": "co_09",
+      "family": "co",
+      "module_name": "",
+      "total_bytes": 10734008,
+      "total_mb": 10.24,
+      "files": [
+        {
+          "file": "regulations.jsonl",
+          "bytes": 3257170
+        },
+        {
+          "file": "transactions.jsonl",
+          "bytes": 5771937
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1463944
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 106423
+        },
+        {
+          "file": "graph.json",
+          "bytes": 134534
+        }
+      ],
+      "modalities": [
+        "regulations",
+        "media_refs",
+        "transactions",
+        "text_corpus",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T14:59:53.681671"
+    },
+    {
+      "slug": "ip_01",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 32610378,
+      "total_mb": 31.1,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2838498
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 2036868
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 25786139
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1948873
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:56.203010"
+    },
+    {
+      "slug": "ip_02",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 24457494,
+      "total_mb": 23.32,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2129115
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 1525335
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 19338256
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1464788
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:57.940070"
+    },
+    {
+      "slug": "ip_03",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 28525797,
+      "total_mb": 27.2,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2483290
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 1780016
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 22560473
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1702018
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T14:59:59.964808"
+    },
+    {
+      "slug": "ip_04",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 28530969,
+      "total_mb": 27.21,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2483755
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 1780384
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 22557681
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1709149
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:01.992002"
+    },
+    {
+      "slug": "ip_05",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 28525310,
+      "total_mb": 27.2,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2483007
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 1781065
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 22560420
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1700818
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:03.939810"
+    },
+    {
+      "slug": "ip_06",
+      "family": "ip",
+      "module_name": "",
+      "total_bytes": 24453930,
+      "total_mb": 23.32,
+      "files": [
+        {
+          "file": "history_events.jsonl",
+          "bytes": 2128975
+        },
+        {
+          "file": "cases.jsonl",
+          "bytes": 1524425
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 19337969
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1462561
+        }
+      ],
+      "modalities": [
+        "cases",
+        "records",
+        "history_events",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:05.665081"
+    },
+    {
+      "slug": "cm_01",
+      "family": "cm",
+      "module_name": "",
+      "total_bytes": 23292834,
+      "total_mb": 22.21,
+      "files": [
+        {
+          "file": "events.jsonl",
+          "bytes": 10325191
+        },
+        {
+          "file": "alerts.jsonl",
+          "bytes": 2225804
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 10741839
+        }
+      ],
+      "modalities": [
+        "events",
+        "records",
+        "alerts"
+      ],
+      "generated_at": "2026-08-08T15:00:07.044585"
+    },
+    {
+      "slug": "cm_02",
+      "family": "cm",
+      "module_name": "",
+      "total_bytes": 20379983,
+      "total_mb": 19.44,
+      "files": [
+        {
+          "file": "events.jsonl",
+          "bytes": 9034446
+        },
+        {
+          "file": "alerts.jsonl",
+          "bytes": 1947697
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 9397840
+        }
+      ],
+      "modalities": [
+        "events",
+        "records",
+        "alerts"
+      ],
+      "generated_at": "2026-08-08T15:00:08.236504"
+    },
+    {
+      "slug": "cm_03",
+      "family": "cm",
+      "module_name": "",
+      "total_bytes": 14558912,
+      "total_mb": 13.88,
+      "files": [
+        {
+          "file": "events.jsonl",
+          "bytes": 6453545
+        },
+        {
+          "file": "alerts.jsonl",
+          "bytes": 1391096
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 6714271
+        }
+      ],
+      "modalities": [
+        "events",
+        "records",
+        "alerts"
+      ],
+      "generated_at": "2026-08-08T15:00:09.096490"
+    },
+    {
+      "slug": "cm_04",
+      "family": "cm",
+      "module_name": "",
+      "total_bytes": 17471293,
+      "total_mb": 16.66,
+      "files": [
+        {
+          "file": "events.jsonl",
+          "bytes": 7743681
+        },
+        {
+          "file": "alerts.jsonl",
+          "bytes": 1669230
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 8058382
+        }
+      ],
+      "modalities": [
+        "events",
+        "records",
+        "alerts"
+      ],
+      "generated_at": "2026-08-08T15:00:10.128287"
+    },
+    {
+      "slug": "cm_05",
+      "family": "cm",
+      "module_name": "",
+      "total_bytes": 17471037,
+      "total_mb": 16.66,
+      "files": [
+        {
+          "file": "events.jsonl",
+          "bytes": 7744150
+        },
+        {
+          "file": "alerts.jsonl",
+          "bytes": 1669452
+        },
+        {
+          "file": "records.jsonl",
+          "bytes": 8057435
+        }
+      ],
+      "modalities": [
+        "events",
+        "records",
+        "alerts"
+      ],
+      "generated_at": "2026-08-08T15:00:11.172686"
+    },
+    {
+      "slug": "fo_01",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 15796704,
+      "total_mb": 15.06,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 10126464
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 2931685
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 318422
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 2248734
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171399
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:12.997936"
+    },
+    {
+      "slug": "fo_02",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 13190699,
+      "total_mb": 12.58,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 8440838
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 2438879
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 265232
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 1874292
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171458
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:14.553991"
+    },
+    {
+      "slug": "fo_03",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 14066274,
+      "total_mb": 13.41,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 9004455
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 2608958
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 283089
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 1998340
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171432
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:16.204793"
+    },
+    {
+      "slug": "fo_04",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 12323808,
+      "total_mb": 11.75,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 7878251
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 2277270
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 247795
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 1749020
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171472
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:17.674457"
+    },
+    {
+      "slug": "fo_05",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 10584051,
+      "total_mb": 10.09,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 6752999
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 1948698
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 212225
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 1498572
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171557
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:18.967804"
+    },
+    {
+      "slug": "fo_06",
+      "family": "fo",
+      "module_name": "",
+      "total_bytes": 12333351,
+      "total_mb": 11.76,
+      "files": [
+        {
+          "file": "transactions.jsonl",
+          "bytes": 7880748
+        },
+        {
+          "file": "documents.txt",
+          "bytes": 2284257
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 247724
+        },
+        {
+          "file": "evidence.jsonl",
+          "bytes": 1749194
+        },
+        {
+          "file": "graph.json",
+          "bytes": 171428
+        }
+      ],
+      "modalities": [
+        "evidence",
+        "media_refs",
+        "transactions",
+        "documents",
+        "graph"
+      ],
+      "generated_at": "2026-08-08T15:00:20.516754"
+    },
+    {
+      "slug": "it_01",
+      "family": "it",
+      "module_name": "",
+      "total_bytes": 13955739,
+      "total_mb": 13.31,
+      "files": [
+        {
+          "file": "configs.jsonl",
+          "bytes": 2882383
+        },
+        {
+          "file": "logs.jsonl",
+          "bytes": 9033044
+        },
+        {
+          "file": "code_issues.jsonl",
+          "bytes": 2040312
+        }
+      ],
+      "modalities": [
+        "code_issues",
+        "logs",
+        "configs"
+      ],
+      "generated_at": "2026-08-08T15:00:21.251865"
+    },
+    {
+      "slug": "it_02",
+      "family": "it",
+      "module_name": "",
+      "total_bytes": 11962401,
+      "total_mb": 11.41,
+      "files": [
+        {
+          "file": "configs.jsonl",
+          "bytes": 2471203
+        },
+        {
+          "file": "logs.jsonl",
+          "bytes": 7742130
+        },
+        {
+          "file": "code_issues.jsonl",
+          "bytes": 1749068
+        }
+      ],
+      "modalities": [
+        "code_issues",
+        "logs",
+        "configs"
+      ],
+      "generated_at": "2026-08-08T15:00:21.829170"
+    },
+    {
+      "slug": "it_03",
+      "family": "it",
+      "module_name": "",
+      "total_bytes": 13958796,
+      "total_mb": 13.31,
+      "files": [
+        {
+          "file": "configs.jsonl",
+          "bytes": 2882629
+        },
+        {
+          "file": "logs.jsonl",
+          "bytes": 9035286
+        },
+        {
+          "file": "code_issues.jsonl",
+          "bytes": 2040881
+        }
+      ],
+      "modalities": [
+        "code_issues",
+        "logs",
+        "configs"
+      ],
+      "generated_at": "2026-08-08T15:00:22.502871"
+    },
+    {
+      "slug": "it_04",
+      "family": "it",
+      "module_name": "",
+      "total_bytes": 13957228,
+      "total_mb": 13.31,
+      "files": [
+        {
+          "file": "configs.jsonl",
+          "bytes": 2882229
+        },
+        {
+          "file": "logs.jsonl",
+          "bytes": 9034069
+        },
+        {
+          "file": "code_issues.jsonl",
+          "bytes": 2040930
+        }
+      ],
+      "modalities": [
+        "code_issues",
+        "logs",
+        "configs"
+      ],
+      "generated_at": "2026-08-08T15:00:23.184161"
+    },
+    {
+      "slug": "it_05",
+      "family": "it",
+      "module_name": "",
+      "total_bytes": 11964123,
+      "total_mb": 11.41,
+      "files": [
+        {
+          "file": "configs.jsonl",
+          "bytes": 2470866
+        },
+        {
+          "file": "logs.jsonl",
+          "bytes": 7744156
+        },
+        {
+          "file": "code_issues.jsonl",
+          "bytes": 1749101
+        }
+      ],
+      "modalities": [
+        "code_issues",
+        "logs",
+        "configs"
+      ],
+      "generated_at": "2026-08-08T15:00:23.771227"
+    },
+    {
+      "slug": "ta_01",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 11422954,
+      "total_mb": 10.89,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 9507787
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1726352
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 188815
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:24.843844"
+    },
+    {
+      "slug": "ta_02",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 10708107,
+      "total_mb": 10.21,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 8912535
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1618223
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 177349
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:25.856689"
+    },
+    {
+      "slug": "ta_03",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 8567544,
+      "total_mb": 8.17,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 7130912
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1294771
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 141861
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:26.662890"
+    },
+    {
+      "slug": "ta_04",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 9993966,
+      "total_mb": 9.53,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 8318055
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1510490
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 165421
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:27.598741"
+    },
+    {
+      "slug": "ta_05",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 8566154,
+      "total_mb": 8.17,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 7129077
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1295185
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 141892
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:28.404488"
+    },
+    {
+      "slug": "ta_06",
+      "family": "ta",
+      "module_name": "",
+      "total_bytes": 9992925,
+      "total_mb": 9.53,
+      "files": [
+        {
+          "file": "invoices.jsonl",
+          "bytes": 8317275
+        },
+        {
+          "file": "transfer_pricing.jsonl",
+          "bytes": 1510376
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 165274
+        }
+      ],
+      "modalities": [
+        "transfer_pricing",
+        "invoices",
+        "media_refs"
+      ],
+      "generated_at": "2026-08-08T15:00:29.343851"
+    },
+    {
+      "slug": "sc_01",
+      "family": "sc",
+      "module_name": "",
+      "total_bytes": 11269173,
+      "total_mb": 10.75,
+      "files": [
+        {
+          "file": "suppliers.jsonl",
+          "bytes": 3960800
+        },
+        {
+          "file": "procurement.jsonl",
+          "bytes": 7175781
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 132592
+        }
+      ],
+      "modalities": [
+        "suppliers",
+        "media_refs",
+        "procurement"
+      ],
+      "generated_at": "2026-08-08T15:00:30.417758"
+    },
+    {
+      "slug": "sc_02",
+      "family": "sc",
+      "module_name": "",
+      "total_bytes": 10518301,
+      "total_mb": 10.03,
+      "files": [
+        {
+          "file": "suppliers.jsonl",
+          "bytes": 3697842
+        },
+        {
+          "file": "procurement.jsonl",
+          "bytes": 6696680
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 123779
+        }
+      ],
+      "modalities": [
+        "suppliers",
+        "media_refs",
+        "procurement"
+      ],
+      "generated_at": "2026-08-08T15:00:31.413943"
+    },
+    {
+      "slug": "sc_03",
+      "family": "sc",
+      "module_name": "",
+      "total_bytes": 10517738,
+      "total_mb": 10.03,
+      "files": [
+        {
+          "file": "suppliers.jsonl",
+          "bytes": 3696772
+        },
+        {
+          "file": "procurement.jsonl",
+          "bytes": 6697183
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 123783
+        }
+      ],
+      "modalities": [
+        "suppliers",
+        "media_refs",
+        "procurement"
+      ],
+      "generated_at": "2026-08-08T15:00:32.402064"
+    },
+    {
+      "slug": "sc_04",
+      "family": "sc",
+      "module_name": "",
+      "total_bytes": 10517148,
+      "total_mb": 10.03,
+      "files": [
+        {
+          "file": "suppliers.jsonl",
+          "bytes": 3696941
+        },
+        {
+          "file": "procurement.jsonl",
+          "bytes": 6696452
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 123755
+        }
+      ],
+      "modalities": [
+        "suppliers",
+        "media_refs",
+        "procurement"
+      ],
+      "generated_at": "2026-08-08T15:00:33.394018"
+    },
+    {
+      "slug": "sc_05",
+      "family": "sc",
+      "module_name": "",
+      "total_bytes": 9015571,
+      "total_mb": 8.6,
+      "files": [
+        {
+          "file": "suppliers.jsonl",
+          "bytes": 3168700
+        },
+        {
+          "file": "procurement.jsonl",
+          "bytes": 5740735
+        },
+        {
+          "file": "media_refs.jsonl",
+          "bytes": 106136
+        }
+      ],
+      "modalities": [
+        "suppliers",
+        "media_refs",
+        "procurement"
+      ],
+      "generated_at": "2026-08-08T15:00:34.260079"
+    },
+    {
+      "slug": "es_01",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 13839417,
+      "total_mb": 13.2,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2749923
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 226949
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 2601747
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 8260798
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:35.257094"
+    },
+    {
+      "slug": "es_02",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 12111285,
+      "total_mb": 11.55,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2406349
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 198533
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 2279458
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 7226945
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:36.079790"
+    },
+    {
+      "slug": "es_03",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 12103099,
+      "total_mb": 11.54,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2406384
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 198621
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 2270835
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 7227259
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:36.894665"
+    },
+    {
+      "slug": "es_04",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 12111397,
+      "total_mb": 11.55,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2406310
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 198626
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 2279375
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 7227086
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:37.704849"
+    },
+    {
+      "slug": "es_05",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 12103465,
+      "total_mb": 11.54,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2406223
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 198641
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 2270762
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 7227839
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:38.518836"
+    },
+    {
+      "slug": "es_06",
+      "family": "es",
+      "module_name": "",
+      "total_bytes": 10374925,
+      "total_mb": 9.89,
+      "files": [
+        {
+          "file": "esg_data.jsonl",
+          "bytes": 2062527
+        },
+        {
+          "file": "satellite_refs.jsonl",
+          "bytes": 170196
+        },
+        {
+          "file": "text_reports.txt",
+          "bytes": 1947653
+        },
+        {
+          "file": "carbon.jsonl",
+          "bytes": 6194549
+        }
+      ],
+      "modalities": [
+        "text_reports",
+        "esg_data",
+        "satellite_refs",
+        "carbon"
+      ],
+      "generated_at": "2026-08-08T15:00:39.223185"
+    },
+    {
+      "slug": "fi_01",
+      "family": "fi",
+      "module_name": "",
+      "total_bytes": 12464232,
+      "total_mb": 11.89,
+      "files": [
+        {
+          "file": "loans.jsonl",
+          "bytes": 8755160
+        },
+        {
+          "file": "guarantees.jsonl",
+          "bytes": 2443514
+        },
+        {
+          "file": "regulatory_reports.jsonl",
+          "bytes": 1265558
+        }
+      ],
+      "modalities": [
+        "regulatory_reports",
+        "guarantees",
+        "loans"
+      ],
+      "generated_at": "2026-08-08T15:00:40.296908"
+    },
+    {
+      "slug": "fi_02",
+      "family": "fi",
+      "module_name": "",
+      "total_bytes": 11687571,
+      "total_mb": 11.15,
+      "files": [
+        {
+          "file": "loans.jsonl",
+          "bytes": 8210094
+        },
+        {
+          "file": "guarantees.jsonl",
+          "bytes": 2290643
+        },
+        {
+          "file": "regulatory_reports.jsonl",
+          "bytes": 1186834
+        }
+      ],
+      "modalities": [
+        "regulatory_reports",
+        "guarantees",
+        "loans"
+      ],
+      "generated_at": "2026-08-08T15:00:41.289459"
+    },
+    {
+      "slug": "fi_03",
+      "family": "fi",
+      "module_name": "",
+      "total_bytes": 10907196,
+      "total_mb": 10.4,
+      "files": [
+        {
+          "file": "loans.jsonl",
+          "bytes": 7662209
+        },
+        {
+          "file": "guarantees.jsonl",
+          "bytes": 2137379
+        },
+        {
+          "file": "regulatory_reports.jsonl",
+          "bytes": 1107608
+        }
+      ],
+      "modalities": [
+        "regulatory_reports",
+        "guarantees",
+        "loans"
+      ],
+      "generated_at": "2026-08-08T15:00:42.214091"
+    },
+    {
+      "slug": "fi_04",
+      "family": "fi",
+      "module_name": "",
+      "total_bytes": 10908292,
+      "total_mb": 10.4,
+      "files": [
+        {
+          "file": "loans.jsonl",
+          "bytes": 7662365
+        },
+        {
+          "file": "guarantees.jsonl",
+          "bytes": 2138575
+        },
+        {
+          "file": "regulatory_reports.jsonl",
+          "bytes": 1107352
+        }
+      ],
+      "modalities": [
+        "regulatory_reports",
+        "guarantees",
+        "loans"
+      ],
+      "generated_at": "2026-08-08T15:00:43.119077"
+    },
+    {
+      "slug": "fi_05",
+      "family": "fi",
+      "module_name": "",
+      "total_bytes": 9349184,
+      "total_mb": 8.92,
+      "files": [
+        {
+          "file": "loans.jsonl",
+          "bytes": 6566681
+        },
+        {
+          "file": "guarantees.jsonl",
+          "bytes": 1833100
+        },
+        {
+          "file": "regulatory_reports.jsonl",
+          "bytes": 949403
+        }
+      ],
+      "modalities": [
+        "regulatory_reports",
+        "guarantees",
+        "loans"
+      ],
+      "generated_at": "2026-08-08T15:00:43.900759"
+    },
+    {
+      "slug": "ia_01",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 7696744,
+      "total_mb": 7.34,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 4006421
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2453315
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1237008
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:44.464096"
+    },
+    {
+      "slug": "ia_02",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 7695297,
+      "total_mb": 7.34,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 4005477
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2452708
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1237112
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:44.974941"
+    },
+    {
+      "slug": "ia_03",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 6596461,
+      "total_mb": 6.29,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 3433895
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2102573
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1059993
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:45.420292"
+    },
+    {
+      "slug": "ia_04",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 6596360,
+      "total_mb": 6.29,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 3433760
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2102715
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1059885
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:45.871776"
+    },
+    {
+      "slug": "ia_05",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 6595727,
+      "total_mb": 6.29,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 3433750
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2102612
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1059365
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:46.339873"
+    },
+    {
+      "slug": "ia_06",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 5497209,
+      "total_mb": 5.24,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 2862000
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 1751839
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 883370
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:46.720125"
+    },
+    {
+      "slug": "ia_07",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 6595756,
+      "total_mb": 6.29,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 3433739
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2102623
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1059394
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:47.157015"
+    },
+    {
+      "slug": "ia_08",
+      "family": "ia",
+      "module_name": "",
+      "total_bytes": 6595414,
+      "total_mb": 6.29,
+      "files": [
+        {
+          "file": "risks.jsonl",
+          "bytes": 3433782
+        },
+        {
+          "file": "remediation.jsonl",
+          "bytes": 2102481
+        },
+        {
+          "file": "audit_plans.jsonl",
+          "bytes": 1059151
+        }
+      ],
+      "modalities": [
+        "audit_plans",
+        "risks",
+        "remediation"
+      ],
+      "generated_at": "2026-08-08T15:00:47.592924"
+    },
+    {
+      "slug": "cb_01",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 12747712,
+      "total_mb": 12.16,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 9365601
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1433860
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1948251
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:48.789386"
+    },
+    {
+      "slug": "cb_02",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 11157018,
+      "total_mb": 10.64,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 8195355
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1252509
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1709154
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:49.844018"
+    },
+    {
+      "slug": "cb_03",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 11150783,
+      "total_mb": 10.63,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 8195111
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1252070
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1703602
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:50.920057"
+    },
+    {
+      "slug": "cb_04",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 11156958,
+      "total_mb": 10.64,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 8195206
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1255061
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1706691
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:51.976227"
+    },
+    {
+      "slug": "cb_05",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 9565382,
+      "total_mb": 9.12,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 7024910
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1074669
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1465803
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:52.890768"
+    },
+    {
+      "slug": "cb_06",
+      "family": "cb",
+      "module_name": "",
+      "total_bytes": 11157200,
+      "total_mb": 10.64,
+      "files": [
+        {
+          "file": "cross_border.jsonl",
+          "bytes": 8196012
+        },
+        {
+          "file": "regulations.jsonl",
+          "bytes": 1252652
+        },
+        {
+          "file": "text_corpus.txt",
+          "bytes": 1708536
+        }
+      ],
+      "modalities": [
+        "cross_border",
+        "regulations",
+        "text_corpus"
+      ],
+      "generated_at": "2026-08-08T15:00:53.950765"
+    }
+  ]
+}

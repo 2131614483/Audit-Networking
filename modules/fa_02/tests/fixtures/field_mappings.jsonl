@@ -1,0 +1,46 @@
+{"raw_name": "应收账款", "standard_name": "accounts_receivable", "subject_code": "1122", "source": "ERP-A"}
+{"raw_name": "A/R", "standard_name": "accounts_receivable", "subject_code": "1122", "source": "ERP-B"}
+{"raw_name": "Accounts Receivable", "standard_name": "accounts_receivable", "subject_code": "1122", "source": "IFS"}
+{"raw_name": "应收票据", "standard_name": "notes_receivable", "subject_code": "1121", "source": "ERP-A"}
+{"raw_name": "Notes Receivable", "standard_name": "notes_receivable", "subject_code": "1121", "source": "IFS"}
+{"raw_name": "预付账款", "standard_name": "prepayments", "subject_code": "1123", "source": "ERP-A"}
+{"raw_name": "Prepayments", "standard_name": "prepayments", "subject_code": "1123", "source": "IFS"}
+{"raw_name": "其他应收款", "standard_name": "other_receivables", "subject_code": "1221", "source": "ERP-A"}
+{"raw_name": "Other Receivables", "standard_name": "other_receivables", "subject_code": "1221", "source": "IFS"}
+{"raw_name": "应付账款", "standard_name": "accounts_payable", "subject_code": "2202", "source": "ERP-A"}
+{"raw_name": "A/P", "standard_name": "accounts_payable", "subject_code": "2202", "source": "ERP-B"}
+{"raw_name": "Accounts Payable", "standard_name": "accounts_payable", "subject_code": "2202", "source": "IFS"}
+{"raw_name": "应付票据", "standard_name": "notes_payable", "subject_code": "2201", "source": "ERP-A"}
+{"raw_name": "Notes Payable", "standard_name": "notes_payable", "subject_code": "2201", "source": "IFS"}
+{"raw_name": "营业收入", "standard_name": "revenue", "subject_code": "6001", "source": "ERP-A"}
+{"raw_name": "Revenue", "standard_name": "revenue", "subject_code": "6001", "source": "IFS"}
+{"raw_name": "主营业务收入", "standard_name": "revenue", "subject_code": "6001", "source": "ERP-B"}
+{"raw_name": "Sales Revenue", "standard_name": "revenue", "subject_code": "6001", "source": "IFS"}
+{"raw_name": "营业成本", "standard_name": "cost_of_sales", "subject_code": "6401", "source": "ERP-A"}
+{"raw_name": "Cost of Sales", "standard_name": "cost_of_sales", "subject_code": "6401", "source": "IFS"}
+{"raw_name": "COGS", "standard_name": "cost_of_sales", "subject_code": "6401", "source": "ERP-B"}
+{"raw_name": "存货", "standard_name": "inventory", "subject_code": "1241", "source": "ERP-A"}
+{"raw_name": "Inventory", "standard_name": "inventory", "subject_code": "1241", "source": "IFS"}
+{"raw_name": "原材料", "standard_name": "raw_materials", "subject_code": "1403", "source": "ERP-A"}
+{"raw_name": "Raw Materials", "standard_name": "raw_materials", "subject_code": "1403", "source": "IFS"}
+{"raw_name": "固定资产", "standard_name": "fixed_assets", "subject_code": "1601", "source": "ERP-A"}
+{"raw_name": "Fixed Assets", "standard_name": "fixed_assets", "subject_code": "1601", "source": "IFS"}
+{"raw_name": "PPE", "standard_name": "fixed_assets", "subject_code": "1601", "source": "ERP-B"}
+{"raw_name": "累计折旧", "standard_name": "accumulated_depreciation", "subject_code": "1602", "source": "ERP-A"}
+{"raw_name": "Accumulated Depreciation", "standard_name": "accumulated_depreciation", "subject_code": "1602", "source": "IFS"}
+{"raw_name": "货币资金", "standard_name": "cash_and_equivalents", "subject_code": "1001", "source": "ERP-A"}
+{"raw_name": "Cash", "standard_name": "cash_and_equivalents", "subject_code": "1001", "source": "IFS"}
+{"raw_name": "银行存款", "standard_name": "bank_deposits", "subject_code": "1002", "source": "ERP-A"}
+{"raw_name": "Bank Deposits", "standard_name": "bank_deposits", "subject_code": "1002", "source": "Bank"}
+{"raw_name": "短期借款", "standard_name": "short_term_loans", "subject_code": "2001", "source": "ERP-A"}
+{"raw_name": "Short-term Loans", "standard_name": "short_term_loans", "subject_code": "2001", "source": "IFS"}
+{"raw_name": "长期借款", "standard_name": "long_term_loans", "subject_code": "2501", "source": "ERP-A"}
+{"raw_name": "Long-term Loans", "standard_name": "long_term_loans", "subject_code": "2501", "source": "IFS"}
+{"raw_name": "实收资本", "standard_name": "paid_in_capital", "subject_code": "4001", "source": "ERP-A"}
+{"raw_name": "Paid-in Capital", "standard_name": "paid_in_capital", "subject_code": "4001", "source": "IFS"}
+{"raw_name": "经营活动现金流", "standard_name": "operating_cash_flow", "subject_code": "CF01", "source": "ERP-A"}
+{"raw_name": "Operating Cash Flow", "standard_name": "operating_cash_flow", "subject_code": "CF01", "source": "IFS"}
+{"raw_name": "投资活动现金流", "standard_name": "investing_cash_flow", "subject_code": "CF02", "source": "ERP-A"}
+{"raw_name": "Investing Cash Flow", "standard_name": "investing_cash_flow", "subject_code": "CF02", "source": "IFS"}
+{"raw_name": "筹资活动现金流", "standard_name": "financing_cash_flow", "subject_code": "CF03", "source": "ERP-A"}
+{"raw_name": "Financing Cash Flow", "standard_name": "financing_cash_flow", "subject_code": "CF03", "source": "IFS"}

@@ -1,0 +1,29 @@
+{
+  "industry": "软件和信息技术服务业",
+  "issues": [
+    {
+      "issue_id": "ISS-001",
+      "issue_type": "收入确认",
+      "issue_desc": "收入确认时点不准确，缺乏控制权转移证据",
+      "severity": "high",
+      "urgency": "high",
+      "depends_on": []
+    },
+    {
+      "issue_id": "ISS-002",
+      "issue_type": "关联交易",
+      "issue_desc": "关联交易披露不完整，定价公允性存疑",
+      "severity": "high",
+      "urgency": "medium",
+      "depends_on": ["ISS-001"]
+    },
+    {
+      "issue_id": "ISS-003",
+      "issue_type": "客户依赖",
+      "issue_desc": "前五大客户占比超80%，客户集中度风险高",
+      "severity": "medium",
+      "urgency": "low",
+      "depends_on": []
+    }
+  ]
+}

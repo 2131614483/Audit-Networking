@@ -1,0 +1,54 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: IP-01
+  name: IPO审计智能加速平台
+  name_en: ip_01
+  version: 1.0.0
+  category: ipo_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 4
+  priority: medium
+  roi: ""
+  duration: "8个月"
+  budget: ""
+  description: >
+    本方案构建基于RPA、ML、LLM和知识图谱的IPO审计智能加速平台。平台通过全流程自动化、智能核查和多方协作功能，大幅缩短IPO审计周期。RPA机器人自动处理重复性工作，ML模型辅助财务核查，LLM支持文档智能处理，知识图谱实现关联信息快速穿透。平台可将IPO审计周期缩短50-60%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.ip_01
+  port: 8801
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+    - rop
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

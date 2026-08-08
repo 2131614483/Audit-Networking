@@ -1,0 +1,55 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: CO-02
+  name: AI法规影响评估引擎
+  name_en: co_02
+  version: 1.0.0
+  category: compliance_audit
+  family: llm_rag
+  family_display: LLM / RAG
+  difficulty: 4
+  priority: high
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    AI法规影响评估引擎基于LLM+RAG技术，实现法规影响评估的自动化。系统通过LLM深度理解法规语义，RAG知识库提供行业对标和历史案例参考，ML模型量化评估合规成本和风险。评估效率提升90%，评估结果结构化、标准化，整改建议针对企业具体情况定制。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.co_02
+  port: 8202
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - lsb
+  modules:
+      - CO-01
+      - CO-03
+      - CO-09
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

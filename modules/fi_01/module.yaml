@@ -1,0 +1,53 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FI-01
+  name: AI信贷资产质量评估引擎
+  name_en: fi_01
+  version: 1.0.0
+  category: other
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 4
+  priority: medium
+  roi: ""
+  duration: "7个月"
+  budget: ""
+  description: >
+    本方案构建基于机器学习、NLP和知识图谱的AI信贷资产质量评估引擎。平台通过PD/LGD/EAD模型验证、五级分类自动校验、担保智能评估等功能，实现信贷资产质量的全面、客观、高效评估。平台可将分类准确率提升15-25%，审计效率提升80%。  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fi_01
+  port: 8901
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      []
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py

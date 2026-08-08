@@ -1,0 +1,52 @@
+{
+  "company_name": "示例科技股份有限公司",
+  "events": [
+    {
+      "event_type": "设立",
+      "date": "2018-03-15",
+      "description": "公司设立，注册资本1000万元",
+      "shareholders": [
+        {"name": "张三", "ratio": 60},
+        {"name": "李四", "ratio": 40}
+      ],
+      "amount": 10000000,
+      "has_resolution": true
+    },
+    {
+      "event_type": "增资",
+      "date": "2020-06-01",
+      "description": "增资至2000万元，新股东加入",
+      "shareholders": [
+        {"name": "张三", "ratio": 50},
+        {"name": "李四", "ratio": 30},
+        {"name": "王五", "ratio": 20}
+      ],
+      "amount": 20000000,
+      "has_resolution": true
+    },
+    {
+      "event_type": "股权转让",
+      "date": "2021-09-10",
+      "description": "李四将部分股权转让给王五",
+      "shareholders": [
+        {"name": "张三", "ratio": 50},
+        {"name": "李四", "ratio": 15},
+        {"name": "王五", "ratio": 35}
+      ],
+      "price": 5000000,
+      "net_asset": 4800000,
+      "has_resolution": true
+    },
+    {
+      "event_type": "改制",
+      "date": "2023-01-20",
+      "description": "整体变更为股份有限公司",
+      "shareholders": [
+        {"name": "张三", "ratio": 50},
+        {"name": "李四", "ratio": 15},
+        {"name": "王五", "ratio": 35}
+      ],
+      "has_resolution": true
+    }
+  ]
+}

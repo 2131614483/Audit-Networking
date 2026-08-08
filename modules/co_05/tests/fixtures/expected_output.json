@@ -1,0 +1,100 @@
+{
+  "status": "ok",
+  "module": "CO-05",
+  "action": "detect_patterns",
+  "meta": {
+    "module": "CO-05",
+    "family": "kg_gnn",
+    "generated_at": "timestamp"
+  },
+  "detections": [
+    {
+      "pattern_id": "PAT-SMURFING",
+      "pattern_name": "分散汇入(Smurfing)",
+      "severity": "high",
+      "confidence": 0.8,
+      "risk_grade": "high",
+      "target_node": "ACC4",
+      "source_count": 6,
+      "transaction_count": 6,
+      "total_amount": 34500.0,
+      "layering_pattern": false,
+      "organized_smurfing": true,
+      "suspected_syndicate": false,
+      "rule_adjustments": ["分散汇入源账户6>=5→有组织分散"]
+    },
+    {
+      "pattern_id": "PAT-STRUCTURING",
+      "pattern_name": "结构化交易(Structuring)",
+      "severity": "medium",
+      "confidence": 0.8,
+      "risk_grade": "medium",
+      "target_node": "ACC5",
+      "transaction_count": 4,
+      "total_amount": 36800.0,
+      "layering_pattern": false,
+      "organized_smurfing": false,
+      "suspected_syndicate": false,
+      "rule_adjustments": []
+    },
+    {
+      "pattern_id": "PAT-MONEY-LOOP",
+      "pattern_name": "资金循环(Money Loop)",
+      "severity": "high",
+      "confidence": 0.885,
+      "risk_grade": "critical",
+      "cycle_path": ["ACC4", "ACC5", "ACC6", "ACC4"],
+      "hop_count": 3,
+      "return_ratio": 0.95,
+      "layering_pattern": true,
+      "organized_smurfing": false,
+      "suspected_syndicate": false,
+      "rule_adjustments": ["资金循环→分层洗钱标记"]
+    },
+    {
+      "pattern_id": "PAT-SHELL-COMPANY",
+      "pattern_name": "空壳公司网络",
+      "severity": "medium",
+      "confidence": 0.72,
+      "risk_grade": "medium",
+      "shared_attribute": "phone:010-12345678",
+      "node_count": 4,
+      "nodes": ["COMP1", "COMP2", "COMP3", "COMP4"],
+      "layering_pattern": false,
+      "organized_smurfing": false,
+      "suspected_syndicate": true,
+      "rule_adjustments": ["空壳网络节点4>=4→犯罪团伙嫌疑"]
+    },
+    {
+      "pattern_id": "PAT-SHELL-COMPANY",
+      "pattern_name": "空壳公司网络",
+      "severity": "medium",
+      "confidence": 0.72,
+      "risk_grade": "medium",
+      "shared_attribute": "address:上海市浦东新区张江路100号",
+      "node_count": 4,
+      "nodes": ["COMP1", "COMP2", "COMP3", "COMP4"],
+      "layering_pattern": false,
+      "organized_smurfing": false,
+      "suspected_syndicate": true,
+      "rule_adjustments": ["空壳网络节点4>=4→犯罪团伙嫌疑"]
+    }
+  ],
+  "summary": {
+    "total_detections": 5,
+    "by_severity": {"high": 2, "medium": 3},
+    "by_pattern": {
+      "PAT-SMURFING": 1,
+      "PAT-STRUCTURING": 1,
+      "PAT-MONEY-LOOP": 1,
+      "PAT-SHELL-COMPANY": 2
+    },
+    "risk_grading": {"critical": 1, "high": 1, "medium": 3, "low": 0},
+    "rule_adjustments": {
+      "layering_pattern": 1,
+      "organized_smurfing": 1,
+      "suspected_syndicate": 2
+    },
+    "thresholds": {"critical_confidence": 0.85}
+  }
+}

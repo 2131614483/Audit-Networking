@@ -1,0 +1,87 @@
+{
+  "case_id": "CASE-2025-001",
+  "case_name": "ABC公司财务造假案电子取证",
+  "previous_chain_hash": "",
+  "evidence_items": [
+    {
+      "evidence_id": "EV-001",
+      "filename": "sales_contract_2025.pdf",
+      "content": "销售合同\n合同编号：HT-2025-001\n甲方：ABC科技有限公司\n乙方：XYZ贸易公司\n合同金额：500万元\n签订日期：2025-01-15\n包含保密条款与知识产权转让条款",
+      "timestamp": "2025-01-15T09:00:00",
+      "author": "张律师",
+      "source": "邮件附件",
+      "tags": ["合同", "关键证据"],
+      "file_type": "PDF文档"
+    },
+    {
+      "evidence_id": "EV-002",
+      "filename": "email_correspondence.eml",
+      "content": "发件人：zhang@abc.com\n收件人：wang@xyz.com\n主题：合同变更事宜\n王总，关于合同的违约条款与赔偿条款，我们需要重新协商。另外保密条款也需要加强。",
+      "timestamp": "2025-02-10T14:20:00",
+      "author": "张律师",
+      "source": "邮件服务器",
+      "tags": ["邮件", "通信记录"],
+      "file_type": "邮件"
+    },
+    {
+      "evidence_id": "EV-003",
+      "filename": "financial_report_q1.xlsx",
+      "content": "2025年第一季度财务报告\n营业收入：3000万元\n营业成本：1800万元\n净利润：800万元\n关联方交易：200万元",
+      "timestamp": "2025-03-31T17:30:00",
+      "author": "李会计",
+      "source": "财务系统",
+      "tags": ["财报", "Q1"],
+      "file_type": "Excel表格"
+    },
+    {
+      "evidence_id": "EV-004",
+      "filename": "system_log.txt",
+      "content": "2025-03-31 23:59:50 用户admin登录财务系统\n2025-04-01 00:00:15 数据导出操作\n2025-04-01 00:00:30 数据修改操作",
+      "timestamp": "2025-04-01T00:00:30",
+      "author": "",
+      "source": "服务器日志",
+      "tags": ["日志", "系统记录"],
+      "file_type": "日志"
+    },
+    {
+      "evidence_id": "EV-005",
+      "filename": "backup_contract.pdf",
+      "content": "销售合同\n合同编号：HT-2025-001\n甲方：ABC科技有限公司\n乙方：XYZ贸易公司\n合同金额：500万元\n签订日期：2025-01-15\n包含保密条款与知识产权转让条款",
+      "timestamp": "2025-01-15T10:00:00",
+      "author": "张律师",
+      "source": "备份服务器",
+      "tags": ["合同", "备份"],
+      "file_type": "PDF文档"
+    },
+    {
+      "evidence_id": "EV-006",
+      "filename": "meeting_minutes.docx",
+      "content": "董事会会议纪要\n时间：2025-06-20\n参会人员：董事长、总经理、财务总监\n议题：关联方交易审批\n决议：通过关联方交易200万元的审批",
+      "timestamp": "2025-06-20T15:00:00",
+      "author": "王秘书",
+      "source": "OA系统",
+      "tags": ["会议纪要", "关联方"],
+      "file_type": "Word文档"
+    },
+    {
+      "evidence_id": "EV-007",
+      "filename": "evidence_photo.jpg",
+      "content": "现场取证照片：办公电脑屏幕显示财务数据修改界面",
+      "timestamp": "2025-07-01T09:30:00",
+      "author": "取证人员",
+      "source": "现场取证",
+      "tags": ["照片", "现场"],
+      "file_type": "图片"
+    },
+    {
+      "evidence_id": "EV-008",
+      "filename": "oral_record.wav",
+      "content": "询问笔录录音：财务总监关于财务数据修改的陈述",
+      "timestamp": "",
+      "author": "",
+      "source": "询问室",
+      "tags": ["录音", "询问"],
+      "file_type": "音频"
+    }
+  ]
+}

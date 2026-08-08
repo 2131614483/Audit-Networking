@@ -1,0 +1,73 @@
+{
+  "invoices": [
+    {
+      "id": "INV-001",
+      "supplier_name": "供应商A",
+      "amount_incl_tax": 1130.00,
+      "amount_excl_tax": 1000.00,
+      "tax_amount": 130.00,
+      "quantity": 10,
+      "date": "2026-07-15"
+    },
+    {
+      "id": "INV-002",
+      "supplier_name": "供应商B",
+      "amount_incl_tax": 5000.00,
+      "amount_excl_tax": 4424.78,
+      "tax_amount": 575.22,
+      "quantity": 50,
+      "date": "2026-07-20"
+    },
+    {
+      "id": "INV-003",
+      "supplier_name": "供应商C",
+      "amount_incl_tax": 300.00,
+      "amount_excl_tax": 265.49,
+      "tax_amount": 34.51,
+      "quantity": 3,
+      "date": "2026-07-25"
+    }
+  ],
+  "orders": [
+    {
+      "id": "PO-001",
+      "supplier_name": "供应商A",
+      "amount_incl_tax": 1130.00,
+      "amount_excl_tax": 1000.00,
+      "tax_amount": 130.00,
+      "quantity": 10,
+      "date": "2026-07-10"
+    },
+    {
+      "id": "PO-002",
+      "supplier_name": "供应商B",
+      "amount_incl_tax": 4500.00,
+      "amount_excl_tax": 3982.30,
+      "tax_amount": 517.70,
+      "quantity": 45,
+      "date": "2026-07-18"
+    }
+  ],
+  "receipts": [
+    {
+      "id": "GR-001",
+      "supplier_name": "供应商A",
+      "amount_incl_tax": 1130.00,
+      "amount_excl_tax": 1000.00,
+      "tax_amount": 130.00,
+      "quantity": 10,
+      "date": "2026-07-14"
+    }
+  ],
+  "payments": [
+    {
+      "id": "PAY-001",
+      "supplier_name": "供应商A",
+      "amount_incl_tax": 1130.00,
+      "amount_excl_tax": 1000.00,
+      "tax_amount": 130.00,
+      "quantity": 10,
+      "date": "2026-07-20"
+    }
+  ]
+}

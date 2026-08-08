@@ -1,0 +1,193 @@
+{
+  "status": "ok",
+  "module": "SC-04",
+  "flagged_transactions": [
+    {
+      "order_id": "PO-0012",
+      "supplier_id": "S004",
+      "category": "钢材",
+      "unit_price": 9500.0,
+      "total_amount": 190000.0,
+      "anomaly_score": 0.6449,
+      "anomaly_level": "中",
+      "severity": "medium",
+      "confirmed_anomaly": false,
+      "indicators": {
+        "benford_contribution": 1.0,
+        "statistical_contribution": 0.9698,
+        "iso_forest_contribution": 0.5828
+      },
+      "rule_flags": [
+        "价格偏离均值2.82σ(>2.0)",
+        "价格高于品类基准中位数91.9%(>15%)"
+      ],
+      "price_outlier": true,
+      "sole_source_investigate": false,
+      "overcharge": true
+    },
+    {
+      "order_id": "PO-0021",
+      "supplier_id": "S007",
+      "category": "水泥",
+      "unit_price": 900.0,
+      "total_amount": 90000.0,
+      "anomaly_score": 0.6146,
+      "anomaly_level": "中",
+      "severity": "medium",
+      "confirmed_anomaly": false,
+      "indicators": {
+        "benford_contribution": 1.0,
+        "statistical_contribution": 0.9405,
+        "iso_forest_contribution": 0.5212
+      },
+      "rule_flags": [
+        "价格偏离均值2.64σ(>2.0)",
+        "价格高于品类基准中位数126.4%(>15%)"
+      ],
+      "price_outlier": true,
+      "sole_source_investigate": false,
+      "overcharge": true
+    },
+    {
+      "order_id": "PO-0013",
+      "supplier_id": "S005",
+      "category": "钢材",
+      "unit_price": 1500.0,
+      "total_amount": 30000.0,
+      "anomaly_score": 0.5952,
+      "anomaly_level": "中",
+      "severity": "medium",
+      "confirmed_anomaly": false,
+      "indicators": {
+        "benford_contribution": 1.0,
+        "statistical_contribution": 0.8731,
+        "iso_forest_contribution": 0.5236
+      },
+      "rule_flags": [
+        "价格偏离均值2.24σ(>2.0)"
+      ],
+      "price_outlier": true,
+      "sole_source_investigate": false,
+      "overcharge": false
+    },
+    {
+      "order_id": "PO-0027",
+      "supplier_id": "S008",
+      "category": "电缆",
+      "unit_price": 1900.0,
+      "total_amount": 95000.0,
+      "anomaly_score": 0.4181,
+      "anomaly_level": "中",
+      "severity": "medium",
+      "confirmed_anomaly": false,
+      "indicators": {
+        "benford_contribution": 1.0,
+        "statistical_contribution": 0.3153,
+        "iso_forest_contribution": 0.4957
+      },
+      "rule_flags": [
+        "单一来源采购且价格高于品类均价,建议核查",
+        "价格高于品类基准中位数40.7%(>15%)"
+      ],
+      "price_outlier": false,
+      "sole_source_investigate": true,
+      "overcharge": true
+    },
+    {
+      "order_id": "PO-0026",
+      "supplier_id": "S008",
+      "category": "电缆",
+      "unit_price": 1600.0,
+      "total_amount": 80000.0,
+      "anomaly_score": 0.3477,
+      "anomaly_level": "低",
+      "severity": "low",
+      "confirmed_anomaly": false,
+      "indicators": {
+        "benford_contribution": 1.0,
+        "statistical_contribution": 0.1089,
+        "iso_forest_contribution": 0.4715
+      },
+      "rule_flags": [
+        "单一来源采购且价格高于品类均价,建议核查",
+        "价格高于品类基准中位数18.5%(>15%)"
+      ],
+      "price_outlier": false,
+      "sole_source_investigate": true,
+      "overcharge": true
+    }
+  ],
+  "statistical_details": {
+    "order_count": 32,
+    "benford_statistic": 1.0,
+    "benford_flagged": true,
+    "anomaly_distribution": {
+      "高": 0,
+      "中": 4,
+      "低": 28
+    },
+    "severity_distribution": {
+      "critical": 0,
+      "high": 0,
+      "medium": 4,
+      "low": 28
+    },
+    "category_stats": {
+      "钢材": {
+        "count": 13,
+        "high": 0,
+        "medium": 2,
+        "total_score": 4.5966000000000005,
+        "avg_score": 0.3536
+      },
+      "水泥": {
+        "count": 8,
+        "high": 0,
+        "medium": 1,
+        "total_score": 2.9858,
+        "avg_score": 0.3732
+      },
+      "电缆": {
+        "count": 6,
+        "high": 0,
+        "medium": 1,
+        "total_score": 2.1424,
+        "avg_score": 0.3571
+      },
+      "阀门": {
+        "count": 5,
+        "high": 0,
+        "medium": 0,
+        "total_score": 1.7335,
+        "avg_score": 0.3467
+      }
+    },
+    "thresholds": {
+      "critical": 0.85,
+      "high": 0.7,
+      "medium": 0.4
+    }
+  },
+  "rule_summary": {
+    "price_outlier": 3,
+    "sole_source_investigate": 2,
+    "overcharge": 4
+  },
+  "recommendations": [
+    "Benford检验异常:金额首位数字分布显著偏离,建议核查采购金额真实性与录入完整性",
+    "发现4笔高于品类基准中位数的采购,建议引入竞争性报价或重新议价",
+    "存在单一来源采购且价格偏高,建议评估独家供应商必要性并探索替代供应源",
+    "发现3笔价格统计离群,建议复核单价构成与采购审批流程"
+  ],
+  "statistics": {
+    "order_count": 32,
+    "anomaly_count": 4,
+    "confirmed_anomaly_count": 0,
+    "severity_distribution": {
+      "critical": 0,
+      "high": 0,
+      "medium": 4,
+      "low": 28
+    }
+  }
+}

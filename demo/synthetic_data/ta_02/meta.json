@@ -1,0 +1,27 @@
+{
+  "slug": "ta_02",
+  "family": "ta",
+  "module_name": "",
+  "total_bytes": 10708107,
+  "total_mb": 10.21,
+  "files": [
+    {
+      "file": "invoices.jsonl",
+      "bytes": 8912535
+    },
+    {
+      "file": "transfer_pricing.jsonl",
+      "bytes": 1618223
+    },
+    {
+      "file": "media_refs.jsonl",
+      "bytes": 177349
+    }
+  ],
+  "modalities": [
+    "transfer_pricing",
+    "invoices",
+    "media_refs"
+  ],
+  "generated_at": "2026-08-08T15:00:25.856689"
+}

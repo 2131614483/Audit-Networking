@@ -1,0 +1,44 @@
+{
+  "applicants": [
+    {
+      "applicant_id": "AP001",
+      "name": "优质客户",
+      "credit_score": 800,
+      "dti_ratio": 0.2,
+      "ltv_ratio": 0.6,
+      "employment_years": 15,
+      "default_history": 0,
+      "loan_amount": 200000
+    },
+    {
+      "applicant_id": "AP002",
+      "name": "中等客户",
+      "credit_score": 680,
+      "dti_ratio": 0.38,
+      "ltv_ratio": 0.75,
+      "employment_years": 8,
+      "default_history": 0,
+      "loan_amount": 300000
+    },
+    {
+      "applicant_id": "AP003",
+      "name": "高风险客户",
+      "credit_score": 550,
+      "dti_ratio": 0.55,
+      "ltv_ratio": 0.95,
+      "employment_years": 2,
+      "default_history": 2,
+      "loan_amount": 500000
+    },
+    {
+      "applicant_id": "AP004",
+      "name": "次优客户",
+      "credit_score": 680,
+      "dti_ratio": 0.36,
+      "ltv_ratio": 0.65,
+      "employment_years": 8,
+      "default_history": 0,
+      "loan_amount": 300000
+    }
+  ]
+}

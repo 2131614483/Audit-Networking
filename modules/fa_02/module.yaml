@@ -1,0 +1,56 @@
+# 模块元数据（预制菜规范 §3.2）
+module:
+  id: FA-02
+  name: 多源数据自动标准化
+  name_en: fa_02
+  version: 1.0.0
+  category: financial_audit
+  family: ml_nlp
+  family_display: ML / NLP
+  difficulty: 3
+  priority: high
+  roi: "0.5-1年"
+  duration: ""
+  budget: ""
+  description: >
+    多源数据自动标准化方案基于BERT-based字段名理解模型和XGBoost字段映射分类器，实现从源系统字段到标准审计数据模型的自动Schema映射。系统支持100+类字段名的自动识别与映射，科目代码通过NLP语义理解自动对齐至统一科目表。增量学习机制确保每次人工确认的映射关系自动纳入训练集，模型准确率持续提升（首月85% → 12个月后98%+）。方案与FA-01智能数据接入平台深度协同，形成"接入→标准化→分析"的完整数据流水线。  ---  ## 二、技术架构设计
+
+runtime:
+  language: python
+  language_version: "3.11"
+  framework: fastapi
+  package: modules.fa_02
+  port: 8002
+  health_check: /api/v1/health
+
+dependencies:
+  platforms:
+    - adl
+  modules:
+      - FA-01
+      - FA-03
+      - FA-07
+      - FA-08
+
+interfaces:
+  consumes: []
+  produces: []
+  rest_apis:
+    - path: /api/v1/execute
+      method: POST
+      desc: 触发模块执行
+
+resources:
+  cpu: "1"
+  memory: "1Gi"
+
+configurable:
+  threshold:
+    confidence: 0.85
+  model:
+    path: models/model.pkl
+
+extension_points:
+  - src/custom/custom_rules.py
+  - src/custom/custom_thresholds.py
+  - src/custom/custom_formatter.py
